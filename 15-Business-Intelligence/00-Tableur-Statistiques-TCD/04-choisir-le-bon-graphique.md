@@ -177,7 +177,7 @@ d'interprétation au lecteur.
 
 > ✍️ **Écris ton titre comme une phrase de conclusion.**
 > ❌ « CA par magasin »
-> ✅ « Lens et Dunkerque réalisent 40 % du CA livré, Arras en réalise 8,5 % »
+> ✅ « Lens et Dunkerque réalisent 32 % du CA livré, Arras en réalise 8,5 % »
 
 ---
 
@@ -187,7 +187,8 @@ Avant de livrer, vérifie les huit points suivants :
 
 - [ ] **Titre** = le message, en une phrase
 - [ ] **Axes nommés**, avec l'**unité** (€, %, nombre de commandes)
-- [ ] **Source et périmètre** en note de bas de graphique (« DVF 2024, 613 commandes livrées »)
+- [ ] **Source et périmètre** en note de bas de graphique
+      (« Cyclo'Nord — export 2025, 360 commandes au statut *Livrée* »)
 - [ ] **Ordre** volontaire (trié par valeur si l'axe est qualitatif)
 - [ ] **Étiquettes de données** si elles sont peu nombreuses — sinon une grille discrète
 - [ ] Pas de fioriture : ni 3D, ni dégradé, ni ombre, ni arrière-plan coloré

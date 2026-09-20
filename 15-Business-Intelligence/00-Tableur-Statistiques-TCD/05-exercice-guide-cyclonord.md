@@ -262,11 +262,32 @@ Construis, avec des formules, le tableau suivant :
 | Magasin | CA **toutes commandes** | CA **livré** | Panier **médian** |
 |---|---|---|---|
 
-*(Pour le panier médian par magasin, tu devras filtrer : il n'existe pas de `MEDIANE.SI.ENS`.
-Note cette limite dans ton classeur — c'est une vraie contrainte du tableur.)*
+*(Pour le panier médian par magasin, il n'existe pas de `MEDIANE.SI.ENS`. Note cette limite dans
+ton classeur — c'est une vraie contrainte du tableur.)*
 
-✅ Arras : 442 616,80 € · 29 214,80 € · 90,00 €
-✅ Lens : 144 276,20 € · 56 878,50 € · 549,00 €
+> ⚠️ **Piège : `MEDIANE` ne voit pas les filtres.** Si tu filtres sur Arras puis tapes
+> `=MEDIANE(T_Ventes[Montant_TTC])`, tu obtiens **177,00 €** — la médiane de tout le fichier —
+> **sans aucun message d'erreur**. Tu croirais avoir bon. Deux méthodes qui marchent vraiment :
+> ```excel
+> =AGREGAT(12;5; T_Ventes[Montant_TTC])    ← 12 = médiane, 5 = ignorer les lignes masquées
+> ```
+> ou, plus sûr et valable sur tous les tableurs : copier les lignes filtrées dans un onglet à
+> part et calculer la médiane dessus.
+
+✅ **Les huit magasins**, pour que tu puisses te corriger ligne par ligne :
+
+| Magasin | CA toutes commandes | CA livré | Panier médian |
+|---|---|---|---|
+| Arras | 442 616,80 € | 29 214,80 € | 90,00 € |
+| Lens | 144 276,20 € | 56 878,50 € | 549,00 € |
+| Amiens | 85 184,10 € | 47 930,05 € | 507,82 € |
+| Lille | 82 683,35 € | 47 768,75 € | 549,00 € |
+| Beauvais | 72 294,50 € | 42 822,10 € | 207,00 € |
+| Dunkerque | 71 939,00 € | 53 362,40 € | 549,00 € |
+| Valenciennes | 71 647,20 € | 36 357,35 € | 92,20 € |
+| Roubaix | 59 059,35 € | 29 543,50 € | 101,05 € |
+
+Contrôle : la colonne « CA toutes commandes » doit totaliser **1 029 700,50 €**.
 
 **Question B7.** Arras est premier sur une colonne et dernier sur une autre. Rédige les **deux
 phrases** que tu mettrais dans un rapport : celle qui décrit le fait, et celle qui l'explique.

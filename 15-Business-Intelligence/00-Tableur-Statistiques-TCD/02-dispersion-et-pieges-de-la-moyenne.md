@@ -70,12 +70,21 @@ L'idée : mesurer l'écart **moyen** à la moyenne. Comme les écarts positifs e
 s'annuleraient, on les met au carré — c'est la **variance**. Puis on reprend la racine carrée pour
 revenir à l'unité de départ (des euros, pas des euros²) — c'est l'**écart-type**.
 
+<details>
+<summary><b>La formule, pour ceux que ça rassure.</b> Tu peux la sauter : le paragraphe ci-dessus dit la même chose, et aucun exercice ne la demande.</summary>
+
 $$\sigma = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n}} \qquad s = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n-1}}$$
+
+Elle se lit de l'intérieur vers l'extérieur : pour chaque valeur `x`, on retire la moyenne `x̄`,
+on met l'écart au carré, on additionne le tout (`∑`), on divise par le nombre de valeurs `n`,
+puis on reprend la racine. La seule différence entre les deux : `n` pour une population
+complète, `n−1` pour un échantillon.
+
+</details>
 
 ```excel
 =ECARTYPE.STANDARD(T_Ventes[Montant_TTC])   → 15 504,58 €   [STDEV.S]  ← échantillon
 =ECARTYPE.PEARSON(T_Ventes[Montant_TTC])    → 15 491,93 €   [STDEV.P]  ← population
-=VAR.S(T_Ventes[Montant_TTC])               → variance      [VAR.S]
 ```
 
 **Laquelle choisir ?**
@@ -83,7 +92,7 @@ $$\sigma = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n}} \qquad s = \sqrt{\frac{\sum (
 | Ta situation | Fonction | Pourquoi |
 |---|---|---|
 | Tes lignes **sont** tout ce qui existe (les 613 commandes de 2025) | `ECARTYPE.PEARSON` | tu décris une population complète |
-| Tes lignes sont un **échantillon** d'un ensemble plus large | `ECARTYPE.STANDARD` | le `n−1` corrige un biais d'estimation |
+| Tes lignes sont un **échantillon** d'un ensemble plus large | `ECARTYPE.STANDARD` | le `n−1` compense le fait qu'un échantillon sous-estime toujours un peu la dispersion réelle |
 
 > 💡 En pratique, au-delà de quelques centaines de lignes l'écart est négligeable (ici : 12 € sur
 > 15 500, soit 0,08 %). **Mais on doit savoir pourquoi on a choisi l'une ou l'autre.** En cas de
@@ -108,6 +117,7 @@ $$CV = \frac{\text{écart-type}}{\text{moyenne}}$$
 |---|---|
 | < 0,15 | données très homogènes |
 | 0,15 – 0,50 | dispersion normale |
+| 0,50 – 1 | dispersion forte : la moyenne reste lisible, mais elle se commente |
 | > 1 | données très hétérogènes — la moyenne ne résume rien |
 
 Par catégorie de produit, le CV révèle immédiatement où sont les problèmes :
@@ -139,12 +149,11 @@ On range les valeurs par ordre croissant et on découpe :
 ```excel
 =QUARTILE.INCLURE(T_Ventes[Montant_TTC]; 1)   →     50,15 €     [QUARTILE.INC]
 =QUARTILE.INCLURE(T_Ventes[Montant_TTC]; 3)   →  1 790,00 €
-=CENTILE.INCLURE(T_Ventes[Montant_TTC]; 0,9)  →  2 590,00 €     [PERCENTILE.INC]
 ```
 
 **Lecture Cyclo'Nord** : la moitié des commandes est comprise entre **50 € et 1 790 €**. L'IQR vaut
 **1 740 €**. C'est une mesure de dispersion **robuste** : la commande à 379 050 € ne la modifie pas
-d'un centime, alors qu'elle multiplie l'écart-type par douze.
+d'un centime, alors qu'elle multiplie l'écart-type par près de six.
 
 | Mesure | Avec la flotte à 379 050 € | Sans elle (612 lignes) | Variation |
 |---|---|---|---|
@@ -175,8 +184,25 @@ Seuil_haut =Q3 + 1,5*IQR                                     →  4 399,77
 Nb       =NB.SI.ENS(T_Ventes[Montant_TTC];">"&Seuil_haut)    →         14
 ```
 
+> 🧰 **Deux gestes nouveaux dans ce bloc.**
+> `Q1`, `Q3`, `IQR` et `Seuil_haut` ne sont pas des mots magiques : ce sont **les cellules où tu
+> viens de ranger ces valeurs**. Soit tu écris leur référence (`=B3-B2`), soit tu sélectionnes la
+> cellule et tu lui donnes ce nom dans la **zone Nom**, à gauche de la barre de formule.
+> Et `">"&Seuil_haut` colle l'opérateur `>` à la valeur de la cellule : un critère doit arriver à
+> Excel **en un seul morceau**, d'où le `&`.
+
 **14 commandes sur 613** dépassent le seuil haut (2,3 %). Aucune ne passe sous le seuil bas — ce qui
 confirme l'étalement vers la droite vu hier.
+
+Pour regarder ces valeurs plutôt que les compter, `GRANDE.VALEUR` donne la n-ième plus grande :
+
+```excel
+=GRANDE.VALEUR(T_Ventes[Montant_TTC];1)   → 379 050,00 €   [LARGE]   ← la plus grande
+=GRANDE.VALEUR(T_Ventes[Montant_TTC];2)   →  59 415,00 €             ← la deuxième
+```
+
+`PETITE.VALEUR` fait l'inverse. Recopie la formule vers le bas en changeant le rang pour obtenir
+un classement, sans toucher au tri de ton tableau.
 
 ### Atypique ≠ faux
 
@@ -302,16 +328,22 @@ en cinq nombres (plus l'effectif) :
 
 ## 7. Mémo des fonctions du jour
 
+**Vues aujourd'hui — tu dois savoir t'en servir :**
+
 | Besoin | Excel (FR) | Excel (EN) |
 |---|---|---|
 | Écart-type (échantillon) | `ECARTYPE.STANDARD` | `STDEV.S` |
 | Écart-type (population) | `ECARTYPE.PEARSON` | `STDEV.P` |
-| Variance (échantillon) | `VAR.S` | `VAR.S` |
 | Quartile | `QUARTILE.INCLURE` | `QUARTILE.INC` |
-| Centile / décile | `CENTILE.INCLURE` | `PERCENTILE.INC` |
-| Rang d'une valeur en % | `RANG.POURCENTAGE.INCLURE` | `PERCENTRANK.INC` |
 | n-ième plus grande valeur | `GRANDE.VALEUR` | `LARGE` |
 | n-ième plus petite valeur | `PETITE.VALEUR` | `SMALL` |
+
+**Bon à savoir qu'elles existent — tu les croiseras plus tard, rien à retenir aujourd'hui :**
+
+| Besoin | Excel (FR) | Excel (EN) |
+|---|---|---|
+| Centile / décile | `CENTILE.INCLURE` | `PERCENTILE.INC` |
+| Rang d'une valeur en % | `RANG.POURCENTAGE.INCLURE` | `PERCENTRANK.INC` |
 | Moyenne en excluant les extrêmes | `MOYENNE.REDUITE` | `TRIMMEAN` |
 | Comptage des valeurs par tranche | `FREQUENCE` | `FREQUENCY` |
 
