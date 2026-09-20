@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 280" width="780" height="280" role="img" aria-label="Trois formes de distribution. À gauche une distribution symétrique où moyenne et médiane se confondent. Au centre une distribution étalée vers la droite où la moyenne est tirée à droite de la médiane : c'est le cas des montants de commande Cyclo'Nord. À droite une distribution étalée vers la gauche où la moyenne passe à gauche de la médiane.">
+  <rect x="0" y="0" width="780" height="280" rx="10" fill="#ffffff"/>
+
+  <g font-family="system-ui, -apple-system, Segoe UI, sans-serif" text-anchor="middle">
+
+    <!-- ================= 1 · symetrique ================= -->
+    <text x="140" y="36" font-size="13.5" font-weight="700" fill="#0f172a">symétrique</text>
+    <text x="140" y="54" font-size="12" fill="#475569">moyenne ≈ médiane</text>
+    <path d="M30 170 C85 170 100 96 140 96 C180 96 195 170 250 170 Z" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/>
+    <line x1="30" y1="170" x2="250" y2="170" stroke="#0f172a" stroke-width="1.5"/>
+    <line x1="140" y1="170" x2="140" y2="96" stroke="#0369a1" stroke-width="3"/>
+    <text x="140" y="192" font-size="12" font-weight="600" fill="#0369a1">moyenne = médiane</text>
+    <text x="140" y="240" font-size="11" fill="#64748b">tailles, températures,</text>
+    <text x="140" y="255" font-size="11" fill="#64748b">notes d'examen</text>
+
+    <!-- ================= 2 · etalee a droite (le cas Cyclo'Nord) ================= -->
+    <text x="390" y="36" font-size="13.5" font-weight="700" fill="#0f172a">étalée vers la droite</text>
+    <text x="390" y="54" font-size="12" font-weight="600" fill="#0369a1">moyenne &gt; médiane</text>
+    <path d="M280 170 C300 170 315 96 345 96 C375 96 390 142 430 156 C465 167 485 170 500 170 Z" fill="#e0f2fe" stroke="#0369a1" stroke-width="1.5"/>
+    <line x1="280" y1="170" x2="500" y2="170" stroke="#0f172a" stroke-width="1.5"/>
+    <line x1="352" y1="170" x2="352" y2="99" stroke="#0369a1" stroke-width="3"/>
+    <line x1="398" y1="170" x2="398" y2="133" stroke="#0f172a" stroke-width="2" stroke-dasharray="4 3"/>
+    <text x="336" y="192" font-size="12" font-weight="600" fill="#0369a1" text-anchor="end">médiane</text>
+    <text x="414" y="192" font-size="12" font-weight="600" fill="#0f172a" text-anchor="start">moyenne</text>
+    <text x="390" y="240" font-size="11" fill="#64748b">salaires, prix,</text>
+    <text x="390" y="255" font-size="11" fill="#64748b">montants de commande</text>
+
+    <!-- ================= 3 · etalee a gauche ================= -->
+    <text x="640" y="36" font-size="13.5" font-weight="700" fill="#0f172a">étalée vers la gauche</text>
+    <text x="640" y="54" font-size="12" fill="#475569">moyenne &lt; médiane</text>
+    <path d="M530 170 C545 170 565 167 600 156 C640 142 655 96 685 96 C715 96 730 170 750 170 Z" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/>
+    <line x1="530" y1="170" x2="750" y2="170" stroke="#0f172a" stroke-width="1.5"/>
+    <line x1="678" y1="170" x2="678" y2="99" stroke="#0369a1" stroke-width="3"/>
+    <line x1="632" y1="170" x2="632" y2="133" stroke="#0f172a" stroke-width="2" stroke-dasharray="4 3"/>
+    <text x="616" y="192" font-size="12" font-weight="600" fill="#0f172a" text-anchor="end">moyenne</text>
+    <text x="694" y="192" font-size="12" font-weight="600" fill="#0369a1" text-anchor="start">médiane</text>
+    <text x="640" y="240" font-size="11" fill="#64748b">âge au décès,</text>
+    <text x="640" y="255" font-size="11" fill="#64748b">notes très hautes</text>
+
+    <!-- le cas du fichier de la semaine -->
+    <text x="390" y="212" font-size="11.5" font-style="italic" fill="#0369a1">le cas des commandes Cyclo'Nord</text>
+  </g>
+</svg>

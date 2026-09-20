@@ -167,6 +167,14 @@ C'est une règle de lecture que tu utiliseras toute ta carrière :
 | **moyenne > médiane** | **étalée vers la droite** — quelques valeurs très grandes | salaires, prix, montants de commande |
 | moyenne < médiane | étalée vers la gauche — quelques valeurs très petites | âge au décès, notes très hautes |
 
+![Les trois formes de distribution, avec la position de la moyenne et de la médiane sur chacune](images/formes-de-distribution.svg)
+
+> 📐 **Comment lire ces trois images.** Le trait bleu plein est la **médiane**, le trait noir
+> pointillé la **moyenne**. À gauche, ils se confondent. Au centre, la traîne de droite **tire la
+> moyenne** loin de la médiane : c'est le cas de Cyclo'Nord, et c'est la forme la plus fréquente
+> sur des montants. Retiens le geste : **la moyenne suit la traîne, la médiane reste sur le gros
+> du peloton.**
+
 Ici : moyenne ≫ médiane → **distribution fortement étalée vers la droite**. Une poignée de très
 grosses commandes (les VAE, et surtout une commande de flotte de 100 vélos cargo à 379 050 €)
 tire la moyenne vers le haut pendant que la masse des commandes reste sous 200 €.

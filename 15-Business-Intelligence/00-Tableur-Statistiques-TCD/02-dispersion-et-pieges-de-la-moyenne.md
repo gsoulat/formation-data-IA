@@ -231,13 +231,11 @@ Tu n'as pas le droit de supprimer une ligne parce qu'elle te gêne. Les trois at
 
 C'est la traduction graphique de tout ce qui précède, en une seule figure.
 
-```
-          Q1          médiane        Q3
-  |────────┤━━━━━━━━━━━━┃━━━━━━━━━━━━├────────|        ● ●    ●
-  │                                           │      valeurs atypiques
- moustache basse                    moustache haute
- (min au-dessus de Q1−1,5·IQR)      (max en dessous de Q3+1,5·IQR)
-```
+![Anatomie d'une boîte à moustaches, annotée avec les valeurs de Cyclo'Nord](images/boite-a-moustaches-anatomie.svg)
+
+> 📐 **Schéma : les positions ne sont pas à l'échelle.** Sur un axe réel, la flotte à 379 050 € est
+> à 86 fois le seuil haut, et la boîte serait écrasée contre l'axe au point d'être illisible.
+> C'est exactement le problème que tu traiteras jeudi, en question B6.
 
 | Ce que tu vois | Ce que ça veut dire |
 |---|---|
