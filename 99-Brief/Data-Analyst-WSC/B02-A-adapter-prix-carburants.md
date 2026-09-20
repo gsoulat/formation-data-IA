@@ -133,20 +133,26 @@ Un chiffre publié sans son périmètre sera compté comme faux, même s'il est 
 
 ## Livrables attendus
 
-**Un dossier** déposé sur Simplonline, nommé `NOM1_NOM2_carburants/`, contenant :
+**Un dépôt GitHub public** par binôme, contenant :
 
-1. **`analyse_carburants.xlsx`**
+1. **`README.md`** — le nom des deux auteurs, la source des données et sa date d'extraction, la
+   question telle que vous l'avez reformulée avec Malik, et où trouver quoi dans le dépôt.
+2. **`analyse_carburants.xlsx`**
    - onglet `Releve_prix` **intact**
    - un onglet `Cadrage` : votre question reformulée, votre périmètre, vos hypothèses
    - un onglet par axe d'analyse, TCD **actualisés**, formules apparentes
    - un onglet `Graphiques` avec les trois visualisations finies
-2. **`note-redaction.md`** — **deux pages maximum**, adressées à Malik Ferhaoui :
+3. **`note-redaction.md`** — **deux pages maximum**, adressées à Malik Ferhaoui :
    - le titre d'article proposé et son chapô (5 lignes)
    - la réponse à la question du lecteur, avec le chiffre, son indicateur et son périmètre
    - ce que vous avez trouvé de plus intéressant, qui n'était pas dans la question initiale
    - les trois limites du jeu de données, formulées pour un lecteur non technicien
    - la source et la date d'extraction
-3. **`graphiques/`** — les trois graphiques exportés en image, nommés explicitement.
+4. **`graphiques/`** — les trois graphiques exportés en image, nommés explicitement.
+
+> 🔧 **Travail en binôme, un seul dépôt.** L'un des deux le crée, ajoute l'autre en collaborateur
+> dans *Settings › Collaborators*. Les deux doivent apparaître dans l'historique des commits : un
+> dépôt où une seule personne a poussé sera lu comme un travail fait par une seule personne.
 
 ## Critères de performance
 

@@ -68,7 +68,7 @@ assumer ce que vous avez écarté.
 | **9 h 00** | Visio de lancement (20 min) — le formateur joue Claire Vandamme et répond aux questions. Posez-lui les bonnes : c'est le seul moment où vous pouvez cadrer la commande. |
 | **13 h 30** | Point d'étape individuel, 5 min par personne, sur le canal de la promo. Vous annoncez : votre territoire, vos indicateurs, votre source complémentaire. |
 | **16 h 00** | Restitution : **6 minutes**, une seule diapositive autorisée. |
-| **17 h 30** | Dépôt sur Simplonline. |
+| **17 h 30** | Dernier push sur le dépôt GitHub. |
 
 ### Vos marges de manœuvre
 
@@ -151,24 +151,26 @@ connues : [`donnees/SOURCES.md`](../../15-Business-Intelligence/00-Tableur-Stati
 
 ## Livrables attendus
 
-**Un dossier** `NOM_Prenom_portrait/` déposé sur Simplonline **avant 17 h 30**, contenant :
+**Un dépôt GitHub public**, poussé **avant 17 h 30**, contenant :
 
-1. **`portrait.xlsx`**
+1. **`README.md`** — votre nom, le territoire retenu, toutes vos sources avec millésime, date
+   d'extraction et licence, et où trouver quoi dans le dépôt.
+2. **`portrait.xlsx`**
    - les onglets du socle, **intacts**
    - votre ou vos source(s) complémentaire(s), dans un onglet identifié
    - un onglet `Methode` : périmètre retenu, indicateurs choisis, **ce que vous avez écarté et
      pourquoi**
    - les onglets d'analyse (TCD, indicateurs de position et de dispersion, calcul pondéré)
    - un onglet `Graphiques`
-2. **`note-critique.md`** — **deux pages maximum**, adressée à Claire Vandamme :
+3. **`note-critique.md`** — **deux pages maximum**, adressée à Claire Vandamme :
    - votre définition opérationnelle du territoire prioritaire
    - les indicateurs retenus et pourquoi ceux-là
    - le traitement de la pondération, avec l'écart chiffré entre calcul simple et calcul pondéré
    - **la réponse** : quels territoires, et sur quelle base
    - les limites de votre analyse, y compris celles que vous auriez aimé lever
    - toutes les sources, avec millésime, date d'extraction et licence
-3. **`graphiques/`** — trois images minimum, nommées explicitement.
-4. **Une diapositive** (PDF ou image) pour la restitution de 16 h.
+4. **`graphiques/`** — trois images minimum, nommées explicitement.
+5. **Une diapositive** (PDF ou image) pour la restitution de 16 h.
 
 ## Critères de performance
 

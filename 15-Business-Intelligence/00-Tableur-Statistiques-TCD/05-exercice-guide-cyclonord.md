@@ -10,7 +10,7 @@
 | **Modalité** | **Individuel** · formatif, non noté |
 | **Compétences** | **C3.1** (niveau 1) · **C4.2** (niveau 1) · **C4.5** (niveau 1) |
 | **Fichier** | [`donnees/cyclonord_ventes_2025_fiable.xlsx`](donnees/cyclonord_ventes_2025_fiable.xlsx) |
-| **Livrable** | `NOM_Prenom_cyclonord_stats.xlsx` + 10 lignes de conclusion, sur Simplonline mardi 17 h 30 |
+| **Livrable** | `cyclonord_stats.xlsx` + `README.md`, poussés sur ton **dépôt GitHub** mardi 17 h 30 |
 
 ---
 
@@ -296,9 +296,10 @@ phrases** que tu mettrais dans un rapport : celle qui décrit le fait, et celle 
 
 ## Livrable
 
-À déposer sur Simplonline **mardi 22/09 avant 17 h 30** :
+**Sur ton dépôt GitHub**, celui que tu as créé en semaine 1 et qui te sert de portfolio, dans un
+dossier `02-cyclonord-stats/`. Dernier push **mardi 22/09 avant 17 h 30**.
 
-**`NOM_Prenom_cyclonord_stats.xlsx`** contenant :
+**1. `cyclonord_stats.xlsx`** contenant :
 
 | Onglet | Contenu |
 |---|---|
@@ -308,8 +309,15 @@ phrases** que tu mettrais dans un rapport : celle qui décrit le fait, et celle 
 | `Dispersion` | B1 à B6, formules apparentes, + la boîte à moustaches |
 | `Conclusion` | **10 lignes maximum** répondant à : *« que faut-il retenir de ces 613 commandes, et quel chiffre unique donneriez-vous à la direction ? »* |
 
+**2. `README.md`** — cinq lignes suffisent : de quoi parle le classeur, ce que tu as calculé, et
+ta phrase de restitution de l'étape A7. C'est la première chose que ton correcteur lira.
+
 > 📌 Les indicateurs doivent être **calculés par formule**, jamais saisis en dur. Un correcteur qui
 > clique sur une cellule doit voir la formule.
+
+> 🔧 **Un classeur est un fichier binaire.** Git le versionne sans problème, mais il ne saura pas
+> te montrer ce qui a changé d'une version à l'autre. Raison de plus pour que ton `README.md` dise
+> ce que contient le fichier — et pour committer au fur et à mesure plutôt qu'en une fois à 17 h 25.
 
 ---
 
