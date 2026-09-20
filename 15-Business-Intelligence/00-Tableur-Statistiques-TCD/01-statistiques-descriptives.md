@@ -60,13 +60,13 @@ moitié des erreurs. Classe tes colonnes **avant** d'ouvrir la boîte à formule
 |---|---|---|---|
 | **Quantitative continue** | un nombre mesurable, les décimales ont un sens | `Montant_TTC`, `Prix_unitaire_TTC`, `Remise` | moyenne, médiane, mode, écart-type, somme |
 | **Quantitative discrète** | un nombre qui se compte, entier | `Quantite` | idem (mais « 1,78 vélo » se commente) |
-| **Qualitative nominale** | une étiquette, sans ordre | `Magasin`, `Categorie`, `Canal`, `Statut` | **effectifs**, pourcentages, **mode** |
+| **Qualitative nominale** | une étiquette, sans ordre | `Magasin`, `Departement`, `Categorie`, `Produit`, `Canal`, `Statut` | **effectifs**, pourcentages, **mode** |
 | **Qualitative ordinale** | une étiquette **ordonnée** | `Note_client` (1 à 5) | effectifs, mode, **médiane** — moyenne discutable |
 | **Date** | un point dans le temps | `Date_commande` | min, max, étendue, regroupements |
-| **Identifiant** | sert à désigner, pas à mesurer | `ID_commande`, `Code_postal` | **rien** — on compte, c'est tout |
+| **Identifiant** | sert à désigner, pas à mesurer | `ID_commande` | **rien** — on compte, c'est tout |
 
 > 🧠 **Le test qui tranche.** Pose-toi la question : *« la somme de cette colonne a-t-elle un sens ? »*
-> Somme des montants = chiffre d'affaires ✅. Somme des codes postaux = rien du tout ❌.
+> Somme des montants = chiffre d'affaires ✅. Somme des `ID_commande` = rien du tout ❌.
 > Si la somme n'a pas de sens, la moyenne non plus.
 
 ### Le cas piégeux : `Note_client`
@@ -174,7 +174,11 @@ tire la moyenne vers le haut pendant que la masse des commandes reste sous 200 �
 > 🚩 **La règle à retenir.**
 > **Distribution asymétrique → on communique la médiane.**
 > La moyenne reste utile pour une chose : multipliée par l'effectif, elle redonne le total.
-> `1 679,77 × 613 = 1 029 700 €` — ça, c'est le chiffre d'affaires, et il est juste.
+> `1 679,772431 × 613 = 1 029 700,50 €` — c'est le **total commandé** sur l'année.
+> ⚠️ Deux précautions. D'abord ce total **n'est pas le chiffre d'affaires** : on verra au §5
+> pourquoi, et c'est un vrai piège professionnel. Ensuite il faut la moyenne **non arrondie** :
+> avec 1 679,77 on retombe sur 1 029 699,01 €, soit 1,49 € d'écart. Un arrondi publié ne permet
+> plus de reconstruire le total.
 
 ---
 
@@ -221,7 +225,7 @@ en cours.** Aucun des deux chiffres n'est faux : ils ne répondent pas à la mê
 ## 6. La moyenne pondérée
 
 « Note moyenne : 4,10 » — mais toutes les commandes pèsent-elles pareil ? Une réparation à 19 € et
-une flotte à 59 415 € comptent chacune pour une note. Si tu veux une note moyenne **pondérée par le
+la flotte à 379 050 € comptent chacune pour une note. Si tu veux une note moyenne **pondérée par le
 chiffre d'affaires**, tu dois donner à chaque note un poids :
 
 $$\text{moyenne pondérée} = \frac{\sum (valeur_i \times poids_i)}{\sum poids_i}$$

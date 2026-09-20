@@ -52,7 +52,9 @@ Dans l'onglet `Position`, recopie ce tableau et **complète les deux dernières 
 | `ID_commande` | | |
 | `Date_commande` | | |
 | `Magasin` | | |
+| `Departement` | | |
 | `Categorie` | | |
+| `Produit` | | |
 | `Canal` | | |
 | `Quantite` | | |
 | `Prix_unitaire_TTC` | | |
