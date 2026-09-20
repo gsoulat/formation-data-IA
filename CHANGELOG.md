@@ -1,3 +1,10 @@
+# [2.23.0](https://github.com/gsoulat/formation-data-IA/compare/v2.22.2...v2.23.0) (2026-09-20)
+
+
+### Features
+
+* **data-analyst:** deux schemas SVG pour la boite a moustaches et les formes de distribution ([5676e3d](https://github.com/gsoulat/formation-data-IA/commit/5676e3daa9d30efa738469e60ab433ce5c367511))
+
 ## [2.22.2](https://github.com/gsoulat/formation-data-IA/compare/v2.22.1...v2.22.2) (2026-09-20)
 
 
