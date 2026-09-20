@@ -1,3 +1,10 @@
+## [2.23.1](https://github.com/gsoulat/formation-data-IA/compare/v2.23.0...v2.23.1) (2026-09-20)
+
+
+### Bug Fixes
+
+* **data-analyst:** les rendus de la semaine 39 se font sur GitHub, pas sur Simplonline ([6db4305](https://github.com/gsoulat/formation-data-IA/commit/6db4305f72ad6fa92445d3cba16524172d55be1d))
+
 # [2.23.0](https://github.com/gsoulat/formation-data-IA/compare/v2.22.2...v2.23.0) (2026-09-20)
 
 
