@@ -1,3 +1,10 @@
+## [2.22.2](https://github.com/gsoulat/formation-data-IA/compare/v2.22.1...v2.22.2) (2026-09-20)
+
+
+### Bug Fixes
+
+* **data-analyst:** accessibilite debutant du module tableur, 8 corrections ([ffbee95](https://github.com/gsoulat/formation-data-IA/commit/ffbee95d8c6ebee8760fb215a111e37746b8c7a9))
+
 ## [2.22.1](https://github.com/gsoulat/formation-data-IA/compare/v2.22.0...v2.22.1) (2026-09-20)
 
 
