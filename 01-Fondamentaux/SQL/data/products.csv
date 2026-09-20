@@ -1,0 +1,11 @@
+id,name,category,price,stock
+1,Ordinateur Portable,Électronique,1200.00,15
+2,Souris Sans Fil,Électronique,25.00,50
+3,Clavier Mécanique,Électronique,85.00,30
+4,T-shirt Coton,Vêtements,20.00,100
+5,Jean Slim,Vêtements,60.00,40
+6,Cafetière,Maison,45.00,20
+7,Lampe de Bureau,Maison,35.00,15
+8,Écran 27 pouces,Électronique,250.00,10
+9,Casque Audio,Électronique,150.00,25
+10,Livre SQL,Livres,30.00,100

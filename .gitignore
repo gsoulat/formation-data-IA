@@ -32,10 +32,17 @@ gcp.pub
 sa.json
 app-fastapi/
 app-django/
-data/
-03-Infrastructure-as-Code/Terraform/A trier/Terraform/Trainning terraform/AWS/creds/berry-devops.pem
+# --- Jeux de donnees pedagogiques ---
+# NE PAS remettre une regle « data/ » nue : elle masquait 65 fichiers (18 Mo),
+# alors que les briefs annoncent aux apprenants « deja present dans le depot ».
+# Regle : on n'ignore QUE les sorties generees par un script versionne a cote.
+#
+# Maintenance-DWH : ventes.csv fait 8,5 Mo -> regenerer via starter-kit/generate_data.py
+99-Brief/Data-Engineer/Maintenance-Data-Warehouse/starter-kit/data/
+# Gouvernance : dossier de travail, rempli par scripts/generate_data.py
+99-Brief/Data-Engineer/Gouvernance-Donnees/starter-kit/data/*
+!99-Brief/Data-Engineer/Gouvernance-Donnees/starter-kit/data/.gitkeep
 .claude
-Formateur/
 
 
 

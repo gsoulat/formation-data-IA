@@ -1,0 +1,11 @@
+id,first_name,last_name,email,city,country,age,subscription_date
+1,Jean,Dupont,jean.dupont@email.com,Paris,France,35,2023-01-15
+2,Alice,Martin,alice.martin@email.com,Lyon,France,28,2023-02-20
+3,Bob,Durand,bob.durand@email.com,Bruxelles,Belgique,42,2023-03-10
+4,Claire,Leroy,claire.leroy@email.com,Genève,Suisse,31,2023-01-05
+5,Thomas,Petit,thomas.petit@email.com,Paris,France,24,2023-04-12
+6,Emma,Roux,emma.roux@email.com,Marseille,France,45,2022-11-30
+7,Lucas,Moreau,lucas.moreau@email.com,Bruxelles,Belgique,19,2023-05-22
+8,Marie,Bernard,marie.bernard@email.com,NULL,France,NULL,2023-06-01
+9,Paul,Lefebvre,paul.lef@email.com,Lyon,France,52,2023-02-15
+10,Julie,Garcia,julie.g@email.com,Paris,France,33,2023-03-01

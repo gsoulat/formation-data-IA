@@ -1,0 +1,51 @@
+id_commande,id_client,description_articles,nb_colis,poids_total_kg,volume_total_m3,date_commande,date_livraison_souhaitee,priorite,statut
+1,2,Medicaments generiques lot 2024-A,12,180,2.5,2024-01-03,2024-01-04,haute,livree
+2,3,Canapes 3 places x2 + table basse,5,320,8.0,2024-01-03,2024-01-06,normale,livree
+3,1,Farine T55 x50 sacs + levure,25,1300,3.2,2024-01-03,2024-01-04,haute,livree
+4,5,Composants electroniques PCB,8,45,1.0,2024-01-03,2024-01-05,normale,livree
+5,6,Vin rouge AOC Cotes du Rhone 200 cartons,200,2400,6.0,2024-01-04,2024-01-06,normale,livree
+6,8,Pieces detachees automobile mixtes,15,230,3.5,2024-01-04,2024-01-06,normale,livree
+7,4,Fruits et legumes bio assortiment,30,850,4.8,2024-01-04,2024-01-05,haute,livree
+8,14,Reactifs de laboratoire,6,95,0.8,2024-01-04,2024-01-05,haute,livree
+9,11,Textiles mode printemps collection,20,280,5.2,2024-01-05,2024-01-08,basse,livree
+10,7,Produits bio epicerie lot mensuel,18,520,3.0,2024-01-05,2024-01-07,normale,livree
+11,16,Vins primeurs 150 caisses,150,1800,4.5,2024-01-05,2024-01-08,normale,livree
+12,19,Filtres industriels assortiment,10,1200,2.8,2024-01-05,2024-01-07,haute,livree
+13,27,Conteneurs transit international,4,8500,35.0,2024-01-06,2024-01-09,normale,livree
+14,28,Produits frais marche de gros,40,1600,7.2,2024-01-06,2024-01-07,haute,livree
+15,9,Livres nouveautes janvier,8,120,1.5,2024-01-06,2024-01-08,basse,livree
+16,12,Patisseries fines evenement,3,45,0.6,2024-01-07,2024-01-07,haute,livree
+17,17,Materiel electrique tableau,12,85,1.2,2024-01-07,2024-01-09,normale,livree
+18,20,Serveurs rack 42U x2,2,180,3.6,2024-01-07,2024-01-08,haute,livree
+19,22,Cosmetiques bio gamme premium,15,120,2.0,2024-01-07,2024-01-09,normale,livree
+20,24,Medicaments lot B-2024,10,160,1.8,2024-01-08,2024-01-09,haute,livree
+21,29,Meubles bureau open space,8,650,12.0,2024-01-08,2024-01-11,normale,livree
+22,13,Plantes et arbustes saison,25,380,6.5,2024-01-08,2024-01-10,normale,livree
+23,30,Equipement labo biotech,5,75,0.9,2024-01-08,2024-01-09,haute,livree
+24,10,Produits chimiques lot C,6,420,1.4,2024-01-09,2024-01-10,haute,livree
+25,18,Viande fraiche boucherie,12,380,2.2,2024-01-09,2024-01-09,haute,livree
+26,25,Fleurs coupees assortiment,20,60,3.8,2024-01-09,2024-01-10,haute,livree
+27,23,Toles acier 3mm x50,50,12500,4.0,2024-01-09,2024-01-12,normale,en_cours
+28,2,Vaccins temperature controlee,4,25,0.3,2024-01-10,2024-01-10,urgente,livree
+29,15,Articles sport hiver soldes,22,340,5.8,2024-01-10,2024-01-13,basse,annulee
+30,6,Vin blanc Bourgogne 100 cartons,100,1200,3.0,2024-01-10,2024-01-12,normale,livree
+31,4,Agrumes import 2 palettes,2,1800,4.0,2024-01-10,2024-01-11,haute,livree
+32,21,Mobilier salon scandinave,6,420,9.0,2024-01-11,2024-01-14,normale,livree
+33,8,Pneus toutes saisons lot,30,900,8.5,2024-01-11,2024-01-13,normale,livree
+34,11,Textiles mode ete preview,18,250,4.8,2024-01-11,2024-01-14,basse,livree
+35,14,Consommables medicaux,8,65,0.7,2024-01-11,2024-01-12,haute,livree
+36,7,Produits laitiers bio,15,680,3.5,2024-01-12,2024-01-13,haute,livree
+37,27,Marchandises transit Asie,6,5200,22.0,2024-01-12,2024-01-15,normale,en_cours
+38,1,Sucre + chocolat patissier,20,1100,2.8,2024-01-12,2024-01-13,haute,livree
+39,19,Pompes industrielles,3,850,2.0,2024-01-12,2024-01-14,normale,livree
+40,5,Cartes electroniques lot 12,6,30,0.5,01/13/2024,2024-01-15,normale,livree
+41,16,Grands crus classement 2020,80,960,2.4,2024-01-13,2024-01-16,normale,livree
+42,28,Produits frais weekend,35,1400,6.5,2024-01-13,2024-01-14,haute,livree
+43,12,Buches glacees evenement,4,55,0.8,2024-01-14,2024-01-14,urgente,livree
+44,22,Maquillage collection limitee,10,80,1.5,2024-01-14,2024-01-16,normale,livree
+45,26,,5,150,1.2,2024-01-14,2024-01-16,normale,livree
+46,3,Literie king size x5,5,450,15.0,2024-01-14,2024-01-17,normale,livree
+47,10,Solvants industriels,4,-280,1.0,2024-01-15,2024-01-16,haute,livree
+48,17,Cables et connectique,14,110,1.8,2024-01-15,2024-01-17,normale,livree
+49,30,Microscopes et accessoires,3,45,0.6,2024-01-15,2024-01-16,haute,livree
+50,20,Switches reseau x10,10,35,0.8,2024-01-15,2024-01-16,normale,livree

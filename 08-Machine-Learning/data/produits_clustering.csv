@@ -1,0 +1,76 @@
+nom_produit,categorie,prix,nb_ventes_mensuel,note_moyenne,nb_avis,stock
+Smartphone Galaxy S24,Electronique,899.99,320,4.5,1250,150
+Ecouteurs Bluetooth Pro,Electronique,79.99,850,4.2,3200,500
+Tablette iPad Air,Electronique,649.00,180,4.7,890,80
+Chargeur USB-C rapide,Electronique,24.99,1200,4.0,2100,800
+Montre connectee Fitbit,Electronique,199.99,420,4.3,1800,200
+Clavier mecanique RGB,Electronique,129.99,280,4.4,950,300
+Webcam HD 1080p,Electronique,49.99,550,3.8,1400,400
+Enceinte portable JBL,Electronique,89.99,680,4.6,2800,350
+Disque dur externe 2To,Electronique,69.99,390,4.1,1100,250
+Souris ergonomique,Electronique,34.99,720,4.0,1600,600
+Casque audio premium,Electronique,299.99,150,4.8,620,60
+Cable HDMI 2m,Electronique,12.99,1500,3.9,800,1200
+Robe ete fleurie,Mode,39.99,180,4.1,320,150
+Jean slim homme,Mode,59.99,250,4.3,580,200
+Baskets running Nike,Mode,119.99,340,4.5,920,120
+T-shirt coton bio,Mode,19.99,620,4.0,450,400
+Veste cuir femme,Mode,189.99,85,4.6,210,40
+Echarpe laine merinos,Mode,34.99,150,4.2,180,250
+Sac a main cuir,Mode,79.99,200,4.4,390,100
+Chaussettes lot de 5,Mode,14.99,900,3.8,650,800
+Pull cachemire,Mode,129.99,110,4.7,280,60
+Ceinture cuir homme,Mode,29.99,320,4.1,420,300
+Short sport femme,Mode,24.99,280,4.0,350,350
+Manteau hiver parka,Mode,149.99,95,4.3,190,50
+Chemise lin homme,Mode,49.99,170,4.2,310,180
+Canape 3 places tissu,Maison,599.99,25,4.4,120,15
+Lampe de bureau LED,Maison,39.99,380,4.1,680,300
+Coussin decoratif 45x45,Maison,19.99,520,4.0,420,600
+Robot aspirateur,Maison,349.99,90,4.3,540,40
+Bougie parfumee vanille,Maison,14.99,680,4.5,890,500
+Miroir mural rond,Maison,49.99,140,4.2,230,100
+Tapis salon 160x230,Maison,129.99,65,4.1,180,30
+Cadre photo 20x30,Maison,9.99,450,3.9,320,700
+Plante artificielle,Maison,24.99,350,4.0,290,400
+Etagere murale bois,Maison,44.99,200,4.3,350,150
+Rideau occultant,Maison,29.99,280,4.1,410,250
+Vase ceramique bleu,Maison,22.99,190,4.4,170,200
+Set serviettes bain,Maison,34.99,240,4.0,300,350
+Horloge murale vintage,Maison,27.99,160,4.2,220,180
+Panier rangement osier,Maison,17.99,410,3.8,380,450
+Velo elliptique pro,Sport,499.99,35,4.5,280,20
+Tapis yoga premium,Sport,29.99,420,4.3,750,350
+Halteres reglables 20kg,Sport,89.99,180,4.4,520,100
+Corde a sauter speed,Sport,14.99,550,4.1,680,500
+Ballon football T5,Sport,24.99,300,4.2,420,400
+Sac sport 50L,Sport,39.99,250,4.0,350,300
+Bandes de resistance,Sport,19.99,480,4.3,620,450
+Gourde isotherme 750ml,Sport,22.99,600,4.5,890,400
+Raquette badminton,Sport,34.99,150,4.1,280,200
+Montre GPS running,Sport,249.99,120,4.6,450,60
+Tenue compression homme,Sport,44.99,200,4.2,340,250
+Protege-tibias football,Sport,12.99,350,3.9,290,500
+Roller fitness adulte,Sport,79.99,90,4.0,180,80
+Cafe grains arabica 1kg,Alimentaire,18.99,800,4.6,1500,600
+Chocolat noir 70% bio,Alimentaire,4.99,1200,4.4,980,900
+Huile olive extra vierge,Alimentaire,12.99,550,4.5,720,400
+Miel lavande 500g,Alimentaire,9.99,420,4.7,580,300
+The vert matcha 100g,Alimentaire,14.99,350,4.3,460,250
+Pates artisanales 500g,Alimentaire,3.99,900,4.1,380,700
+Confiture fraise bio,Alimentaire,5.99,480,4.2,420,500
+Biscuits sables beurre,Alimentaire,6.99,650,4.0,350,550
+Vinaigre balsamique,Alimentaire,8.99,300,4.4,290,350
+Epices curry madras,Alimentaire,4.49,380,4.3,310,400
+Granola bio fruits secs,Alimentaire,7.99,520,4.5,640,450
+Sauce tomate basilic,Alimentaire,3.49,750,4.1,280,650
+Riz basmati premium 1kg,Alimentaire,5.49,620,4.2,340,500
+Chips artisanales sel,Alimentaire,2.99,1100,3.8,250,800
+Jus orange presse 1L,Alimentaire,4.29,700,4.0,320,600
+Sirop erable pur 250ml,Alimentaire,11.99,200,4.6,180,150
+Compote pomme bio 4x100g,Alimentaire,3.29,580,4.1,270,550
+Crackers sesame,Alimentaire,3.79,430,3.9,210,500
+Beurre de cacahuete,Alimentaire,6.49,380,4.3,350,400
+Lait avoine bio 1L,Alimentaire,2.79,850,4.0,420,700
+Yaourt grec nature 500g,Alimentaire,3.99,680,4.2,380,600
+Amandes grillees 200g,Alimentaire,7.49,310,4.4,290,350

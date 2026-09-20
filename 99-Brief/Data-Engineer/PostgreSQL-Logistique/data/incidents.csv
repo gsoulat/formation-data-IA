@@ -1,0 +1,13 @@
+id_incident,id_livraison,type_incident,description,date_incident,heure_incident,gravite,resolu,date_resolution
+1,6,retard,Bouchons sur A1 hauteur de Beaune - retard 1h,2024-01-05,10:30,mineur,oui,2024-01-05
+2,13,avarie,Leger choc sur conteneur lors du dechargement,2024-01-07,06:00,mineur,oui,2024-01-07
+3,18,retard,Attente au quai de dechargement Lesquin 45min,2024-01-08,12:00,mineur,oui,2024-01-08
+4,26,avarie,2 bottes de fleurs ecrasees pendant transport,2024-01-10,11:30,modere,oui,2024-01-11
+5,27,retard,Chargement depasse capacite - reorganisation necessaire,2024-01-10,07:00,majeur,non,
+6,30,retard,Panne vehicule sur A26 - intervention depanneuse,2024-01-11,06:45,majeur,oui,2024-01-11
+7,36,retard,Attente dedouanement marchandises transit,2024-01-13,08:00,modere,non,
+8,42,retard,Acces rue bloque par marche - livraison a pied,2024-01-14,05:15,mineur,oui,2024-01-14
+9,31,avarie,Rayure sur meuble pendant livraison escalier,2024-01-12,08:15,modere,oui,2024-01-13
+10,46,retard,Controle routier ADR - verification documents 30min,2024-01-16,07:00,mineur,oui,2024-01-16
+11,6,retard,Bouchons sur A1 hauteur de Beaune - retard 1h,2024-01-05,10:30,mineur,oui,2024-01-05
+12,45,retard,Travaux A10 - deviation par nationale,2024-01-15,08:00,mineur,oui,2024-01-15

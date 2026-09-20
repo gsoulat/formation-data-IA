@@ -1,0 +1,1251 @@
+date_vente,isbn,quantite,prix_unitaire_eur,email_client,canal
+2025-07-13,9781449486792,1,12.4,nathan.david95@example.org,site
+2025-07-17,9780241968154,1,12.74,camille.leroy26@example.org,Magasin
+2026-04-28,9780765316974,2,4.73,louis.bertrand55@example.org,STORE
+2025-10-19,9791000000829,2,8.12,jade.bernard46@example.org,STORE
+2025-07-23,9780415478816,1,8.92,jade.bernard71@example.org,en ligne
+2026-05-13,9791000000079,2,24.94,lea.martin85@example.org,web
+2025-08-10,9780393925340,1,8.08,manon.lefebvre82@example.org,en ligne
+2025-12-29,9780061652264,1,29.34,lea.roux82@example.org,boutique
+2025-11-03,9781434462770,1,14.06,hugo.david42@example.org,magasin
+2025-07-17,9780224617253,1,13.98,chloe.roux92@example.org,STORE
+2026-03-13,9789020632729,2,27.26,emma.laurent18@example.org,boutique
+2026-04-02,9780345458889,2,19.67,jade.simon29@example.org,web
+2025-08-16,9783257208634,1,8.38,louis.morel88@example.org,Magasin
+2026-01-14,9781466864580,1,21.07,manon.leroy2@example.org,magasin
+2026-04-01,9782221129289,1,27.19,nathan.laurent56@example.org,web
+2025-11-12,9791000000979,1,10.82,nathan.fournier81@example.org,STORE
+2026-03-17,9781594488849,1,17.74,louis.leroy68@example.org,site
+2026-03-08,9780878210329,1,17.35,theo.moreau8@example.org,boutique
+2025-08-10,9780385094436,2,33.39,emma.dubois85@example.org,online
+2025-09-23,9780062225719,1,25.97,chloe.leroy97@example.org,place de marché
+2025-12-07,9788445007037,0,27.51,zoe.leroy58@example.org,site
+2025-08-02,9783423262644,1,24.11,hugo.martin10@example.org,magasin
+2025-07-17,9780373300693,1,22.7,manon.david63@example.org,boutique
+2026-04-19,9780007299805,1,32.28,gabriel.moreau13@example.org,magasin
+2025-12-29,9780256234787,1,35.08,jules.david84@example.org,site
+2025-12-21,9780140256352,2,13.3,chloe.leroy58@example.org,boutique
+2025-11-20,9788408282952,1,37.18,zoe.morel71@example.org,magasin
+2026-04-03,9780007163243,1,7.8,hugo.dubois53@example.org,Magasin
+2026-01-22,9791000000269,1,17.92,jade.laurent59@example.org,STORE
+2026-04-11,9781593157135,2,9.98,theo.moreau8@example.org,magasin
+2025-07-30,9781735056692,1,22.3,louis.martin66@example.org,site
+2025-08-05,9781841593326,1,35.01,jade.bernard73@example.org,web
+2025-07-21,9785553671754,1,27.77,ines.laurent27@example.org,STORE
+2026-01-19,9780606404518,1,15.12,ines.morel10@example.org,magasin
+2026-04-15,9780804168441,1,12.05,manon.dubois45@example.org,magasin
+2026-01-06,9788804507727,1,34.01,theo.roux84@example.org,site
+2026-04-10,9781491543382,3,8.17,emma.laurent15@example.org,site
+2025-09-18,9780872205925,1,11.96,ines.moreau88@example.org,en ligne
+2025-11-06,9791000000299,3,6.3,gabriel.fournier36@example.org,magasin
+2025-09-05,9781491514931,3,10.22,zoe.leroy91@example.org,Magasin
+2025-08-27,9781408999011,3,28.96,emma.leroy5@example.org,STORE
+2025-09-14,9780823420278,1,15.41,jules.simon27@example.org,boutique
+2025-12-29,9781653656752,1,35.46,emma.moreau21@example.org,web
+2025-07-13,9782226018052,2,16.26,gabriel.morel86@example.org,web
+2026-06-25,9780547524009,1,5.87,arthur.moreau26@example.org,Magasin
+2025-10-25,9781844135844,1,11.34,ines.laurent9@example.org,STORE
+2026-03-18,9788420683324,1,34.37,ines.martin15@example.org,STORE
+2025-11-13,9780563524922,1,19.88,ines.michel78@example.org,magasin
+2026-04-22,9788448034580,1,29.59,camille.leroy69@example.org,boutique
+2025-08-05,9791000000739,1,16.19,ines.david16@example.org,STORE
+2026-06-07,9780373511648,1,29.18,emma.moreau54@example.org,Magasin
+2025-09-28,9780394299877,1,18.88,camille.laurent37@example.org,web
+2026-04-23,9780007527564,1,20.96,zoe.david28@example.org,Magasin
+2025-09-25,9780358023951,1,22.75,ines.bernard97@example.org,web
+2025-10-24,9780739371077,1,5.36,hugo.lefebvre79@example.org,site
+2026-05-19,9780297859390,1,29.15,arthur.michel32@example.org,boutique
+2025-07-03,9791000000159,2,31.76,nathan.morel55@example.org,web
+2026-06-22,9781471198144,1,24.23,nathan.lefebvre18@example.org,Magasin
+2026-04-13,9781841593326,1,31.24,zoe.roux93@example.org,online
+2026-04-07,9781433231933,2,30.83,arthur.lefebvre34@example.org,web
+2025-11-19,9781432622459,2,21.65,hugo.laurent57@example.org,site
+2025-10-29,9780872205925,1,36.11,lea.dubois20@example.org,web
+2025-09-17,9781565843790,1,19.19,ines.leroy60@example.org,Magasin
+2026-02-01,9781726017640,3,25.18,camille.fournier98@example.org,Magasin
+2025-12-28,9780079131195,2,34.71,gabriel.leroy96@example.org,boutique
+2025-11-17,9780809533756,1,18.27,jade.bertrand22@example.org,Magasin
+2026-05-15,9781442006188,1,18.45,camille.bernard83@example.org,MP
+2026-02-22,9781775415190,1,17.92,chloe.lefebvre42@example.org,STORE
+2026-01-11,9780765316974,2,33.95,manon.fournier11@example.org,online
+2026-04-03,9780843940008,0,16.89,lea.morel84@example.org,magasin
+2025-11-04,9798618236188,2,26.5,hugo.dubois61@example.org,site
+2025-10-20,9780963270702,1,31.65,louis.roux78@example.org,magasin
+2025-09-22,9791000000899,1,24.99,theo.roux87@example.org,online
+2025-10-10,9781408999011,1,33.9,hugo.bernard90@example.org,STORE
+2026-05-04,9780224617253,1,39.33,jules.simon69@example.org,online
+2025-08-05,9781984819574,1,4.95,gabriel.fournier63@example.org,site
+2026-01-02,9780749391843,2,20.77,emma.michel23@example.org,STORE
+2026-04-02,9786070793677,1,19.92,manon.simon32@example.org,site
+2026-02-16,9781958943052,2,24.67,jade.simon4@example.org,Magasin
+2025-10-02,9781421889276,1,32.74,ines.laurent77@example.org,en ligne
+2026-03-22,9791000000729,1,13.04,gabriel.lefebvre72@example.org,boutique
+2026-05-27,9788427298286,1,32.57,lea.laurent29@example.org,online
+2025-12-04,9780198118244,1,21.25,lucas.michel96@example.org,en ligne
+2026-02-18,9780263122169,1,12.66,chloe.simon16@example.org,boutique
+2026-03-05,9780345301451,2,39.07,theo.bernard25@example.org,STORE
+2025-09-30,9788427911758,1,23.41,manon.martin7@example.org,STORE
+2025-09-03,9798417265099,2,21.88,camille.roux37@example.org,online
+2025-12-22,9780671491758,3,13.44,arthur.bernard9@example.org,Magasin
+2026-04-22,9789578278035,1,9.87,theo.bernard32@example.org,magasin
+2026-01-30,978957467950X,1,26.39,jade.lefebvre57@example.org,STORE
+2026-02-05,9781780318578,1,6.63,nathan.morel27@example.org,web
+2025-08-11,9789022591932,1,24.04,louis.martin53@example.org,Magasin
+2026-02-26,9780141378893,1,14.7,theo.bertrand59@example.org,site
+2025-11-13,9781883217044,2,25.38,chloe.michel15@example.org,web
+2025-11-14,9780071408691,1,6.61,theo.roux96@example.org,en ligne
+2026-02-25,9780765314673,1,18.75,manon.leroy70@example.org,Magasin
+2026-05-03,9781512157055,2,30.5,manon.martin12@example.org,boutique
+2026-04-21,9798893310856,3,39.88,manon.roux6@example.org,marketplace
+2026-05-30,9780812540116,3,10.92,gabriel.david63@example.org,magasin
+2026-01-26,9781629376363,1,8.2,louis.simon53@example.org,Magasin
+2026-01-22,9780671742881,2,5.8,lea.simon33@example.org,STORE
+2026-01-23,9788501117687,1,39.48,zoe.michel7@example.org,boutique
+2026-05-15,9781322110233,1,20.15,jules.moreau35@example.org,boutique
+2026-02-10,9791000000029,1,8.8,hugo.bertrand21@example.org,MP
+2026-04-09,978281120345X,1,39.63,nathan.lefebvre16@example.org,boutique
+2025-11-27,9781975618674,2,19.21,arthur.lefebvre32@example.org,Magasin
+2026-01-13,9780070441606,3,22.49,emma.fournier9@example.org,STORE
+2026-01-29,9798475273906,3,22.47,camille.laurent93@example.org,en ligne
+2026-04-23,9788432217456,1,9.76,arthur.simon43@example.org,online
+2025-12-12,9780062839701,1,29.19,jade.moreau53@example.org,magasin
+2026-02-28,9781957568225,3,18.0,emma.lefebvre5@example.org,boutique
+2026-04-29,9781631619854,2,35.45,zoe.bernard68@example.org,Magasin
+2025-09-12,9781439580721,2,38.84,lea.lefebvre34@example.org,STORE
+2026-01-20,978006095685X,1,16.13,jade.simon81@example.org,online
+2025-07-19,9780810997516,1,26.84,theo.moreau96@example.org,site
+2025-08-20,9788440220677,1,35.39,zoe.dubois89@example.org,STORE
+2025-07-24,9780131105409,2,14.89,lucas.michel19@example.org,marketplace
+2026-04-16,9781691553822,2,10.52,lea.roux49@example.org,boutique
+2026-04-25,9780141018980,1,27.08,zoe.laurent86@example.org,magasin
+2026-02-24,9791000000249,1,23.85,lea.lefebvre45@example.org,en ligne
+2026-02-03,9780860099697,1,34.42,chloe.michel62@example.org,site
+2026-04-19,9780061285752,1,39.64,theo.martin85@example.org,Magasin
+2026-04-16,9788501117687,1,30.86,jules.roux96@example.org,Magasin
+2025-11-24,9780736423298,2,25.99,lucas.moreau82@example.org,web
+2026-06-13,9783257208634,2,27.84,emma.david13@example.org,site
+2026-02-11,9798212378338,1,30.43,lea.laurent42@example.org,Magasin
+2025-09-06,9788418483448,1,38.89,manon.fournier22@example.org,STORE
+2026-03-04,9791000000929,2,30.93,ines.morel15@example.org,MP
+2025-09-11,9780380395606,3,34.95,jade.fournier72@example.org,MP
+2026-01-19,9781532913686,1,8.88,lucas.david96@example.org,STORE
+2026-05-23,9791000000649,1,28.39,arthur.martin80@example.org,STORE
+2025-10-22,9786073814423,1,33.66,theo.david53@example.org,marketplace
+2025-07-20,9781305639614,0,8.61,hugo.leroy18@example.org,Magasin
+2026-06-09,9791000000749,2,37.99,gabriel.roux96@example.org,boutique
+2026-06-01,9780313207693,2,26.29,manon.martin89@example.org,en ligne
+2026-02-13,9791000000759,1,17.34,lucas.leroy83@example.org,STORE
+2025-11-19,9788448034580,3,38.09,zoe.bernard85@example.org,boutique
+2026-05-02,9791000000969,1,32.35,hugo.dubois73@example.org,web
+2026-04-10,9781593974336,1,33.28,hugo.simon19@example.org,magasin
+2025-09-13,9798893311020,1,32.77,nathan.david4@example.org,boutique
+2025-10-30,9789993957720,1,10.67,jules.dubois95@example.org,Magasin
+2025-08-02,9789353445416,1,17.32,nathan.lefebvre65@example.org,boutique
+2025-07-23,9789000338658,2,35.19,theo.lefebvre83@example.org,marketplace
+2026-03-03,9785557099196,1,28.79,arthur.bertrand57@example.org,magasin
+2025-12-12,9780130853660,1,8.97,ines.michel77@example.org,en ligne
+2026-05-06,9780823420278,1,29.34,chloe.michel58@example.org,boutique
+2026-02-18,9788445007037,1,7.87,gabriel.simon86@example.org,STORE
+2025-09-17,9798513996880,3,6.88,lea.bernard56@example.org,magasin
+2026-01-07,9781595583260,1,6.62,ines.david16@example.org,online
+2026-06-06,9791000000659,2,35.23,jules.laurent77@example.org,STORE
+2026-04-22,9780786189694,1,27.75,hugo.fournier14@example.org,STORE
+2026-01-05,9780575073241,2,24.82,gabriel.fournier72@example.org,site
+2026-06-02,9780825616518,1,5.52,manon.bertrand98@example.org,en ligne
+2025-12-27,9780072466652,1,9.57,jade.bernard19@example.org,place de marché
+2025-07-16,9780263098839,2,12.12,gabriel.lefebvre44@example.org,web
+2025-12-14,9781613822494,3,25.61,jules.dubois21@example.org,magasin
+2025-11-17,9780843960044,1,21.69,zoe.michel35@example.org,web
+2025-08-28,9781442472426,1,14.53,arthur.leroy86@example.org,en ligne
+2026-01-19,9788417454432,1,11.74,chloe.morel18@example.org,STORE
+2025-08-31,9780062019813,1,19.75,emma.michel69@example.org,boutique
+2026-06-08,9780739371077,1,18.56,jules.michel3@example.org,Magasin
+2025-12-08,9780297859390,1,18.82,gabriel.laurent15@example.org,MP
+2025-12-14,9780061365515,2,26.38,lucas.bernard56@example.org,magasin
+2026-04-28,9781857157246,1,18.51,theo.bertrand44@example.org,boutique
+2025-09-25,9788499300023,1,8.54,chloe.morel45@example.org,STORE
+2026-05-27,9798479401305,1,8.14,manon.moreau23@example.org,web
+2026-06-01,9781408999011,1,31.86,arthur.lefebvre97@example.org,online
+2026-04-16,9780747557777,1,26.61,ines.dubois57@example.org,site
+2026-05-20,9780967162461,2,25.44,lucas.leroy10@example.org,STORE
+2025-07-20,9783423763349,1,14.66,lea.roux77@example.org,Magasin
+2026-04-10,9791000000799,2,36.21,zoe.morel74@example.org,boutique
+2026-03-01,9780263102734,1,6.69,nathan.morel44@example.org,magasin
+2025-09-27,9781512157055,1,20.0,zoe.leroy67@example.org,boutique
+2025-11-22,9781440673641,1,16.48,jules.morel81@example.org,STORE
+2025-08-18,9781250879530,1,14.56,emma.simon11@example.org,boutique
+2025-12-06,9791000000929,1,27.94,emma.roux91@example.org,marketplace
+2026-01-09,9780747557777,2,33.29,lea.david86@example.org,Magasin
+2025-07-10,9798716103634,1,38.17,ines.morel63@example.org,boutique
+2025-09-09,9781119621508,1,34.39,nathan.leroy99@example.org,magasin
+2026-05-13,9780606404518,1,9.96,louis.fournier89@example.org,web
+2025-07-23,9780300278576,1,29.97,zoe.roux37@example.org,online
+2025-10-31,9789500417563,3,32.27,chloe.simon87@example.org,Magasin
+2025-11-22,9781377100975,1,23.17,louis.fournier26@example.org,boutique
+2025-07-27,9781974343539,1,17.64,nathan.bertrand67@example.org,site
+2025-09-21,9783734163357,1,22.67,gabriel.bernard29@example.org,Magasin
+2025-07-14,9781414340913,1,22.27,hugo.michel11@example.org,en ligne
+2025-12-11,9791000000559,1,29.8,ines.morel19@example.org,boutique
+2026-02-27,9780307741172,2,31.36,arthur.lefebvre79@example.org,magasin
+2025-07-10,9785170912360,1,9.79,gabriel.bernard37@example.org,marketplace
+2025-07-25,9788828350453,1,32.6,zoe.bernard15@example.org,Magasin
+2025-07-09,9781504765145,1,13.06,emma.laurent55@example.org,magasin
+2025-11-01,9798627159133,1,28.02,lea.leroy47@example.org,site
+2026-04-05,9780786189694,2,22.47,camille.michel61@example.org,marketplace
+2026-01-08,978083177404X,2,17.14,lea.simon31@example.org,site
+2025-12-18,9780263784701,1,23.83,louis.fournier88@example.org,online
+2026-03-03,9781529152975,1,9.27,zoe.martin38@example.org,marketplace
+2025-10-11,9791000000089,1,37.54,jade.fournier70@example.org,Magasin
+2026-05-28,9780070441606,1,35.02,jules.fournier84@example.org,STORE
+2026-01-05,9780003303377,2,30.81,jade.simon24@example.org,Magasin
+2026-01-05,9791000000489,2,13.94,lea.bertrand55@example.org,site
+2025-10-01,9781417701155,1,8.13,ines.david38@example.org,STORE
+2026-02-04,9791020900593,1,16.94,jules.bertrand46@example.org,Magasin
+2025-07-30,9788476603819,1,18.88,louis.martin19@example.org,Magasin
+2025-08-04,9780307394392,2,17.47,jade.roux5@example.org,boutique
+2026-01-06,9780671746520,1,7.22,emma.leroy47@example.org,online
+2025-11-20,9781535540124,3,5.42,louis.lefebvre67@example.org,Magasin
+2025-08-30,9780060826086,2,29.42,chloe.roux37@example.org,place de marché
+2026-03-09,9798618236188,1,34.69,zoe.dubois92@example.org,MP
+2026-06-15,9791000000929,2,15.81,lucas.bertrand9@example.org,place de marché
+2025-12-01,9780594091400,1,29.62,louis.morel47@example.org,boutique
+2025-10-11,9788074770814,1,32.48,camille.simon71@example.org,STORE
+2026-04-09,9780788729386,1,7.55,theo.michel92@example.org,Magasin
+2026-01-26,9780263753820,1,8.94,ines.david10@example.org,Magasin
+2026-03-22,9781409095484,1,33.85,louis.morel17@example.org,Magasin
+2025-07-29,9780373114108,1,9.92,louis.dubois42@example.org,boutique
+2026-03-23,9791000000179,1,7.29,chloe.david71@example.org,STORE
+2025-12-03,9780525572923,1,22.29,louis.roux75@example.org,boutique
+2026-05-16,9780349440187,3,16.45,jules.fournier4@example.org,magasin
+2026-05-25,9780141394718,1,27.55,gabriel.roux82@example.org,magasin
+2026-05-18,9781417701155,1,38.37,arthur.moreau88@example.org,Magasin
+2025-08-07,9780765314673,1,20.06,arthur.lefebvre27@example.org,STORE
+2025-12-08,9783893400614,2,30.49,lucas.michel17@example.org,en ligne
+2025-08-24,9798352831533,1,8.84,zoe.moreau19@example.org,magasin
+2026-01-13,9780750503075,1,13.29,louis.fournier42@example.org,STORE
+2025-09-20,9780425104347,0,21.03,theo.lefebvre3@example.org,magasin
+2026-03-16,9780451168283,3,12.12,lucas.martin7@example.org,MP
+2026-05-31,9798515079307,1,23.5,nathan.michel18@example.org,STORE
+2026-01-23,9781480342187,1,6.31,chloe.simon71@example.org,en ligne
+2026-03-16,9789999589604,2,14.4,nathan.dubois13@example.org,Magasin
+2025-12-21,9781250879530,3,31.23,chloe.roux66@example.org,Magasin
+2025-07-24,9780563524922,1,16.29,arthur.leroy59@example.org,boutique
+2026-03-21,9780061244650,1,26.2,louis.michel79@example.org,en ligne
+2026-03-17,9788374801171,1,21.84,theo.lefebvre3@example.org,STORE
+2025-08-26,978038049668X,1,32.71,camille.roux61@example.org,STORE
+2026-04-23,9781536435078,1,6.32,arthur.dubois68@example.org,place de marché
+2026-01-11,9780307815651,2,13.07,nathan.moreau3@example.org,online
+2025-09-16,9786073108409,1,19.03,arthur.fournier95@example.org,magasin
+2026-03-23,9781593974336,1,39.83,arthur.leroy49@example.org,en ligne
+2026-02-21,9791000000369,1,23.84,manon.roux62@example.org,marketplace
+2025-11-20,9781250879530,1,37.83,theo.morel37@example.org,place de marché
+2026-06-26,9788466642613,1,16.85,manon.laurent16@example.org,Magasin
+2026-01-19,9786051719092,1,31.87,emma.laurent6@example.org,en ligne
+2025-08-10,9781476873626,3,27.72,arthur.moreau26@example.org,place de marché
+2026-04-14,9780307741172,1,8.37,hugo.moreau7@example.org,boutique
+2025-07-27,9780804168441,1,29.89,nathan.david99@example.org,web
+2026-04-08,9791000000539,1,27.61,arthur.lefebvre84@example.org,boutique
+2025-11-25,9789794130834,1,6.59,lea.david74@example.org,web
+2025-07-20,9791000000379,3,19.29,louis.martin51@example.org,Magasin
+2025-11-26,9781400142866,1,15.06,nathan.simon37@example.org,Magasin
+2026-04-05,9780263775051,1,37.73,zoe.laurent25@example.org,marketplace
+2026-02-20,9786073814423,1,11.09,ines.morel38@example.org,boutique
+2026-05-24,9791000000199,1,19.64,ines.bernard52@example.org,magasin
+2025-09-10,9780763603519,1,13.28,manon.michel31@example.org,Magasin
+2025-12-16,9788427911758,1,24.78,manon.david47@example.org,web
+2025-08-30,9780963270702,1,18.85,theo.bertrand16@example.org,STORE
+2025-10-22,9781408998465,3,21.43,zoe.bertrand78@example.org,STORE
+2026-04-08,9791000000369,1,23.53,chloe.morel32@example.org,magasin
+2026-03-28,9798791612762,1,36.97,nathan.martin71@example.org,boutique
+2025-09-15,9781915593009,1,22.92,nathan.david27@example.org,Magasin
+2026-03-19,9781433231933,2,20.55,gabriel.lefebvre73@example.org,magasin
+2026-06-10,9783453161818,1,5.27,manon.fournier1@example.org,boutique
+2025-07-24,9780256234787,1,6.76,jules.bernard61@example.org,magasin
+2025-10-01,9781419772955,1,27.21,gabriel.simon49@example.org,Magasin
+2026-01-10,9781534487673,1,38.63,emma.david45@example.org,site
+2026-04-02,978006024803X,1,30.27,hugo.fournier1@example.org,magasin
+2026-02-23,9780590113076,2,19.51,jade.fournier30@example.org,marketplace
+2025-09-18,9788501110008,1,35.48,nathan.martin85@example.org,Magasin
+2025-07-09,9788324592838,1,8.07,jules.lefebvre77@example.org,site
+2025-07-23,9781108057875,1,23.61,jules.dubois65@example.org,STORE
+2026-04-21,9798352831533,1,31.85,ines.moreau39@example.org,boutique
+2026-03-24,9780061739590,1,14.24,louis.david87@example.org,MP
+2025-07-25,9791000000979,1,27.27,jade.morel68@example.org,STORE
+2026-01-26,9783464107676,1,11.01,arthur.moreau29@example.org,en ligne
+2025-09-12,9780739371077,1,6.54,gabriel.michel72@example.org,web
+2025-11-08,9780545541251,1,7.3,zoe.fournier48@example.org,magasin
+2025-10-06,9781548261887,1,28.35,jules.fournier10@example.org,boutique
+2026-04-27,9780316310420,1,12.18,chloe.fournier43@example.org,en ligne
+2025-07-08,9780356502571,3,38.56,nathan.bertrand97@example.org,MP
+2026-06-22,9789144023649,2,18.54,hugo.leroy42@example.org,MP
+2026-03-31,9780131272866,1,13.76,arthur.lefebvre13@example.org,Magasin
+2025-12-11,9791000000389,1,15.58,jules.roux29@example.org,web
+2026-04-10,9791000000599,1,29.99,theo.dubois26@example.org,STORE
+2026-04-18,9780007354733,1,23.99,ines.laurent98@example.org,Magasin
+2026-05-25,9780216897984,1,10.46,lucas.dubois18@example.org,place de marché
+2025-10-03,9791000000409,2,39.56,jules.leroy5@example.org,magasin
+2026-06-08,9780007493579,2,19.1,hugo.bernard91@example.org,marketplace
+2026-03-16,9789710843480,1,26.37,arthur.david63@example.org,magasin
+2026-04-09,9789812340931,1,23.24,manon.leroy37@example.org,magasin
+2026-06-23,9780312856830,1,37.77,louis.bernard13@example.org,boutique
+2026-05-14,9786155514142,1,17.05,jade.bernard48@example.org,Magasin
+2025-11-02,9780224618144,1,28.72,lea.david84@example.org,magasin
+2026-01-11,9781481428149,1,6.49,camille.bertrand22@example.org,magasin
+2026-02-08,9780756992248,2,24.53,nathan.leroy6@example.org,boutique
+2026-06-20,9791000000099,1,14.1,lea.david36@example.org,magasin
+2025-12-09,9782266208178,3,25.28,jade.bernard39@example.org,boutique
+2026-04-17,9788491052371,2,28.47,ines.michel97@example.org,boutique
+2026-06-18,9780316310420,1,30.89,lucas.martin13@example.org,online
+2025-08-08,9798475273906,1,26.23,jade.morel42@example.org,magasin
+2026-02-16,9780143566526,1,24.08,jade.michel24@example.org,online
+2026-05-13,9798688109153,2,29.74,lea.laurent20@example.org,Magasin
+2026-05-21,9788381351881,2,15.71,nathan.bernard1@example.org,en ligne
+2025-11-16,9788494945786,1,11.13,zoe.leroy72@example.org,Magasin
+2025-08-15,9781976709135,1,25.63,ines.fournier50@example.org,magasin
+2026-01-15,9780008115456,1,36.4,hugo.roux67@example.org,boutique
+2025-09-25,9789994714094,1,14.0,emma.bernard22@example.org,online
+2025-12-01,9780263118124,2,17.28,hugo.bertrand81@example.org,Magasin
+2025-10-09,9780451168283,1,15.28,jade.simon80@example.org,Magasin
+2025-12-16,9781306337564,1,33.37,emma.laurent42@example.org,web
+2025-09-29,9791000000899,1,15.8,arthur.roux32@example.org,STORE
+2026-01-18,9788402092014,1,24.46,louis.david99@example.org,magasin
+2026-02-22,9791000000679,2,20.02,theo.fournier89@example.org,marketplace
+2026-01-26,9780590113076,1,26.92,hugo.laurent85@example.org,web
+2026-01-10,9789388144346,1,25.67,jade.leroy65@example.org,online
+2026-01-01,9783548362595,2,23.51,lea.bernard99@example.org,boutique
+2025-12-29,9791020900593,1,6.07,jade.morel43@example.org,online
+2025-08-20,9781957635002,1,30.94,hugo.lefebvre48@example.org,Magasin
+2026-06-13,9789993957720,1,9.84,camille.lefebvre14@example.org,STORE
+2025-08-13,9789367901229,2,30.35,lucas.laurent44@example.org,Magasin
+2026-03-24,9780451493835,1,7.96,zoe.simon9@example.org,en ligne
+2026-06-29,9780575073241,1,16.64,nathan.david22@example.org,boutique
+2026-04-09,9780590411011,1,19.59,zoe.moreau52@example.org,boutique
+2026-06-02,9781444833386,1,30.6,chloe.lefebvre76@example.org,Magasin
+2026-06-26,9781071068403,1,31.13,lea.roux14@example.org,boutique
+2025-10-09,9780451168283,1,28.24,arthur.leroy82@example.org,STORE
+2026-05-09,9780230015760,1,16.82,zoe.roux23@example.org,STORE
+2026-04-29,9781574535587,1,15.59,hugo.laurent15@example.org,marketplace
+2025-09-11,9780671827038,1,25.61,jade.michel24@example.org,Magasin
+2026-06-21,9791000000439,1,39.9,louis.lefebvre37@example.org,web
+2026-02-16,9785553671754,1,17.21,camille.lefebvre18@example.org,boutique
+2026-04-14,9788440672599,1,18.98,arthur.michel91@example.org,online
+2025-08-12,9780862416041,1,31.44,theo.martin36@example.org,boutique
+2025-09-25,9780241753859,1,30.79,arthur.leroy66@example.org,magasin
+2025-11-15,9786070793677,1,39.58,jules.morel93@example.org,Magasin
+2026-02-03,9788494945786,2,27.64,hugo.laurent5@example.org,Magasin
+2025-08-14,9781435336667,2,8.66,hugo.moreau95@example.org,STORE
+2026-05-09,9781504765145,1,26.31,chloe.fournier27@example.org,site
+2026-03-30,9781436253796,1,10.46,theo.laurent74@example.org,STORE
+2026-03-21,9791000000239,1,7.87,gabriel.martin36@example.org,place de marché
+2025-09-06,9781535540124,1,15.9,hugo.morel87@example.org,Magasin
+2026-04-22,9781504765145,1,19.16,zoe.bernard82@example.org,magasin
+2025-11-20,9781497303881,3,17.57,arthur.simon75@example.org,magasin
+2025-08-17,9780807275122,3,26.97,lucas.fournier9@example.org,online
+2026-02-05,9781957464176,1,14.01,theo.simon71@example.org,boutique
+2026-03-06,9781094048994,1,28.66,jules.martin13@example.org,Magasin
+2025-09-19,9780425029459,1,39.61,gabriel.moreau89@example.org,boutique
+2025-12-02,9780263762495,2,35.53,lea.david47@example.org,en ligne
+2026-06-06,9791000000279,1,6.33,theo.bertrand90@example.org,boutique
+2025-08-16,9798791612762,1,12.06,lea.dubois76@example.org,boutique
+2026-02-13,9783499174766,1,16.66,nathan.fournier55@example.org,boutique
+2025-10-26,9798532977518,1,33.03,nathan.simon48@example.org,STORE
+2025-09-07,9781974343539,0,9.56,camille.roux84@example.org,boutique
+2025-10-18,9780811806404,2,37.06,zoe.fournier28@example.org,magasin
+2025-09-10,9780984358137,1,30.34,lucas.michel41@example.org,web
+2026-05-27,9781574535587,1,25.78,theo.morel89@example.org,magasin
+2026-06-03,9781984842305,1,22.83,chloe.bertrand51@example.org,en ligne
+2025-10-31,9788447369225,1,13.03,lea.leroy2@example.org,en ligne
+2025-09-06,9781440673641,2,24.62,lucas.leroy88@example.org,marketplace
+2025-08-07,9780898796827,1,4.99,chloe.martin8@example.org,online
+2026-05-18,9780140209723,1,19.21,jade.bernard82@example.org,boutique
+2025-12-06,9789584275097,1,11.69,emma.leroy42@example.org,Magasin
+2026-05-29,9780061351426,1,15.48,gabriel.bertrand31@example.org,magasin
+2026-02-08,9789367901229,1,26.05,theo.david95@example.org,boutique
+2026-06-28,9780449908587,2,10.3,lucas.leroy67@example.org,STORE
+2025-09-03,9781424231355,2,14.01,nathan.morel4@example.org,STORE
+2025-11-17,9780263775051,1,29.72,lea.lefebvre59@example.org,en ligne
+2026-04-17,9791020900593,1,13.53,nathan.roux87@example.org,magasin
+2026-03-18,9781119251736,1,35.05,hugo.martin61@example.org,STORE
+2025-09-15,9782226018052,3,34.85,gabriel.moreau42@example.org,boutique
+2025-12-11,9780263122169,2,24.73,nathan.leroy87@example.org,magasin
+2026-03-22,9781476878584,3,6.94,zoe.fournier37@example.org,STORE
+2026-04-10,9780449024959,1,11.6,theo.bertrand80@example.org,boutique
+2026-04-29,9791000000979,1,31.85,chloe.bertrand70@example.org,boutique
+2026-01-26,9784871877664,1,16.76,camille.simon1@example.org,Magasin
+2025-12-05,9798454025748,1,39.3,gabriel.lefebvre8@example.org,web
+2025-08-17,9780333675182,3,36.26,gabriel.bertrand48@example.org,online
+2025-08-13,9780063429147,1,9.23,jade.bernard76@example.org,place de marché
+2026-06-05,9791000000899,1,14.83,ines.morel51@example.org,STORE
+2025-11-17,9780373833740,1,11.68,nathan.dubois14@example.org,boutique
+2025-12-08,9781335468437,1,17.18,chloe.lefebvre40@example.org,Magasin
+2025-08-31,9780757910869,1,28.79,jules.moreau42@example.org,boutique
+2025-11-05,9791000000939,1,22.68,theo.laurent23@example.org,magasin
+2026-02-17,9789583004506,2,13.34,zoe.bernard18@example.org,marketplace
+2025-10-22,9798893311020,1,18.68,lea.roux76@example.org,STORE
+2025-08-08,9780553902716,0,11.5,zoe.morel17@example.org,marketplace
+2025-12-17,9780792483809,1,20.82,louis.roux56@example.org,place de marché
+2025-07-16,9780575085688,1,10.62,chloe.dubois36@example.org,STORE
+2025-09-15,9780380821099,1,26.34,theo.lefebvre53@example.org,Magasin
+2025-11-21,9798532977518,1,11.56,hugo.david70@example.org,magasin
+2025-12-31,9781695322240,1,21.66,ines.michel35@example.org,marketplace
+2026-05-02,9781408998465,1,33.2,manon.martin61@example.org,STORE
+2025-10-28,9791000000999,1,13.27,hugo.laurent69@example.org,site
+2025-10-21,9780297859390,2,32.73,lucas.fournier23@example.org,web
+2025-12-10,9780739371077,2,17.2,camille.bertrand90@example.org,STORE
+2026-04-15,9780263137958,1,11.16,arthur.leroy40@example.org,marketplace
+2025-08-16,9780373110926,1,12.25,arthur.martin43@example.org,boutique
+2025-12-22,9781679583353,1,32.91,ines.martin3@example.org,web
+2025-09-11,9781932796575,1,23.13,lucas.bernard48@example.org,Magasin
+2025-12-20,9788427911758,1,39.05,gabriel.morel82@example.org,Magasin
+2025-09-28,9798417660092,3,29.05,lucas.moreau86@example.org,web
+2026-06-18,9788381352079,1,30.3,jade.fournier99@example.org,magasin
+2025-12-10,9791000000459,2,26.14,nathan.lefebvre19@example.org,STORE
+2025-10-30,9780205176076,0,10.44,lea.fournier91@example.org,en ligne
+2025-11-13,9780061652264,1,6.9,manon.morel14@example.org,magasin
+2026-02-10,9783455302790,1,10.39,gabriel.lefebvre49@example.org,STORE
+2025-08-21,9788374801171,1,35.09,hugo.dubois58@example.org,magasin
+2025-07-18,9788381352079,1,13.74,nathan.bernard44@example.org,web
+2025-09-21,9780470104248,1,37.84,lea.simon77@example.org,online
+2026-02-06,9791000000679,1,26.0,gabriel.dubois7@example.org,site
+2025-10-06,9781439580721,1,30.06,manon.david37@example.org,STORE
+2025-07-26,978006024803X,1,34.23,emma.martin47@example.org,magasin
+2025-11-28,9780263753820,1,25.75,chloe.bernard4@example.org,boutique
+2025-11-27,9789871144686,1,8.59,jade.lefebvre63@example.org,STORE
+2026-04-05,9781440673641,1,35.85,lucas.dubois58@example.org,magasin
+2026-02-24,9780345458889,1,14.01,jules.dubois97@example.org,magasin
+2025-12-24,9780061557064,1,38.86,hugo.leroy8@example.org,Magasin
+2026-01-31,9791000000909,1,35.19,arthur.roux31@example.org,online
+2026-01-19,9791000000269,2,5.73,emma.bernard97@example.org,Magasin
+2025-09-24,9791000000979,1,11.32,jules.michel11@example.org,Magasin
+2026-05-18,9780307815651,2,13.63,lea.bernard50@example.org,Magasin
+2025-11-19,9781092148580,1,35.42,gabriel.bernard54@example.org,boutique
+2026-04-28,9798987380420,2,37.76,nathan.roux13@example.org,STORE
+2025-12-24,9781417727582,1,18.06,arthur.roux78@example.org,online
+2025-11-19,9781713532125,1,26.05,jade.martin51@example.org,STORE
+2025-07-26,9780769206684,1,14.01,lucas.martin44@example.org,en ligne
+2026-03-09,9780241269657,1,7.98,hugo.dubois39@example.org,Magasin
+2025-12-12,9780091203207,2,25.92,lea.moreau57@example.org,web
+2026-01-25,9789189298323,1,22.78,lucas.fournier8@example.org,place de marché
+2025-08-03,9788579623844,2,18.78,camille.dubois25@example.org,web
+2025-11-05,9780263053043,1,37.0,chloe.laurent48@example.org,online
+2026-05-22,9791000000479,1,5.58,lucas.lefebvre77@example.org,Magasin
+2026-02-28,9780307291813,1,16.69,manon.bertrand89@example.org,magasin
+2026-01-14,9781250275042,1,24.76,chloe.fournier29@example.org,boutique
+2025-11-15,9780141038148,1,5.21,camille.lefebvre17@example.org,web
+2025-07-05,9780416165326,1,33.0,theo.bertrand91@example.org,en ligne
+2026-01-09,9781857234701,1,13.42,zoe.laurent87@example.org,Magasin
+2025-07-04,9780671827038,0,38.71,lucas.leroy83@example.org,STORE
+2025-08-25,9782266227049,1,39.49,ines.fournier36@example.org,STORE
+2026-05-30,9780079131195,1,22.81,hugo.martin77@example.org,online
+2026-06-14,9780061244650,2,27.7,theo.laurent54@example.org,online
+2025-07-19,9780697034342,2,24.75,chloe.simon93@example.org,boutique
+2026-05-23,9780816137152,1,37.8,lucas.leroy39@example.org,web
+2026-04-12,9780679432531,1,21.17,manon.bertrand72@example.org,web
+2025-12-19,9780374524524,1,17.08,theo.michel43@example.org,MP
+2025-11-28,9780030314810,2,21.16,lea.lefebvre25@example.org,magasin
+2026-01-12,9789795533412,1,6.41,emma.dubois26@example.org,en ligne
+2026-04-18,9791000000159,3,20.7,ines.fournier92@example.org,boutique
+2026-03-07,9781679521836,1,10.76,jules.martin58@example.org,en ligne
+2025-09-25,9780007299805,2,21.83,lea.dubois79@example.org,Magasin
+2026-01-23,9781886463172,3,18.07,jules.leroy26@example.org,en ligne
+2025-12-12,9780061734526,2,11.25,camille.david94@example.org,marketplace
+2025-12-24,9780263096378,1,18.08,theo.dubois9@example.org,magasin
+2025-11-26,9789710843480,2,25.61,ines.michel88@example.org,boutique
+2026-03-08,9780061285752,2,10.34,jade.martin30@example.org,boutique
+2025-09-06,9780356502571,2,25.38,louis.bernard47@example.org,site
+2026-05-24,9780754006329,2,26.56,jules.david14@example.org,magasin
+2025-08-29,978038049668X,1,8.88,manon.lefebvre90@example.org,boutique
+2026-06-17,9781473888357,1,19.4,nathan.david67@example.org,STORE
+2026-06-24,9780449908587,1,36.31,nathan.laurent15@example.org,site
+2026-05-08,9798618236188,2,33.94,chloe.simon91@example.org,Magasin
+2025-07-21,9780821775370,1,11.85,arthur.simon31@example.org,magasin
+2025-08-15,9791000000309,1,24.83,arthur.dubois12@example.org,magasin
+2025-08-21,9791000000289,1,12.68,theo.laurent60@example.org,site
+2025-09-28,9789953432540,1,14.79,ines.michel95@example.org,magasin
+2025-07-24,9783499174766,2,27.98,louis.simon46@example.org,Magasin
+2025-11-15,9780267171989,2,17.69,ines.dubois15@example.org,MP
+2026-02-19,9780872205925,2,28.92,arthur.morel54@example.org,boutique
+2026-06-22,9789333394918,1,37.86,louis.bernard54@example.org,Magasin
+2026-06-13,9788447368990,1,17.94,lucas.roux4@example.org,web
+2026-03-07,9781665141253,2,20.1,lea.laurent84@example.org,STORE
+2026-06-13,9780061556746,2,24.91,hugo.david44@example.org,magasin
+2025-11-05,9782266227049,1,28.44,jade.dubois72@example.org,magasin
+2025-09-19,9788440672599,2,34.66,louis.bernard97@example.org,Magasin
+2025-12-17,9791000000959,1,22.45,jade.michel31@example.org,magasin
+2026-04-20,9798642299869,1,22.15,ines.bernard64@example.org,magasin
+2026-01-28,9783442249329,1,4.51,lea.morel78@example.org,STORE
+2026-04-14,9780358213253,1,20.65,ines.simon7@example.org,web
+2025-12-17,9798897248889,2,25.74,lucas.bertrand58@example.org,site
+2026-06-03,9781250819369,1,17.07,theo.leroy67@example.org,STORE
+2025-07-24,9791000000199,1,9.47,gabriel.bernard33@example.org,web
+2026-01-18,9781502784278,1,32.16,ines.bernard97@example.org,Magasin
+2026-05-21,9780151189786,1,8.86,zoe.lefebvre85@example.org,boutique
+2025-07-03,9788447333165,2,24.08,gabriel.fournier75@example.org,MP
+2025-09-29,9781572707313,1,30.36,emma.bernard50@example.org,place de marché
+2025-12-12,9780241745168,2,19.32,hugo.laurent51@example.org,en ligne
+2026-02-17,9780224617253,1,19.11,theo.fournier90@example.org,place de marché
+2026-06-30,9798671330687,3,26.89,chloe.moreau80@example.org,en ligne
+2026-06-10,9780750504355,0,27.51,louis.leroy70@example.org,en ligne
+2025-12-28,9788845212178,1,24.7,gabriel.david96@example.org,en ligne
+2026-02-02,9780061557064,1,8.27,jade.dubois7@example.org,site
+2025-09-21,979821701436X,1,9.68,jules.bertrand38@example.org,boutique
+2025-07-17,9780061285752,2,8.13,hugo.bertrand83@example.org,online
+2026-06-22,9780140449532,1,6.16,jade.michel54@example.org,STORE
+2025-07-28,9781405617093,2,11.69,zoe.fournier29@example.org,place de marché
+2026-05-28,9781690319849,2,23.85,chloe.morel93@example.org,web
+2025-09-29,9780316479264,1,38.57,nathan.michel6@example.org,Magasin
+2025-11-13,9798893311020,1,34.45,camille.simon60@example.org,boutique
+2025-12-13,9789630711722,1,37.51,theo.lefebvre74@example.org,STORE
+2026-06-28,9780525537113,1,38.38,lea.morel65@example.org,boutique
+2026-04-01,9781417601356,1,12.33,chloe.david43@example.org,STORE
+2025-10-20,9791000000759,2,23.28,camille.bernard86@example.org,STORE
+2026-05-25,9781974052264,3,13.13,jules.david42@example.org,Magasin
+2025-08-28,9780714822761,1,30.13,camille.leroy99@example.org,MP
+2026-03-18,9781433231933,1,14.99,chloe.simon66@example.org,magasin
+2025-09-24,9791000000969,3,23.54,camille.david9@example.org,marketplace
+2025-10-18,9788501117687,1,34.08,chloe.leroy90@example.org,online
+2025-08-06,9780316389716,1,5.34,ines.martin12@example.org,site
+2025-11-06,9781250879530,1,33.59,manon.michel50@example.org,Magasin
+2026-02-07,9781974932573,1,28.33,camille.david93@example.org,site
+2026-04-26,9780198118756,2,7.07,nathan.laurent88@example.org,en ligne
+2025-11-22,9780156035156,3,18.0,camille.lefebvre21@example.org,web
+2026-01-17,9780679729525,2,23.82,emma.laurent87@example.org,STORE
+2025-07-06,9780736628174,2,9.5,jules.martin74@example.org,place de marché
+2026-04-07,9791000000719,1,11.94,lucas.moreau53@example.org,boutique
+2025-10-22,9780070165694,2,11.38,louis.david73@example.org,magasin
+2026-04-08,9780739370971,1,7.09,lea.laurent13@example.org,web
+2026-03-07,9791000000769,1,9.04,hugo.bernard37@example.org,site
+2025-12-10,9781446456309,1,26.32,theo.bertrand75@example.org,marketplace
+2026-01-03,9780061557064,1,19.66,camille.simon32@example.org,boutique
+2026-05-25,9780809533756,1,17.23,ines.lefebvre60@example.org,online
+2025-12-04,9781689366922,1,10.72,lea.fournier36@example.org,boutique
+2025-10-09,9780345458889,2,26.68,lea.martin65@example.org,site
+2026-04-23,9780765391162,2,12.03,jules.leroy34@example.org,online
+2025-09-15,9781480342187,1,36.06,theo.dubois60@example.org,site
+2026-03-15,9780062457806,1,34.52,louis.morel66@example.org,boutique
+2025-09-30,9780393966848,3,27.84,emma.bertrand94@example.org,Magasin
+2025-07-21,9781408998465,2,12.7,manon.simon30@example.org,marketplace
+2026-03-23,9791000000319,2,18.24,zoe.martin6@example.org,en ligne
+2026-03-24,9782843623103,2,34.05,manon.roux70@example.org,boutique
+2026-01-10,9781480342187,1,36.3,lea.leroy33@example.org,Magasin
+2025-10-23,9780517202753,1,33.43,lucas.lefebvre62@example.org,place de marché
+2025-09-10,9781306337564,1,7.23,manon.moreau20@example.org,boutique
+2026-05-05,9781679583353,2,27.9,gabriel.morel43@example.org,magasin
+2026-03-03,9798790221941,1,10.21,gabriel.martin32@example.org,magasin
+2026-04-30,9781400083039,1,22.65,emma.martin22@example.org,STORE
+2026-03-22,9791000000839,1,38.81,camille.bertrand94@example.org,place de marché
+2025-08-13,9780416027020,1,39.64,arthur.dubois29@example.org,online
+2026-04-25,9788429776317,2,26.56,manon.dubois93@example.org,en ligne
+2026-05-02,9789799831750,1,17.89,emma.bernard3@example.org,marketplace
+2026-03-16,9780688184742,1,9.79,nathan.dubois61@example.org,magasin
+2026-03-30,9780140138351,2,7.8,emma.roux70@example.org,site
+2026-06-13,9780131272866,1,19.39,jules.bertrand68@example.org,online
+2026-03-04,9780800712136,2,16.91,nathan.michel18@example.org,STORE
+2025-10-28,9791000000339,2,14.53,gabriel.laurent25@example.org,magasin
+2025-07-04,9781536435078,1,22.9,jade.david27@example.org,en ligne
+2025-08-24,9781119621508,1,25.22,manon.fournier69@example.org,Magasin
+2026-05-10,9788501110008,0,18.57,chloe.michel71@example.org,Magasin
+2026-04-13,9780393963298,1,39.49,lucas.morel91@example.org,Magasin
+2026-06-03,9780263119763,2,20.31,louis.bernard28@example.org,online
+2026-04-08,9781974052264,1,29.52,louis.michel82@example.org,site
+2025-09-13,9780156724005,3,19.91,lea.laurent29@example.org,en ligne
+2025-07-20,9780316310420,1,39.35,theo.bertrand77@example.org,magasin
+2025-09-28,9781521105948,1,4.88,theo.moreau5@example.org,place de marché
+2026-06-23,9787555027706,1,28.36,lucas.moreau84@example.org,magasin
+2025-08-14,9788501110008,2,17.0,jade.michel76@example.org,marketplace
+2026-06-26,9780375507250,3,23.96,lucas.simon36@example.org,boutique
+2025-10-08,9781963349023,3,24.85,manon.dubois53@example.org,site
+2026-03-15,9788381352079,1,8.64,manon.leroy74@example.org,STORE
+2026-01-10,9781442426757,1,13.11,ines.morel59@example.org,online
+2025-07-15,9782266227049,1,6.89,hugo.david90@example.org,web
+2026-01-28,9791000000809,1,23.46,manon.moreau37@example.org,site
+2025-12-23,9781408999011,1,10.82,ines.simon28@example.org,STORE
+2026-06-15,9791000000549,3,22.16,chloe.moreau95@example.org,boutique
+2025-10-14,9780141374239,1,13.34,lucas.dubois14@example.org,site
+2026-06-12,9791000000809,1,26.23,jules.fournier62@example.org,MP
+2026-03-10,9791000000209,0,36.25,manon.lefebvre24@example.org,en ligne
+2026-04-22,9783442424504,1,32.79,arthur.leroy5@example.org,STORE
+2026-06-17,9780736423298,1,39.07,zoe.simon89@example.org,magasin
+2025-10-16,9780460116947,1,16.02,manon.dubois71@example.org,STORE
+2026-02-27,9791000000839,1,17.45,arthur.michel27@example.org,Magasin
+2026-01-07,9788402092014,2,14.4,louis.roux17@example.org,web
+2025-11-16,9780786230358,1,19.8,jade.moreau19@example.org,web
+2025-07-05,9798737952464,1,9.26,ines.morel63@example.org,STORE
+2026-04-17,9789508700568,1,28.95,jules.moreau33@example.org,Magasin
+2025-08-19,9780060513061,2,13.7,lucas.leroy72@example.org,en ligne
+2026-01-27,9783849536206,1,28.56,chloe.roux74@example.org,boutique
+2025-11-23,9780300024838,1,22.57,zoe.bernard49@example.org,place de marché
+2026-05-20,9791000000819,1,10.43,ines.michel81@example.org,Magasin
+2025-08-06,9781804990278,1,12.58,ines.david38@example.org,en ligne
+2026-01-19,9780263122169,2,32.15,lucas.bertrand76@example.org,online
+2025-10-03,9781539145943,1,30.26,manon.bertrand90@example.org,magasin
+2026-01-20,9781101192740,1,37.66,arthur.leroy7@example.org,magasin
+2026-03-26,9780156035156,0,8.18,emma.bernard84@example.org,online
+2025-11-04,9798669140557,1,26.68,emma.leroy22@example.org,magasin
+2025-12-30,9783442245666,3,35.09,zoe.fournier70@example.org,STORE
+2025-09-08,9791000000949,3,23.59,zoe.david96@example.org,Magasin
+2026-05-24,9781442006188,1,16.79,hugo.morel12@example.org,Magasin
+2026-01-28,9780743486286,1,4.87,emma.simon37@example.org,Magasin
+2026-06-18,9791000000469,1,31.24,theo.martin99@example.org,Magasin
+2026-05-02,9780736614016,2,23.91,chloe.michel72@example.org,online
+2025-09-22,9788440666826,2,18.3,jade.moreau34@example.org,magasin
+2025-10-31,9781727208351,2,36.71,manon.laurent84@example.org,STORE
+2025-08-05,9781775415190,1,8.41,zoe.roux58@example.org,STORE
+2026-03-09,9780263757538,1,9.89,camille.dubois14@example.org,en ligne
+2026-02-10,9789000338658,1,7.69,camille.lefebvre28@example.org,STORE
+2026-03-13,9780671746520,1,32.52,ines.bernard97@example.org,boutique
+2026-01-17,9780064601375,1,10.93,manon.fournier49@example.org,magasin
+2025-11-05,9782724215908,2,20.18,jules.moreau59@example.org,magasin
+2025-10-15,9798511718255,1,38.53,ines.dubois81@example.org,magasin
+2026-04-08,9780393419610,1,21.54,theo.moreau47@example.org,site
+2025-10-20,9791000000989,1,26.9,ines.martin22@example.org,en ligne
+2026-01-19,9780800712136,1,38.8,arthur.bertrand77@example.org,boutique
+2025-08-15,9785170178285,1,7.74,ines.morel81@example.org,magasin
+2026-05-27,9788381351881,2,32.52,emma.lefebvre30@example.org,STORE
+2026-05-27,9781322110233,1,36.07,chloe.martin89@example.org,MP
+2025-09-07,9780802142641,2,21.68,zoe.leroy38@example.org,Magasin
+2025-10-04,9798705893843,1,30.43,manon.fournier77@example.org,boutique
+2025-09-18,9780060513061,1,13.82,lucas.lefebvre1@example.org,Magasin
+2025-07-10,9785553671754,2,31.97,hugo.simon93@example.org,site
+2026-04-02,9786051719092,1,23.05,arthur.morel71@example.org,web
+2025-12-13,9781439580721,1,8.41,lea.martin17@example.org,web
+2025-10-12,9789020554113,1,8.0,jade.david63@example.org,en ligne
+2025-10-22,978957467950X,2,4.96,chloe.david63@example.org,magasin
+2026-05-24,9780446511070,1,30.82,gabriel.fournier48@example.org,magasin
+2025-11-14,9789715502016,1,6.99,theo.bernard28@example.org,site
+2025-10-27,9789711024154,1,11.34,hugo.roux81@example.org,boutique
+2026-04-12,9781936719112,2,31.63,lucas.david59@example.org,Magasin
+2025-09-24,9788074770814,1,18.72,ines.david21@example.org,online
+2025-12-09,9780593105061,0,15.99,lucas.michel98@example.org,place de marché
+2025-12-13,9781594488849,1,23.82,jade.morel71@example.org,STORE
+2026-02-17,9798642299869,3,4.51,jules.laurent77@example.org,magasin
+2025-12-02,9780072466652,1,12.35,ines.martin99@example.org,STORE
+2026-03-19,9789583004506,1,24.74,nathan.martin59@example.org,MP
+2025-11-13,9781942788768,2,13.34,manon.morel39@example.org,magasin
+2026-04-18,9791000000419,1,7.23,ines.morel62@example.org,boutique
+2026-06-19,9781536457674,1,36.63,theo.martin94@example.org,Magasin
+2025-07-29,9791000000459,2,16.82,gabriel.michel16@example.org,boutique
+2026-05-05,9791000000529,1,32.02,jade.martin40@example.org,site
+2026-04-16,9780862201234,1,29.2,emma.martin87@example.org,Magasin
+2026-05-01,9780297859390,1,12.36,theo.morel51@example.org,marketplace
+2025-08-12,9789353445416,1,6.25,jade.laurent11@example.org,Magasin
+2026-06-23,9798893311020,2,21.52,chloe.lefebvre51@example.org,boutique
+2026-03-26,9780755334223,1,13.93,gabriel.simon88@example.org,magasin
+2026-01-28,9780256234787,1,11.24,lucas.roux84@example.org,magasin
+2025-09-25,9781470825553,1,39.55,zoe.roux19@example.org,online
+2025-10-28,9798618236188,1,10.02,lea.bernard95@example.org,magasin
+2026-05-14,9791000000509,1,33.97,theo.martin44@example.org,magasin
+2026-02-27,9780553539899,1,30.7,chloe.moreau70@example.org,STORE
+2026-05-15,9780415478816,0,29.11,camille.michel75@example.org,magasin
+2025-07-31,9788418550928,1,29.16,manon.martin60@example.org,magasin
+2026-06-04,9780263122169,1,36.82,lucas.fournier14@example.org,magasin
+2026-05-29,9780714822761,1,17.98,nathan.simon63@example.org,magasin
+2026-03-14,9791000000919,1,37.29,camille.martin32@example.org,STORE
+2026-01-18,9780785744580,1,16.78,lucas.simon81@example.org,STORE
+2026-03-14,9788501110008,2,26.65,jade.fournier4@example.org,STORE
+2025-12-22,9791000000199,1,9.36,jade.leroy87@example.org,boutique
+2026-04-20,9781101138816,1,15.56,ines.lefebvre70@example.org,boutique
+2025-09-09,9780063429147,1,32.82,emma.laurent89@example.org,boutique
+2025-09-13,9780840356451,3,36.97,ines.bernard72@example.org,magasin
+2025-09-13,9789000338658,1,15.78,gabriel.michel39@example.org,Magasin
+2026-05-23,9791000000579,2,9.88,chloe.bernard17@example.org,web
+2026-05-10,9780070165694,1,24.57,hugo.roux30@example.org,boutique
+2025-12-31,9781804990278,1,21.37,arthur.bertrand84@example.org,en ligne
+2026-01-15,9788481096156,1,10.3,hugo.martin53@example.org,magasin
+2026-01-28,9781250819369,2,39.48,chloe.bernard23@example.org,MP
+2026-03-08,9781958943366,1,20.7,hugo.michel52@example.org,site
+2026-01-11,9780349440187,1,26.15,jules.leroy14@example.org,online
+2025-07-22,9781417727582,0,22.86,jade.bertrand6@example.org,Magasin
+2026-05-19,9791000000879,1,14.81,jade.laurent37@example.org,Magasin
+2025-11-28,9781730710735,3,28.92,emma.lefebvre83@example.org,Magasin
+2026-03-14,9781665141253,1,25.22,emma.michel53@example.org,STORE
+2025-09-30,9780856352737,1,29.73,chloe.lefebvre12@example.org,STORE
+2026-05-29,9791000000309,2,10.31,nathan.bernard15@example.org,Magasin
+2025-08-13,9780263775051,2,30.23,louis.michel71@example.org,online
+2025-09-26,9791000000369,1,35.34,emma.dubois19@example.org,boutique
+2025-07-27,9780958854344,1,30.35,zoe.laurent81@example.org,web
+2025-09-06,9791000000859,1,26.54,manon.martin59@example.org,Magasin
+2026-04-05,9783453161818,1,35.75,hugo.moreau76@example.org,online
+2026-02-12,9781804990278,1,4.73,manon.roux81@example.org,boutique
+2025-09-14,9788417992491,1,5.8,jules.david74@example.org,STORE
+2025-08-14,9781250275042,1,39.68,louis.david37@example.org,boutique
+2026-04-23,9787229030933,3,7.8,theo.simon48@example.org,MP
+2026-02-04,9781410498700,1,14.87,emma.bernard89@example.org,en ligne
+2026-01-28,9780061556746,1,11.9,jules.bernard74@example.org,magasin
+2026-06-18,9781417733675,3,39.41,theo.michel78@example.org,STORE
+2026-04-21,9781847941480,1,9.09,arthur.leroy94@example.org,Magasin
+2025-10-01,9791000000059,1,29.58,chloe.martin16@example.org,magasin
+2025-08-30,9798669140557,2,32.8,gabriel.michel6@example.org,STORE
+2026-05-23,9780879015497,1,11.62,theo.laurent9@example.org,STORE
+2026-04-08,9789721041028,2,8.53,ines.simon51@example.org,magasin
+2025-10-08,9780593160015,2,37.15,arthur.lefebvre5@example.org,web
+2026-05-18,9781521093443,2,23.51,ines.lefebvre53@example.org,magasin
+2025-12-01,9780862416041,2,15.67,camille.moreau74@example.org,en ligne
+2025-12-29,9781442421844,3,14.43,camille.simon49@example.org,web
+2026-01-16,9780718188740,1,35.11,theo.bertrand41@example.org,magasin
+2025-08-14,9781976446184,2,17.65,theo.moreau68@example.org,STORE
+2026-01-08,9780816137152,1,11.65,lea.lefebvre65@example.org,magasin
+2026-03-14,9788381351881,1,37.2,theo.morel42@example.org,web
+2025-08-20,9780880881326,0,22.77,emma.moreau93@example.org,site
+2026-03-25,9789367901229,1,37.5,lea.simon60@example.org,magasin
+2026-06-03,9780769206684,1,24.95,theo.david27@example.org,STORE
+2025-11-24,9780345301451,1,31.86,nathan.laurent20@example.org,boutique
+2025-07-08,9791000000839,1,22.7,chloe.leroy45@example.org,STORE
+2026-06-26,9780786230358,1,13.17,lea.laurent79@example.org,STORE
+2025-07-26,9798893311020,1,36.48,jules.bernard50@example.org,magasin
+2026-01-17,9782226018052,2,36.05,zoe.roux46@example.org,STORE
+2025-10-10,9781483928197,2,33.15,lea.morel98@example.org,Magasin
+2025-08-17,9781408880715,2,29.23,nathan.lefebvre40@example.org,Magasin
+2025-10-23,9780071332484,2,26.34,lucas.michel24@example.org,STORE
+2025-12-14,9780856352737,1,6.81,nathan.simon62@example.org,online
+2025-11-22,9780061002878,1,24.84,nathan.michel92@example.org,site
+2026-05-29,9785811232321,2,23.36,jade.roux53@example.org,boutique
+2026-04-07,9780263762495,3,18.09,ines.moreau89@example.org,online
+2026-02-08,9781250030962,2,23.78,hugo.dubois85@example.org,site
+2026-06-30,9780142413401,2,8.55,zoe.simon72@example.org,site
+2025-09-29,9780872863101,3,6.96,nathan.david77@example.org,online
+2026-05-27,9780070078727,1,12.2,emma.roux97@example.org,magasin
+2026-06-04,9783464107676,1,14.82,zoe.moreau27@example.org,en ligne
+2026-06-13,9781305639614,3,37.66,lucas.bernard75@example.org,magasin
+2026-03-19,9781417601356,2,34.68,jules.simon71@example.org,site
+2026-04-13,9788429776317,3,8.38,theo.fournier4@example.org,boutique
+2026-04-29,9780141378480,1,29.7,jade.michel56@example.org,boutique
+2026-03-01,9789994714094,1,18.11,lucas.fournier54@example.org,web
+2026-06-09,9781250883520,1,7.04,camille.dubois93@example.org,Magasin
+2025-09-08,9781574535587,1,33.03,zoe.morel90@example.org,online
+2026-02-18,9781975618674,1,33.53,jade.simon29@example.org,web
+2025-07-04,9781536435078,1,30.37,manon.michel70@example.org,STORE
+2025-07-20,9781093750065,1,17.55,arthur.bertrand11@example.org,boutique
+2026-03-27,9783785530030,0,32.07,zoe.leroy11@example.org,site
+2026-05-19,9781449486792,1,28.17,theo.roux7@example.org,STORE
+2025-07-06,9780451525918,1,36.57,ines.michel46@example.org,STORE
+2025-07-19,9781497303881,3,31.03,manon.martin81@example.org,Magasin
+2026-04-20,9781548261887,1,14.83,camille.laurent63@example.org,magasin
+2025-08-09,9780594091400,2,13.42,manon.laurent33@example.org,magasin
+2026-05-06,9780658006340,3,30.66,zoe.simon23@example.org,en ligne
+2025-10-29,9780945353874,1,23.17,jules.simon11@example.org,web
+2025-09-17,9780151189786,1,39.67,jade.moreau85@example.org,Magasin
+2025-09-24,9780805035650,1,34.3,jules.david34@example.org,site
+2026-02-23,9788445007037,1,21.36,hugo.michel88@example.org,Magasin
+2025-09-13,9788447333165,2,4.92,zoe.michel87@example.org,STORE
+2026-06-15,9791000000809,1,36.99,lucas.fournier56@example.org,place de marché
+2025-11-17,9780136054054,1,32.9,manon.david75@example.org,MP
+2026-06-11,9781424231355,1,28.28,chloe.leroy44@example.org,boutique
+2025-07-06,9798515079307,1,6.91,gabriel.bernard68@example.org,magasin
+2025-12-27,9781408998465,2,13.42,jules.martin80@example.org,site
+2026-05-01,9780263121407,2,12.18,nathan.bertrand16@example.org,magasin
+2025-09-05,9781534487673,1,36.36,louis.bernard90@example.org,web
+2026-02-25,9780070078727,3,27.11,manon.morel55@example.org,STORE
+2025-08-07,9780345301451,2,18.05,ines.martin34@example.org,STORE
+2025-08-05,9788481096156,3,11.6,jade.dubois83@example.org,Magasin
+2026-04-03,9781419772955,1,26.23,nathan.lefebvre92@example.org,STORE
+2025-08-07,9785811232321,1,13.37,zoe.martin64@example.org,boutique
+2025-07-01,9791000000579,1,18.32,emma.bertrand43@example.org,online
+2026-03-21,9798417660092,3,21.87,gabriel.michel94@example.org,magasin
+2025-07-02,9781732172234,3,33.46,arthur.bernard73@example.org,STORE
+2025-12-03,9781857157246,1,39.79,lea.simon69@example.org,STORE
+2026-02-21,9788440220677,2,27.43,louis.leroy6@example.org,Magasin
+2025-12-01,9780307741172,1,8.28,lucas.lefebvre11@example.org,online
+2025-09-10,9783442249329,1,29.98,hugo.lefebvre50@example.org,site
+2026-05-26,9780872863101,1,38.66,zoe.martin5@example.org,en ligne
+2025-07-22,9780001604308,1,33.07,zoe.david69@example.org,boutique
+2025-10-28,9791000000499,1,30.54,arthur.david3@example.org,online
+2026-05-13,9780198118756,1,27.47,camille.dubois81@example.org,marketplace
+2025-08-19,9780449024959,1,34.07,lea.fournier14@example.org,marketplace
+2026-05-12,9788492412402,1,11.67,ines.morel95@example.org,Magasin
+2026-06-16,9780297859390,1,15.88,chloe.morel6@example.org,boutique
+2025-08-31,9780793546534,1,19.2,lucas.leroy22@example.org,Magasin
+2026-04-24,9780434007493,1,32.5,jade.morel21@example.org,magasin
+2025-08-11,9780072466652,1,37.29,theo.michel89@example.org,online
+2025-10-14,9780141018980,1,23.02,gabriel.moreau23@example.org,site
+2026-03-13,9781568955575,3,26.7,theo.simon54@example.org,magasin
+2025-10-07,9798596021639,0,39.08,lucas.fournier98@example.org,boutique
+2026-05-17,9788432217456,1,6.38,nathan.morel20@example.org,Magasin
+2025-09-20,9780356502410,3,6.41,lucas.laurent27@example.org,Magasin
+2026-05-12,9780224617253,2,20.54,nathan.bertrand7@example.org,boutique
+2025-07-15,9780945353874,1,7.01,hugo.bertrand57@example.org,STORE
+2026-06-12,9791000000209,1,32.08,ines.moreau13@example.org,boutique
+2025-10-11,9781534487673,2,7.1,arthur.martin56@example.org,web
+2026-05-09,9781963349023,1,17.72,zoe.bertrand25@example.org,STORE
+2025-10-12,9780136054054,1,29.0,jules.laurent18@example.org,marketplace
+2026-02-20,9780894108815,1,16.66,theo.roux21@example.org,web
+2026-04-10,9780393925340,1,19.07,arthur.fournier28@example.org,Magasin
+2025-11-20,9781532913686,2,30.56,hugo.moreau42@example.org,online
+2026-04-29,9791000000709,1,24.81,camille.michel6@example.org,magasin
+2026-03-16,9798212378338,1,18.46,nathan.lefebvre64@example.org,marketplace
+2025-07-07,9780833589484,2,38.13,emma.simon38@example.org,boutique
+2025-08-16,9782266208178,1,15.29,zoe.fournier74@example.org,site
+2026-02-23,9782266138826,1,29.39,louis.morel48@example.org,place de marché
+2026-05-21,9780575038479,2,7.0,ines.leroy5@example.org,STORE
+2025-11-16,9781474029599,3,23.7,chloe.morel88@example.org,magasin
+2025-12-19,9781119675655,3,22.72,lucas.martin15@example.org,online
+2026-05-13,9780434007493,1,10.7,lea.leroy91@example.org,boutique
+2025-12-19,9788828350453,1,27.48,chloe.morel96@example.org,boutique
+2025-11-14,9780140138351,1,14.31,lea.simon45@example.org,Magasin
+2026-03-27,9780825616518,1,29.63,theo.lefebvre80@example.org,STORE
+2026-06-20,9780061002823,3,35.76,chloe.lefebvre12@example.org,site
+2025-09-30,9780142423295,3,7.22,louis.laurent15@example.org,boutique
+2025-10-13,9780393419610,3,5.3,gabriel.david70@example.org,boutique
+2026-02-01,9780143432821,2,5.26,chloe.bernard3@example.org,boutique
+2026-03-24,9780756992248,1,24.99,ines.lefebvre76@example.org,online
+2026-04-17,9780750504355,2,15.35,manon.moreau62@example.org,STORE
+2025-07-25,9780307815651,1,20.64,louis.roux21@example.org,place de marché
+2025-10-02,9791000000989,1,29.57,emma.dubois31@example.org,magasin
+2025-12-10,9780373107148,1,13.72,louis.moreau72@example.org,magasin
+2025-12-24,9780307815651,1,23.61,louis.leroy39@example.org,site
+2026-01-24,9791000000559,1,9.65,zoe.simon20@example.org,marketplace
+2026-04-06,9791000001019,1,27.41,theo.lefebvre38@example.org,place de marché
+2026-04-16,9780358067801,3,20.15,nathan.bertrand62@example.org,site
+2026-04-09,9780843929959,1,18.72,hugo.lefebvre46@example.org,magasin
+2026-05-08,9781974343539,1,23.14,manon.moreau3@example.org,magasin
+2026-02-14,9783442457472,1,7.59,jade.moreau63@example.org,STORE
+2026-03-19,9791000000689,1,28.1,jade.dubois92@example.org,online
+2026-01-07,9781538500484,1,16.94,zoe.fournier72@example.org,magasin
+2026-02-13,9781449486792,0,32.95,theo.dubois94@example.org,Magasin
+2026-01-29,9789994714094,2,25.67,emma.moreau39@example.org,online
+2026-03-26,9780136054054,1,38.49,jade.bernard1@example.org,MP
+2025-11-17,9781414340913,1,20.86,emma.moreau24@example.org,online
+2026-03-09,9780263808568,2,15.19,theo.lefebvre72@example.org,Magasin
+2025-07-02,9788381351881,1,38.34,arthur.bernard84@example.org,STORE
+2026-03-09,9791000000309,1,13.16,nathan.morel36@example.org,Magasin
+2025-08-04,9788417454432,2,25.07,gabriel.fournier34@example.org,place de marché
+2026-06-21,9785171001605,1,22.64,camille.fournier34@example.org,web
+2025-09-13,9781432899011,1,29.04,lucas.dubois7@example.org,STORE
+2026-05-22,9791000000359,3,6.22,theo.leroy82@example.org,magasin
+2026-05-18,9781495096105,2,25.7,louis.leroy42@example.org,STORE
+2026-06-16,9780140256352,1,28.76,lucas.bernard69@example.org,en ligne
+2025-07-07,9780449908587,1,17.7,arthur.michel44@example.org,web
+2025-09-18,9780140138351,1,11.17,nathan.michel59@example.org,magasin
+2025-09-06,9791000000479,1,16.83,lucas.dubois57@example.org,STORE
+2025-12-03,9780263751635,2,8.7,emma.fournier89@example.org,boutique
+2025-12-05,9781250883520,1,39.23,gabriel.bertrand98@example.org,site
+2026-03-05,9780061734526,1,11.45,jules.morel85@example.org,magasin
+2025-11-07,9780333675182,1,28.13,nathan.morel16@example.org,boutique
+2025-10-11,9780007164943,1,5.54,emma.fournier96@example.org,STORE
+2025-12-26,9788535931327,1,22.22,hugo.leroy73@example.org,marketplace
+2026-04-23,9780898451429,1,12.18,chloe.laurent22@example.org,magasin
+2025-08-20,9791000000489,1,22.35,arthur.simon90@example.org,place de marché
+2026-06-10,9791000000829,1,34.05,jade.michel28@example.org,boutique
+2025-12-08,9783442454181,1,22.9,arthur.morel47@example.org,STORE
+2025-07-21,9782021011968,1,8.6,theo.lefebvre77@example.org,STORE
+2026-02-13,9781935682028,1,14.79,gabriel.moreau9@example.org,online
+2026-01-05,9782226018052,1,28.37,nathan.michel57@example.org,place de marché
+2025-08-13,9780143469131,1,18.68,nathan.bertrand22@example.org,site
+2025-10-10,9783423262644,1,34.38,jade.bernard30@example.org,Magasin
+2025-11-20,9780156035156,2,25.1,manon.morel83@example.org,online
+2026-06-07,9788423991235,3,39.46,manon.dubois99@example.org,Magasin
+2025-11-06,9780205060450,1,26.74,emma.martin13@example.org,magasin
+2026-03-13,9780465067091,1,10.84,ines.dubois39@example.org,site
+2026-06-04,9781433207938,1,21.92,zoe.moreau38@example.org,online
+2025-11-11,9798874620929,1,34.93,camille.morel5@example.org,Magasin
+2025-08-30,9798532977518,1,34.69,zoe.lefebvre5@example.org,site
+2026-06-03,9783442245666,2,35.82,louis.lefebvre56@example.org,boutique
+2026-01-16,9781421889276,2,24.64,arthur.david71@example.org,Magasin
+2025-09-19,9781984819574,1,13.82,jade.roux87@example.org,STORE
+2025-11-23,9789794130834,1,25.4,emma.fournier47@example.org,en ligne
+2026-04-25,9780471119463,2,26.63,jade.bernard55@example.org,en ligne
+2026-01-27,9781561005987,1,13.15,hugo.david40@example.org,place de marché
+2026-06-18,9781442421844,2,8.55,louis.martin69@example.org,STORE
+2026-06-02,9780750503075,1,22.72,gabriel.laurent3@example.org,Magasin
+2025-12-10,9781481428149,1,15.91,nathan.morel63@example.org,magasin
+2025-10-14,9780517082461,1,33.23,ines.dubois79@example.org,en ligne
+2026-02-09,9798855127560,1,34.5,lea.fournier69@example.org,boutique
+2025-07-25,9781436223881,0,18.73,hugo.roux96@example.org,magasin
+2026-04-23,9798739934543,1,14.18,arthur.michel27@example.org,en ligne
+2026-05-30,9780263753820,1,32.97,gabriel.david70@example.org,en ligne
+2026-01-22,9780072457445,1,20.54,louis.martin81@example.org,boutique
+2025-10-18,9780070078727,3,30.77,zoe.laurent82@example.org,Magasin
+2026-05-17,9780061550676,1,17.4,emma.moreau20@example.org,place de marché
+2025-12-01,9780373104383,1,15.78,lea.david27@example.org,online
+2025-11-24,9780823022748,1,28.81,hugo.michel31@example.org,magasin
+2025-07-15,9789507511288,2,15.49,arthur.leroy56@example.org,Magasin
+2025-07-19,9798855127560,1,9.33,manon.morel36@example.org,web
+2025-07-22,9791000000889,2,32.19,jules.fournier11@example.org,en ligne
+2025-08-02,9791000000249,3,36.25,lea.michel93@example.org,web
+2026-04-19,9781407034461,1,8.77,manon.lefebvre12@example.org,boutique
+2025-12-08,9780534359454,2,30.6,hugo.michel28@example.org,boutique
+2025-10-18,9791000000959,1,18.96,jules.lefebvre69@example.org,STORE
+2025-08-27,9780195365931,1,21.31,hugo.laurent19@example.org,en ligne
+2026-01-05,9780880881326,1,27.35,jules.fournier95@example.org,magasin
+2026-06-09,9780263778724,1,18.12,lucas.morel88@example.org,site
+2025-10-30,9780241269657,1,4.78,jade.laurent39@example.org,magasin
+2025-10-29,9781436223881,1,36.01,zoe.david41@example.org,place de marché
+2025-07-18,9780793546534,2,33.64,arthur.lefebvre95@example.org,Magasin
+2025-12-18,9781679583353,1,37.02,nathan.fournier21@example.org,place de marché
+2025-08-03,9788535931327,1,30.31,ines.lefebvre89@example.org,magasin
+2026-05-25,9781974343539,1,20.2,emma.martin52@example.org,web
+2025-12-08,9780297859390,1,10.09,emma.fournier77@example.org,online
+2025-12-11,9780263853087,1,30.53,manon.dubois88@example.org,en ligne
+2025-10-10,9781574535587,1,10.94,jade.fournier74@example.org,web
+2025-07-12,9791000000479,1,26.16,hugo.bernard60@example.org,boutique
+2025-09-25,9781250275042,1,19.68,manon.dubois12@example.org,STORE
+2026-04-17,9798596021639,1,23.11,zoe.fournier87@example.org,Magasin
+2025-10-13,9780070441606,3,33.29,manon.laurent96@example.org,Magasin
+2026-02-06,9781982127794,1,12.13,theo.bertrand87@example.org,boutique
+2026-01-26,9788074770814,1,14.77,manon.moreau80@example.org,Magasin
+2026-01-06,9798987380420,1,20.72,camille.lefebvre18@example.org,MP
+2026-01-20,9798513996880,1,18.08,gabriel.bertrand77@example.org,MP
+2026-04-12,9780833566980,1,37.46,arthur.simon78@example.org,magasin
+2026-03-16,9785553671754,1,39.1,lucas.dubois72@example.org,magasin
+2025-11-11,9781590073995,1,37.43,zoe.dubois12@example.org,STORE
+2026-02-07,9780263137958,1,15.59,emma.lefebvre36@example.org,en ligne
+2025-11-22,9791000000269,2,26.2,manon.leroy41@example.org,MP
+2025-12-09,9798671330687,0,31.53,emma.leroy85@example.org,online
+2025-09-15,9780345313904,1,5.77,manon.dubois91@example.org,Magasin
+2026-03-11,9780434007493,1,39.5,arthur.lefebvre64@example.org,magasin
+2025-09-14,9783442454181,1,11.71,theo.dubois22@example.org,en ligne
+2026-06-05,9782221125779,1,39.83,camille.leroy99@example.org,boutique
+2025-08-09,9780755334223,2,28.46,ines.martin37@example.org,magasin
+2026-04-29,9791000000539,3,34.13,emma.martin11@example.org,Magasin
+2026-06-03,9781695322240,1,38.31,camille.simon6@example.org,online
+2026-04-18,9780788729386,1,6.22,theo.simon8@example.org,magasin
+2026-05-05,9781466864580,1,13.53,hugo.morel52@example.org,magasin
+2025-10-15,9789132428876,1,18.74,emma.bernard39@example.org,Magasin
+2025-12-06,9791000000279,1,9.15,nathan.fournier48@example.org,web
+2026-01-15,9789353445416,1,25.75,lea.morel55@example.org,STORE
+2026-02-08,9781473888357,1,5.93,ines.lefebvre87@example.org,web
+2025-09-18,9791000000559,1,26.79,lea.laurent60@example.org,online
+2026-03-02,9780307567291,1,9.02,theo.fournier32@example.org,Magasin
+2025-07-25,9780439982566,1,6.1,nathan.leroy55@example.org,Magasin
+2026-06-04,9780349440187,1,13.47,manon.roux11@example.org,magasin
+2026-06-04,9788408282952,1,10.95,jade.martin11@example.org,Magasin
+2025-11-30,9780307262196,1,20.61,zoe.roux34@example.org,en ligne
+2025-10-04,9780356502571,1,30.94,manon.fournier87@example.org,marketplace
+2025-07-10,9780224008884,1,4.97,arthur.lefebvre89@example.org,Magasin
+2026-05-05,9789333394918,1,26.39,lucas.bertrand87@example.org,online
+2025-08-14,9781250883520,1,11.25,camille.bertrand25@example.org,site
+2026-05-29,9780393091809,1,19.93,chloe.bernard39@example.org,Magasin
+2026-02-02,9780553902716,1,36.45,zoe.lefebvre61@example.org,magasin
+2026-04-26,9780263771213,1,24.66,jade.martin43@example.org,site
+2026-02-07,9781936719112,2,30.59,theo.martin63@example.org,Magasin
+2026-04-29,9780857550460,1,28.52,arthur.moreau92@example.org,magasin
+2026-02-02,9780007299805,1,6.75,gabriel.lefebvre15@example.org,Magasin
+2026-05-27,9780205176076,1,19.94,louis.laurent93@example.org,web
+2026-02-10,9787555027706,1,25.3,ines.roux92@example.org,Magasin
+2025-11-28,9788416029808,2,38.48,lucas.morel61@example.org,boutique
+2025-11-22,9780099558781,2,28.11,emma.dubois26@example.org,web
+2025-08-21,9781409413615,1,39.68,theo.moreau27@example.org,site
+2025-12-31,9791000000039,1,28.46,louis.fournier65@example.org,marketplace
+2025-12-20,9780823420278,1,12.52,hugo.lefebvre34@example.org,en ligne
+2025-07-24,9781101216347,2,13.97,emma.fournier89@example.org,site
+2026-02-10,9798855090437,1,34.29,nathan.bernard79@example.org,site
+2025-07-22,9780786189694,1,26.8,chloe.simon21@example.org,en ligne
+2026-03-17,9780425104347,2,8.02,lucas.simon18@example.org,site
+2026-02-10,9791000000949,1,31.72,hugo.fournier61@example.org,en ligne
+2025-09-26,9780385094436,1,29.82,gabriel.simon81@example.org,boutique
+2026-03-29,9780140139198,2,9.38,gabriel.michel53@example.org,Magasin
+2026-03-22,9798433379008,1,37.91,zoe.dubois99@example.org,marketplace
+2026-03-22,9791000000689,1,16.48,jade.morel22@example.org,online
+2025-07-19,9780070078727,3,9.84,jules.david92@example.org,STORE
+2026-06-14,9780373706099,1,15.27,ines.simon2@example.org,STORE
+2026-05-09,9791000000449,1,18.8,chloe.leroy80@example.org,place de marché
+2026-06-23,9781442472426,2,32.17,jade.morel26@example.org,en ligne
+2026-04-02,9780593724309,1,29.95,emma.leroy70@example.org,STORE
+2026-03-19,9780373106233,1,16.56,louis.martin4@example.org,STORE
+2025-12-03,9789333394918,1,22.39,jules.fournier48@example.org,STORE
+2025-12-29,9783442454181,1,27.54,nathan.lefebvre39@example.org,site
+2025-10-29,9780224617253,2,25.09,hugo.simon39@example.org,STORE
+2026-04-20,9798515079307,1,17.87,hugo.bernard42@example.org,web
+2026-01-01,9781963349023,1,29.69,gabriel.bernard12@example.org,site
+2025-09-05,9789353445416,1,7.26,jade.roux72@example.org,Magasin
+2026-04-26,9780425104347,1,39.78,arthur.bertrand54@example.org,web
+2025-09-04,9780945353874,2,9.08,nathan.bertrand28@example.org,Magasin
+2025-09-19,9791000000689,1,37.13,nathan.roux53@example.org,magasin
+2026-04-19,9798990047709,1,9.93,lucas.laurent48@example.org,STORE
+2025-07-15,9788498723533,1,32.25,gabriel.martin40@example.org,STORE
+2026-03-08,9781119251736,1,16.84,jules.michel62@example.org,STORE
+2025-12-20,9783596035694,1,34.04,emma.morel18@example.org,Magasin
+2026-06-07,9780060829575,1,30.27,lea.morel80@example.org,online
+2026-01-19,9788324592265,1,38.42,zoe.bertrand36@example.org,magasin
+2026-06-28,9780263790429,1,32.68,theo.leroy83@example.org,site
+2025-08-13,9781605090962,3,23.68,jules.roux67@example.org,web
+2026-03-15,9791000000199,1,27.8,louis.martin36@example.org,web
+2026-06-27,9780007120970,2,20.23,ines.michel76@example.org,magasin
+2025-07-12,9798475273906,1,19.19,ines.michel33@example.org,magasin
+2025-08-20,9781434499936,1,9.6,manon.morel12@example.org,boutique
+2026-01-25,9780465067091,1,26.25,ines.dubois4@example.org,magasin
+2025-08-20,9781432899011,1,36.11,manon.michel16@example.org,magasin
+2026-05-02,9780307291813,1,22.51,jade.bernard35@example.org,magasin
+2026-04-10,9781335468437,1,5.52,hugo.martin35@example.org,magasin
+2026-04-11,9780141038148,2,15.28,gabriel.lefebvre11@example.org,boutique
+2025-09-11,9781850180005,1,10.45,hugo.leroy55@example.org,online
+2026-02-23,9791000000869,2,14.74,louis.martin8@example.org,Magasin
+2025-11-06,9780007120970,1,39.87,chloe.roux66@example.org,STORE
+2026-03-31,9781442426757,1,7.68,nathan.fournier18@example.org,STORE
+2025-10-16,9780142427835,1,32.89,ines.david34@example.org,online
+2026-06-05,9780312472849,1,20.78,ines.martin89@example.org,boutique
+2025-07-02,9781594488849,1,36.41,louis.michel72@example.org,online
+2026-04-02,9789871144686,2,27.48,lea.leroy4@example.org,online
+2025-12-28,9791000000979,2,33.79,lucas.michel23@example.org,site
+2026-01-06,9791000000609,1,4.83,camille.morel36@example.org,STORE
+2026-05-11,9780007815586,1,29.91,hugo.lefebvre47@example.org,magasin
+2026-06-26,9781565843790,1,4.75,jade.bernard36@example.org,Magasin
+2025-10-08,9788432217456,2,28.3,louis.bernard76@example.org,boutique
+2025-09-04,9781529369526,3,34.78,manon.moreau87@example.org,site
+2026-06-20,9780465067091,1,13.45,zoe.martin55@example.org,place de marché
+2026-05-29,9780843940008,2,15.93,gabriel.laurent16@example.org,online
+2026-03-22,9783458080664,1,30.03,jules.laurent54@example.org,Magasin
+2026-01-17,9781432645960,1,35.66,camille.bertrand29@example.org,Magasin
+2025-11-05,9787020062362,1,15.5,nathan.martin62@example.org,MP
+2026-04-30,9788439707929,1,16.33,manon.moreau14@example.org,online
+2025-12-22,9781804992326,1,16.31,hugo.bernard77@example.org,Magasin
+2026-05-17,9788445073834,1,7.53,jules.martin49@example.org,en ligne
+2026-06-21,9780849202476,2,6.69,zoe.martin39@example.org,online
+2026-06-12,9780373110926,1,14.94,jade.michel13@example.org,Magasin
+2026-05-03,9781883217044,1,4.88,jade.lefebvre55@example.org,magasin
+2026-06-11,9781617807558,1,22.81,chloe.bernard14@example.org,magasin
+2025-08-04,9789719201847,2,11.35,emma.david66@example.org,STORE
+2026-03-04,9780857550460,1,11.08,emma.morel6@example.org,magasin
+2026-04-26,9780809533756,1,27.57,lucas.laurent75@example.org,boutique
+2025-12-06,9788423991235,1,17.56,camille.leroy76@example.org,boutique
+2026-03-17,9786051719092,2,34.9,gabriel.simon26@example.org,boutique
+2025-10-12,9780679728054,1,11.2,arthur.bertrand89@example.org,online
+2025-12-17,9781857234701,1,38.59,theo.michel43@example.org,boutique
+2025-07-22,9781280839290,1,4.63,hugo.bertrand30@example.org,Magasin
+2025-10-31,9786053751120,2,38.22,ines.morel95@example.org,online
+2025-10-03,9782075094450,0,17.34,lea.simon4@example.org,magasin
+2026-02-11,9781432645960,1,36.81,lucas.martin4@example.org,boutique
+2025-09-28,9781408998465,2,29.95,ines.fournier71@example.org,boutique
+2025-07-12,9798737952464,2,36.74,camille.fournier87@example.org,boutique
+2025-08-26,9783423262644,3,15.3,hugo.simon48@example.org,boutique
+2026-05-16,9791000000039,1,29.67,nathan.dubois17@example.org,marketplace
+2026-01-10,9781497303881,1,25.72,hugo.martin98@example.org,boutique
+2025-11-28,9780800712136,1,13.25,manon.fournier17@example.org,online
+2025-08-11,9780816137152,1,27.99,lea.dubois66@example.org,Magasin
+2026-05-27,9781433207938,1,22.15,zoe.dubois42@example.org,en ligne
+2026-03-05,9788440666826,3,21.27,jade.david75@example.org,magasin
+2025-10-12,9780263853087,2,18.51,theo.michel49@example.org,boutique
+2026-01-08,9798561631788,1,9.26,lea.laurent57@example.org,place de marché
+2026-04-25,9780606309912,1,26.49,gabriel.lefebvre60@example.org,Magasin
+2026-03-12,9780195365931,1,5.38,zoe.moreau34@example.org,magasin
+2025-08-12,9788381352079,2,22.65,lea.morel36@example.org,boutique
+2025-08-06,9787229030933,1,11.59,chloe.david43@example.org,STORE
+2026-06-15,9780140440577,1,29.48,emma.fournier97@example.org,STORE
+2025-12-01,9780321793102,2,32.22,jade.michel75@example.org,magasin
+2026-03-20,9782702411933,3,35.14,hugo.moreau93@example.org,boutique
+2026-03-22,9798893310856,2,31.32,zoe.simon11@example.org,STORE
+2026-02-05,9781101216347,3,19.29,zoe.lefebvre72@example.org,site
+2026-04-22,9780330471138,1,37.89,camille.lefebvre85@example.org,STORE
+2026-01-31,9780999174067,1,18.78,theo.simon76@example.org,magasin
+2025-07-17,9791000000469,1,39.09,ines.roux81@example.org,Magasin
+2025-10-13,9791000000739,1,23.42,chloe.lefebvre14@example.org,MP
+2026-02-17,9780553418286,2,7.8,nathan.david71@example.org,boutique
+2026-06-18,9788423991235,1,11.11,lea.michel37@example.org,boutique
+2026-06-03,9780263775051,1,6.53,camille.dubois42@example.org,Magasin
+2025-08-26,9780788729386,1,21.43,lea.michel27@example.org,boutique
+2025-12-06,9781444833386,2,28.03,louis.roux74@example.org,en ligne
+2026-03-15,9781417999729,1,14.25,camille.dubois58@example.org,magasin
+2026-05-06,9783453161818,1,16.14,arthur.lefebvre60@example.org,site
+2025-11-25,9780823022748,2,20.65,theo.michel79@example.org,web
+2025-09-30,9791000000239,1,19.8,jade.david24@example.org,magasin
+2025-07-23,9780263778724,2,10.09,theo.david9@example.org,boutique
+2026-01-27,9780061741005,1,39.73,lea.morel14@example.org,place de marché
+2025-12-14,9781439580721,1,13.45,jules.lefebvre4@example.org,site
+2026-06-11,9781424231355,1,16.67,jade.fournier25@example.org,online
+2025-11-06,9780575073241,2,9.33,zoe.lefebvre60@example.org,magasin
+2026-06-02,9780263771213,2,20.0,arthur.fournier36@example.org,boutique
+2025-07-10,9780007527564,1,14.91,jade.dubois10@example.org,magasin
+2025-09-17,9780425029459,1,12.17,jules.david69@example.org,web
+2025-07-25,9780007163243,1,23.01,nathan.michel89@example.org,STORE
+2026-05-03,978031212598X,1,17.86,chloe.moreau48@example.org,boutique
+2025-07-09,9780140139198,1,5.02,chloe.david86@example.org,magasin
+2025-08-19,9788439707929,2,28.01,louis.martin54@example.org,magasin
+2025-12-13,9788845212178,1,26.61,jade.michel16@example.org,web
+2025-12-30,9789721041028,1,18.74,ines.martin50@example.org,boutique
+2025-08-03,9780062111234,2,27.51,lucas.martin9@example.org,boutique
+2026-05-03,9798438389804,0,8.1,louis.laurent13@example.org,STORE
+2026-06-22,9781784878719,1,38.92,emma.simon23@example.org,place de marché
+2026-06-18,9780525537113,3,28.09,lea.simon3@example.org,online
+2026-05-24,9781449486792,1,25.3,camille.moreau3@example.org,magasin
+2026-02-05,9780061734526,1,7.31,emma.simon64@example.org,STORE
+2026-01-09,9780241573754,1,12.93,zoe.bertrand43@example.org,boutique
+2026-05-26,9788418483448,2,22.94,gabriel.david37@example.org,magasin
+2025-12-17,9781283677127,1,23.59,hugo.morel88@example.org,boutique
+2026-01-12,9780393419610,1,20.16,camille.bernard63@example.org,site
+2025-07-27,9780807217696,0,37.71,emma.bernard23@example.org,place de marché
+2025-10-13,9780307394392,1,19.59,zoe.laurent22@example.org,boutique
+2025-09-29,978957467950X,1,14.6,zoe.david26@example.org,STORE
+2026-03-04,9781804990278,3,17.23,jade.dubois61@example.org,online
+2026-05-09,9781407034461,1,10.02,arthur.martin98@example.org,Magasin
+2025-08-12,9783458080664,3,15.13,emma.leroy94@example.org,boutique
+2026-02-23,9788477111252,1,17.78,arthur.bernard43@example.org,boutique
+2025-10-09,9781119621508,3,4.65,lucas.lefebvre52@example.org,online
+2026-01-08,9781732172234,1,27.19,lea.michel5@example.org,marketplace
+2026-04-16,9789132428876,1,19.94,manon.morel97@example.org,STORE
+2026-03-08,9780749391843,1,29.15,jade.michel95@example.org,boutique
+2025-07-18,9791000000459,2,26.84,camille.bertrand86@example.org,boutique
+2026-02-19,9791000000689,1,13.5,louis.martin15@example.org,magasin
+2026-01-13,9780061944727,2,38.98,lea.leroy25@example.org,online
+2026-02-04,9780671692650,1,22.22,jade.roux40@example.org,Magasin
+2025-08-15,9781721284443,1,31.99,lucas.fournier19@example.org,en ligne
+2026-01-20,978030747249X,1,39.44,arthur.martin13@example.org,site
+2026-01-30,9780061556746,1,14.71,gabriel.dubois23@example.org,en ligne
+2025-09-07,9782702400500,1,22.29,nathan.lefebvre73@example.org,boutique
+2025-07-31,9781424231355,1,31.37,manon.fournier53@example.org,Magasin
+2026-05-16,9781721284443,2,10.38,theo.bernard49@example.org,site
+2025-12-23,9780241968154,1,21.42,nathan.martin8@example.org,STORE
+2025-07-04,9783453089228,1,39.46,nathan.moreau67@example.org,site
+2026-03-24,9791000000879,2,37.5,arthur.morel44@example.org,Magasin
+2026-06-15,9791000000129,1,15.66,hugo.simon86@example.org,Magasin
+2025-07-30,979100000100X,1,16.19,nathan.martin59@example.org,Magasin
+2025-09-10,9781439116050,1,35.26,manon.bertrand97@example.org,web
+2026-05-13,9780545926751,1,21.32,gabriel.david25@example.org,magasin
+2025-12-12,9780898796827,1,35.42,ines.david57@example.org,marketplace
+2026-01-21,9780747263463,1,7.38,gabriel.lefebvre85@example.org,site
+2025-11-28,9780007527564,1,9.57,jules.dubois64@example.org,site
+2026-06-10,9780821775370,0,21.02,zoe.bernard62@example.org,boutique
+2025-09-26,9781958292068,3,29.28,nathan.michel92@example.org,magasin
+2025-12-15,9791000000269,1,14.42,manon.david61@example.org,magasin
+2026-03-31,9782843623103,2,7.7,ines.fournier29@example.org,site
+2026-01-10,9791000000349,2,30.55,jade.david83@example.org,online
+2025-10-23,9781529369526,1,7.6,lea.simon95@example.org,web
+2025-08-29,9781559348263,1,34.71,jade.roux95@example.org,site
+2026-04-29,9780671868376,1,18.24,gabriel.simon99@example.org,STORE
+2025-09-03,9781092148580,1,25.41,nathan.michel2@example.org,online
+2025-11-29,9780151189786,1,28.57,emma.roux37@example.org,boutique
+2026-06-25,9780380821099,1,15.43,nathan.laurent91@example.org,online
+2025-10-19,9788447369225,1,38.71,jules.morel43@example.org,web
+2025-10-16,9780575079090,2,33.19,jules.fournier23@example.org,online
+2025-12-01,9798479401305,1,34.54,camille.leroy51@example.org,en ligne
+2026-02-28,9781723208614,2,18.34,theo.laurent90@example.org,boutique
+2026-04-07,9780141378480,1,15.95,jules.fournier91@example.org,en ligne
+2025-09-22,9781536435078,1,29.14,theo.dubois27@example.org,boutique
+2025-10-09,9781407034461,1,17.32,nathan.david19@example.org,online
+2026-02-04,9780141384641,2,37.28,nathan.simon61@example.org,marketplace
+2025-08-30,9780736614818,1,25.51,emma.david93@example.org,MP
+2025-08-30,9788324592838,1,15.22,louis.david96@example.org,Magasin
+2026-06-09,9780358023951,1,20.91,jade.laurent81@example.org,online
+2025-08-31,9780843929959,1,21.82,hugo.martin76@example.org,Magasin
+2025-08-18,9798433379008,1,18.09,gabriel.laurent74@example.org,boutique
+2025-08-02,9781483928197,3,32.65,louis.michel90@example.org,magasin
+2026-04-01,9781977668066,2,21.8,nathan.morel97@example.org,boutique
+2025-08-30,9780679432531,2,29.11,camille.leroy58@example.org,MP
+2025-09-04,9780373107148,1,10.21,manon.fournier97@example.org,magasin
+2025-09-02,9781984819574,1,38.71,louis.michel85@example.org,magasin
+2025-07-24,9791000000709,3,36.52,theo.david69@example.org,Magasin
+2026-03-09,9781497303881,1,36.74,lucas.roux69@example.org,boutique
+2026-06-05,9780307568083,1,5.8,emma.laurent28@example.org,web
+2025-10-19,9788416906550,1,9.05,gabriel.bernard71@example.org,en ligne
+2026-05-29,9791000000279,1,20.64,manon.david55@example.org,boutique
+2025-08-06,9789578278035,2,39.74,chloe.bertrand48@example.org,boutique
+2025-09-17,9781974932573,0,19.85,camille.roux32@example.org,magasin
+2026-03-30,9781500420536,1,18.9,ines.david12@example.org,STORE
+2025-11-17,9781544739366,2,12.49,camille.bernard49@example.org,marketplace
+2025-08-23,9781617807558,3,10.72,theo.roux63@example.org,magasin
+2026-06-24,9781976087097,2,24.02,nathan.martin22@example.org,STORE
+2026-01-16,9780679432531,1,30.74,jade.lefebvre76@example.org,marketplace
+2026-06-17,9781442445987,2,27.78,emma.michel73@example.org,STORE
+2026-05-24,9791000000999,1,32.02,gabriel.bertrand59@example.org,boutique
+2025-12-29,9781568497037,1,14.65,gabriel.leroy92@example.org,boutique
+2025-08-14,9791000000729,1,31.78,lea.david11@example.org,magasin
+2025-08-17,9780671458423,1,7.49,theo.leroy64@example.org,site
+2026-02-03,9783442457472,1,30.37,arthur.lefebvre66@example.org,place de marché
+2026-03-30,9781474029599,1,4.99,chloe.fournier96@example.org,marketplace
+2026-06-25,9786287574632,2,13.15,jules.roux58@example.org,web
+2026-03-26,9791000000279,1,7.16,emma.leroy46@example.org,site
+2026-01-11,9780263120974,1,8.51,hugo.fournier70@example.org,magasin
+2026-03-05,9780394179933,1,4.58,jade.moreau40@example.org,magasin
+2026-05-13,9780575079090,1,17.09,zoe.simon39@example.org,MP
+2025-12-27,9791000000129,2,18.73,camille.bernard56@example.org,Magasin
+2026-03-28,9788170554240,2,19.04,arthur.martin20@example.org,STORE
+2026-01-19,9781083144430,1,19.66,louis.leroy35@example.org,magasin
+2026-06-02,9780007120970,1,9.45,gabriel.martin46@example.org,place de marché
+2025-10-06,9788804507727,1,18.47,ines.martin21@example.org,boutique
+2026-06-06,9781421809083,1,21.81,arthur.morel88@example.org,place de marché
+2026-01-21,9780263102734,2,30.76,jade.dubois15@example.org,magasin
+2025-09-03,9781338611991,1,4.98,hugo.martin87@example.org,en ligne
+2026-05-02,9798669140557,1,21.5,theo.lefebvre11@example.org,Magasin
+2025-09-17,9780358067801,1,13.33,nathan.fournier34@example.org,boutique
+2026-02-05,9788492966660,1,32.21,nathan.bertrand94@example.org,web
+2026-04-29,9789578278035,1,12.62,emma.michel5@example.org,STORE
+2025-09-13,9780263138382,1,11.57,jules.michel53@example.org,place de marché
+2026-05-21,9780736614016,1,19.58,jules.leroy55@example.org,magasin
+2025-11-15,9780263095760,1,16.93,gabriel.moreau41@example.org,magasin
+2025-07-01,9780843940008,1,15.89,theo.lefebvre36@example.org,magasin
+2025-11-07,9791000000739,1,16.33,nathan.bernard86@example.org,magasin
+2025-09-05,9781631619854,1,33.18,lucas.moreau84@example.org,en ligne
+2026-01-13,9789024512799,2,9.12,nathan.martin76@example.org,boutique
+2026-02-14,9791000000499,1,37.84,ines.laurent93@example.org,Magasin
+2025-10-12,9781442006188,2,6.05,chloe.michel71@example.org,place de marché
+2026-04-13,979100000100X,1,17.46,nathan.michel9@example.org,Magasin
+2026-03-15,9780451628800,1,25.71,emma.laurent6@example.org,magasin
+2026-06-21,9788448034580,2,18.57,lea.dubois57@example.org,online
+2026-01-16,9781857157246,1,11.83,camille.dubois74@example.org,boutique
+2025-07-05,9791000000019,3,22.65,manon.laurent29@example.org,STORE
+2026-04-09,9780263119763,1,6.11,hugo.laurent6@example.org,web
+2025-11-20,9791000000519,1,35.42,jules.david32@example.org,marketplace
+2025-07-01,9780131272866,1,25.92,lucas.simon11@example.org,STORE
+2026-01-26,9791000000209,1,15.99,jules.david2@example.org,en ligne
+2025-11-21,9798737952464,1,5.05,nathan.bertrand96@example.org,Magasin
+2025-11-09,9780062839701,1,25.89,chloe.fournier57@example.org,marketplace
+2025-10-13,9781428811195,1,34.88,jade.dubois58@example.org,boutique
+2026-02-08,9789684196780,1,21.46,arthur.dubois59@example.org,web
+2025-09-29,9788422631880,1,37.89,louis.david37@example.org,site
+2025-09-29,9785171001605,1,26.02,lea.dubois10@example.org,Magasin
+2026-05-27,9791000000959,1,30.14,emma.bertrand97@example.org,magasin
+2026-01-10,9781732172234,1,33.76,jules.dubois32@example.org,site
+2026-05-18,9780708883587,1,38.71,nathan.leroy95@example.org,STORE
+2025-08-13,9781538745748,1,31.39,zoe.fournier21@example.org,en ligne
+2025-09-18,9781958943052,1,29.0,nathan.martin6@example.org,magasin
+2025-08-22,9780671827038,2,19.2,camille.moreau4@example.org,boutique
+2025-09-14,9781594634956,1,12.5,jade.david92@example.org,magasin
+2025-08-26,9780416165326,1,38.34,lucas.bernard79@example.org,STORE
+2025-08-13,9791000000189,1,9.85,gabriel.leroy43@example.org,boutique
+2025-09-15,9791000000159,1,15.18,theo.simon14@example.org,en ligne
+2026-06-04,9789684196780,3,33.2,lea.morel1@example.org,marketplace
+2025-09-14,9781432899011,1,20.31,arthur.fournier9@example.org,site
+2025-11-20,9780393091809,1,39.71,louis.morel50@example.org,STORE
+2026-02-03,9786053751120,1,19.15,ines.dubois84@example.org,boutique
+2026-04-08,9781539170389,1,21.94,hugo.michel11@example.org,Magasin
+2026-06-21,9798986868035,2,29.39,hugo.simon1@example.org,boutique
+2025-07-09,9798716103634,1,38.4,nathan.martin45@example.org,MP
+2025-09-10,9788381352079,1,34.07,gabriel.moreau27@example.org,web
+2025-09-09,9798596021639,3,29.42,jade.bertrand4@example.org,Magasin
+2026-06-25,9780970373908,1,7.11,louis.martin19@example.org,STORE
+2025-11-03,9788499300023,1,33.92,gabriel.dubois98@example.org,boutique
+2025-09-10,9780061895968,1,38.09,arthur.michel93@example.org,STORE
+2026-05-27,9781497303881,1,8.44,jules.david5@example.org,boutique
+2025-07-06,9789020632729,2,28.57,zoe.leroy92@example.org,STORE
+2026-03-14,9788477111252,2,19.5,louis.laurent12@example.org,place de marché
+2025-09-03,9781476870748,1,26.41,hugo.michel24@example.org,magasin
+2026-02-25,9780763603519,1,27.22,jade.dubois7@example.org,en ligne
+2025-10-08,9780571226856,1,7.25,ines.martin31@example.org,en ligne
+2025-08-24,9780849202476,1,4.89,theo.moreau71@example.org,boutique
+2025-07-17,9788324592838,1,39.07,jules.roux62@example.org,site
+2025-08-17,9791000000689,1,39.21,theo.michel65@example.org,boutique
+2026-01-17,9789333394918,1,9.08,nathan.simon53@example.org,magasin
+2025-09-15,9784871877664,1,18.03,jules.laurent21@example.org,boutique
+2025-08-10,9791000000079,1,38.23,hugo.moreau88@example.org,web
+2025-09-21,9791000000889,1,39.63,ines.lefebvre17@example.org,en ligne
+2026-05-16,9781982127794,3,5.92,jade.moreau27@example.org,magasin
+2026-04-17,9781177541923,0,7.95,camille.dubois99@example.org,MP
+2025-08-14,9780425104347,1,15.61,theo.dubois9@example.org,STORE
+2025-12-28,9780263130249,1,29.66,zoe.laurent61@example.org,STORE
+2026-02-12,978006095685X,3,37.77,arthur.martin47@example.org,en ligne
+2026-05-14,9791000000419,1,20.11,ines.simon11@example.org,Magasin
+2025-11-12,9781417727582,2,28.66,jules.bertrand32@example.org,magasin
+2025-08-23,9780996487191,1,24.68,lea.moreau50@example.org,Magasin
+2025-12-26,9780805243550,1,23.44,zoe.bernard11@example.org,web
+2026-01-20,9780061002878,1,18.71,lea.simon44@example.org,online
+2026-03-01,9780575073241,1,5.86,emma.lefebvre19@example.org,boutique
+2025-07-17,9781848721791,2,6.71,lucas.morel56@example.org,Magasin
+2025-10-17,9781593976064,1,31.36,gabriel.laurent33@example.org,boutique
+2025-08-05,9780793546534,1,15.06,zoe.fournier54@example.org,boutique
+2025-11-10,9780671491758,2,7.77,gabriel.simon97@example.org,en ligne
+2025-12-26,9791000000669,1,21.33,louis.bertrand56@example.org,STORE
+2026-04-19,9781726017640,2,24.36,chloe.bernard93@example.org,place de marché
+2025-09-13,9789721041028,1,33.65,ines.martin20@example.org,Magasin
+2026-03-13,9788501117687,1,32.54,gabriel.laurent67@example.org,place de marché
+2026-02-16,9791000000679,2,8.95,zoe.david75@example.org,magasin
+2025-10-05,9780155826083,1,31.91,jade.moreau45@example.org,boutique
+2026-06-13,9780007299805,3,17.61,lucas.martin39@example.org,MP
+2025-09-02,9780786936137,1,39.87,gabriel.michel46@example.org,STORE
+2026-02-04,9781442486126,3,16.39,louis.lefebvre55@example.org,en ligne
+2026-05-01,9789132428876,1,18.01,gabriel.david37@example.org,magasin
+2025-08-23,9780263130249,1,26.32,gabriel.bernard64@example.org,place de marché
+2026-04-05,9780804168441,1,22.32,jules.david38@example.org,online
+2026-02-18,9780439982566,1,11.42,arthur.bernard45@example.org,Magasin
+2026-05-27,9798791612762,2,18.51,lucas.morel29@example.org,STORE
+2026-06-03,9781781251485,1,36.45,gabriel.david31@example.org,magasin
+2026-01-29,9780263053043,1,9.93,lucas.fournier67@example.org,place de marché
+2025-12-19,9780263120974,3,39.65,hugo.leroy51@example.org,boutique

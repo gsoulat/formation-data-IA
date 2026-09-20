@@ -1,0 +1,20 @@
+product_id,product_name,category,brand,cost_price,selling_price
+PROD-001,Wireless Mouse,Electronics,TechBrand,22.50,49.99
+PROD-002,Bluetooth Headphones,Electronics,SoundMax,35.00,79.99
+PROD-003,Smart Watch,Electronics,TechBrand,89.00,199.99
+PROD-004,USB-C Cable 2m,Accessories,CablePro,8.50,34.99
+PROD-005,Mechanical Keyboard,Electronics,KeyMaster,55.00,129.99
+PROD-006,Laptop Stand,Accessories,DeskPro,38.00,89.99
+PROD-007,Webcam HD 1080p,Electronics,VisionTech,25.00,59.99
+PROD-008,Screen Cleaner Kit,Accessories,CleanTech,5.50,19.99
+PROD-009,External SSD 500GB,Storage,DataFast,65.00,149.99
+PROD-010,Mouse Pad XL,Accessories,DeskPro,8.00,24.99
+PROD-011,Gaming Monitor 27",Electronics,VisionTech,180.00,299.99
+PROD-012,Tablet 10 inch,Electronics,TechBrand,250.00,449.99
+PROD-013,Laptop Pro 15,Electronics,TechBrand,380.00,599.99
+PROD-014,Wireless Earbuds,Electronics,SoundMax,85.00,199.99
+PROD-015,Phone Case Premium,Accessories,ProtectPlus,18.00,79.99
+PROD-016,HDMI Cable 3m,Accessories,CablePro,12.00,44.99
+PROD-017,Portable Charger 20000mAh,Electronics,PowerUp,75.00,249.99
+PROD-018,Ergonomic Chair,Furniture,ComfortZone,95.00,169.99
+PROD-019,Desk Lamp LED,Furniture,LightWorks,35.00,99.99

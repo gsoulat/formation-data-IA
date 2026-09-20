@@ -1,0 +1,31 @@
+id_client,raison_sociale,siret,adresse,code_postal,ville,telephone,email,type_contrat,volume_mensuel_kg,date_debut_contrat,actif
+1,Boulangerie Martin,12345678901234,5 rue du Four,75006,Paris,01 42 33 12 45,contact@boulangeriemartin.fr,standard,1200,2021-03-01,oui
+2,Pharma Express,23456789012345,18 avenue Pasteur,69007,Lyon,04 78 55 23 10,logistique@pharmaexpress.fr,premium,8500,2020-09-15,oui
+3,MeublePlus SAS,34567890123456,Zone Industrielle Nord,33700,Merignac,05 56 78 90 12,transport@meubleplus.com,standard,15000,2021-06-20,oui
+4,FreshFood Distribution,,120 rue du Marche,59160,Lomme,03 20 45 67 89,fresh@freshfood.fr,premium,22000,2020-01-10,oui
+5,TechnoParts SARL,56789012345678,8 impasse des Ateliers,69100,Villeurbanne,0478123456,info@technoparts.fr,standard,3200,2022-02-14,oui
+6,Caves du Rhone,67890123456789,34 quai de la Pecherie,69001,Lyon,04-78-22-33-44,caves@cavesdurhone.fr,premium,9800,2019-11-01,oui
+7,BioMarche SCOP,78901234567890,Place du Marche,33000,bordeaux,05 56 12 34 56,contact@biomarche.coop,standard,4500,2021-08-01,oui
+8,AutoPieces Express,89012345678901,ZAC des Moulins,59650,Villeneuve-d'Ascq,03 20 78 90 12,commandes@autopieces-express.fr,standard,6700,2022-05-10,oui
+9,Librairie Dupont,90123456789012,22 rue des Livres,75005,Paris,01 43 26 78 90,livraison@librairiedupont.fr,standard,800,2023-01-15,oui
+10,ChimieVerte SA,01onal456789012,Parc Technologique,69130,Ecully,04 72 18 45 67,logistique@chimieverte.com,premium,18000,2020-04-01,oui
+11,Textile Mode,11223344556677,15 rue de la Mode,59000,Lille,03 20 11 22 33,expeditions@textilemode.fr,standard,5600,2021-11-20,oui
+12,Patisserie Royale,22334455667788,3 place Bellecour,69002,Lyon,04 78 99 88 77,pro@patisserieroyale.fr,standard,950,2022-07-01,oui
+13,GreenGarden,33445566778899,Route de Bayonne,33400,Talence,,contact@greengarden.fr,standard,7200,2021-04-15,oui
+14,MediLab Solutions,44556677889900,Campus Sante,59120,Loos,03 20 56 78 90,supply@medilab.fr,premium,11000,2020-07-20,oui
+15,SportMax,55667788990011,Centre Commercial Grand Sud,33130,Begles,05 57 12 34 56,logistique@sportmax.fr,standard,8900,2022-01-05,non
+16,Vins et Terroirs,66778899001122,Chateau Lapeyrouse,33500,Libourne,05 57 25 36 47,commandes@vinsterroirs.fr,premium,6300,2019-05-15,oui
+17,ElectroPro,77889900112233,14 rue Ampere,69003,Lyon,04 78 60 70 80,achats@electropro.fr,standard,4100,2023-03-01,oui
+18,Boucherie Lefevre,88990011223344,7 rue du Boucher,59800,Lille,0320445566,boucherie.lefevre@orange.fr,standard,2800,2022-09-12,oui
+19,AquaPure,99001122334455,Zone Portuaire,33300,Bordeaux,05 56 98 76 54,transport@aquapure.fr,premium,14000,2020-12-01,oui
+20,DataCenter Nord,10203040506070,Parc d'Activites,59810,Lesquin,03 20 67 89 01,infra@datacenternord.fr,standard,1500,2023-06-15,oui
+21,Boulangerie Martin,12345678901234,5 rue du Four,75006,Paris,01 42 33 12 45,contact@boulangeriemartin.fr,standard,1200,2021-03-01,oui
+22,Cosmetiques Bio,21324354657687,28 rue Paradis,69006,LYON,04 78 24 35 46,logistique@cosmetiquesbio.fr,standard,3800,2021-10-01,oui
+23,IndustriaMetal,32435465768798,Zone Industrielle Sud,59500,Douai,0327889900,metal.transport@industriametal.com,premium,25000,15/03/2020,oui
+24,PharmaPlus,43546576879809,Centre Medical,33600,Pessac,05 57 02 03 04,pharma@pharmaplus.fr,standard,5200,2022-04-20,oui
+25,Fleurs et Jardins,54657687980910,12 allee des Roses,69005,Lyon,04 78 36 47 58,livraison@fleursetjardins.fr,standard,1800,2023-02-28,oui
+26,,65768798091021,Rue Sans Nom,59000,Lille,03 20 99 88 77,contact@anonymous.fr,standard,2000,2022-06-01,oui
+27,TransitGlobal,76879809102132,Port de Bordeaux,33000,Bordeaux,05 56 44 55 66,ops@transitglobal.com,premium,32000,2019-08-01,oui
+28,Alimentaire Express,87980910213243,Marche de Gros,69200,Venissieux,04-72-50-60-70,express@alimentaire.fr,premium,19500,2020-06-15,oui
+29,MobilierConfort,98091021324354,Avenue du Meuble,33170,Gradignan,05 56 89 01 23,transport@mobilierconfort.fr,standard,11500,2021-09-01,oui
+30,LaboBioTech,09102132435465,Bioparc,59120,Loos,03 20 34 56 78,labo@labobiotech.fr,premium,7600,2022-11-15,oui

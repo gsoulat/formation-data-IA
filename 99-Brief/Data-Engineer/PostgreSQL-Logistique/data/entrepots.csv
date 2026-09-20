@@ -1,0 +1,4 @@
+id_entrepot,nom,ville,adresse,code_postal,latitude,longitude,capacite_m2,nb_zones_stockage,date_ouverture
+1,TransFlow Lyon,Lyon,45 rue de la Part-Dieu,69003,45.7640,4.8357,12000,8,2018-03-15
+2,TransFlow Bordeaux,Bordeaux,12 avenue des Chartrons,33000,44.8378,-0.5792,8500,5,2019-06-01
+3,TransFlow Lille,Lille,78 boulevard de la Liberte,59000,50.6292,3.0573,9200,6,2020-01-10

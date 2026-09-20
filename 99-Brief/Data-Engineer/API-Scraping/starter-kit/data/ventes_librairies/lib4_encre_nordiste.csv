@@ -1,0 +1,1251 @@
+date;code_isbn;nb;prix;mail;canal;commentaire
+21-10-2025;9781690319849;3;16,13;theo.david94@example.org;en ligne;
+01-10-2025;9780198118756;1;32,59;gabriel.lefebvre42@example.org;Magasin;commande spéciale
+07-05-2026;9780881035254;1;28,59;zoe.roux71@example.org;boutique;commande spéciale
+04-12-2025;9782226479822;1;19,07;emma.lefebvre33@example.org;STORE;commande spéciale
+15-06-2026;9798454025748;1;18,27;lucas.leroy74@example.org;online;
+20-07-2025;9781568497037;2;35,59;louis.dubois15@example.org;marketplace;client fidèle
+29-06-2026;9780060934514;1;17,81;camille.leroy26@example.org;STORE;commande spéciale
+14-06-2026;9780061895968;1;28,28;hugo.martin88@example.org;Magasin;
+24-08-2025;9789189298323;1;13,22;arthur.roux77@example.org;boutique;commande spéciale
+21-05-2026;9791000000309;3;29,14;jules.morel29@example.org;boutique;client fidèle
+06-03-2026;9780061895968;1;22,87;lucas.fournier19@example.org;STORE;client fidèle
+14-04-2026;9783442245666;1;18,54;nathan.leroy99@example.org;en ligne;
+21-04-2026;9781512486162;1;13,09;camille.david1@example.org;online;commande spéciale
+27-04-2026;9788804507727;1;39,2;theo.morel36@example.org;STORE;RAS
+25-05-2026;9788432217456;1;32,82;manon.bernard6@example.org;Magasin;client fidèle
+26-09-2025;9780001711129;1;18,15;ines.laurent84@example.org;boutique;client fidèle
+17-02-2026;9781760892531;1;24,61;jade.martin94@example.org;STORE;RAS
+23-04-2026;9780141038148;3;11,91;ines.david82@example.org;magasin;client fidèle
+07-05-2026;9798791612762;2;38,7;lucas.leroy41@example.org;Magasin;
+23-10-2025;9791000000469;1;16,18;lea.michel62@example.org;STORE;
+20-10-2025;9788477111252;1;21,8;chloe.martin57@example.org;place de marché;RAS
+17-06-2026;9780749459116;1;38,39;nathan.david82@example.org;web;RAS
+14-07-2025;9781616960926;1;21,91;chloe.michel75@example.org;boutique;
+10-10-2025;9788440666826;2;15,88;camille.moreau25@example.org;Magasin;
+06-05-2026;9798475273906;1;24,12;jules.bertrand24@example.org;boutique;client fidèle
+09-09-2025;9791000000549;2;32,86;ines.moreau21@example.org;Magasin;commande spéciale
+21-06-2026;9780606283892;2;33,13;theo.roux58@example.org;boutique;
+19-06-2026;9781451686296;1;38,79;hugo.laurent62@example.org;Magasin;commande spéciale
+03-02-2026;9788074770814;1;35,87;hugo.bertrand46@example.org;STORE;client fidèle
+21-06-2026;9780263853087;0;5,98;emma.martin6@example.org;Magasin;client fidèle
+06-11-2025;9789388144346;1;38,99;manon.morel47@example.org;STORE;RAS
+17-01-2026;9780062273208;2;8,32;hugo.david77@example.org;site;
+14-09-2025;9782376862185;1;31,26;camille.fournier54@example.org;MP;RAS
+24-01-2026;9781101192740;3;10,48;emma.leroy84@example.org;boutique;client fidèle
+20-05-2026;9780471119463;1;14,98;gabriel.leroy89@example.org;en ligne;RAS
+03-07-2025;9791000000619;1;17,59;ines.roux43@example.org;magasin;
+25-01-2026;9780879015497;2;19,68;arthur.lefebvre63@example.org;STORE;client fidèle
+19-10-2025;9787555027706;1;21,78;chloe.roux93@example.org;place de marché;client fidèle
+13-06-2026;9780263753820;1;5,53;louis.bertrand95@example.org;boutique;commande spéciale
+10-01-2026;9781405224031;1;33,51;emma.michel73@example.org;magasin;RAS
+17-06-2026;9780671491758;1;24,47;lucas.simon87@example.org;magasin;client fidèle
+20-02-2026;9781547277322;1;19,78;zoe.martin93@example.org;magasin;commande spéciale
+13-06-2026;9780547524009;1;6,48;chloe.laurent40@example.org;place de marché;
+09-02-2026;9788417454432;1;10,29;nathan.michel24@example.org;magasin;client fidèle
+08-10-2025;9780545926751;1;28,79;hugo.roux95@example.org;magasin;
+19-09-2025;9781536435078;3;32,23;emma.bernard1@example.org;en ligne;commande spéciale
+03-03-2026;9780385094436;1;37,06;jules.fournier8@example.org;boutique;
+19-03-2026;9780061451652;1;20,23;manon.dubois59@example.org;site;commande spéciale
+14-05-2026;9798897248889;1;30,53;zoe.morel22@example.org;boutique;client fidèle
+08-10-2025;9785882156922;1;27,87;camille.bernard22@example.org;Magasin;RAS
+10-04-2026;9781451686296;3;13,66;gabriel.simon65@example.org;place de marché;
+16-11-2025;9780143566526;1;34,4;gabriel.fournier89@example.org;magasin;RAS
+13-11-2025;9781306337564;1;26,72;ines.dubois47@example.org;online;client fidèle
+08-04-2026;9780963270702;1;21,11;manon.martin57@example.org;magasin;RAS
+23-06-2026;978957467950X;1;15,76;zoe.lefebvre7@example.org;online;commande spéciale
+11-05-2026;9788170554240;1;20,56;emma.leroy40@example.org;boutique;RAS
+01-08-2025;9788804686521;1;22,65;emma.michel88@example.org;magasin;
+10-01-2026;9780307491572;1;5,45;ines.moreau64@example.org;site;
+03-02-2026;9798212378338;1;30,29;jade.leroy66@example.org;site;
+08-08-2025;9780860099697;2;27,2;jade.laurent61@example.org;en ligne;commande spéciale
+12-09-2025;9780805243550;1;11,26;nathan.dubois98@example.org;en ligne;RAS
+16-06-2026;9783453186880;1;17,71;manon.bernard52@example.org;magasin;commande spéciale
+06-05-2026;9780385094436;3;24,2;manon.leroy3@example.org;Magasin;RAS
+25-06-2026;9780263119763;1;29,0;jade.lefebvre14@example.org;STORE;client fidèle
+03-03-2026;9781512486162;1;30,15;jules.lefebvre37@example.org;magasin;
+24-10-2025;9780061744303;3;25,0;zoe.roux49@example.org;Magasin;commande spéciale
+28-05-2026;9791000000359;1;7,45;jules.simon9@example.org;site;
+19-04-2026;9791000000499;1;28,44;jules.fournier14@example.org;Magasin;RAS
+02-01-2026;9780785748663;2;4,92;jules.dubois45@example.org;STORE;commande spéciale
+22-09-2025;9780545926751;2;26,69;louis.martin11@example.org;magasin;
+27-09-2025;9785553671754;3;21,16;arthur.laurent83@example.org;MP;client fidèle
+31-05-2026;9780198118244;2;16,32;hugo.fournier77@example.org;online;commande spéciale
+17-02-2026;9780061895968;1;33,93;louis.simon20@example.org;Magasin;
+14-06-2026;9780394299877;2;13,63;louis.martin37@example.org;site;commande spéciale
+27-08-2025;9780263782011;2;11,98;theo.martin88@example.org;STORE;RAS
+05-10-2025;9788828350453;1;32,15;hugo.fournier57@example.org;Magasin;client fidèle
+19-01-2026;9781449486792;1;32,23;zoe.michel69@example.org;site;commande spéciale
+09-01-2026;9780072957549;3;34,15;ines.simon64@example.org;site;client fidèle
+20-02-2026;9780575042681;1;6,14;lucas.leroy39@example.org;online;RAS
+10-08-2025;9798625352550;1;26,17;jules.moreau44@example.org;Magasin;commande spéciale
+24-07-2025;9780312856830;1;13,54;ines.martin73@example.org;Magasin;
+10-11-2025;9781850180005;2;15,73;zoe.bertrand76@example.org;magasin;RAS
+29-08-2025;9780757910869;1;6,51;lucas.morel89@example.org;magasin;
+06-11-2025;9780300278576;1;36,26;ines.roux29@example.org;marketplace;commande spéciale
+30-12-2025;9780071408691;1;8,67;chloe.martin85@example.org;Magasin;RAS
+10-10-2025;9780679803072;1;37,67;camille.morel6@example.org;web;
+31-01-2026;9780062225719;1;26,31;arthur.david18@example.org;magasin;commande spéciale
+17-12-2025;9780550200686;1;10,3;arthur.morel71@example.org;magasin;RAS
+11-09-2025;9791000000939;1;31,36;theo.lefebvre88@example.org;en ligne;client fidèle
+03-04-2026;9780356232928;1;18,19;theo.dubois75@example.org;web;commande spéciale
+23-08-2025;9782266227049;2;37,03;arthur.morel24@example.org;marketplace;RAS
+10-08-2025;9780881039108;1;16,39;jules.morel35@example.org;STORE;
+15-05-2026;9781804992326;2;19,5;gabriel.roux65@example.org;online;client fidèle
+04-04-2026;9780061556746;1;21,16;theo.laurent43@example.org;STORE;commande spéciale
+28-11-2025;9791000000919;1;14,33;nathan.roux18@example.org;web;
+02-07-2025;9780099558781;1;25,81;louis.bertrand59@example.org;STORE;RAS
+02-08-2025;978030747249X;1;13,39;hugo.leroy78@example.org;site;
+20-11-2025;9780606374224;3;14,64;theo.lefebvre78@example.org;boutique;
+08-06-2026;9780263782011;1;37,11;lea.simon53@example.org;Magasin;commande spéciale
+06-09-2025;9783548362595;3;35,22;jules.morel60@example.org;magasin;commande spéciale
+19-12-2025;9781974052264;1;5,57;ines.moreau14@example.org;online;
+27-06-2026;9798893311020;1;37,2;hugo.moreau7@example.org;boutique;
+11-06-2026;9798737952464;2;36,84;arthur.bernard69@example.org;online;client fidèle
+21-09-2025;9788804507727;1;35,38;lucas.michel25@example.org;site;
+23-08-2025;9798893311020;1;11,92;camille.lefebvre70@example.org;web;RAS
+07-03-2026;9788835161189;2;6,18;jade.michel10@example.org;STORE;
+30-11-2025;9780205176076;1;22,58;jade.michel30@example.org;en ligne;
+28-06-2026;9780007354733;1;23,01;camille.dubois81@example.org;boutique;
+08-08-2025;9791000000629;1;27,96;jade.michel75@example.org;magasin;client fidèle
+09-12-2025;9788491052371;3;14,15;theo.dubois69@example.org;place de marché;client fidèle
+20-06-2026;9780749459116;1;14,64;jules.simon20@example.org;site;client fidèle
+08-06-2026;9788492412402;2;10,43;zoe.bernard94@example.org;boutique;
+20-09-2025;9791000000419;1;35,21;jade.leroy56@example.org;STORE;commande spéciale
+12-02-2026;9791000000539;2;21,51;jade.dubois55@example.org;STORE;client fidèle
+12-09-2025;9789715502016;1;17,91;camille.bertrand32@example.org;boutique;client fidèle
+05-03-2026;9780060829575;1;33,92;zoe.bernard96@example.org;magasin;RAS
+06-06-2026;9781559343602;1;12,35;lucas.fournier97@example.org;STORE;RAS
+23-12-2025;9791000000139;1;11,33;emma.fournier58@example.org;Magasin;client fidèle
+19-07-2025;9780373110926;1;12,04;lucas.bertrand75@example.org;online;
+03-09-2025;9780736423298;1;30,89;emma.dubois71@example.org;STORE;
+15-02-2026;9791000000469;3;15,55;louis.morel33@example.org;site;commande spéciale
+17-09-2025;9781631619854;1;14,78;gabriel.leroy78@example.org;web;client fidèle
+16-02-2026;9791000000149;3;20,72;jules.laurent14@example.org;marketplace;RAS
+12-04-2026;9782265077249;2;6,95;gabriel.david37@example.org;Magasin;client fidèle
+21-02-2026;9780061451652;1;34,29;ines.michel78@example.org;site;RAS
+20-11-2025;9780736614818;1;36,28;gabriel.lefebvre96@example.org;boutique;commande spéciale
+30-06-2026;9788191032406;1;7,0;louis.laurent70@example.org;STORE;client fidèle
+24-02-2026;9791000000429;1;5,53;gabriel.dubois31@example.org;STORE;RAS
+25-04-2026;9780749459116;1;34,3;louis.michel36@example.org;marketplace;RAS
+13-07-2025;9780393966435;1;15,94;jules.bernard17@example.org;magasin;client fidèle
+03-11-2025;9780297859390;1;29,06;hugo.bertrand65@example.org;Magasin;client fidèle
+09-01-2026;9780071332484;1;13,27;gabriel.leroy80@example.org;magasin;
+07-04-2026;9786070793677;0;5,85;camille.bernard47@example.org;boutique;commande spéciale
+21-11-2025;9780151189786;2;16,04;zoe.martin17@example.org;Magasin;commande spéciale
+19-03-2026;9780072957549;1;39,83;jade.simon78@example.org;Magasin;client fidèle
+05-01-2026;9788408282952;1;25,08;theo.simon64@example.org;en ligne;
+10-05-2026;9780792443483;1;17,52;ines.simon84@example.org;boutique;client fidèle
+15-01-2026;9781955876162;1;26,86;zoe.bernard39@example.org;en ligne;client fidèle
+24-11-2025;9791000000209;1;12,44;lucas.dubois89@example.org;en ligne;
+05-06-2026;9791000000199;1;33,14;jules.lefebvre86@example.org;boutique;commande spéciale
+08-08-2025;9780141378480;1;7,91;lea.roux81@example.org;web;RAS
+08-01-2026;9788481096156;1;14,97;emma.martin27@example.org;magasin;RAS
+06-06-2026;9781725530911;1;18,15;manon.lefebvre26@example.org;site;commande spéciale
+07-04-2026;9780593109069;1;6,51;lucas.david31@example.org;boutique;client fidèle
+16-08-2025;9780679728054;1;39,62;theo.martin95@example.org;web;RAS
+09-02-2026;9780373833740;1;34,08;camille.roux33@example.org;magasin;RAS
+15-08-2025;9780708313503;1;5,87;louis.simon62@example.org;STORE;client fidèle
+01-08-2025;9798417660092;1;37,25;arthur.roux33@example.org;magasin;RAS
+01-06-2026;9780140281118;3;16,0;gabriel.martin12@example.org;magasin;client fidèle
+28-08-2025;9780545541251;2;30,73;hugo.laurent65@example.org;place de marché;RAS
+05-08-2025;9798855127560;1;31,66;gabriel.bertrand23@example.org;Magasin;
+29-01-2026;9789024512799;1;12,97;emma.bernard99@example.org;magasin;client fidèle
+23-09-2025;9785553671754;1;29,13;chloe.leroy11@example.org;boutique;commande spéciale
+26-11-2025;9788417347970;2;24,34;louis.roux68@example.org;magasin;RAS
+27-05-2026;9780263775570;2;24,98;gabriel.laurent47@example.org;boutique;
+20-04-2026;9780547524009;1;35,26;jules.leroy20@example.org;magasin;
+07-10-2025;9789794130834;1;24,38;chloe.bernard57@example.org;web;RAS
+06-02-2026;9791000000039;2;18,61;jules.laurent92@example.org;magasin;RAS
+13-08-2025;9798585573934;2;12,2;lea.roux15@example.org;place de marché;
+03-03-2026;9780996487191;1;33,29;camille.bernard31@example.org;web;RAS
+12-07-2025;9780898451429;2;13,32;manon.roux48@example.org;online;RAS
+10-03-2026;9788499300023;1;22,88;jade.simon8@example.org;Magasin;client fidèle
+26-06-2026;9788381351881;1;34,93;zoe.dubois29@example.org;magasin;client fidèle
+15-10-2025;9798596021639;1;34,07;arthur.david65@example.org;site;
+09-06-2026;9780785744580;3;6,44;zoe.fournier4@example.org;boutique;
+20-04-2026;9781568955575;1;31,81;jules.michel52@example.org;online;RAS
+24-12-2025;9780393656435;1;18,75;jade.michel88@example.org;boutique;commande spéciale
+09-09-2025;9781432622459;1;28,93;jules.martin64@example.org;site;client fidèle
+10-12-2025;9781442486126;2;32,16;arthur.fournier9@example.org;en ligne;RAS
+13-04-2026;9780155826083;1;10,96;theo.moreau4@example.org;online;client fidèle
+31-03-2026;9781377100975;1;14,6;chloe.roux84@example.org;boutique;
+19-12-2025;9780708883587;2;34,26;arthur.dubois19@example.org;STORE;client fidèle
+20-06-2026;9780593109069;1;23,98;ines.bertrand36@example.org;MP;RAS
+27-08-2025;9780356502571;1;8,55;gabriel.morel4@example.org;boutique;RAS
+23-03-2026;9783893400614;1;31,09;gabriel.lefebvre70@example.org;place de marché;RAS
+07-04-2026;9781534431010;1;18,53;chloe.dubois31@example.org;place de marché;client fidèle
+10-11-2025;9781497303881;1;13,54;lucas.leroy40@example.org;Magasin;client fidèle
+18-11-2025;9781727208351;1;21,48;manon.bernard51@example.org;boutique;client fidèle
+15-08-2025;9798893311020;1;12,57;zoe.simon45@example.org;boutique;RAS
+04-03-2026;9788420683324;1;13,71;theo.martin66@example.org;magasin;commande spéciale
+15-11-2025;978083177404X;2;17,59;louis.leroy15@example.org;STORE;commande spéciale
+25-06-2026;9780460116947;2;7,07;jade.bernard14@example.org;en ligne;
+16-07-2025;9780373300693;1;17,78;lea.leroy78@example.org;boutique;RAS
+12-07-2025;9781617807558;1;16,53;manon.michel45@example.org;STORE;
+20-01-2026;9781534438545;3;17,94;manon.fournier30@example.org;Magasin;RAS
+14-11-2025;9783453161818;1;14,77;manon.david88@example.org;STORE;
+21-12-2025;9785557099196;1;28,38;gabriel.martin2@example.org;boutique;client fidèle
+14-08-2025;9781101137833;1;19,14;emma.dubois64@example.org;marketplace;client fidèle
+25-03-2026;9780812992182;2;21,19;manon.david17@example.org;place de marché;commande spéciale
+13-02-2026;9780001711129;2;11,85;hugo.leroy48@example.org;magasin;client fidèle
+14-12-2025;9780151189786;1;20,46;chloe.laurent4@example.org;place de marché;
+13-08-2025;9781335468437;1;36,6;jules.leroy15@example.org;site;client fidèle
+20-06-2026;9780451628800;1;36,06;camille.moreau36@example.org;STORE;RAS
+05-10-2025;9781561037629;2;21,27;zoe.martin2@example.org;Magasin;commande spéciale
+07-03-2026;9791000000529;1;29,72;ines.bertrand16@example.org;STORE;
+01-05-2026;9791000000799;1;14,59;jade.michel74@example.org;en ligne;commande spéciale
+13-08-2025;9781449486792;2;21,35;lucas.fournier56@example.org;boutique;commande spéciale
+25-09-2025;9781534438545;1;4,92;gabriel.bertrand92@example.org;magasin;
+14-02-2026;9780241573754;1;20,82;theo.bertrand97@example.org;en ligne;client fidèle
+28-10-2025;9789868856097;1;33,39;chloe.leroy30@example.org;boutique;
+21-03-2026;978957467950X;1;7,72;jules.martin12@example.org;Magasin;commande spéciale
+11-04-2026;9791000000919;3;8,94;theo.david84@example.org;STORE;commande spéciale
+08-08-2025;9798669140557;2;5,95;manon.fournier73@example.org;STORE;client fidèle
+16-08-2025;978030747249X;3;14,71;hugo.simon92@example.org;STORE;client fidèle
+04-04-2026;9798855127560;1;21,61;arthur.bertrand46@example.org;online;client fidèle
+20-04-2026;9780393963298;1;11,87;emma.michel42@example.org;online;RAS
+19-02-2026;9791000000759;2;7,89;lea.simon67@example.org;boutique;
+03-08-2025;9780343038007;1;39,47;zoe.martin87@example.org;en ligne;RAS
+02-07-2025;9781421889276;2;8,78;gabriel.bernard10@example.org;STORE;commande spéciale
+09-11-2025;9798561631788;1;27,5;nathan.roux65@example.org;marketplace;commande spéciale
+22-04-2026;9780451168283;1;15,24;theo.fournier63@example.org;boutique;client fidèle
+09-06-2026;9780517202753;3;34,87;ines.bertrand24@example.org;marketplace;RAS
+08-06-2026;9780451493835;3;24,31;arthur.lefebvre1@example.org;magasin;client fidèle
+13-04-2026;9791000000099;1;9,7;hugo.dubois43@example.org;magasin;commande spéciale
+29-05-2026;9789000338658;2;33,82;louis.morel22@example.org;Magasin;client fidèle
+26-04-2026;9780061550676;1;28,07;gabriel.bertrand3@example.org;boutique;client fidèle
+01-01-2026;9791000000349;2;11,7;chloe.fournier74@example.org;STORE;
+26-01-2026;9781597223072;1;33,71;emma.bernard99@example.org;magasin;
+05-10-2025;9780316479264;0;21,22;camille.lefebvre6@example.org;web;commande spéciale
+01-08-2025;9780263775570;1;31,11;gabriel.bertrand91@example.org;Magasin;RAS
+23-04-2026;9780805013344;1;22,15;jules.roux66@example.org;web;RAS
+16-11-2025;9780393656435;1;29,11;gabriel.lefebvre93@example.org;STORE;RAS
+26-01-2026;9791000000589;1;26,3;lucas.martin61@example.org;STORE;client fidèle
+15-11-2025;9781595583260;1;15,71;emma.michel61@example.org;online;client fidèle
+19-11-2025;9780263130249;2;22,55;nathan.lefebvre76@example.org;STORE;commande spéciale
+22-04-2026;9781470825553;1;37,05;jules.moreau40@example.org;STORE;RAS
+15-09-2025;9780446511070;1;39,01;jade.roux29@example.org;site;client fidèle
+16-01-2026;9780198118244;3;13,55;louis.simon57@example.org;boutique;
+10-05-2026;9791000000349;2;5,67;zoe.morel34@example.org;magasin;
+25-10-2025;9780136054054;1;22,73;emma.david20@example.org;en ligne;commande spéciale
+03-03-2026;9781690319849;1;16,63;chloe.lefebvre98@example.org;magasin;client fidèle
+31-12-2025;9780749459116;2;11,93;gabriel.roux27@example.org;boutique;RAS
+08-02-2026;9780736614016;1;13,63;emma.leroy46@example.org;Magasin;client fidèle
+24-03-2026;9780736614016;1;36,19;hugo.lefebvre87@example.org;boutique;RAS
+23-04-2026;9781593974336;1;12,75;hugo.bertrand61@example.org;magasin;
+20-06-2026;9780575105843;1;27,69;manon.martin27@example.org;Magasin;RAS
+10-10-2025;9780070441606;1;31,46;nathan.david81@example.org;boutique;
+04-01-2026;9788445007037;1;38,78;emma.simon83@example.org;Magasin;RAS
+17-05-2026;9791000000469;1;20,95;zoe.bernard76@example.org;en ligne;
+17-06-2026;9783442457472;1;38,11;jade.leroy3@example.org;online;commande spéciale
+27-06-2026;9780450055492;1;30,27;emma.bernard48@example.org;Magasin;RAS
+03-04-2026;9788498723533;1;26,47;louis.michel38@example.org;site;
+13-09-2025;9789578278035;2;11,52;gabriel.leroy68@example.org;STORE;RAS
+12-11-2025;9789333394918;3;23,13;chloe.david74@example.org;site;RAS
+19-02-2026;9781974052264;3;21,09;chloe.david28@example.org;magasin;
+12-07-2025;9780655672241;1;25,52;lucas.morel75@example.org;online;
+02-01-2026;9781653656752;1;28,75;camille.dubois43@example.org;marketplace;RAS
+08-02-2026;9781400142866;3;27,49;jade.david86@example.org;magasin;commande spéciale
+20-02-2026;9781844135844;0;22,0;arthur.bernard39@example.org;Magasin;RAS
+13-04-2026;9780697034342;1;26,29;camille.moreau68@example.org;STORE;commande spéciale
+14-09-2025;9780263758993;1;10,48;nathan.simon46@example.org;Magasin;client fidèle
+12-06-2026;9780812540116;1;24,78;gabriel.moreau77@example.org;STORE;
+02-05-2026;9780142423295;1;24,19;lucas.simon96@example.org;en ligne;RAS
+08-02-2026;9780008115456;1;17,53;lea.lefebvre8@example.org;Magasin;commande spéciale
+28-07-2025;9780862201234;2;7,72;emma.bertrand60@example.org;boutique;RAS
+09-01-2026;9780061739590;1;38,94;lucas.bertrand50@example.org;Magasin;client fidèle
+26-06-2026;9780071408691;1;38,03;chloe.laurent65@example.org;Magasin;RAS
+18-10-2025;9789643114190;3;19,58;jade.martin13@example.org;magasin;RAS
+06-07-2025;9788427911758;1;19,75;camille.bertrand57@example.org;boutique;
+17-09-2025;9780373104420;1;37,21;zoe.morel99@example.org;place de marché;client fidèle
+18-05-2026;9780099558781;1;21,1;lucas.roux47@example.org;en ligne;client fidèle
+06-02-2026;9788804686521;1;33,39;camille.roux26@example.org;Magasin;client fidèle
+29-01-2026;9788374805568;3;31,8;lucas.david72@example.org;magasin;
+27-12-2025;9781433207938;1;13,24;manon.michel56@example.org;STORE;
+10-03-2026;9788074770814;1;38,5;hugo.leroy57@example.org;magasin;commande spéciale
+30-06-2026;9780449235997;1;37,9;camille.david43@example.org;online;client fidèle
+14-08-2025;9780736628174;1;23,7;theo.bertrand58@example.org;Magasin;
+28-03-2026;9791000000469;2;22,29;zoe.laurent32@example.org;STORE;commande spéciale
+07-05-2026;9780307568083;1;15,79;chloe.leroy6@example.org;Magasin;RAS
+13-12-2025;9788475842318;1;6,1;jade.laurent51@example.org;boutique;commande spéciale
+22-10-2025;9780079131195;2;12,72;manon.leroy52@example.org;STORE;client fidèle
+27-08-2025;9780718188740;2;28,79;jade.martin31@example.org;Magasin;commande spéciale
+24-03-2026;9783608938296;1;16,19;theo.michel80@example.org;STORE;
+01-07-2025;9791000000289;1;32,9;chloe.lefebvre52@example.org;STORE;RAS
+21-02-2026;9780823420278;2;25,13;lea.michel11@example.org;boutique;commande spéciale
+21-12-2025;9780099439752;0;12,92;jade.bertrand41@example.org;STORE;
+26-01-2026;9781534431010;1;37,29;lea.david73@example.org;magasin;
+02-12-2025;9780792483809;1;25,82;chloe.moreau48@example.org;boutique;
+29-01-2026;9780511783289;2;18,7;nathan.fournier29@example.org;en ligne;
+01-07-2025;9781432622459;2;10,42;ines.morel62@example.org;boutique;commande spéciale
+06-07-2025;9780970373908;0;35,8;lea.dubois38@example.org;en ligne;commande spéciale
+18-08-2025;9791000000889;1;36,76;jules.michel96@example.org;site;client fidèle
+08-05-2026;9781093750065;2;8,6;jade.david93@example.org;STORE;
+30-12-2025;9780517082461;1;7,86;hugo.fournier74@example.org;Magasin;client fidèle
+11-08-2025;9780263102734;1;27,87;lea.lefebvre1@example.org;magasin;
+09-05-2026;9791000000729;1;34,61;louis.morel72@example.org;en ligne;client fidèle
+25-06-2026;9780028729206;1;7,46;hugo.moreau18@example.org;magasin;client fidèle
+21-11-2025;9780007299805;1;38,54;jules.roux99@example.org;en ligne;RAS
+27-07-2025;9791000000689;0;12,05;lea.lefebvre64@example.org;STORE;RAS
+26-12-2025;9782724215908;1;20,39;camille.michel52@example.org;magasin;
+01-10-2025;9791000000289;1;39,06;emma.bertrand5@example.org;boutique;RAS
+15-01-2026;9788417347970;0;17,62;lea.michel41@example.org;MP;
+25-09-2025;9781500420536;1;19,78;lea.leroy11@example.org;site;commande spéciale
+06-09-2025;9780750503075;1;27,34;hugo.fournier87@example.org;web;commande spéciale
+02-10-2025;9780131105409;1;35,47;arthur.roux93@example.org;boutique;RAS
+16-09-2025;9780061739590;1;14,57;ines.roux56@example.org;magasin;client fidèle
+25-04-2026;9798791612762;1;8,31;jade.fournier71@example.org;site;
+31-12-2025;9780380813018;1;7,65;emma.morel7@example.org;marketplace;RAS
+04-07-2025;9780373020751;1;32,33;nathan.bertrand72@example.org;site;
+25-01-2026;9780007120970;1;23,66;lea.bertrand79@example.org;Magasin;RAS
+09-11-2025;9780563524922;2;24,03;hugo.laurent55@example.org;place de marché;client fidèle
+21-11-2025;9780393966848;2;5,56;jade.martin76@example.org;STORE;commande spéciale
+14-03-2026;9780380821099;1;9,16;zoe.laurent44@example.org;online;
+12-04-2026;9788492412402;1;27,07;lucas.roux84@example.org;magasin;RAS
+11-09-2025;9780130853660;0;7,27;emma.david80@example.org;magasin;client fidèle
+31-12-2025;9781963349023;3;39,79;zoe.michel23@example.org;STORE;client fidèle
+11-06-2026;9782702411933;1;14,68;jade.morel50@example.org;site;
+24-12-2025;9781432645960;1;18,33;theo.lefebvre18@example.org;online;RAS
+28-11-2025;9798515079307;2;36,01;ines.roux2@example.org;boutique;
+17-06-2026;9781440673641;1;33,05;jade.bernard16@example.org;MP;client fidèle
+03-04-2026;9788445007037;1;31,69;theo.roux67@example.org;boutique;RAS
+21-01-2026;9781400142866;1;36,98;gabriel.lefebvre84@example.org;magasin;client fidèle
+06-01-2026;9781798850466;1;22,12;arthur.fournier88@example.org;STORE;client fidèle
+02-08-2025;9791000000199;1;37,59;emma.moreau12@example.org;boutique;RAS
+18-11-2025;9782226018052;3;16,54;ines.fournier96@example.org;Magasin;client fidèle
+01-07-2025;9780393419610;1;34,13;theo.roux50@example.org;site;commande spéciale
+25-08-2025;9780451622891;3;6,5;emma.martin81@example.org;STORE;
+25-10-2025;9780593160015;1;7,6;nathan.leroy35@example.org;MP;client fidèle
+09-07-2025;9780534359454;1;33,86;hugo.laurent85@example.org;marketplace;client fidèle
+03-09-2025;9789333394918;2;8,87;lea.dubois75@example.org;STORE;client fidèle
+24-10-2025;9780857550460;1;33,33;lea.laurent4@example.org;place de marché;commande spéciale
+06-03-2026;9788580445046;1;29,09;chloe.david82@example.org;MP;
+04-03-2026;9788416906550;2;9,85;theo.martin97@example.org;web;client fidèle
+28-08-2025;9780451118103;3;9,71;lea.moreau63@example.org;magasin;client fidèle
+31-05-2026;9780373114306;3;32,96;jade.dubois40@example.org;boutique;client fidèle
+24-12-2025;9780030314810;1;26,33;gabriel.morel28@example.org;place de marché;RAS
+16-03-2026;9798511718255;1;14,49;lucas.fournier17@example.org;Magasin;RAS
+25-06-2026;9780307567291;1;38,14;emma.moreau96@example.org;Magasin;commande spéciale
+15-09-2025;9780786215133;1;30,97;emma.david42@example.org;web;
+04-08-2025;9791000000229;1;23,13;louis.leroy4@example.org;STORE;RAS
+05-11-2025;9780072457445;1;12,66;louis.leroy61@example.org;boutique;client fidèle
+12-11-2025;9780425029459;1;19,9;jade.bertrand6@example.org;boutique;
+11-03-2026;9781491543382;1;29,15;zoe.bernard93@example.org;boutique;
+27-02-2026;9789868856097;1;28,71;chloe.bertrand50@example.org;STORE;commande spéciale
+22-08-2025;9780671746520;2;29,61;jade.dubois13@example.org;site;RAS
+29-11-2025;9788427298286;2;7,41;manon.moreau1@example.org;magasin;commande spéciale
+15-01-2026;9789871144686;1;14,63;emma.roux77@example.org;Magasin;commande spéciale
+28-12-2025;9798417660092;1;14,1;chloe.moreau9@example.org;place de marché;
+03-03-2026;9788371501531;2;28,7;lucas.moreau30@example.org;web;commande spéciale
+24-04-2026;9791000000579;1;26,53;zoe.martin12@example.org;site;
+14-10-2025;9788498723533;1;12,51;theo.roux77@example.org;online;client fidèle
+30-06-2026;9798874620929;2;33,31;gabriel.david9@example.org;magasin;commande spéciale
+01-03-2026;9788580445046;1;38,06;emma.bernard47@example.org;web;client fidèle
+08-11-2025;9781478312932;1;39,11;hugo.leroy17@example.org;Magasin;commande spéciale
+25-04-2026;9781593976064;1;37,06;chloe.bernard21@example.org;marketplace;
+05-05-2026;9780312472849;1;5,95;zoe.martin38@example.org;Magasin;
+30-08-2025;9780263096378;2;35,59;chloe.morel51@example.org;Magasin;RAS
+27-02-2026;9788416029808;2;13,56;zoe.martin29@example.org;Magasin;
+28-12-2025;9781108057875;1;28,3;zoe.michel92@example.org;boutique;client fidèle
+08-04-2026;9781857234701;1;35,14;louis.morel88@example.org;boutique;RAS
+17-10-2025;9783785530030;2;19,2;louis.lefebvre72@example.org;STORE;client fidèle
+07-09-2025;9780263138382;1;32,48;chloe.moreau2@example.org;en ligne;
+01-01-2026;9780613135818;1;34,18;louis.david98@example.org;site;client fidèle
+22-01-2026;9788432217456;3;5,65;manon.leroy46@example.org;marketplace;client fidèle
+12-10-2025;9780671692650;1;13,87;ines.leroy94@example.org;STORE;RAS
+14-04-2026;9780263098839;1;22,94;theo.fournier56@example.org;STORE;commande spéciale
+11-11-2025;9780679432531;1;35,4;hugo.lefebvre72@example.org;magasin;
+28-06-2026;9780878210329;1;29,65;hugo.morel49@example.org;STORE;RAS
+28-03-2026;9798739934543;1;19,04;ines.roux45@example.org;en ligne;commande spéciale
+09-04-2026;9780739371077;1;17,68;manon.dubois10@example.org;web;client fidèle
+10-10-2025;9791000000459;1;31,51;gabriel.moreau89@example.org;Magasin;commande spéciale
+12-03-2026;9780345461629;1;20,83;arthur.lefebvre63@example.org;STORE;client fidèle
+01-01-2026;9781094048994;1;7,05;theo.bernard63@example.org;STORE;commande spéciale
+07-08-2025;9780575105843;1;31,91;camille.leroy84@example.org;place de marché;client fidèle
+30-09-2025;9781444833386;2;34,77;chloe.moreau78@example.org;site;client fidèle
+08-03-2026;9780061728419;1;17,36;camille.martin13@example.org;site;client fidèle
+09-05-2026;9780970373908;1;23,11;camille.laurent37@example.org;boutique;
+28-01-2026;9791000000979;1;26,39;lea.laurent75@example.org;site;RAS
+26-03-2026;9791000000759;1;32,83;jade.morel33@example.org;Magasin;commande spéciale
+10-07-2025;9780263096378;2;39,22;lea.simon62@example.org;web;commande spéciale
+14-07-2025;9781466864580;1;37,73;jade.lefebvre86@example.org;boutique;
+01-10-2025;9780806246178;1;18,46;jules.morel24@example.org;boutique;commande spéciale
+07-02-2026;9781780318578;1;10,64;lucas.leroy50@example.org;Magasin;RAS
+14-11-2025;9791000000359;1;39,34;nathan.david97@example.org;place de marché;commande spéciale
+15-06-2026;9780143432821;1;10,06;arthur.lefebvre1@example.org;magasin;client fidèle
+19-12-2025;9780872863101;1;7,89;zoe.david64@example.org;boutique;RAS
+02-10-2025;9780415478816;2;19,15;gabriel.leroy44@example.org;online;client fidèle
+18-06-2026;9780671868376;2;28,81;gabriel.morel9@example.org;magasin;client fidèle
+26-03-2026;9781950508914;1;21,29;lucas.leroy49@example.org;MP;RAS
+29-04-2026;9780394179933;2;38,09;chloe.fournier53@example.org;en ligne;RAS
+12-03-2026;9781548261887;1;11,61;arthur.michel64@example.org;Magasin;client fidèle
+27-12-2025;9780393656435;1;35,36;manon.bertrand43@example.org;online;client fidèle
+15-01-2026;9782724215908;1;33,5;manon.lefebvre96@example.org;site;commande spéciale
+18-05-2026;9780061002823;2;14,24;zoe.laurent41@example.org;magasin;client fidèle
+05-09-2025;978083177404X;1;17,4;zoe.lefebvre22@example.org;site;commande spéciale
+17-11-2025;9780141384641;2;23,06;jade.simon30@example.org;STORE;
+14-07-2025;9780140281118;1;33,34;manon.leroy5@example.org;Magasin;client fidèle
+08-01-2026;9783453317109;1;11,53;lucas.michel75@example.org;boutique;RAS
+07-05-2026;9780800854539;1;25,77;theo.bertrand68@example.org;magasin;client fidèle
+19-11-2025;9798986868035;2;21,31;zoe.moreau8@example.org;en ligne;
+01-07-2025;9780439451932;2;12,23;manon.fournier4@example.org;STORE;RAS
+11-09-2025;978281120345X;1;12,66;zoe.david75@example.org;Magasin;client fidèle
+27-11-2025;9791000000489;1;14,45;gabriel.laurent89@example.org;Magasin;commande spéciale
+20-07-2025;9780321623539;1;34,84;emma.lefebvre26@example.org;online;RAS
+19-12-2025;9780393656435;1;6,4;theo.fournier9@example.org;magasin;
+11-07-2025;9782226018052;1;19,94;arthur.morel69@example.org;site;commande spéciale
+02-05-2026;9783502551638;1;15,09;manon.roux60@example.org;online;
+26-02-2026;9781538745748;1;39,75;camille.michel12@example.org;STORE;RAS
+12-12-2025;9788445073834;2;17,64;arthur.leroy76@example.org;boutique;commande spéciale
+12-07-2025;9791000000709;2;16,68;louis.michel5@example.org;web;
+15-07-2025;9789333394918;1;23,19;ines.michel97@example.org;online;commande spéciale
+13-08-2025;9780393966435;2;29,27;nathan.dubois77@example.org;boutique;commande spéciale
+21-01-2026;9791000000469;1;12,23;nathan.dubois25@example.org;Magasin;client fidèle
+03-01-2026;9789643114190;1;22,94;theo.david14@example.org;boutique;RAS
+05-11-2025;9780425104347;1;22,22;camille.simon89@example.org;place de marché;commande spéciale
+06-07-2025;9780205060450;1;31,35;jade.fournier83@example.org;en ligne;commande spéciale
+16-07-2025;9786051719092;1;5,95;jules.lefebvre68@example.org;boutique;
+14-06-2026;9780756992248;1;23,29;manon.leroy26@example.org;site;RAS
+22-03-2026;9780606374224;2;20,87;gabriel.fournier43@example.org;STORE;commande spéciale
+04-07-2025;9781593976064;1;13,79;emma.lefebvre24@example.org;site;commande spéciale
+05-10-2025;9798596021639;2;24,11;hugo.morel85@example.org;online;
+09-11-2025;9789507511288;2;7,43;arthur.bertrand67@example.org;en ligne;
+15-03-2026;9788374801171;1;13,74;manon.martin71@example.org;en ligne;commande spéciale
+27-04-2026;9781502784278;1;39,75;jules.lefebvre81@example.org;MP;
+23-12-2025;9781119621508;1;26,62;jules.bernard96@example.org;STORE;commande spéciale
+29-05-2026;9780486851921;2;25,99;jade.michel26@example.org;boutique;commande spéciale
+04-05-2026;9780708313503;2;36,72;lucas.fournier52@example.org;STORE;commande spéciale
+02-07-2025;9798753137173;1;25,64;nathan.morel46@example.org;STORE;
+31-07-2025;9780786230358;1;20,89;louis.martin16@example.org;web;commande spéciale
+18-05-2026;9781594488849;1;7,81;ines.martin3@example.org;en ligne;
+10-08-2025;9781718104273;3;9,46;jules.morel89@example.org;Magasin;
+03-09-2025;9780061557064;3;15,15;nathan.morel89@example.org;marketplace;
+29-07-2025;9791000000339;3;15,03;theo.bertrand58@example.org;boutique;
+31-12-2025;9780143432821;2;21,68;zoe.moreau76@example.org;place de marché;client fidèle
+15-09-2025;9780263122169;2;16,16;ines.moreau68@example.org;marketplace;
+13-08-2025;9780671868376;1;9,65;chloe.morel66@example.org;boutique;client fidèle
+18-11-2025;9781857234701;1;17,07;nathan.leroy44@example.org;boutique;RAS
+03-01-2026;9798739955418;1;19,33;lea.simon44@example.org;site;client fidèle
+20-03-2026;9783442454181;1;30,27;ines.fournier39@example.org;STORE;
+18-02-2026;9781440673641;1;32,79;camille.fournier91@example.org;en ligne;
+22-11-2025;9782221125779;2;35,82;ines.bertrand4@example.org;boutique;
+25-11-2025;9781335468437;2;5,95;ines.martin57@example.org;online;client fidèle
+01-01-2026;9781476873626;2;25,79;chloe.simon43@example.org;magasin;commande spéciale
+17-03-2026;9781322110233;2;28,01;zoe.lefebvre43@example.org;en ligne;client fidèle
+17-02-2026;9781177541923;1;21,96;lucas.roux24@example.org;STORE;client fidèle
+28-06-2026;9798596021639;1;22,71;emma.fournier37@example.org;boutique;commande spéciale
+26-02-2026;9780394299877;1;21,97;theo.fournier43@example.org;STORE;RAS
+23-11-2025;9789994910458;2;24,65;gabriel.lefebvre34@example.org;magasin;commande spéciale
+06-09-2025;9782702400500;1;16,57;gabriel.david63@example.org;magasin;
+03-01-2026;9780307291813;1;36,42;louis.morel58@example.org;Magasin;
+16-05-2026;9781250095275;2;17,8;nathan.morel20@example.org;boutique;client fidèle
+13-06-2026;9780451493835;1;11,49;lea.laurent48@example.org;magasin;
+12-10-2025;9788501110008;1;36,59;jules.martin44@example.org;en ligne;commande spéciale
+20-12-2025;9789583004506;1;14,76;lucas.roux44@example.org;MP;
+04-10-2025;9791000000839;1;39,62;chloe.moreau48@example.org;place de marché;
+29-01-2026;9781414340913;1;24,34;lucas.morel1@example.org;STORE;client fidèle
+24-04-2026;9780263098839;1;19,28;jules.laurent26@example.org;marketplace;RAS
+06-01-2026;9791000000349;1;21,19;ines.morel21@example.org;magasin;client fidèle
+23-04-2026;9780449024959;1;12,4;jade.martin79@example.org;web;commande spéciale
+08-06-2026;9780063273986;1;23,03;lucas.david87@example.org;site;
+18-07-2025;9789684196780;1;31,49;chloe.roux11@example.org;marketplace;
+13-10-2025;9781408839966;1;18,87;jules.martin79@example.org;boutique;
+30-10-2025;9798417660092;1;24,7;hugo.lefebvre76@example.org;site;commande spéciale
+02-07-2025;9783453089228;1;12,86;zoe.leroy22@example.org;magasin;commande spéciale
+11-05-2026;9780356502571;1;14,53;zoe.leroy13@example.org;Magasin;RAS
+07-02-2026;9781417601356;1;35,72;emma.bertrand2@example.org;web;commande spéciale
+24-06-2026;9781101137833;1;11,1;jade.michel38@example.org;Magasin;RAS
+28-01-2026;9781597223072;1;5,56;zoe.david72@example.org;boutique;
+24-09-2025;9782702411933;1;33,54;gabriel.moreau57@example.org;en ligne;RAS
+15-06-2026;9780833589484;1;20,2;theo.laurent79@example.org;boutique;commande spéciale
+27-03-2026;9781433231933;1;15,33;manon.michel79@example.org;boutique;RAS
+18-04-2026;9780070165694;2;13,33;ines.simon56@example.org;MP;
+12-09-2025;9780049140172;1;4,86;emma.david49@example.org;magasin;
+16-04-2026;9780224617253;1;31,6;jade.michel54@example.org;site;RAS
+01-09-2025;9781593157135;0;10,94;emma.roux19@example.org;marketplace;client fidèle
+29-05-2026;9781473888357;3;27,35;manon.michel72@example.org;online;commande spéciale
+27-07-2025;9781935682028;1;12,66;manon.martin50@example.org;magasin;client fidèle
+28-01-2026;9788481096156;3;29,52;ines.lefebvre65@example.org;boutique;RAS
+13-11-2025;9781883217044;1;25,18;ines.david58@example.org;Magasin;commande spéciale
+07-06-2026;9791000000409;2;17,66;zoe.leroy50@example.org;site;commande spéciale
+28-12-2025;9780590928861;1;30,51;jade.david96@example.org;Magasin;commande spéciale
+11-11-2025;9780553418286;1;25,8;chloe.michel29@example.org;web;commande spéciale
+05-01-2026;9780300278576;1;38,56;lucas.moreau33@example.org;STORE;RAS
+01-08-2025;9780141378893;1;39,22;gabriel.lefebvre33@example.org;Magasin;client fidèle
+05-01-2026;9780449908587;1;16,03;lea.roux68@example.org;en ligne;RAS
+02-06-2026;9780553902716;2;18,97;nathan.moreau29@example.org;en ligne;RAS
+07-04-2026;9781432899011;1;7,6;manon.moreau24@example.org;web;RAS
+14-03-2026;9781593976064;3;36,33;gabriel.bertrand27@example.org;web;
+09-06-2026;9788416906550;1;6,19;manon.dubois27@example.org;web;
+01-07-2025;9781108057875;1;39,25;lea.bertrand63@example.org;magasin;client fidèle
+16-09-2025;9780060291693;1;23,22;lucas.lefebvre84@example.org;STORE;RAS
+25-01-2026;9780451622891;1;5,24;emma.lefebvre3@example.org;boutique;commande spéciale
+14-05-2026;9781886463172;1;8,5;theo.moreau41@example.org;boutique;commande spéciale
+04-07-2025;9781177541923;1;30,4;lucas.bernard29@example.org;magasin;
+06-07-2025;9781841593326;2;36,26;emma.bernard52@example.org;Magasin;commande spéciale
+11-10-2025;9780708313503;1;14,5;zoe.moreau20@example.org;magasin;RAS
+12-08-2025;9785763905953;1;14,48;lea.dubois53@example.org;Magasin;RAS
+20-01-2026;9781982127794;1;12,35;jade.bernard53@example.org;STORE;commande spéciale
+12-07-2025;9780894108815;2;13,37;ines.simon44@example.org;boutique;client fidèle
+10-09-2025;9791000000169;1;13,07;arthur.bertrand8@example.org;boutique;commande spéciale
+08-12-2025;9781665141253;1;35,98;lucas.bertrand88@example.org;Magasin;RAS
+22-07-2025;9780263138382;1;15,8;lea.morel10@example.org;boutique;RAS
+25-03-2026;9780263098839;2;20,56;chloe.morel24@example.org;boutique;client fidèle
+05-10-2025;9780373107148;2;31,41;hugo.martin81@example.org;STORE;client fidèle
+22-11-2025;9781250095275;1;15,82;lea.fournier54@example.org;STORE;commande spéciale
+29-07-2025;9791000000189;1;15,01;emma.fournier14@example.org;boutique;
+16-11-2025;9798737952464;1;13,88;ines.david88@example.org;STORE;RAS
+20-04-2026;9780263790429;1;5,72;lea.fournier84@example.org;site;client fidèle
+04-12-2025;9781481413770;1;32,08;nathan.martin78@example.org;boutique;
+17-01-2026;9786070793677;1;13,27;gabriel.moreau98@example.org;boutique;commande spéciale
+04-03-2026;9780521205542;2;29,28;chloe.lefebvre90@example.org;magasin;client fidèle
+03-04-2026;9791000000239;1;18,86;manon.moreau58@example.org;Magasin;RAS
+28-05-2026;9781857987386;1;20,87;manon.lefebvre8@example.org;magasin;client fidèle
+22-12-2025;9798791612762;2;26,53;hugo.fournier28@example.org;online;RAS
+25-05-2026;9780749459116;2;17,74;nathan.lefebvre49@example.org;Magasin;RAS
+29-12-2025;9789144023649;1;38,2;hugo.bertrand73@example.org;boutique;
+25-06-2026;9780375507250;0;28,77;lucas.fournier76@example.org;magasin;
+07-05-2026;9781419772955;1;13,26;lea.lefebvre76@example.org;web;RAS
+09-01-2026;9780140449532;1;5,49;manon.bertrand39@example.org;marketplace;
+26-06-2026;9781679583353;2;14,98;lucas.fournier20@example.org;STORE;commande spéciale
+05-01-2026;9781512486162;1;22,11;jade.fournier48@example.org;magasin;commande spéciale
+17-01-2026;9780134101477;2;21,1;ines.michel19@example.org;boutique;
+24-04-2026;9781593157135;2;19,04;emma.fournier81@example.org;Magasin;client fidèle
+03-08-2025;9783849536206;1;22,64;camille.bertrand16@example.org;site;RAS
+21-10-2025;9780809533756;2;25,3;lea.roux36@example.org;place de marché;client fidèle
+11-04-2026;9780141309750;1;6,23;chloe.dubois64@example.org;Magasin;
+28-03-2026;9784871877664;1;34,38;zoe.lefebvre63@example.org;online;RAS
+13-08-2025;9780765316974;1;20,93;jade.leroy17@example.org;site;commande spéciale
+19-12-2025;9780451118103;1;31,86;jade.laurent56@example.org;magasin;
+16-02-2026;9781538745748;1;38,55;lucas.michel90@example.org;place de marché;commande spéciale
+30-04-2026;9785171001605;1;5,81;nathan.moreau48@example.org;online;commande spéciale
+18-04-2026;9791000000589;2;20,77;theo.bertrand68@example.org;boutique;client fidèle
+25-07-2025;9781280839290;1;19,52;manon.morel93@example.org;Magasin;
+05-10-2025;9798716103634;1;24,01;nathan.lefebvre94@example.org;online;commande spéciale
+16-02-2026;9791000000689;0;22,17;hugo.simon79@example.org;STORE;commande spéciale
+05-12-2025;9780416027020;1;17,7;arthur.morel16@example.org;web;client fidèle
+19-07-2025;9780373024209;1;11,59;jade.laurent55@example.org;magasin;RAS
+09-03-2026;9780263096347;1;24,63;chloe.moreau48@example.org;boutique;commande spéciale
+17-10-2025;9781177541923;1;31,57;arthur.leroy28@example.org;site;
+18-01-2026;9788447333165;1;32,74;arthur.simon30@example.org;boutique;RAS
+17-12-2025;9788191032406;1;10,58;emma.roux87@example.org;STORE;commande spéciale
+09-03-2026;978083177404X;1;8,89;louis.leroy21@example.org;online;client fidèle
+06-06-2026;9780593642009;1;30,91;nathan.lefebvre30@example.org;boutique;RAS
+09-09-2025;9781976016301;1;20,09;zoe.leroy56@example.org;en ligne;
+05-07-2025;9781409413615;1;27,55;zoe.simon98@example.org;place de marché;commande spéciale
+09-12-2025;9780449235997;3;29,02;arthur.bertrand62@example.org;site;RAS
+13-10-2025;9789388144346;3;28,19;chloe.laurent83@example.org;STORE;RAS
+04-11-2025;9788422686569;3;7,21;ines.lefebvre46@example.org;magasin;client fidèle
+11-09-2025;9791000000239;3;10,09;manon.leroy5@example.org;web;RAS
+25-06-2026;9780393925340;1;27,29;gabriel.dubois79@example.org;STORE;RAS
+22-04-2026;9780804168441;1;17,87;zoe.martin67@example.org;STORE;client fidèle
+21-01-2026;9781559348263;2;12,57;manon.laurent14@example.org;magasin;
+04-08-2025;9782266208178;1;34,88;arthur.laurent80@example.org;web;
+26-04-2026;9780862201234;1;38,4;nathan.fournier68@example.org;magasin;RAS
+24-05-2026;9780525572923;1;36,14;nathan.moreau20@example.org;boutique;
+12-12-2025;9780805035650;1;32,7;lea.bernard12@example.org;STORE;commande spéciale
+20-07-2025;9780393925340;1;20,72;jade.martin83@example.org;site;RAS
+27-01-2026;979821701436X;2;35,61;louis.michel24@example.org;en ligne;RAS
+19-12-2025;9791000000329;1;19,23;louis.martin23@example.org;site;
+22-12-2025;9780224018616;1;18,28;louis.dubois85@example.org;web;client fidèle
+03-07-2025;9780205060450;2;7,45;zoe.moreau86@example.org;STORE;commande spéciale
+14-01-2026;9798532977518;3;37,01;ines.fournier34@example.org;Magasin;
+04-06-2026;9781735056692;1;32,68;hugo.roux68@example.org;site;
+22-04-2026;9781932796575;1;18,35;ines.dubois10@example.org;STORE;
+13-08-2025;9780216897984;1;36,81;louis.laurent82@example.org;site;client fidèle
+21-01-2026;9780141309750;1;5,97;ines.michel33@example.org;magasin;RAS
+19-12-2025;9780571226856;1;12,23;chloe.michel51@example.org;STORE;commande spéciale
+07-07-2025;9780061244650;1;39,21;lea.simon56@example.org;en ligne;
+10-02-2026;9798739955418;1;28,11;arthur.leroy22@example.org;magasin;RAS
+29-09-2025;9798669140557;2;25,48;louis.bernard75@example.org;site;
+22-08-2025;9780679803072;1;24,69;manon.leroy15@example.org;en ligne;commande spéciale
+04-07-2025;9781433207938;1;33,37;lucas.bertrand91@example.org;Magasin;RAS
+24-04-2026;9788448034580;1;14,57;louis.michel42@example.org;marketplace;client fidèle
+31-08-2025;9788374801171;1;29,66;nathan.lefebvre39@example.org;magasin;RAS
+14-05-2026;9791000000259;1;15,22;theo.michel80@example.org;Magasin;
+16-05-2026;9781436223881;1;28,96;emma.lefebvre24@example.org;magasin;commande spéciale
+14-01-2026;9780451168283;2;16,07;nathan.michel40@example.org;STORE;
+22-04-2026;9783442454181;0;38,72;chloe.morel20@example.org;site;commande spéciale
+14-07-2025;9791000000149;1;11,25;ines.dubois28@example.org;magasin;RAS
+31-03-2026;9780072957549;1;38,65;theo.dubois70@example.org;STORE;
+07-07-2025;9789000338658;1;35,7;manon.michel23@example.org;MP;RAS
+11-08-2025;9789578278035;1;32,12;camille.dubois41@example.org;boutique;client fidèle
+07-11-2025;9780263762495;1;19,51;jules.fournier58@example.org;MP;commande spéciale
+07-12-2025;9781547277322;1;37,02;chloe.david82@example.org;Magasin;RAS
+04-02-2026;9780521205542;1;21,13;jules.leroy90@example.org;online;commande spéciale
+07-09-2025;9788476603819;1;27,52;louis.morel38@example.org;magasin;RAS
+20-10-2025;978030747249X;1;32,51;lea.martin89@example.org;Magasin;commande spéciale
+13-09-2025;9788418550928;2;32,97;emma.simon36@example.org;marketplace;RAS
+26-11-2025;9791000000079;1;30,87;chloe.roux23@example.org;Magasin;RAS
+08-02-2026;9780984358137;2;31,17;hugo.roux71@example.org;MP;client fidèle
+21-10-2025;9780393963298;1;32,99;louis.morel66@example.org;web;
+28-05-2026;978147893377X;3;26,68;zoe.leroy84@example.org;MP;commande spéciale
+02-03-2026;9791000000069;0;37,02;manon.dubois84@example.org;boutique;
+19-02-2026;9781547277322;1;7,3;lucas.roux31@example.org;magasin;RAS
+04-02-2026;9781691553822;1;11,12;lea.david25@example.org;en ligne;
+28-06-2026;9781512486162;2;16,75;arthur.fournier84@example.org;magasin;RAS
+08-01-2026;9780072466652;2;24,03;theo.roux37@example.org;Magasin;commande spéciale
+25-12-2025;9780449024959;1;19,23;gabriel.dubois99@example.org;magasin;client fidèle
+06-07-2025;9781595583260;1;24,99;lea.roux33@example.org;STORE;
+20-11-2025;9780061895968;1;36,37;ines.simon13@example.org;web;client fidèle
+05-10-2025;9798417660092;1;16,09;lea.simon38@example.org;site;client fidèle
+15-10-2025;9788432217456;1;8,38;nathan.martin77@example.org;Magasin;
+23-12-2025;9789020554113;1;39,1;gabriel.moreau52@example.org;STORE;commande spéciale
+06-07-2025;9791000000679;2;30,48;manon.bernard63@example.org;web;RAS
+11-09-2025;9780593109069;1;9,25;arthur.fournier65@example.org;Magasin;commande spéciale
+21-07-2025;9780224018616;1;38,34;louis.moreau82@example.org;site;commande spéciale
+11-08-2025;9780425029459;1;32,55;hugo.simon40@example.org;Magasin;
+11-12-2025;9781417727582;1;33,57;lea.dubois57@example.org;en ligne;commande spéciale
+02-02-2026;9798753137173;2;22,13;chloe.bernard12@example.org;MP;RAS
+14-10-2025;9788828350453;0;8,22;camille.leroy65@example.org;online;client fidèle
+01-11-2025;9780345313904;2;30,41;ines.morel75@example.org;STORE;commande spéciale
+14-07-2025;9780471119463;1;37,34;nathan.leroy3@example.org;web;commande spéciale
+30-11-2025;9789994910458;3;29,82;jules.martin17@example.org;site;commande spéciale
+03-12-2025;9781408999011;2;5,34;lea.lefebvre6@example.org;boutique;commande spéciale
+02-02-2026;9781591846918;1;23,98;zoe.david81@example.org;boutique;commande spéciale
+02-08-2025;9780321793102;1;24,82;camille.moreau86@example.org;boutique;
+21-11-2025;9780263757538;1;28,02;manon.moreau93@example.org;marketplace;commande spéciale
+05-09-2025;9798454025748;1;17,29;jules.morel3@example.org;STORE;client fidèle
+01-07-2025;9781442421844;1;14,85;chloe.bernard31@example.org;en ligne;client fidèle
+19-02-2026;9798627159133;1;6,18;arthur.morel19@example.org;boutique;RAS
+02-05-2026;9791000000859;1;31,23;zoe.dubois85@example.org;site;RAS
+09-08-2025;9781534431010;1;31,56;arthur.bertrand71@example.org;Magasin;client fidèle
+01-03-2026;9781119675655;1;17,64;lea.moreau65@example.org;Magasin;commande spéciale
+09-08-2025;9783442424504;2;25,97;lea.leroy74@example.org;boutique;client fidèle
+26-05-2026;9780393966435;2;5,98;arthur.moreau5@example.org;en ligne;
+27-04-2026;9780671692650;1;30,67;gabriel.leroy11@example.org;Magasin;client fidèle
+23-10-2025;9781436253796;1;24,17;camille.lefebvre75@example.org;online;client fidèle
+12-06-2026;9780434007493;1;26,93;nathan.simon63@example.org;en ligne;commande spéciale
+14-05-2026;9781605090962;3;8,25;ines.moreau85@example.org;Magasin;RAS
+17-07-2025;9780451622891;3;33,78;chloe.morel31@example.org;web;
+11-06-2026;9798846711082;1;5,6;gabriel.moreau67@example.org;STORE;client fidèle
+19-02-2026;9780754000471;1;6,43;zoe.david10@example.org;en ligne;client fidèle
+13-04-2026;9780263121407;1;6,45;lucas.simon88@example.org;STORE;client fidèle
+21-10-2025;9780590113076;1;14,5;jules.lefebvre98@example.org;online;
+23-06-2026;9791000000929;1;23,11;louis.david92@example.org;boutique;RAS
+24-08-2025;9780061741005;3;30,71;zoe.morel18@example.org;place de marché;RAS
+19-11-2025;9780553902716;2;26,4;arthur.morel9@example.org;site;
+29-11-2025;9781713532125;1;20,2;arthur.leroy89@example.org;site;commande spéciale
+21-11-2025;9798739934543;3;5,31;theo.leroy55@example.org;online;client fidèle
+25-03-2026;9780894108815;1;14,18;gabriel.dubois99@example.org;STORE;
+12-03-2026;9780833566980;1;24,43;gabriel.lefebvre11@example.org;magasin;commande spéciale
+30-08-2025;9788422686569;1;32,06;hugo.moreau21@example.org;en ligne;
+25-07-2025;9780833589484;1;14,9;camille.lefebvre32@example.org;boutique;
+09-01-2026;9788432217456;1;23,27;arthur.david33@example.org;magasin;commande spéciale
+24-05-2026;9780736423298;1;32,75;hugo.leroy13@example.org;online;
+01-05-2026;9780267171989;2;37,55;emma.laurent52@example.org;boutique;client fidèle
+12-07-2025;9798377220947;2;8,79;chloe.martin12@example.org;Magasin;client fidèle
+25-11-2025;9798753137173;1;7,46;manon.simon89@example.org;online;client fidèle
+19-08-2025;9780345337757;2;10,38;lucas.roux11@example.org;online;RAS
+03-11-2025;9780263122169;1;31,37;manon.moreau94@example.org;boutique;client fidèle
+12-01-2026;9780739371077;1;14,98;ines.moreau49@example.org;boutique;client fidèle
+29-05-2026;9780606283892;1;8,87;ines.laurent14@example.org;magasin;commande spéciale
+14-07-2025;9781521105948;1;17,92;arthur.bernard32@example.org;Magasin;
+13-10-2025;9781451686296;2;17,26;emma.dubois10@example.org;en ligne;client fidèle
+28-05-2026;9788501117687;1;37,33;hugo.bertrand97@example.org;STORE;RAS
+13-04-2026;9780062225719;1;15,69;gabriel.bernard16@example.org;online;RAS
+16-06-2026;9789868856097;1;26,49;theo.laurent95@example.org;boutique;
+25-06-2026;9780385094436;1;34,63;ines.simon27@example.org;Magasin;
+10-12-2025;9780671868376;3;18,71;emma.bertrand83@example.org;en ligne;RAS
+24-08-2025;9780571226856;2;25,05;theo.martin24@example.org;boutique;RAS
+25-12-2025;9780393963298;1;12,64;lucas.leroy8@example.org;boutique;commande spéciale
+18-05-2026;9781629376363;2;10,57;camille.simon4@example.org;MP;RAS
+12-03-2026;9781417999729;1;7,62;zoe.morel28@example.org;STORE;
+28-11-2025;9791000000359;1;10,9;arthur.lefebvre63@example.org;Magasin;commande spéciale
+18-11-2025;9780393966848;1;32,62;hugo.martin40@example.org;Magasin;RAS
+28-07-2025;9780007493579;1;18,18;emma.michel39@example.org;Magasin;RAS
+09-06-2026;9780451168283;1;17,42;chloe.lefebvre60@example.org;boutique;commande spéciale
+14-04-2026;9788535931327;3;35,13;jade.martin75@example.org;site;client fidèle
+12-07-2025;9791000000089;2;5,36;louis.fournier47@example.org;STORE;RAS
+29-12-2025;9780807275122;1;19,9;lea.morel56@example.org;site;client fidèle
+11-05-2026;9781539145943;0;12,38;manon.lefebvre4@example.org;Magasin;commande spéciale
+20-01-2026;9791000000779;1;28,16;nathan.bertrand62@example.org;STORE;commande spéciale
+17-06-2026;9780141378480;2;12,2;lucas.martin84@example.org;boutique;commande spéciale
+20-06-2026;9781613822494;1;13,23;manon.laurent20@example.org;online;RAS
+31-12-2025;9781338611991;1;13,1;lea.morel64@example.org;STORE;client fidèle
+12-11-2025;9780517082461;3;15,34;lucas.bertrand80@example.org;STORE;
+17-03-2026;9781984842305;1;20,38;chloe.bertrand14@example.org;online;
+25-11-2025;9780061351426;2;27,82;emma.lefebvre94@example.org;site;client fidèle
+06-09-2025;9780671255961;1;28,67;camille.dubois28@example.org;boutique;RAS
+06-06-2026;9791000000389;1;18,22;zoe.michel35@example.org;magasin;RAS
+19-11-2025;9780434007493;1;37,17;ines.david47@example.org;site;RAS
+09-04-2026;9781481428149;1;7,31;nathan.martin45@example.org;magasin;RAS
+28-06-2026;9780062839701;2;23,33;louis.martin62@example.org;place de marché;client fidèle
+22-05-2026;9783423262644;1;10,51;emma.lefebvre54@example.org;Magasin;
+17-11-2025;9781775415190;1;11,94;manon.moreau97@example.org;boutique;RAS
+19-02-2026;9781547236091;2;9,22;zoe.leroy28@example.org;online;RAS
+23-04-2026;9780718188740;1;38,43;nathan.martin2@example.org;web;commande spéciale
+08-03-2026;9780425029459;2;6,9;chloe.david81@example.org;STORE;commande spéciale
+22-06-2026;9780060934514;1;35,55;jade.morel44@example.org;marketplace;client fidèle
+04-08-2025;9783453186880;3;21,36;nathan.martin46@example.org;web;commande spéciale
+17-04-2026;9780896216921;1;24,19;hugo.martin86@example.org;STORE;RAS
+15-05-2026;9780061652264;2;21,03;hugo.bernard17@example.org;Magasin;
+18-11-2025;9791000000659;1;15,52;ines.martin99@example.org;marketplace;commande spéciale
+18-02-2026;9782018055524;3;17,71;camille.leroy20@example.org;online;commande spéciale
+10-07-2025;9783552044319;1;21,21;louis.martin72@example.org;Magasin;
+19-09-2025;9791000000689;2;22,99;manon.simon24@example.org;boutique;RAS
+26-05-2026;9780786936137;1;19,14;jules.dubois31@example.org;boutique;commande spéciale
+15-12-2025;9798986868035;1;32,1;zoe.simon15@example.org;Magasin;RAS
+14-05-2026;9780241968154;1;11,46;jules.morel56@example.org;magasin;
+22-11-2025;9791000000639;1;16,4;louis.morel94@example.org;en ligne;client fidèle
+22-10-2025;9791000000579;1;20,21;gabriel.lefebvre84@example.org;STORE;commande spéciale
+06-03-2026;9780131105409;1;23,66;camille.roux44@example.org;magasin;
+23-07-2025;9780550200686;1;36,67;louis.moreau51@example.org;Magasin;
+12-06-2026;978006024803X;1;10,8;gabriel.simon14@example.org;site;commande spéciale
+19-06-2026;9781955876162;1;32,58;hugo.david71@example.org;STORE;commande spéciale
+13-12-2025;9791000000379;1;38,29;manon.michel19@example.org;site;RAS
+14-01-2026;9781250790514;1;37,39;chloe.fournier74@example.org;STORE;
+10-01-2026;9780060829575;1;5,69;gabriel.roux66@example.org;STORE;RAS
+14-02-2026;9780263122169;1;38,4;lea.martin51@example.org;Magasin;client fidèle
+16-09-2025;9781886463172;1;7,74;zoe.roux31@example.org;Magasin;RAS
+10-12-2025;9780416027020;1;6,35;louis.laurent74@example.org;boutique;commande spéciale
+26-08-2025;9780718033323;2;17,12;emma.laurent32@example.org;online;commande spéciale
+16-11-2025;9781306337564;1;5,89;chloe.michel45@example.org;magasin;RAS
+14-02-2026;9781850180005;1;25,03;gabriel.bertrand76@example.org;web;RAS
+21-10-2025;9785389061606;3;30,17;arthur.moreau44@example.org;online;RAS
+03-01-2026;9781726017640;2;39,55;lea.dubois32@example.org;magasin;
+22-12-2025;9780451168283;1;35,03;lucas.morel76@example.org;magasin;RAS
+11-09-2025;9781957568225;1;16,55;jade.michel3@example.org;magasin;
+01-07-2025;9781984842305;2;36,96;chloe.michel84@example.org;magasin;RAS
+14-10-2025;9780380813018;1;36,72;lea.fournier32@example.org;online;client fidèle
+05-10-2025;9781250883520;1;15,94;manon.roux87@example.org;Magasin;client fidèle
+11-02-2026;9781984801494;3;30,57;jules.michel6@example.org;site;
+10-01-2026;9780313207693;2;32,37;hugo.fournier57@example.org;magasin;client fidèle
+20-11-2025;9783455302790;1;30,33;arthur.laurent37@example.org;marketplace;RAS
+10-02-2026;9782021011968;1;27,05;jade.moreau65@example.org;Magasin;client fidèle
+10-08-2025;9791000000309;1;21,42;arthur.morel39@example.org;magasin;RAS
+08-11-2025;9791000000979;1;22,26;gabriel.bernard68@example.org;web;client fidèle
+03-04-2026;9780316310420;1;6,87;louis.lefebvre65@example.org;STORE;RAS
+18-05-2026;9781448105618;1;30,19;arthur.dubois54@example.org;web;RAS
+17-06-2026;9781976087097;1;26,91;emma.moreau92@example.org;web;RAS
+26-04-2026;9788491052371;2;36,26;louis.bernard41@example.org;magasin;RAS
+23-06-2026;9780880881326;1;34,99;emma.david90@example.org;magasin;client fidèle
+17-11-2025;9791000000729;1;37,17;lucas.michel59@example.org;Magasin;
+07-06-2026;9781421809083;1;38,15;jade.michel1@example.org;STORE;
+07-04-2026;9780593642009;2;24,92;nathan.michel88@example.org;STORE;commande spéciale
+31-05-2026;9781857157246;1;32,36;zoe.morel52@example.org;STORE;client fidèle
+07-02-2026;9782724215908;1;13,41;jade.martin72@example.org;en ligne;commande spéciale
+14-03-2026;9780606283892;2;16,61;emma.roux56@example.org;STORE;
+12-12-2025;9791000000509;1;21,88;jules.laurent74@example.org;Magasin;commande spéciale
+30-04-2026;9781250879530;1;39,76;zoe.simon39@example.org;STORE;client fidèle
+03-07-2025;9780718033323;1;29,27;lucas.bertrand6@example.org;Magasin;client fidèle
+26-09-2025;9781841593326;2;21,05;hugo.david68@example.org;online;RAS
+19-11-2025;9780380821099;1;32,83;emma.laurent54@example.org;online;
+20-07-2025;9789507511288;1;35,18;manon.moreau8@example.org;boutique;
+22-06-2026;9788448034580;0;33,55;hugo.moreau3@example.org;magasin;commande spéciale
+27-08-2025;9780810918849;2;13,8;camille.michel46@example.org;STORE;client fidèle
+13-12-2025;9781950508914;1;15,82;emma.bertrand38@example.org;STORE;commande spéciale
+18-01-2026;9798454025748;1;14,29;gabriel.roux59@example.org;STORE;client fidèle
+28-06-2026;9791000000789;1;15,74;zoe.roux70@example.org;boutique;RAS
+19-02-2026;9780140209723;3;27,75;ines.simon51@example.org;online;commande spéciale
+07-02-2026;9791000000989;2;27,76;chloe.morel70@example.org;place de marché;RAS
+29-12-2025;9781534431010;2;23,52;manon.bernard60@example.org;web;commande spéciale
+15-06-2026;9781440673641;3;29,01;nathan.morel95@example.org;Magasin;commande spéciale
+03-02-2026;9791000000589;1;26,94;gabriel.bertrand22@example.org;boutique;
+16-06-2026;9791000000609;1;9,36;lucas.fournier15@example.org;Magasin;
+20-02-2026;9780070441606;1;24,49;jules.bernard1@example.org;marketplace;RAS
+11-03-2026;9781408880715;1;31,37;ines.fournier93@example.org;web;RAS
+05-10-2025;9788835161189;3;20,58;nathan.dubois16@example.org;en ligne;
+19-04-2026;9780606309912;1;36,33;jade.dubois40@example.org;en ligne;
+02-10-2025;9785882156922;1;18,33;gabriel.michel28@example.org;boutique;client fidèle
+13-06-2026;9781594634956;1;10,01;chloe.bertrand17@example.org;online;
+01-11-2025;9780590113076;1;38,29;camille.moreau7@example.org;Magasin;RAS
+01-05-2026;9781322110233;1;14,55;manon.dubois8@example.org;boutique;commande spéciale
+28-03-2026;9781436223881;1;38,06;jules.lefebvre36@example.org;en ligne;client fidèle
+04-05-2026;9780879015497;2;13,24;louis.leroy7@example.org;Magasin;commande spéciale
+13-11-2025;9780571226856;1;37,35;chloe.bernard4@example.org;magasin;commande spéciale
+19-08-2025;9782018055524;1;12,84;ines.bertrand89@example.org;boutique;client fidèle
+05-09-2025;9781322110233;2;21,3;hugo.lefebvre56@example.org;MP;
+11-02-2026;9780061944727;1;9,01;lucas.lefebvre29@example.org;STORE;
+12-04-2026;9791000000509;1;21,07;nathan.dubois50@example.org;Magasin;
+21-12-2025;9791000000139;1;25,04;emma.roux35@example.org;boutique;client fidèle
+27-07-2025;9781804992326;1;6,94;jules.david13@example.org;boutique;RAS
+22-10-2025;9780393966435;1;6,29;louis.lefebvre80@example.org;en ligne;client fidèle
+25-11-2025;9781595583260;1;11,19;lea.fournier17@example.org;magasin;RAS
+27-08-2025;9780765314673;1;9,74;zoe.simon77@example.org;boutique;client fidèle
+02-01-2026;9780786215133;1;37,07;theo.morel24@example.org;magasin;
+15-08-2025;9780140139198;3;11,12;louis.martin91@example.org;online;RAS
+10-06-2026;9780449235997;1;6,12;manon.fournier33@example.org;web;
+19-10-2025;9780230015760;1;13,38;louis.bertrand73@example.org;Magasin;client fidèle
+07-11-2025;9781857987386;1;31,41;camille.david8@example.org;Magasin;commande spéciale
+23-09-2025;9791000000439;2;20,13;hugo.simon21@example.org;online;commande spéciale
+18-05-2026;9780786189694;3;37,07;ines.david62@example.org;magasin;commande spéciale
+20-10-2025;9780263757538;1;17,67;jules.martin6@example.org;magasin;
+06-06-2026;9780256234787;1;39,03;ines.leroy94@example.org;online;
+01-03-2026;9791000000569;1;16,21;jade.simon71@example.org;online;client fidèle
+23-09-2025;9780736628174;1;38,62;camille.moreau38@example.org;STORE;commande spéciale
+23-05-2026;9780416027020;1;29,7;jade.simon84@example.org;online;
+28-03-2026;9788804507727;3;31,8;ines.laurent96@example.org;online;RAS
+18-12-2025;9780800854539;1;22,03;ines.morel9@example.org;en ligne;client fidèle
+13-03-2026;9789020632729;1;18,19;lucas.roux53@example.org;STORE;
+07-07-2025;9780606309912;2;27,18;hugo.bertrand29@example.org;online;RAS
+17-09-2025;9781775415190;1;18,49;manon.leroy33@example.org;web;
+15-04-2026;9780590411011;1;35,91;ines.bernard94@example.org;STORE;commande spéciale
+03-03-2026;9791000000419;1;17,54;chloe.lefebvre83@example.org;boutique;RAS
+20-01-2026;9780373104420;1;6,98;emma.michel40@example.org;boutique;
+13-05-2026;9780945001102;1;23,8;hugo.morel63@example.org;boutique;RAS
+13-04-2026;9780141018980;1;26,45;chloe.simon82@example.org;boutique;client fidèle
+09-06-2026;9788448034580;1;10,38;lucas.martin12@example.org;STORE;RAS
+07-09-2025;9780061003776;1;20,81;gabriel.david83@example.org;STORE;RAS
+28-07-2025;9791000000459;1;23,56;chloe.david85@example.org;STORE;RAS
+23-01-2026;9780451168283;1;5,35;zoe.leroy20@example.org;en ligne;client fidèle
+06-02-2026;9780230015760;1;15,42;hugo.michel88@example.org;magasin;commande spéciale
+16-04-2026;9782843623103;1;22,84;louis.david96@example.org;en ligne;client fidèle
+09-07-2025;9789795533412;1;25,01;ines.morel82@example.org;MP;RAS
+02-03-2026;9788074770814;1;17,96;emma.moreau19@example.org;STORE;commande spéciale
+20-09-2025;9781421889276;1;37,97;gabriel.leroy92@example.org;boutique;client fidèle
+29-07-2025;9798589452563;1;21,05;chloe.morel87@example.org;boutique;client fidèle
+06-11-2025;9781984842305;2;19,74;jade.bernard6@example.org;STORE;client fidèle
+30-11-2025;9788417454432;2;18,18;jules.michel66@example.org;Magasin;client fidèle
+08-04-2026;9780714822761;2;30,92;arthur.roux22@example.org;STORE;
+06-05-2026;9791000000169;0;35,99;hugo.david98@example.org;place de marché;
+15-05-2026;9787229030933;1;38,38;ines.michel12@example.org;web;commande spéciale
+17-11-2025;9789508700568;2;39,02;hugo.bertrand84@example.org;web;RAS
+05-04-2026;9780321623539;1;8,79;chloe.laurent61@example.org;online;commande spéciale
+08-09-2025;9780756992248;2;37,01;arthur.lefebvre78@example.org;boutique;
+09-05-2026;9780439982566;2;7,72;louis.dubois4@example.org;site;RAS
+19-08-2025;9780263102734;2;10,89;camille.david20@example.org;boutique;
+03-01-2026;9781101160459;1;37,36;hugo.fournier51@example.org;boutique;client fidèle
+27-11-2025;9780061002878;1;24,09;lea.dubois63@example.org;site;RAS
+01-09-2025;9780385233132;1;19,6;louis.martin15@example.org;boutique;RAS
+06-05-2026;9780061492570;2;38,08;nathan.david99@example.org;online;
+11-12-2025;9788445007037;3;29,19;camille.martin90@example.org;magasin;
+01-06-2026;9781428811195;1;31,11;lea.lefebvre49@example.org;en ligne;client fidèle
+17-10-2025;9788429776317;2;37,74;theo.leroy31@example.org;en ligne;client fidèle
+19-03-2026;9791000000339;2;8,53;lea.simon37@example.org;place de marché;client fidèle
+08-02-2026;9780060721428;1;20,97;jules.bertrand89@example.org;Magasin;RAS
+05-03-2026;9780593109069;1;11,1;jules.fournier33@example.org;magasin;client fidèle
+30-10-2025;9780263121407;0;29,95;camille.fournier70@example.org;boutique;
+17-04-2026;9781974343539;1;34,14;louis.bernard49@example.org;magasin;RAS
+04-05-2026;9780466208349;2;10,8;lea.leroy30@example.org;boutique;commande spéciale
+27-12-2025;9780718188740;2;18,11;lucas.dubois84@example.org;site;client fidèle
+15-08-2025;9788492412402;1;19,96;lucas.bertrand38@example.org;web;RAS
+19-10-2025;9781508279327;2;21,99;camille.bernard96@example.org;magasin;RAS
+16-03-2026;9780062273208;1;19,83;zoe.morel95@example.org;Magasin;RAS
+03-05-2026;9780062019813;1;7,89;chloe.leroy51@example.org;en ligne;
+07-02-2026;9780843960044;1;5,06;louis.martin79@example.org;en ligne;
+17-06-2026;9783453161818;3;16,47;camille.laurent87@example.org;magasin;RAS
+10-10-2025;9781508217022;1;14,45;lea.martin86@example.org;STORE;
+13-12-2025;9788804686521;1;23,18;ines.dubois71@example.org;STORE;RAS
+08-03-2026;9788445073834;1;32,17;manon.michel58@example.org;Magasin;
+04-07-2025;9780896216921;1;12,54;camille.david58@example.org;Magasin;RAS
+28-11-2025;9781760892531;1;37,56;hugo.simon42@example.org;magasin;commande spéciale
+22-09-2025;9780812540116;1;27,2;zoe.moreau93@example.org;boutique;RAS
+16-04-2026;9781439116050;1;28,91;hugo.dubois2@example.org;STORE;RAS
+19-09-2025;9781591846918;2;13,55;gabriel.moreau50@example.org;magasin;RAS
+13-05-2026;9781250242754;1;5,54;theo.martin52@example.org;STORE;commande spéciale
+11-06-2026;9780451525918;1;33,95;arthur.morel10@example.org;magasin;
+08-06-2026;978006024803X;1;16,95;zoe.roux56@example.org;Magasin;commande spéciale
+19-05-2026;9780062111234;1;36,16;manon.fournier8@example.org;MP;commande spéciale
+06-05-2026;9780263790429;1;15,04;lea.moreau70@example.org;site;RAS
+02-09-2025;9780804168441;0;38,09;manon.fournier43@example.org;Magasin;RAS
+21-06-2026;9781108057875;1;19,23;lea.roux44@example.org;boutique;
+21-01-2026;9798669140557;1;21,63;emma.morel13@example.org;Magasin;commande spéciale
+17-12-2025;9788476603819;3;21,6;zoe.morel6@example.org;boutique;RAS
+06-06-2026;9781591847816;1;13,41;lucas.moreau40@example.org;online;commande spéciale
+22-09-2025;9781306337564;1;9,31;chloe.bertrand20@example.org;magasin;client fidèle
+28-12-2025;9780393966435;1;28,92;manon.leroy73@example.org;online;
+01-01-2026;9780521205542;1;10,68;zoe.dubois80@example.org;web;
+21-12-2025;9780373706099;1;28,73;camille.dubois90@example.org;STORE;client fidèle
+10-05-2026;9780263771213;1;18,69;gabriel.moreau92@example.org;STORE;
+24-11-2025;9781442006188;1;9,29;zoe.moreau75@example.org;web;client fidèle
+18-01-2026;9780679729525;1;9,13;hugo.roux10@example.org;Magasin;RAS
+24-01-2026;9791020900593;2;10,01;hugo.simon29@example.org;web;RAS
+02-07-2025;9791000000639;1;10,09;nathan.michel55@example.org;web;RAS
+31-07-2025;9780843929959;1;35,56;lea.simon51@example.org;boutique;RAS
+18-06-2026;9781950508914;1;35,43;chloe.michel22@example.org;Magasin;client fidèle
+20-10-2025;9781432645960;1;5,64;manon.laurent47@example.org;STORE;client fidèle
+30-08-2025;9780216897984;3;27,6;theo.moreau35@example.org;en ligne;commande spéciale
+13-08-2025;9781508217022;1;16,52;manon.laurent73@example.org;MP;
+25-11-2025;9791020900593;2;7,37;theo.dubois81@example.org;STORE;RAS
+16-03-2026;9781500420536;2;7,14;nathan.bernard53@example.org;STORE;
+25-05-2026;9780142427835;1;13,41;jade.laurent23@example.org;online;commande spéciale
+11-02-2026;9798589452563;1;12,09;arthur.simon98@example.org;magasin;client fidèle
+02-07-2025;9780446511070;1;33,16;manon.simon84@example.org;magasin;RAS
+21-10-2025;9780263758993;1;35,77;louis.david31@example.org;site;RAS
+24-02-2026;9781408880715;2;10,57;ines.bertrand26@example.org;magasin;
+15-03-2026;9780263098839;1;18,82;theo.moreau96@example.org;Magasin;client fidèle
+14-06-2026;9782075094450;3;37,77;theo.moreau96@example.org;magasin;commande spéciale
+22-05-2026;9785811232321;3;26,87;camille.michel54@example.org;place de marché;client fidèle
+16-01-2026;9780020701705;2;17,87;gabriel.moreau96@example.org;online;commande spéciale
+07-05-2026;9788494945786;2;9,71;lea.leroy63@example.org;place de marché;client fidèle
+18-05-2026;9780806246178;1;4,82;lea.fournier99@example.org;MP;RAS
+27-12-2025;9781428811195;1;8,3;louis.simon1@example.org;boutique;RAS
+06-10-2025;9789871144686;1;4,56;manon.morel7@example.org;web;client fidèle
+04-03-2026;9780671458423;1;33,22;gabriel.morel66@example.org;marketplace;
+27-08-2025;9791000000499;1;24,12;lea.laurent96@example.org;en ligne;client fidèle
+19-07-2025;9780671255961;1;18,48;jade.roux78@example.org;Magasin;client fidèle
+11-11-2025;9781434462770;1;6,68;lea.laurent11@example.org;STORE;
+08-09-2025;9780307491572;1;27,21;hugo.fournier63@example.org;web;
+31-03-2026;9791000000419;1;29,93;lucas.roux48@example.org;boutique;commande spéciale
+12-12-2025;9780216897984;1;35,2;manon.lefebvre42@example.org;Magasin;client fidèle
+18-10-2025;9791000000179;2;21,84;louis.roux30@example.org;site;commande spéciale
+13-03-2026;9782376862185;1;27,87;chloe.michel57@example.org;Magasin;commande spéciale
+07-12-2025;9780349440187;1;5,93;chloe.roux35@example.org;magasin;commande spéciale
+21-11-2025;9780193151468;2;24,67;hugo.simon56@example.org;magasin;RAS
+29-03-2026;9788834706107;2;26,9;jade.michel92@example.org;site;
+31-01-2026;9780356502571;1;28,45;jade.martin63@example.org;en ligne;client fidèle
+26-09-2025;9789024512799;1;22,21;emma.michel22@example.org;web;commande spéciale
+01-06-2026;9781847941831;3;23,13;emma.fournier36@example.org;STORE;RAS
+01-08-2025;9780263102734;1;32,33;hugo.simon52@example.org;STORE;RAS
+19-09-2025;9780810918849;1;13,14;zoe.morel94@example.org;STORE;
+14-02-2026;9788416029808;2;37,11;lucas.morel42@example.org;Magasin;client fidèle
+06-03-2026;9781984842305;2;24,33;lucas.bertrand96@example.org;web;
+26-09-2025;9780263120974;3;37,71;theo.michel59@example.org;magasin;RAS
+09-03-2026;9780224617253;1;10,51;louis.fournier62@example.org;boutique;commande spéciale
+15-04-2026;9780545926751;2;39,62;ines.dubois27@example.org;online;client fidèle
+13-06-2026;9780330471138;1;37,62;jules.dubois8@example.org;boutique;RAS
+21-12-2025;9780091203207;1;4,53;manon.morel12@example.org;en ligne;client fidèle
+12-08-2025;9791000000659;1;9,58;ines.lefebvre41@example.org;boutique;commande spéciale
+05-04-2026;9798475273906;1;39,66;arthur.michel91@example.org;web;commande spéciale
+11-05-2026;9788804507727;1;15,56;gabriel.bertrand22@example.org;magasin;client fidèle
+19-03-2026;9781976709135;1;18,58;hugo.moreau34@example.org;Magasin;
+27-03-2026;9788417454432;1;22,06;zoe.dubois67@example.org;boutique;
+26-12-2025;9788423991235;2;11,18;chloe.bertrand65@example.org;site;client fidèle
+30-06-2026;9791000000799;1;21,53;jade.martin32@example.org;boutique;commande spéciale
+12-06-2026;9780736614016;1;33,36;theo.laurent12@example.org;place de marché;RAS
+05-11-2025;9780958854344;1;35,12;jules.david24@example.org;site;
+10-10-2025;9789024512799;1;36,74;jules.bertrand21@example.org;site;client fidèle
+01-11-2025;9791000000549;1;30,16;gabriel.lefebvre59@example.org;Magasin;
+30-01-2026;9781283677127;2;20,65;theo.simon45@example.org;STORE;client fidèle
+30-07-2025;9780061857171;1;38,58;nathan.roux43@example.org;STORE;client fidèle
+26-08-2025;9780547524009;3;9,45;chloe.roux41@example.org;STORE;commande spéciale
+26-07-2025;9782265077249;1;31,09;chloe.bertrand32@example.org;boutique;commande spéciale
+12-08-2025;9781591847816;1;30,88;lea.laurent84@example.org;en ligne;RAS
+15-07-2025;9781591026907;1;17,83;camille.michel18@example.org;Magasin;
+11-02-2026;9780321793102;2;15,82;nathan.bertrand39@example.org;STORE;client fidèle
+02-03-2026;9780003303377;1;37,51;gabriel.laurent72@example.org;web;client fidèle
+08-11-2025;9780070078727;1;29,18;zoe.moreau7@example.org;web;RAS
+28-07-2025;9780003303377;1;33,71;louis.simon22@example.org;magasin;
+01-01-2026;9780786189694;1;20,57;nathan.dubois48@example.org;boutique;RAS
+29-03-2026;9781432622459;1;36,15;theo.fournier78@example.org;STORE;client fidèle
+13-01-2026;9780465067091;2;26,62;lea.bertrand91@example.org;place de marché;client fidèle
+08-12-2025;9780007163243;2;27,75;theo.laurent56@example.org;STORE;RAS
+12-09-2025;9780655672241;2;4,71;manon.bernard48@example.org;web;RAS
+18-09-2025;9781400142866;2;30,6;jade.lefebvre69@example.org;STORE;commande spéciale
+10-03-2026;9791000000129;1;6,95;arthur.morel63@example.org;STORE;
+02-09-2025;9791000000159;1;17,8;jules.bertrand79@example.org;web;RAS
+12-09-2025;9782226479822;1;16,67;jules.bertrand17@example.org;magasin;commande spéciale
+19-06-2026;9798764553290;1;20,83;jules.fournier82@example.org;Magasin;client fidèle
+24-06-2026;9780594091400;1;28,32;nathan.michel13@example.org;boutique;
+07-07-2025;9780316389716;1;26,38;lea.michel35@example.org;en ligne;commande spéciale
+29-09-2025;9781421889276;1;27,42;chloe.fournier17@example.org;Magasin;RAS
+15-03-2026;9783423262644;3;38,47;jules.michel51@example.org;magasin;RAS
+25-02-2026;9781500420536;1;17,41;gabriel.david54@example.org;magasin;
+29-01-2026;9798897248889;0;36,06;jules.roux31@example.org;online;RAS
+31-10-2025;9781784878719;1;27,13;ines.roux48@example.org;MP;
+28-01-2026;9780843929959;2;7,04;chloe.roux43@example.org;Magasin;
+04-10-2025;9780606404518;1;17,65;lea.leroy20@example.org;MP;client fidèle
+23-01-2026;9780141309750;1;7,39;emma.david91@example.org;Magasin;
+16-02-2026;9780140440577;2;15,54;jade.roux63@example.org;place de marché;
+04-03-2026;9798627159133;2;22,46;gabriel.bertrand26@example.org;magasin;RAS
+23-10-2025;9788475842318;1;22,01;jules.laurent91@example.org;boutique;RAS
+02-10-2025;9780134101477;2;33,31;lea.michel33@example.org;boutique;commande spéciale
+31-08-2025;9781955876162;1;18,85;camille.bernard63@example.org;Magasin;RAS
+25-08-2025;9781958292068;1;24,7;gabriel.moreau60@example.org;magasin;client fidèle
+02-01-2026;9780971830516;1;33,26;camille.michel20@example.org;web;RAS
+28-01-2026;9788422631880;1;21,15;lucas.lefebvre59@example.org;STORE;client fidèle
+26-11-2025;9791020900593;2;22,94;lea.martin39@example.org;magasin;client fidèle
+29-06-2026;9783442249329;1;30,86;arthur.moreau3@example.org;web;client fidèle
+05-12-2025;9780072957549;1;29,61;theo.fournier89@example.org;online;
+14-12-2025;9791020924636;1;12,62;ines.fournier53@example.org;magasin;client fidèle
+21-03-2026;9780099558781;2;4,96;hugo.fournier70@example.org;magasin;
+05-02-2026;9780263758993;2;29,41;ines.leroy86@example.org;online;commande spéciale
+04-06-2026;9780141309750;1;11,58;lea.bertrand14@example.org;marketplace;commande spéciale
+22-09-2025;9788422686569;2;21,02;camille.morel27@example.org;online;client fidèle
+18-01-2026;9780141374239;1;29,99;theo.lefebvre23@example.org;magasin;commande spéciale
+20-09-2025;9781414340913;3;16,05;manon.simon2@example.org;web;client fidèle
+16-06-2026;9788481096156;1;29,89;manon.martin29@example.org;Magasin;
+24-12-2025;9782843623103;1;28,09;nathan.david26@example.org;boutique;commande spéciale
+23-12-2025;9780060291693;2;20,37;ines.michel58@example.org;site;
+23-12-2025;9789508700568;2;33,82;hugo.martin48@example.org;Magasin;
+11-04-2026;9781531888176;1;6,87;jade.simon20@example.org;STORE;RAS
+15-05-2026;9788374805568;2;25,87;lucas.dubois93@example.org;web;RAS
+25-09-2025;9791000000339;1;29,74;ines.bernard36@example.org;Magasin;
+28-01-2026;9780385142519;1;13,21;lea.michel46@example.org;Magasin;client fidèle
+25-12-2025;9780449908587;1;39,73;emma.bertrand97@example.org;Magasin;commande spéciale
+17-04-2026;9780840356451;1;14,02;camille.fournier17@example.org;STORE;client fidèle
+12-11-2025;9780063429147;2;11,22;manon.bertrand41@example.org;Magasin;commande spéciale
+26-01-2026;9780750503075;1;30,05;hugo.leroy69@example.org;Magasin;RAS
+22-12-2025;9782266208178;2;38,36;jules.bertrand75@example.org;magasin;
+01-05-2026;9781476873626;2;30,87;chloe.dubois27@example.org;en ligne;client fidèle
+29-04-2026;9781322110233;1;33,07;nathan.roux37@example.org;marketplace;RAS
+21-02-2026;9780380813018;1;8,26;ines.david30@example.org;Magasin;client fidèle
+29-03-2026;9781594131523;1;39,73;zoe.dubois1@example.org;boutique;RAS
+23-10-2025;9791000000509;1;12,1;nathan.bernard21@example.org;magasin;commande spéciale
+22-04-2026;9780810997516;1;34,68;gabriel.moreau57@example.org;web;
+11-10-2025;9798739955418;1;14,95;manon.leroy29@example.org;MP;RAS
+05-03-2026;9783552044319;1;8,06;camille.simon52@example.org;STORE;RAS
+24-11-2025;9780007120970;2;11,36;gabriel.lefebvre62@example.org;magasin;RAS
+17-01-2026;9786051719092;1;25,78;lea.michel33@example.org;magasin;client fidèle
+22-12-2025;9780263122169;0;36,16;arthur.bertrand31@example.org;magasin;
+22-03-2026;9791000000939;1;23,4;jules.fournier21@example.org;en ligne;
+18-08-2025;9780825616495;3;32,85;gabriel.fournier54@example.org;boutique;client fidèle
+11-03-2026;9781377100975;1;6,22;jules.roux42@example.org;magasin;RAS
+16-08-2025;9781653656752;1;8,82;ines.roux60@example.org;magasin;client fidèle
+06-08-2025;9791000000409;1;6,47;jules.lefebvre27@example.org;STORE;commande spéciale
+11-02-2026;9791000000419;2;12,71;theo.bertrand64@example.org;STORE;RAS
+22-01-2026;9781958292068;1;33,54;jules.leroy78@example.org;STORE;client fidèle
+24-08-2025;9780373107148;1;38,0;jade.lefebvre9@example.org;boutique;client fidèle
+11-10-2025;9791000000849;1;14,9;manon.david91@example.org;boutique;RAS
+04-08-2025;9798454025748;1;36,47;jules.moreau97@example.org;STORE;client fidèle
+08-07-2025;9781536435078;1;27,93;theo.bernard24@example.org;en ligne;
+15-05-2026;9786055943370;2;25,37;hugo.morel99@example.org;boutique;commande spéciale
+04-04-2026;9780224018616;1;19,32;zoe.michel56@example.org;magasin;RAS
+15-01-2026;9780373114108;1;30,27;ines.fournier10@example.org;marketplace;client fidèle
+06-12-2025;9780898796827;1;24,47;arthur.leroy28@example.org;online;
+08-06-2026;9780786936137;1;5,26;nathan.leroy26@example.org;Magasin;commande spéciale
+19-06-2026;9781322110233;1;11,74;zoe.bertrand2@example.org;boutique;
+12-01-2026;9780263771213;1;35,56;arthur.bernard45@example.org;STORE;
+09-04-2026;9780449235997;1;12,4;nathan.bernard61@example.org;Magasin;RAS
+10-02-2026;9780825616518;1;34,31;arthur.bernard76@example.org;boutique;
+06-06-2026;9780896216921;1;9,27;jules.fournier30@example.org;marketplace;commande spéciale
+29-03-2026;9791000000959;0;20,21;zoe.laurent5@example.org;MP;commande spéciale
+04-10-2025;9780655672241;1;4,96;gabriel.martin49@example.org;Magasin;client fidèle
+04-03-2026;9780062273208;1;27,28;manon.morel77@example.org;Magasin;RAS
+28-09-2025;9781798850466;1;31,07;zoe.bernard25@example.org;online;
+29-01-2026;9780763603519;3;29,21;nathan.bertrand96@example.org;STORE;RAS
+17-02-2026;9788834706107;2;17,08;theo.morel39@example.org;boutique;RAS
+13-12-2025;9789994714094;2;27,68;jules.bertrand15@example.org;place de marché;client fidèle
+23-08-2025;9780061741005;3;33,49;ines.bertrand56@example.org;Magasin;client fidèle
+27-10-2025;9798705893843;2;7,14;zoe.michel37@example.org;online;RAS
+19-07-2025;9780131272866;1;27,9;camille.roux70@example.org;boutique;
+16-10-2025;9783550068751;2;12,41;gabriel.simon90@example.org;magasin;commande spéciale
+06-03-2026;9781432899011;1;19,66;hugo.david39@example.org;STORE;
+18-06-2026;9788324592838;2;32,02;emma.moreau39@example.org;STORE;RAS
+12-12-2025;9780263853087;1;7,23;ines.bertrand61@example.org;boutique;RAS
+01-04-2026;9798705893843;1;27,15;louis.laurent87@example.org;boutique;
+10-01-2026;9781500420536;1;30,96;jade.morel21@example.org;Magasin;commande spéciale
+22-02-2026;9791000000839;2;21,54;louis.moreau81@example.org;Magasin;RAS
+16-06-2026;9789583004506;1;39,67;arthur.leroy97@example.org;Magasin;RAS
+21-06-2026;9780007164943;1;7,9;chloe.bernard79@example.org;web;commande spéciale
+19-04-2026;9791000000769;1;31,83;louis.bertrand29@example.org;boutique;RAS
+22-06-2026;9783552044319;2;31,56;jade.dubois45@example.org;boutique;
+06-11-2025;9781593976064;2;36,76;lucas.laurent44@example.org;en ligne;client fidèle
+03-04-2026;9781730710735;1;23,57;hugo.bernard34@example.org;magasin;commande spéciale
+27-10-2025;9780205176076;1;5,49;louis.leroy20@example.org;Magasin;commande spéciale
+15-12-2025;9780971830516;1;26,18;theo.lefebvre75@example.org;Magasin;commande spéciale
+21-08-2025;9780263138382;2;22,33;gabriel.david18@example.org;magasin;commande spéciale
+04-01-2026;9780061550676;1;10,61;gabriel.leroy41@example.org;Magasin;commande spéciale
+17-05-2026;9780805035650;1;18,19;louis.moreau3@example.org;boutique;RAS
+05-04-2026;9781435336667;1;25,67;theo.michel60@example.org;web;commande spéciale
+09-08-2025;9781538739723;1;5,08;theo.michel6@example.org;magasin;client fidèle
+18-01-2026;9791000000929;2;22,7;camille.moreau27@example.org;Magasin;
+26-07-2025;9780736614818;2;14,55;arthur.laurent74@example.org;magasin;
+07-02-2026;9783453161818;0;13,5;hugo.fournier88@example.org;site;
+18-08-2025;9780446511070;2;28,91;jade.michel31@example.org;Magasin;commande spéciale
+12-09-2025;9780263775051;1;34,13;theo.bernard38@example.org;magasin;client fidèle
+17-12-2025;9780856352737;1;37,3;jade.dubois21@example.org;STORE;RAS
+23-08-2025;9780807217696;1;15,55;gabriel.bernard5@example.org;Magasin;commande spéciale
+29-01-2026;9780706968019;1;27,86;jules.dubois50@example.org;site;client fidèle
+29-04-2026;9780061492570;1;20,15;ines.moreau66@example.org;magasin;
+11-01-2026;9791000000139;2;36,41;manon.bernard4@example.org;MP;RAS
+09-03-2026;9781417701155;1;15,81;arthur.fournier29@example.org;boutique;
+06-02-2026;9780263782011;1;10,79;manon.dubois28@example.org;place de marché;commande spéciale
+25-12-2025;9781421809083;2;34,49;camille.lefebvre10@example.org;magasin;
+08-07-2025;9798513996880;1;10,57;lucas.martin22@example.org;web;RAS
+14-07-2025;9781476873626;1;31,02;gabriel.michel57@example.org;site;client fidèle
+21-12-2025;9780373833740;3;27,76;nathan.lefebvre98@example.org;magasin;RAS
+21-04-2026;9788440220677;1;13,54;lea.dubois73@example.org;boutique;commande spéciale
+23-04-2026;9788191032406;1;33,55;louis.leroy86@example.org;magasin;client fidèle
+31-05-2026;9780679432531;1;25,26;lucas.dubois15@example.org;Magasin;commande spéciale
+07-04-2026;9780756956691;1;33,36;gabriel.roux56@example.org;web;
+24-07-2025;9780594091400;1;6,52;hugo.bertrand18@example.org;STORE;
+04-05-2026;9781591846918;1;25,77;hugo.martin32@example.org;web;commande spéciale
+25-09-2025;9781689366922;1;18,57;emma.morel31@example.org;boutique;commande spéciale
+22-11-2025;9798688109153;1;36,81;hugo.lefebvre83@example.org;Magasin;commande spéciale
+16-10-2025;9781250242754;1;13,92;lucas.bertrand68@example.org;magasin;client fidèle
+14-07-2025;9781442486126;1;13,51;nathan.laurent72@example.org;Magasin;
+04-09-2025;9789799831750;1;22,74;camille.simon8@example.org;en ligne;commande spéciale
+19-03-2026;9780393925340;1;8,25;camille.fournier41@example.org;marketplace;
+17-10-2025;9780805243550;1;8,21;jules.lefebvre33@example.org;STORE;client fidèle
+20-04-2026;9780099558781;1;8,3;lea.lefebvre16@example.org;Magasin;commande spéciale
+06-07-2025;9780241968154;1;13,57;jade.leroy87@example.org;place de marché;RAS
+29-03-2026;9789020632729;1;37,54;chloe.lefebvre38@example.org;en ligne;client fidèle
+24-01-2026;9781481428149;3;20,16;hugo.michel49@example.org;magasin;commande spéciale
+26-02-2026;9780345458889;1;4,74;nathan.leroy1@example.org;web;RAS
+01-05-2026;9780805035650;1;9,95;emma.morel69@example.org;STORE;client fidèle
+19-10-2025;9780063429147;1;17,42;jade.martin18@example.org;Magasin;commande spéciale
+28-06-2026;9781474055437;1;20,12;emma.bertrand56@example.org;online;RAS
+13-04-2026;9791000000599;1;28,09;nathan.michel26@example.org;Magasin;
+05-08-2025;9780821778555;1;13,76;lea.moreau44@example.org;boutique;commande spéciale
+15-11-2025;9789022591932;1;35,62;hugo.morel79@example.org;boutique;
+16-05-2026;9780898451429;3;13,01;lucas.dubois95@example.org;Magasin;client fidèle
+31-05-2026;9782265077249;0;11,16;zoe.moreau38@example.org;magasin;RAS
+08-11-2025;9785553671754;2;21,8;theo.lefebvre43@example.org;STORE;client fidèle
+12-10-2025;9798515079307;2;20,41;zoe.martin36@example.org;site;
+30-01-2026;9780881039108;1;25,85;lucas.fournier50@example.org;STORE;RAS
+16-02-2026;9780061451652;1;7,83;jules.david26@example.org;STORE;client fidèle
+26-02-2026;9781591847816;3;18,71;nathan.martin67@example.org;magasin;commande spéciale
+26-08-2025;9781957568225;1;38,71;ines.michel80@example.org;STORE;client fidèle
+17-07-2025;9781441739001;2;36,78;nathan.david65@example.org;online;RAS
+04-08-2025;9783442457472;2;38,23;nathan.michel41@example.org;online;client fidèle
+27-01-2026;9780321623539;1;6,98;jules.laurent69@example.org;STORE;commande spéciale
+11-04-2026;9791000000419;2;20,4;nathan.dubois50@example.org;STORE;client fidèle
+21-06-2026;9780590411011;1;6,86;emma.fournier99@example.org;site;commande spéciale
+09-03-2026;9782226479822;1;27,2;lucas.david22@example.org;STORE;RAS
+10-06-2026;9798987380420;1;35,62;camille.david68@example.org;STORE;client fidèle
+22-06-2026;9781723208614;1;24,33;ines.simon25@example.org;Magasin;client fidèle
+01-08-2025;9781565843790;2;12,09;gabriel.moreau16@example.org;en ligne;
+23-01-2026;9791000000969;1;21,95;nathan.michel97@example.org;STORE;
+29-06-2026;9791000000469;2;14,09;theo.martin1@example.org;magasin;commande spéciale
+17-11-2025;9780806246178;2;17,58;jules.dubois31@example.org;site;
+02-02-2026;9780263096378;3;5,93;arthur.dubois75@example.org;Magasin;client fidèle
+21-09-2025;9798737952464;2;22,32;ines.bertrand40@example.org;boutique;commande spéciale
+14-10-2025;9781476870748;1;39,72;arthur.roux95@example.org;boutique;
+08-01-2026;9780575073241;2;27,23;arthur.bertrand25@example.org;online;commande spéciale
+12-12-2025;9788501110008;1;37,76;zoe.fournier72@example.org;boutique;
+05-03-2026;9791000000339;1;6,62;ines.moreau76@example.org;place de marché;client fidèle
+29-12-2025;9786073814423;2;6,45;gabriel.bertrand64@example.org;online;
+13-12-2025;9781432645960;2;4,57;nathan.lefebvre38@example.org;boutique;commande spéciale
+09-11-2025;9780446511070;3;10,09;jade.morel8@example.org;site;commande spéciale
+11-10-2025;9791000000239;1;28,65;arthur.lefebvre46@example.org;boutique;RAS
+01-07-2025;9788447368990;1;10,01;zoe.roux91@example.org;Magasin;
+06-02-2026;9782207256343;2;16,03;gabriel.fournier98@example.org;STORE;RAS
+22-06-2026;9780881039108;1;30,01;camille.bertrand38@example.org;boutique;commande spéciale
+19-05-2026;9780028729206;1;29,96;zoe.michel18@example.org;boutique;commande spéciale
+10-02-2026;9780380821099;1;16,81;hugo.bernard51@example.org;web;RAS
+11-12-2025;9780345337757;1;19,4;arthur.dubois43@example.org;Magasin;commande spéciale
+22-11-2025;9781732172234;2;39,5;louis.david6@example.org;boutique;client fidèle
+11-07-2025;9798627347820;1;8,31;lucas.martin85@example.org;boutique;RAS
+03-08-2025;9780655672241;1;29,34;arthur.moreau12@example.org;boutique;RAS
+10-06-2026;9788417992491;2;29,71;jade.lefebvre56@example.org;Magasin;RAS
+24-11-2025;9780840356451;1;12,79;louis.laurent21@example.org;place de marché;commande spéciale
+28-08-2025;9781572707313;2;39,12;manon.moreau43@example.org;marketplace;commande spéciale
+14-03-2026;9780769206684;1;7,09;camille.simon71@example.org;site;RAS
+23-03-2026;9780613642880;3;20,54;louis.bernard29@example.org;Magasin;RAS
+13-02-2026;9780263758993;1;37,61;jade.laurent46@example.org;en ligne;RAS
+07-09-2025;9780373511648;1;8,72;zoe.martin95@example.org;en ligne;
+12-03-2026;9780754000471;1;38,38;lucas.martin72@example.org;online;client fidèle
+14-11-2025;9798990047709;1;31,84;ines.david76@example.org;Magasin;commande spéciale
+10-12-2025;9781015420908;1;9,83;jade.moreau41@example.org;online;client fidèle
+13-01-2026;9786073814423;1;28,06;lea.simon12@example.org;Magasin;RAS
+27-04-2026;9781434267276;2;29,1;lucas.bernard75@example.org;web;commande spéciale
+24-03-2026;9780802142641;1;12,21;louis.lefebvre26@example.org;STORE;client fidèle
+06-11-2025;9783453161818;2;23,26;camille.david9@example.org;online;
+20-09-2025;9780263096347;1;14,02;lea.michel36@example.org;Magasin;client fidèle
+15-09-2025;9791000000639;1;36,92;ines.moreau20@example.org;boutique;client fidèle
+11-06-2026;9780451628800;1;35,61;zoe.martin95@example.org;magasin;RAS
+02-07-2025;9789020554113;1;28,96;louis.roux93@example.org;MP;commande spéciale
+12-04-2026;9780671868376;1;31,91;manon.moreau58@example.org;STORE;commande spéciale
+28-05-2026;9789000338658;2;35,71;emma.michel66@example.org;magasin;commande spéciale
+04-05-2026;9781535540124;1;5,0;camille.simon66@example.org;magasin;commande spéciale
+01-06-2026;9791000000329;0;5,98;nathan.laurent3@example.org;boutique;commande spéciale
+30-06-2026;9780007120970;1;39,69;nathan.bertrand93@example.org;magasin;commande spéciale
+29-06-2026;9780061739590;1;27,21;gabriel.morel76@example.org;magasin;commande spéciale
+24-08-2025;9781377100975;1;6,92;gabriel.bertrand54@example.org;en ligne;RAS
+09-09-2025;9791000000859;1;10,19;theo.michel58@example.org;Magasin;
+12-09-2025;9788440672599;1;29,48;lucas.roux68@example.org;web;commande spéciale
+20-09-2025;9781548261887;1;33,13;manon.roux89@example.org;STORE;client fidèle
+27-09-2025;9781726017640;1;24,99;camille.moreau29@example.org;magasin;
+10-11-2025;9780785744580;1;19,27;lucas.lefebvre92@example.org;site;RAS
+17-01-2026;9781976709135;1;34,97;nathan.moreau3@example.org;en ligne;client fidèle
+16-05-2026;9781442472426;2;15,23;jade.laurent84@example.org;marketplace;commande spéciale
+28-12-2025;9781512157055;1;9,6;ines.moreau17@example.org;boutique;RAS
+12-07-2025;9781440758089;0;39,66;arthur.michel33@example.org;site;commande spéciale
+28-01-2026;9780313207693;2;28,2;lucas.fournier47@example.org;MP;
+05-04-2026;9781538739723;1;30,9;ines.fournier65@example.org;boutique;RAS
+07-12-2025;9791000000069;3;22,84;lucas.laurent82@example.org;STORE;client fidèle
+11-06-2026;9780553418286;1;23,28;nathan.roux23@example.org;site;
+13-01-2026;9780062073747;1;11,44;lucas.david77@example.org;Magasin;commande spéciale
+20-02-2026;9780809533756;1;9,42;gabriel.leroy31@example.org;site;
+26-02-2026;9798475273906;1;13,5;chloe.roux95@example.org;en ligne;commande spéciale
+22-05-2026;9788418052637;2;33,57;jules.dubois18@example.org;place de marché;RAS
+18-02-2026;9781539170389;1;38,95;gabriel.dubois73@example.org;STORE;commande spéciale
+10-07-2025;9780263784701;2;27,88;theo.laurent59@example.org;boutique;RAS
+07-06-2026;9782207256343;1;39,69;theo.bertrand32@example.org;site;
+20-10-2025;9783442353927;3;30,55;nathan.fournier68@example.org;Magasin;commande spéciale
+04-02-2026;9791000000919;1;24,79;jules.michel55@example.org;online;commande spéciale
+09-11-2025;9788418052637;1;26,97;jules.bertrand13@example.org;marketplace;
+01-08-2025;9798688109153;1;12,66;manon.moreau95@example.org;online;RAS
+27-09-2025;9780141378480;1;7,51;zoe.lefebvre92@example.org;online;RAS
+25-12-2025;9780613135818;1;35,17;theo.dubois18@example.org;en ligne;commande spéciale
+24-10-2025;9791000000659;1;9,24;emma.simon98@example.org;Magasin;
+01-10-2025;9789710843480;1;17,32;ines.martin22@example.org;magasin;RAS
+24-03-2026;9781417661589;2;11,11;nathan.laurent68@example.org;en ligne;client fidèle
+18-07-2025;9780553350630;2;11,21;hugo.roux51@example.org;Magasin;RAS
+16-03-2026;9780330471138;1;33,22;camille.morel96@example.org;STORE;commande spéciale
+18-06-2026;9780007815586;1;25,31;hugo.simon85@example.org;STORE;RAS
+01-03-2026;9780373110926;2;24,9;hugo.david76@example.org;boutique;
+01-11-2025;9798893311020;1;6,43;ines.laurent53@example.org;magasin;client fidèle
+30-06-2026;9783453089228;2;21,29;theo.michel96@example.org;online;client fidèle
+26-03-2026;9781718104273;2;22,9;gabriel.moreau92@example.org;online;commande spéciale
+10-08-2025;9780330471138;1;24,83;theo.morel82@example.org;en ligne;RAS
+26-04-2026;9781725530911;2;6,79;ines.bertrand57@example.org;marketplace;commande spéciale
+20-05-2026;9781679521836;3;6,33;manon.lefebvre28@example.org;Magasin;
+02-02-2026;9780449908587;1;11,46;jade.fournier46@example.org;STORE;client fidèle
+15-04-2026;9791000000689;1;21,97;zoe.roux11@example.org;online;
+20-05-2026;9788381351881;2;32,62;camille.martin71@example.org;magasin;commande spéciale
+16-07-2025;9788371501531;2;10,8;gabriel.david54@example.org;magasin;RAS
+11-12-2025;9780385094436;1;15,95;ines.bernard33@example.org;magasin;RAS
+20-01-2026;9781841492391;1;29,18;camille.david66@example.org;magasin;commande spéciale
+13-11-2025;9781529152975;3;22,73;arthur.dubois35@example.org;boutique;commande spéciale
+05-03-2026;9780241269657;1;27,2;jade.michel45@example.org;web;
+22-03-2026;9788492966660;2;38,12;lucas.bernard59@example.org;site;RAS
+18-09-2025;9781476870748;1;10,87;chloe.fournier33@example.org;boutique;client fidèle
+29-10-2025;9783502551638;1;19,79;lucas.david58@example.org;online;client fidèle
+17-10-2025;9780802142641;3;32,36;emma.michel99@example.org;STORE;
+04-03-2026;9788173043727;1;28,06;camille.laurent91@example.org;Magasin;commande spéciale
+09-11-2025;9780575038479;1;21,4;louis.fournier66@example.org;magasin;client fidèle
+28-01-2026;9780385094436;3;39,59;jules.lefebvre34@example.org;MP;client fidèle
+28-06-2026;9786073108409;1;22,11;manon.lefebvre20@example.org;magasin;client fidèle
+26-09-2025;9798990047709;2;17,54;gabriel.leroy85@example.org;boutique;client fidèle
+26-07-2025;9781119997559;1;31,3;jade.fournier74@example.org;en ligne;RAS
+02-01-2026;9780449235997;1;30,26;jade.lefebvre27@example.org;en ligne;
+28-02-2026;9791000000949;1;7,81;jules.david64@example.org;web;
+23-10-2025;9780340874592;1;33,23;jade.laurent93@example.org;Magasin;RAS
+06-08-2025;9781495096105;1;7,62;chloe.david52@example.org;web;RAS
+20-04-2026;9780396080176;1;38,56;zoe.simon51@example.org;STORE;client fidèle
+24-04-2026;9781593976064;2;25,14;lea.david78@example.org;STORE;commande spéciale
+22-01-2026;9781478312932;0;6,68;jade.moreau50@example.org;boutique;client fidèle
+30-08-2025;9788074770814;0;17,2;lea.michel34@example.org;site;client fidèle
+22-02-2026;9780466208349;2;38,49;jules.fournier39@example.org;magasin;commande spéciale
+31-05-2026;9780263095760;2;36,08;chloe.fournier89@example.org;Magasin;commande spéciale
+09-06-2026;9781529152975;1;19,21;louis.lefebvre81@example.org;web;client fidèle
+01-05-2026;9780195365931;1;23,76;zoe.lefebvre61@example.org;site;RAS
+30-11-2025;9781727208351;1;29,78;jules.lefebvre12@example.org;boutique;RAS
+06-05-2026;9781732172234;1;25,79;nathan.simon38@example.org;web;RAS
+02-03-2026;9783499174766;1;9,01;hugo.moreau90@example.org;marketplace;commande spéciale
+04-09-2025;9798627347820;1;11,4;manon.michel3@example.org;boutique;commande spéciale
+08-02-2026;9782226479822;1;23,47;lea.simon64@example.org;Magasin;client fidèle
+08-09-2025;9781449486792;1;6,89;manon.dubois90@example.org;STORE;RAS
+29-04-2026;9781594634956;2;31,15;arthur.michel86@example.org;STORE;commande spéciale
+04-05-2026;9789022591932;1;29,02;lucas.dubois89@example.org;STORE;client fidèle
+08-06-2026;9781439116050;2;36,3;chloe.martin86@example.org;boutique;
+07-04-2026;9781377100975;2;10,78;hugo.morel31@example.org;en ligne;
+05-04-2026;9781539145943;1;26,18;nathan.simon93@example.org;marketplace;commande spéciale
+03-05-2026;9780131272866;1;21,65;louis.michel68@example.org;STORE;client fidèle
+13-03-2026;9781421809083;1;28,43;ines.martin59@example.org;web;
+03-11-2025;9781101192740;2;37,18;nathan.leroy46@example.org;site;client fidèle
+26-07-2025;9791000000599;1;15,69;theo.fournier45@example.org;magasin;commande spéciale
+21-12-2025;9798874620929;1;4,92;camille.bernard1@example.org;online;
+09-03-2026;9780786230358;3;13,48;gabriel.bernard76@example.org;boutique;RAS
+07-04-2026;9791000000799;1;11,36;jade.morel82@example.org;STORE;client fidèle
+17-12-2025;9780263771213;3;12,78;zoe.lefebvre36@example.org;Magasin;
+10-10-2025;9791000000779;1;36,15;emma.dubois89@example.org;MP;client fidèle
+26-09-2025;9788422686569;1;37,24;lucas.martin24@example.org;marketplace;RAS
+14-10-2025;9780385233132;2;22,16;theo.simon7@example.org;STORE;client fidèle
+29-08-2025;9780708883587;1;15,81;camille.laurent61@example.org;marketplace;commande spéciale
+14-07-2025;9786055943370;1;36,68;gabriel.dubois77@example.org;site;commande spéciale
+27-04-2026;9781689366922;1;39,07;gabriel.michel3@example.org;STORE;RAS
+07-05-2026;9780061003776;1;31,1;arthur.bertrand30@example.org;Magasin;
+13-10-2025;9781974052264;1;23,22;lucas.leroy58@example.org;STORE;RAS
+01-05-2026;9780316479264;1;36,47;lucas.lefebvre15@example.org;boutique;
+20-05-2026;9781568955575;1;38,46;manon.morel93@example.org;Magasin;
+08-02-2026;9780263771213;2;15,83;ines.lefebvre33@example.org;Magasin;
+20-11-2025;9780140281118;1;10,09;emma.moreau65@example.org;STORE;
+13-02-2026;9781536681949;1;33,34;lea.leroy97@example.org;Magasin;RAS
+10-03-2026;9788417347970;2;23,54;hugo.dubois94@example.org;boutique;
+21-07-2025;9780553418286;2;37,0;ines.roux2@example.org;en ligne;commande spéciale
+28-08-2025;9788447368990;1;15,9;lucas.laurent5@example.org;STORE;commande spéciale
+04-08-2025;9781976087097;1;15,22;louis.laurent53@example.org;web;RAS
+26-02-2026;9781101192740;0;11,17;hugo.moreau8@example.org;online;RAS
+12-10-2025;9780671746520;2;11,39;lucas.roux61@example.org;STORE;RAS
+26-04-2026;9780356502410;1;24,69;louis.leroy24@example.org;place de marché;
+01-05-2026;9781417601356;3;23,1;arthur.morel81@example.org;en ligne;RAS
+16-03-2026;9780141038148;2;9,68;arthur.moreau60@example.org;online;RAS
+28-04-2026;9791000000569;1;12,27;hugo.fournier56@example.org;Magasin;client fidèle
+18-04-2026;9798438389804;1;39,75;ines.simon2@example.org;magasin;client fidèle
+27-11-2025;9780765316974;0;27,93;zoe.bertrand18@example.org;online;commande spéciale
+09-05-2026;9791000000179;3;39,53;camille.david11@example.org;magasin;RAS

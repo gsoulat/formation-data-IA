@@ -1,0 +1,8 @@
+magasin_id,ville,type,surface_m2,date_ouverture
+1,Lille,Magasin,2400,2015-03-12
+2,Roubaix,Magasin,1800,2017-09-01
+3,Tourcoing,Magasin,1500,2018-06-15
+4,Dunkerque,Magasin,2100,2016-11-20
+5,Valenciennes,Magasin,1300,2019-02-04
+6,Amiens,Magasin,1700,2020-10-10
+7,En ligne,E-commerce,0,2014-01-01

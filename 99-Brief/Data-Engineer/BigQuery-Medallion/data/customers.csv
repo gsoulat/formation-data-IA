@@ -1,0 +1,21 @@
+customer_id,email,first_name,last_name,country,registration_date,segment
+CUST-001,alice.martin@email.fr,Alice,Martin,FR,2023-03-15,Gold
+CUST-002,bob.mueller@email.de,Bob,Mueller,DE,2023-05-22,Silver
+CUST-003,carol.smith@email.co.uk,Carol,Smith,UK,2023-06-10,Gold
+CUST-004,david.garcia@email.es,David,Garcia,ES,2023-08-01,Bronze
+CUST-005,emma.dubois@email.fr,Emma,Dubois,FR,2023-09-12,Silver
+CUST-006,francesco.rossi@email.it,Francesco,Rossi,IT,2023-10-05,Bronze
+CUST-007,gabriel.bernard@email.fr,Gabriel,Bernard,FR,2023-11-20,Silver
+CUST-008,hannah.janssen@email.be,Hannah,Janssen,BE,2023-12-01,Bronze
+CUST-009,isabelle.devries@email.nl,Isabelle,De Vries,NL,2024-01-10,Bronze
+CUST-010,julien.petit@email.fr,Julien,Petit,FR,2024-01-15,Bronze
+CUST-011,karl.schneider@email.ch,Karl,Schneider,CH,2024-01-20,Silver
+CUST-012,laure.moreau@email.fr,Laure,Moreau,FR,2024-01-25,Bronze
+CUST-013,max.weber@email.de,Max,Weber,DE,2024-02-01,Bronze
+CUST-014,nina.wilson@email.co.uk,Nina,Wilson,UK,2024-02-10,Bronze
+CUST-015,olivier.leroy@email.fr,Olivier,Leroy,FR,2024-02-15,Bronze
+CUST-016,petra.huber@email.at,Petra,Huber,AT,2024-02-20,Bronze
+CUST-017,ricardo.silva@email.pt,Ricardo,Silva,PT,2024-03-01,Bronze
+CUST-018,sophie.lambert@email.fr,Sophie,Lambert,FR,2024-03-05,Bronze
+CUST-019,thomas.murphy@email.ie,Thomas,Murphy,IE,2024-03-10,Bronze
+CUST-020,ursula.fischer@email.fr,Ursula,Fischer,FR,2024-03-15,Bronze

@@ -1,0 +1,31 @@
+produit_id,produit,categorie,prix_unitaire,cout_unitaire,marque,actif
+1,Vélo VTT,Sport,545.21,310.71,SportNord,0
+2,Raquette tennis,Sport,706.19,344.15,Belle Maison,0
+3,Ballon foot,Sport,100.1,42.2,SportNord,0
+4,Tapis yoga,Sport,658.36,305.65,SportNord,1
+5,Haltères 10kg,Sport,98.3,55.6,NordPro,1
+6,Maillot bain,Sport,350.77,151.47,Belle Maison,1
+7,Chaussures running,Sport,569.53,259.33,SportNord,1
+8,Jean homme,Mode,272.27,180.15,Belle Maison,1
+9,Robe été,Mode,296.52,224.06,Générique,0
+10,Veste hiver,Mode,655.99,331.91,Belle Maison,0
+11,T-shirt coton,Mode,504.67,304.44,NordPro,1
+12,Pull laine,Mode,884.49,388.43,Belle Maison,1
+13,Baskets ville,Mode,460.51,312.46,NordPro,1
+14,Canapé 3 places,Maison,246.23,189.35,Belle Maison,1
+15,Lampe LED,Maison,134.22,65.94,NordPro,1
+16,Set casseroles,Maison,706.85,299.18,Générique,1
+17,Couette 220x240,Maison,224.09,133.7,NordPro,0
+18,Étagère bois,Maison,279.59,190.47,Belle Maison,1
+19,Rideau occultant,Maison,101.21,56.32,NordPro,1
+20,Aspirateur,Électroménager,191.18,94.63,SportNord,0
+21,Cafetière,Électroménager,392.24,177.68,NordPro,0
+22,Micro-ondes,Électroménager,453.16,281.6,Belle Maison,0
+23,Bouilloire,Électroménager,726.04,333.74,SportNord,1
+24,Robot cuiseur,Électroménager,249.97,158.05,NordPro,1
+25,Réfrigérateur,Électroménager,387.37,274.59,Belle Maison,1
+26,Perceuse,Bricolage,105.66,83.96,Hauts-Tech,1
+27,Tournevis set,Bricolage,636.28,315.84,Belle Maison,1
+28,Peinture 5L,Bricolage,609.0,283.54,Hauts-Tech,0
+29,Échelle alu,Bricolage,354.67,186.27,Hauts-Tech,0
+30,Boîte à outils,Bricolage,83.21,60.22,SportNord,0
