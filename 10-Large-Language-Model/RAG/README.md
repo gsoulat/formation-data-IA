@@ -61,30 +61,30 @@ pip install langchain-ollama sentence-transformers chromadb
 
 | Fichier | Titre | Durée estimée |
 |---------|-------|---------------|
-| [Concepts/01-introduction-rag.md](./Concepts/01-introduction-rag.md) | Qu'est-ce que le RAG, pourquoi, architecture | 45 min |
-| [Concepts/02-chunking-strategies.md](./Concepts/02-chunking-strategies.md) | Stratégies de découpage de documents | 45 min |
+| [Concepts/01-introduction-rag.md](01-Concepts/01-introduction-rag.md) | Qu'est-ce que le RAG, pourquoi, architecture | 45 min |
+| [Concepts/02-chunking-strategies.md](01-Concepts/02-chunking-strategies.md) | Stratégies de découpage de documents | 45 min |
 
 ### Pipeline
 
 | Fichier | Titre | Durée estimée |
 |---------|-------|---------------|
-| [Pipeline/01-ingestion.md](./Pipeline/01-ingestion.md) | Chargement, découpage, embedding, stockage | 60 min |
-| [Pipeline/02-retrieval.md](./Pipeline/02-retrieval.md) | Recherche vectorielle, hybride, reranking | 60 min |
-| [Pipeline/03-generation.md](./Pipeline/03-generation.md) | Construction du prompt, synthèse, citations | 45 min |
+| [Pipeline/01-ingestion.md](02-Pipeline/01-ingestion.md) | Chargement, découpage, embedding, stockage | 60 min |
+| [Pipeline/02-retrieval.md](02-Pipeline/02-retrieval.md) | Recherche vectorielle, hybride, reranking | 60 min |
+| [Pipeline/03-generation.md](02-Pipeline/03-generation.md) | Construction du prompt, synthèse, citations | 45 min |
 
 ### Évaluation
 
 | Fichier | Titre | Durée estimée |
 |---------|-------|---------------|
-| [Evaluation/01-metriques.md](./Evaluation/01-metriques.md) | Métriques : fidélité, pertinence, qualité | 30 min |
-| [Evaluation/02-ragas.md](./Evaluation/02-ragas.md) | Framework RAGAS pour l'évaluation automatisée | 45 min |
+| [Evaluation/01-metriques.md](03-Evaluation/01-metriques.md) | Métriques : fidélité, pertinence, qualité | 30 min |
+| [Evaluation/02-ragas.md](03-Evaluation/02-ragas.md) | Framework RAGAS pour l'évaluation automatisée | 45 min |
 
 ### Patterns avancés
 
 | Fichier | Titre | Durée estimée |
 |---------|-------|---------------|
-| [Avance/01-rag-conversationnel.md](./Avance/01-rag-conversationnel.md) | RAG multi-tours avec historique | 45 min |
-| [Avance/02-self-rag.md](./Avance/02-self-rag.md) | Self-RAG et Corrective-RAG | 60 min |
+| [Avance/01-rag-conversationnel.md](04-Avance/01-rag-conversationnel.md) | RAG multi-tours avec historique | 45 min |
+| [Avance/02-self-rag.md](04-Avance/02-self-rag.md) | Self-RAG et Corrective-RAG | 60 min |
 
 ### Exercices pratiques
 
@@ -185,7 +185,7 @@ Avancé / Production
 
 ```bash
 # Naviguer vers le répertoire
-cd formation-data-engineer/10-Large-Language-Model/RAG/
+cd formation-data-IA/10-Large-Language-Model/RAG/
 
 # Fichier .env type
 OPENAI_API_KEY=sk-proj-...

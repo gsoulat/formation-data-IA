@@ -127,7 +127,7 @@ Avancé
 
 ```bash
 # Cloner ou naviguer vers le répertoire du cours
-cd formation-data-engineer/10-Large-Language-Model/LangChain/
+cd formation-data-IA/10-Large-Language-Model/LangChain/
 
 # Fichier .env type (à créer à la racine de votre projet)
 OPENAI_API_KEY=sk-...

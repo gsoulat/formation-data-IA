@@ -1,10 +1,10 @@
 {
-  "name": "formation-data-engineer",
+  "name": "formation-data-ia",
   "version": "2.21.0",
-  "description": "Formation Data Engineer",
+  "description": "Formation Data & IA — Data Analyst, Data Engineer, Dev IA, DevOps, Backend",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gsoulat/formation-data-engineer.git"
+    "url": "https://github.com/gsoulat/formation-data-IA.git"
   },
   "keywords": [
     "terraform",

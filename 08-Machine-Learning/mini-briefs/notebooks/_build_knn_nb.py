@@ -1,4 +1,5 @@
 import json
+from pathlib import Path
 
 def md(*lines):
     return {"cell_type": "markdown", "metadata": {}, "source": list(lines)}
@@ -356,7 +357,7 @@ nb = {
     "nbformat_minor": 5
 }
 
-out = "/Users/guillaume/workplace/formation_data_engineer/formation-data-engineer/08-Machine-Learning/mini-briefs/notebooks/mini-brief-01-knn.ipynb"
+out = str(Path(__file__).resolve().parent / "mini-brief-01-knn.ipynb")
 with open(out, "w", encoding="utf-8") as f:
     json.dump(nb, f, ensure_ascii=False, indent=1)
 

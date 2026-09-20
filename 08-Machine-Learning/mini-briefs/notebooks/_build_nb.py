@@ -1,4 +1,5 @@
 import json
+from pathlib import Path
 
 
 def md(*lines):
@@ -270,7 +271,7 @@ nb = {
     "nbformat_minor": 5,
 }
 
-out = "/Users/guillaume/workplace/formation_data_engineer/formation-data-engineer/08-Machine-Learning/mini-briefs/notebooks/mini-brief-10-naive-bayes.ipynb"
+out = str(Path(__file__).resolve().parent / "mini-brief-10-naive-bayes.ipynb")
 with open(out, "w", encoding="utf-8") as f:
     json.dump(nb, f, ensure_ascii=False, indent=1)
 

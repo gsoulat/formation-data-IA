@@ -109,7 +109,7 @@ uv pip install ipykernel       # avec uv
 pip install ipykernel           # avec pip
 
 # 3. Enregistrer le kernel avec un nom explicite
-python -m ipykernel install --user --name="formation-data-engineer" --display-name="Python (Formation DE)"
+python -m ipykernel install --user --name="formation-data-ia" --display-name="Python (Formation Data IA)"
 ```
 
 - `--name` : identifiant technique du kernel (sans espaces)
@@ -126,13 +126,13 @@ Exemple de sortie :
 ```
 Available kernels:
   python3                    /usr/local/share/jupyter/kernels/python3
-  formation-data-engineer    /Users/user/Library/Jupyter/kernels/formation-data-engineer
+  formation-data-ia    /Users/user/Library/Jupyter/kernels/formation-data-ia
 ```
 
 ### Supprimer un kernel
 
 ```bash
-jupyter kernelspec remove formation-data-engineer
+jupyter kernelspec remove formation-data-ia
 ```
 
 ### Changer de kernel
