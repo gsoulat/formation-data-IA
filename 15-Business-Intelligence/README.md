@@ -40,6 +40,7 @@ Ce module couvre le cœur du métier de **Data Analyst** : analyser des données
 ```
 15-Business-Intelligence/
 ├── README.md                              ← Ce fichier
+├── 00-Tableur-Statistiques-TCD/           ← Socle tableur : moyenne/médiane/mode, dispersion, TCD, choix du graphique
 ├── 01-Metier-Data-Analyst/                ← Métier, posture, méthode & veille
 ├── 02-Panorama-Outils-BI/                 ← Installation des outils, panorama SQL / Python / Power BI / Looker Studio / Tableau
 ├── 03-Analyse-Besoin-Metier/              ← Recueil du besoin métier, formalisation d'une problématique
@@ -50,22 +51,24 @@ Ce module couvre le cœur du métier de **Data Analyst** : analyser des données
 ├── 08-Restitution-Storytelling/           ← Restituer & présenter les résultats
 ├── 09-Modelisation-Etoile-PowerQuery/     ← Modèle en étoile, granularité, relations, Power Query
 ├── 10-DAX/                                ← Mesures DAX, contexte de filtre, Time Intelligence
-├── 11-Visualisations-Avancees/            ← Drill-down, interactivité, accessibilité WCAG
+├── 11-Visualisations-Avancees/            ← Drill-down, interactivité, accessibilité WCAG, Plotly/Bokeh, cartographie Folium
 ├── 12-Ethique-Biais-RGPD/                 ← RGPD, éthique, biais des données
 ├── 13-Accompagnement-Metier/              ← Conduite du changement, adoption par les équipes métier
 ├── 14-Collecte-Donnees/                   ← Processus de collecte, RGPD by design
 ├── 15-ETL-Automatisation/                 ← Pipelines ETL, automatisation de la collecte
 ├── 16-Nettoyage-Donnees/                  ← Valeurs manquantes, valeurs aberrantes
 ├── 17-Dashboard-Expert/                   ← Tableau de bord BI niveau expert (avancé)
-└── 18-Preparation-Certification/          ← Révisions, portfolio, dossier de projet, soutenance finale
+├── 18-Preparation-Certification/          ← Révisions, portfolio, dossier de projet, soutenance finale
+└── 19-Tableur-Avance/                     ← Tableaux croisés dynamiques, recherches inter-fichiers
 ```
 
 ---
 
-## Les 18 sous-modules
+## Les 19 sous-modules
 
 | # | Sous-module | Contenu | Niveau |
 |---|---|---|---|
+| 00 | [Tableur-Statistiques-TCD](00-Tableur-Statistiques-TCD/) | Socle tableur : moyenne/médiane/mode, dispersion et pièges de la moyenne, TCD, choix du graphique | Socle, débutant |
 | 01 | [Metier-Data-Analyst](01-Metier-Data-Analyst/) | Le métier de Data Analyst, la posture professionnelle, méthode & veille | Découverte |
 | 02 | [Panorama-Outils-BI](02-Panorama-Outils-BI/) | Installation des outils, panorama SQL / Python / Power BI / Looker Studio / Tableau | Outillage, socle |
 | 03 | [Analyse-Besoin-Metier](03-Analyse-Besoin-Metier/) | Recueil du besoin métier, formalisation d'une problématique | Débutant→avancé |
@@ -76,14 +79,15 @@ Ce module couvre le cœur du métier de **Data Analyst** : analyser des données
 | 08 | [Restitution-Storytelling](08-Restitution-Storytelling/) | Restituer et présenter les résultats d'une analyse | Débutant→avancé |
 | 09 | [Modelisation-Etoile-PowerQuery](09-Modelisation-Etoile-PowerQuery/) | Table de faits et dimensions, granularité, schéma en étoile, relations Power BI, table de dates | BI avancée |
 | 10 | [DAX](10-DAX/) | Mesures DAX, colonnes calculées, contexte de filtre, CALCULATE, Time Intelligence | BI avancée |
-| 11 | [Visualisations-Avancees](11-Visualisations-Avancees/) | Drill-down, hiérarchies, interactivité, infobulles, accessibilité WCAG | Intermédiaire |
+| 11 | [Visualisations-Avancees](11-Visualisations-Avancees/) | Drill-down, hiérarchies, interactivité, accessibilité WCAG, dataviz Python (Plotly/Bokeh), cartographie Folium | Intermédiaire |
 | 12 | [Ethique-Biais-RGPD](12-Ethique-Biais-RGPD/) | RGPD appliqué au projet data, éthique, biais des données | Débutant |
 | 13 | [Accompagnement-Metier](13-Accompagnement-Metier/) | Accompagner une équipe métier : conduite du changement, adoption, cahier des charges | Intermédiaire |
-| 14 | [Collecte-Donnees](14-Collecte-Donnees/) | Concevoir un processus de collecte de données, RGPD by design | Débutant |
+| 14 | [Collecte-Donnees](14-Collecte-Donnees/) | Concevoir un processus de collecte de données, RGPD by design, web scraping | Débutant→intermédiaire |
 | 15 | [ETL-Automatisation](15-ETL-Automatisation/) | Automatiser la collecte : pipelines ETL, extraction et préparation des données | Débutant |
 | 16 | [Nettoyage-Donnees](16-Nettoyage-Donnees/) | Stratégies de nettoyage : valeurs manquantes, valeurs aberrantes | Débutant |
 | 17 | [Dashboard-Expert](17-Dashboard-Expert/) | Tableau de bord BI de niveau expert : conception complète, interactivité, accessibilité | Avancé |
 | 18 | [Preparation-Certification](18-Preparation-Certification/) | Préparer l'évaluation finale : révisions, portfolio, dossier de projet, soutenance | Avancé |
+| 19 | [Tableur-Avance](19-Tableur-Avance/) | Tableaux croisés dynamiques, recherches inter-fichiers (Excel / Google Sheets) | Débutant |
 
 ---
 
