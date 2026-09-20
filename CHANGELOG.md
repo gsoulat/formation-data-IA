@@ -1,3 +1,10 @@
+## [2.22.1](https://github.com/gsoulat/formation-data-IA/compare/v2.22.0...v2.22.1) (2026-09-20)
+
+
+### Bug Fixes
+
+* **data-analyst:** corriger 5 defauts du cours de statistiques descriptives ([4666590](https://github.com/gsoulat/formation-data-IA/commit/4666590893e86d68e0c6e4cb988e7d8a1aaf2061))
+
 # [2.22.0](https://github.com/gsoulat/formation-data-IA/compare/v2.21.0...v2.22.0) (2026-09-20)
 
 
