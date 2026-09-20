@@ -15,7 +15,7 @@ Mettez en pratique vos connaissances avec des projets concrets
 
 Choisissez votre parcours d'apprentissage
 
-[🏠 Index Module 5](index.html) [🔄 RNN Basiques](module5_rnn_basics.html) [🧠 LSTM & GRU](module5_lstm_gru.html) [🚀 Applications (Actuel)](module5_applications.html)
+[🏠 Index Module 5](index.md) [🔄 RNN Basiques](module5_rnn_basics.html) [🧠 LSTM & GRU](module5_lstm_gru.html) [🚀 Applications (Actuel)](module5_applications.md)
 
 ## 🎯 Applications Avancées
 
@@ -53,6 +53,6 @@ Félicitations ! Vous maîtrisez maintenant les RNN, LSTM et GRU
 **✅ Compétences acquises :**  
 Architecture RNN • Mémoire LSTM • Portes GRU • Applications pratiques
 
-[🧠 ← Réviser LSTM & GRU](module5_lstm_gru.html) [🤖 Module 6: Transformers →](../Module6/index.html)
+[🧠 ← Réviser LSTM & GRU](module5_lstm_gru.html) [🤖 Module 6: Transformers →](../Module6/index.md)
 
 **🚀 Prochaine étape :** Découvrez les Transformers et l'architecture qui révolutionne le NLP

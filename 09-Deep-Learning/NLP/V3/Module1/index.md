@@ -49,7 +49,7 @@ Qu'est-ce que le NLP ? Différences avec Computer Vision et ML classique. Défin
 
 ⏱️ 25 minutes
 
-](module1_intro.html)[
+](module1_intro.md)[
 
 ### 🚧 2. Défis du NLP
 
@@ -57,7 +57,7 @@ Ambiguïté, contexte, variation linguistique. Pourquoi le langage humain est-il
 
 ⏱️ 35 minutes
 
-](module1_defis.html)[
+](module1_defis.md)[
 
 ### 🎯 3. Tâches Principales
 
@@ -65,7 +65,7 @@ Classification, sentiment, NER, traduction, génération. Découvrez ce que le N
 
 ⏱️ 40 minutes
 
-](module1_taches.html)[
+](module1_taches.md)[
 
 ### 📈 4. Évolution Historique
 
@@ -73,7 +73,7 @@ De 1950 à aujourd'hui : règles, statistiques, embeddings, transformers. 70 ans
 
 ⏱️ 45 minutes
 
-](module1_evolution.html)[
+](module1_evolution.md)[
 
 ### 📋 5. Résumé & Quiz
 
@@ -81,9 +81,9 @@ Consolidez vos connaissances avec un résumé complet et testez votre compréhen
 
 ⏱️ 30 minutes
 
-](module1_resume.html)
+](module1_resume.md)
 
-[🚀 Commencer le Module 1](module1_intro.html)
+[🚀 Commencer le Module 1](module1_intro.md)
 
 ### 🔮 Modules Suivants
 

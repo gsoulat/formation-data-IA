@@ -92,29 +92,29 @@ result = session.exec(text("""
 ### Python
 | Section | Description |
 |---------|-------------|
-| [SQLAlchemy](./Python/SQLAlchemy/) | L'ORM Python de référence, pattern Data Mapper |
-| [SQLModel](./Python/SQLModel/) | SQLAlchemy + Pydantic, idéal pour FastAPI |
-| [Oxide](./Python/Oxide/) | ORM async moderne et léger |
-| [Tortoise-ORM](./Python/Tortoise-ORM/) | ORM async inspiré de Django |
-| [Ormar](./Python/Ormar/) | Mini ORM async SQLAlchemy + Pydantic |
+| [SQLAlchemy](01-Python/01-SQLAlchemy/) | L'ORM Python de référence, pattern Data Mapper |
+| [SQLModel](01-Python/02-SQLModel/) | SQLAlchemy + Pydantic, idéal pour FastAPI |
+| [Oxide](01-Python/03-Oxide/) | ORM async moderne et léger |
+| [Tortoise-ORM](01-Python/04-Tortoise-ORM/) | ORM async inspiré de Django |
+| [Ormar](01-Python/05-Ormar/) | Mini ORM async SQLAlchemy + Pydantic |
 
 ### Java
 | Section | Description |
 |---------|-------------|
-| [JPA / Hibernate](./Java/JPA-Hibernate/) | Standard Java EE, ORM le plus utilisé en entreprise |
-| [Spring Data JPA](./Java/Spring-Data-JPA/) | Couche Repository au-dessus de JPA, Spring Boot |
+| [JPA / Hibernate](02-Java/01-JPA-Hibernate/) | Standard Java EE, ORM le plus utilisé en entreprise |
+| [Spring Data JPA](02-Java/02-Spring-Data-JPA/) | Couche Repository au-dessus de JPA, Spring Boot |
 
 ### Rust
 | Section | Description |
 |---------|-------------|
-| [Diesel](./Rust/Diesel/) | ORM type-safe compilé, sync |
-| [SeaORM](./Rust/SeaORM/) | ORM async pour Rust, moderne |
+| [Diesel](03-Rust/01-Diesel/) | ORM type-safe compilé, sync |
+| [SeaORM](03-Rust/02-SeaORM/) | ORM async pour Rust, moderne |
 
 ### Migrations
 | Section | Description |
 |---------|-------------|
-| [Alembic](./Migrations/Alembic/) | Gestion de migrations pour SQLAlchemy/Python |
-| [Diesel Migrations](./Migrations/Diesel-Migrations/) | Migrations intégrées pour Diesel/Rust |
+| [Alembic](04-Migrations/01-Alembic/) | Gestion de migrations pour SQLAlchemy/Python |
+| [Diesel Migrations](04-Migrations/02-Diesel-Migrations/) | Migrations intégrées pour Diesel/Rust |
 
 ---
 

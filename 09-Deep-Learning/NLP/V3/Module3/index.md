@@ -50,7 +50,7 @@ Introduction : Du Texte aux Nombres
 
 Le défi central du NLP et panorama des solutions
 
-Théorie](module3_intro.html)[
+Théorie](module3_intro.md)[
 
 🎒
 
@@ -58,7 +58,7 @@ Bag of Words - Concepts
 
 Principe fondamental et mathématiques
 
-Théorie](module3_bow_concepts.html)[
+Théorie](module3_bow_concepts.md)[
 
 ⚖️
 
@@ -66,7 +66,7 @@ TF-IDF - Concepts
 
 Pondération intelligente des mots
 
-Théorie](module3_tfidf_concepts.html)[
+Théorie](module3_tfidf_concepts.md)[
 
 🔗
 
@@ -74,7 +74,7 @@ N-grams - Concepts
 
 Capturer les séquences de mots
 
-Théorie](module3_ngrams_concepts.html)
+Théorie](module3_ngrams_concepts.md)
 
 ## 🧪 Démonstrations Pratiques
 
@@ -88,7 +88,7 @@ Bag of Words - Démonstrations
 
 Générateur interactif et applications
 
-Demo](module3_bow_demo.html)[
+Demo](module3_bow_demo.md)[
 
 ⚖️
 
@@ -96,7 +96,7 @@ TF-IDF - Démonstrations
 
 Calculateur interactif et applications
 
-Demo](module3_tfidf_demo.html)[
+Demo](module3_tfidf_demo.md)[
 
 🔗
 
@@ -104,7 +104,7 @@ N-grams - Démonstrations
 
 Générateur avancé et analyses
 
-Demo](ngrams_demos.html)[
+Demo](ngrams_demos.md)[
 
 🤖
 
@@ -112,11 +112,11 @@ Classification de Texte
 
 Pipeline complet et comparaisons
 
-Projet](classification_final.html)
+Projet](classification_final.md)
 
 ### Navigation du Cours
 
-[🏠 Accueil Formation](../index.html) [← Module 2](../module2/index.html) [🚀 Commencer le Module](module3_intro.html) [Module 4 →](../module4/index.html)
+[🏠 Accueil Formation](../index.html) [← Module 2](../module2/index.md) [🚀 Commencer le Module](module3_intro.md) [Module 4 →](../module4/index.md)
 
 // Animation de la barre de progression window.addEventListener('load', function () { setTimeout(() => { document.querySelector('.progress-fill').style.width = '60%'; }, 1000); }); // Animation au scroll function animateOnScroll() { const cards = document.querySelectorAll('.section-card'); const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; } }); }, { threshold: 0.1 }); cards.forEach(card => { observer.observe(card); }); } // Initialisation document.addEventListener('DOMContentLoaded', animateOnScroll);
 

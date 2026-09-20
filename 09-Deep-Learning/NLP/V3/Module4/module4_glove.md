@@ -11,7 +11,7 @@ category: 09-Deep-Learning
 
 Global Vectors for Word Representation
 
-[← Word2Vec](module4_word2vec.html)
+[← Word2Vec](module4_word2vec.md)
 
 **GloVe - Statistiques Globales**  
 Stanford NLP Group, 2014
@@ -250,9 +250,9 @@ Pour approfondir vos connaissances sur GloVe :
 
 [📄 Paper Original - GloVe: Global Vectors for Word Representation](https://aclanthology.org/D14-1162/) [🏛️ Site Officiel Stanford NLP](https://nlp.stanford.edu/projects/glove/) [💻 Code Source Officiel (GitHub)](https://github.com/stanfordnlp/GloVe) [📦 Embeddings Pré-entraînés](https://nlp.stanford.edu/data/glove.6B.zip) [🐍 Utilisation avec Gensim](https://radimrehurek.com/gensim/scripts/glove2word2vec.html)
 
-[← Index Module 4](index.html)
+[← Index Module 4](index.md)
 
 **Prêt pour FastText ?**  
 Découvrez la gestion des sous-mots
 
-[FastText →](module4_fasttext.html)
+[FastText →](module4_fasttext.md)

@@ -170,5 +170,5 @@ Phase 3 — CONTRACT (supprimer l'ancienne version)
 
 | Section | Outil | Langage | ORM associé |
 |---------|-------|---------|-------------|
-| [Alembic](./Alembic/) | Alembic | Python | SQLAlchemy, SQLModel |
-| [Diesel Migrations](./Diesel-Migrations/) | diesel_migrations | Rust | Diesel |
+| [Alembic](01-Alembic/) | Alembic | Python | SQLAlchemy, SQLModel |
+| [Diesel Migrations](02-Diesel-Migrations/) | diesel_migrations | Rust | Diesel |

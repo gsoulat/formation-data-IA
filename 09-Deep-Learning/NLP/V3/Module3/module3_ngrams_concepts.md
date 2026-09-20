@@ -128,4 +128,4 @@ Créer des modèles statistiques simples de la langue.
 
 Améliorer les performances en capturant des expressions caractéristiques.
 
-[← Retour à TF-IDF](module3_tfidf_demo.html) [Voir les démonstrations pratiques →](ngrams_demos.html)
+[← Retour à TF-IDF](module3_tfidf_demo.md) [Voir les démonstrations pratiques →](ngrams_demos.md)

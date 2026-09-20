@@ -35,7 +35,7 @@ Ce parcours vous forme à concevoir, entraîner et déployer des modèles d'inte
 - [ ] [MLflow](08-Machine-Learning/cours/17-mlflow.md) — Experiment tracking, model registry
 - [ ] [Data Drift Detection](08-Machine-Learning/cours/18-data-drift.md) — Evidently AI, PSI, KS test
 - [ ] [MLOps Pipeline](08-Machine-Learning/MLOps/) — DVC, GitHub Actions ML, Docker ML, monitoring
-- [ ] [ORM Python](05-Databases/ORM/Python/) — SQLAlchemy, SQLModel, Alembic
+- [ ] [ORM Python](05-Databases/ORM/01-Python/) — SQLAlchemy, SQLModel, Alembic
 
 > 🎯 **[Brief — Prédiction de churn & industrialisation MLflow](99-Brief/Dev-IA/ML-Classification/BRIEF_ML_CLASSIFICATION.md)** — classification supervisée end-to-end, MLflow (tracking + registry) et détection de drift.
 
@@ -47,8 +47,8 @@ Ce parcours vous forme à concevoir, entraîner et déployer des modèles d'inte
 - [ ] [Cloud AI Services](04-Cloud-Platforms/AI-Services/) — Azure AI, AWS Textract/Rekognition/Bedrock, GCP Vision/Document AI
 - [ ] [Veille Technologique](01-Fondamentaux/Veille-Technologique/) — Rapport comparatif services IA
 - [ ] [API FastAPI + Modèle ML](01-Fondamentaux/Python/08-FastAPI/) — Exposer un modèle scikit-learn
-- [ ] [Streamlit](12-Frontend-IA/Streamlit/) — Interface cliente consommant une API modèle
-- [ ] [Gradio](12-Frontend-IA/Gradio/) — Interface ML avec composants interactifs
+- [ ] [Streamlit](12-Frontend-IA/02-Streamlit/) — Interface cliente consommant une API modèle
+- [ ] [Gradio](12-Frontend-IA/01-Gradio/) — Interface ML avec composants interactifs
 
 > 🎯 **[Brief — Intégration d'un service IA cloud managé](99-Brief/Dev-IA/Services-IA-Cloud/BRIEF_SERVICES_IA_CLOUD.md)** — service OCR/vision/génération exposé via une API FastAPI + interface Streamlit/Gradio.
 
@@ -57,9 +57,9 @@ Ce parcours vous forme à concevoir, entraîner et déployer des modèles d'inte
 ### 🚀 Phase 4 : Architecture & Gestion de Projet (Semaines 15-17)
 *Objectif : Cadrer un projet IA, concevoir une architecture, coordonner une équipe.*
 
-- [ ] [Agile / Scrum](11-Gestion-Projet/Agile-Scrum/) — User Stories, sprints, Kanban
-- [ ] [ADR](11-Gestion-Projet/ADR/) — Architecture Decision Records
-- [ ] [C4 Architecture](11-Gestion-Projet/C4-Architecture/) — Diagrammes C4, PlantUML, Structurizr
+- [ ] [Agile / Scrum](11-Gestion-Projet/01-Agile-Scrum/) — User Stories, sprints, Kanban
+- [ ] [ADR](11-Gestion-Projet/02-ADR/) — Architecture Decision Records
+- [ ] [C4 Architecture](11-Gestion-Projet/03-C4-Architecture/) — Diagrammes C4, PlantUML, Structurizr
 - [ ] [Django](01-Fondamentaux/Python/09-Django/) — Application web, DRF, auth JWT
 
 > 🎯 **[Brief — Cadrage & architecture d'un projet IA](99-Brief/Dev-IA/Architecture-Projet/BRIEF_ARCHITECTURE_PROJET.md)** — diagrammes C4, ADRs et découpage Agile (user stories, sprints).

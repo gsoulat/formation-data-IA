@@ -446,4 +446,4 @@ for log in derniers_logs:
 
 ## Prochaine étape
 
-Passez au module [ORM Django — 01 Requêtes](../ORM-Django/01-requetes.md) pour maîtriser l'interrogation de la base de données.
+Passez au module [ORM Django — 01 Requêtes](../02-ORM-Django/01-requetes.md) pour maîtriser l'interrogation de la base de données.

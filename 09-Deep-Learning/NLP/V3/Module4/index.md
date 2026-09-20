@@ -85,7 +85,7 @@ L'algorithme pionnier de Google qui a révolutionné le NLP en 2013. Découvrez 
 
 Google Research 2013
 
-[Découvrir Word2Vec →](module4_word2vec.html) [📓 Notebook Word2Vec →](notebook/module4_word2vec_demo.ipynb)
+[Découvrir Word2Vec →](module4_word2vec.md) [📓 Notebook Word2Vec →](notebook/module4_word2vec_demo.ipynb)
 
 2
 
@@ -100,7 +100,7 @@ L'approche Stanford qui combine statistiques globales et apprentissage local. Co
 
 Stanford NLP 2014
 
-[Comprendre GloVe →](module4_glove.html) [📓 Notebook GloVe →](notebook/module4_glove_demo.ipynb)
+[Comprendre GloVe →](module4_glove.md) [📓 Notebook GloVe →](notebook/module4_glove_demo.ipynb)
 
 3
 
@@ -117,14 +117,14 @@ L'innovation Facebook qui gère les mots inconnus grâce aux n-grammes de caract
 
 Facebook AI 2016
 
-[Explorer FastText →](module4_fasttext.html) [📓 Notebook FastText →](notebook/fasttext_demo.ipynb)
+[Explorer FastText →](module4_fasttext.md) [📓 Notebook FastText →](notebook/fasttext_demo.ipynb)
 
-[← Module 3: TF-IDF](../Module3/index.html)
+[← Module 3: TF-IDF](../Module3/index.md)
 
 **Module 4 - Word Embeddings**  
 De la théorie aux outils pratiques
 
-[Module 5: Deep Learning →](../Module5/index.html)
+[Module 5: Deep Learning →](../Module5/index.md)
 
 // Animation d'apparition progressive des cartes document.addEventListener('DOMContentLoaded', function() { const cards = document.querySelectorAll('.lesson-card'); const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }; const observer = new IntersectionObserver(function(entries) { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; } }); }, observerOptions); cards.forEach(card => { card.style.opacity = '0'; card.style.transform = 'translateY(30px)'; observer.observe(card); }); }); // Effet de hover interactif sur les cartes document.querySelectorAll('.lesson-card').forEach(card => { card.addEventListener('mouseenter', function() { this.style.background = 'rgba(255, 255, 255, 1)'; }); card.addEventListener('mouseleave', function() { this.style.background = 'rgba(255, 255, 255, 0.95)'; }); }); // Animation des statistiques au scroll function animateStats() { const statNumbers = document.querySelectorAll('.stat-number'); const targets = \['3', '300', '95%', '2013'\]; statNumbers.forEach((stat, index) => { if (index < 2) { // Animer les chiffres let current = 0; const target = parseInt(targets\[index\]); const increment = target / 30; const timer = setInterval(() => { current += increment; if (current >= target) { current = target; clearInterval(timer); } stat.textContent = Math.floor(current); }, 50); } }); } // Observer pour les statistiques const statsSection = document.querySelector('.stats-section'); const statsObserver = new IntersectionObserver(function(entries) { entries.forEach(entry => { if (entry.isIntersecting) { animateStats(); statsObserver.unobserve(entry.target); } }); }, { threshold: 0.5 }); statsObserver.observe(statsSection);
 

@@ -61,10 +61,10 @@ Vous connaissez déjà la Computer Vision et le ML classique. Voici les différe
 *   **Défis :** Ambiguïté, contexte, culture, évolution
 *   **Exemple :** Comprendre "Je suis content" vs "Je suis content !"
 
-[⬅️ Retour au Module](module1_index.html) [🚧 Découvrir les Défis](module1_defis.html)
+[⬅️ Retour au Module](module1_index.html) [🚧 Découvrir les Défis](module1_defis.md)
 
 ### ➡️ Prochaine Étape
 
 Maintenant que vous comprenez ce qu'est le NLP, explorons les défis uniques qui rendent cette discipline si fascinante et complexe !
 
-[Continuer vers les Défis 🚧](module1_defis.html)
+[Continuer vers les Défis 🚧](module1_defis.md)

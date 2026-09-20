@@ -14,12 +14,12 @@ Le cœur révolutionnaire des Transformers
 **🎯 Question centrale :**  
 "Comment permettre à un modèle de se concentrer sur les parties importantes d'une séquence ?"
 
-[← Introduction](module6_introduction.html)
+[← Introduction](module6_introduction.md)
 
 **Mécanismes d'Attention**  
 Le cœur des Transformers
 
-[Architecture Transformer →](module6_transformer_architecture.html)
+[Architecture Transformer →](module6_transformer_architecture.md)
 
 ## 1\. 🔍 Qu'est-ce que l'Attention ?
 
@@ -333,11 +333,11 @@ Le modèle apprend automatiquement quelles connexions sont importantes.
 
 **Impact :** Adaptation automatique à différents types de tâches.
 
-[← Introduction](module6_introduction.html)
+[← Introduction](module6_introduction.md)
 
 **Prêt pour l'architecture complète ?**  
 Découvrez le Transformer au complet
 
-[Architecture Transformer →](module6_transformer_architecture.html)
+[Architecture Transformer →](module6_transformer_architecture.md)
 
 // Démonstration interactive d'attention const attentionPatterns = { '0': { weights: \[0.8, 0.1, 0.05, 0.02, 0.02, 0.01\], explanation: "Le déterminant 'Le' porte surtout attention à lui-même et un peu au nom qu'il détermine." }, '1': { weights: \[0.2, 0.4, 0.15, 0.2, 0.03, 0.02\], explanation: "Le nom 'chat' porte attention au déterminant, à son adjectif 'noir', et au verbe 'mange'." }, '2': { weights: \[0.05, 0.6, 0.3, 0.03, 0.01, 0.01\], explanation: "L'adjectif 'noir' porte principalement attention au nom qu'il qualifie : 'chat'." }, '3': { weights: \[0.02, 0.5, 0.05, 0.3, 0.08, 0.05\], explanation: "Le verbe 'mange' porte attention au sujet 'chat' et à l'objet 'souris'." }, '4': { weights: \[0.1, 0.02, 0.01, 0.05, 0.7, 0.12\], explanation: "Le déterminant 'la' porte surtout attention à lui-même et au nom qu'il détermine." }, '5': { weights: \[0.01, 0.02, 0.01, 0.3, 0.15, 0.51\], explanation: "Le nom 'souris' porte attention au verbe qui l'affecte et à son déterminant." } }; document.getElementById('attentionDemo').addEventListener('click', function(e) { if (e.target.classList.contains('word-token')) { // Reset all tokens document.querySelectorAll('.word-token').forEach(token => { token.classList.remove('active'); const existing = token.querySelector('.attention-weight'); if (existing) existing.remove(); }); // Activate clicked token e.target.classList.add('active'); // Get attention pattern const wordIndex = e.target.dataset.word; const pattern = attentionPatterns\[wordIndex\]; // Add attention weights document.querySelectorAll('.word-token').forEach((token, i) => { const weight = pattern.weights\[i\]; if (weight > 0.1) { const weightElement = document.createElement('div'); weightElement.className = 'attention-weight'; weightElement.textContent = weight.toFixed(1); token.appendChild(weightElement); } }); // Update explanation document.getElementById('attentionExplanation').textContent = pattern.explanation; } }); // Matrice d'attention interactive const matrixExplanations = { '0.1': "Attention faible - relation grammaticale basique", '0.2': "Attention faible-moyenne - lien contextuel", '0.3': "Attention moyenne - relation syntaxique", '0.5': "Attention forte - auto-attention (le mot se regarde lui-même)", '0.6': "Attention forte - relation grammaticale importante", '0.7': "Attention très forte - dépendance syntaxique directe" }; document.getElementById('attentionMatrix').addEventListener('click', function(e) { if (e.target.classList.contains('matrix-value')) { const score = e.target.dataset.score; const explanation = matrixExplanations\[score\] || "Score d'attention"; document.getElementById('matrixExplanation').innerHTML = \`<strong>Score ${score} :</strong> ${explanation}\`; } }); // Animation au scroll function animateOnScroll() { const elements = document.querySelectorAll('.content-section'); elements.forEach(element => { const elementTop = element.getBoundingClientRect().top; const elementVisible = 150; if (elementTop < window.innerHeight - elementVisible) { element.style.opacity = '1'; element.style.transform = 'translateY(0)'; } }); } window.addEventListener('scroll', animateOnScroll); document.addEventListener('DOMContentLoaded', animateOnScroll);

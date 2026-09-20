@@ -11,7 +11,7 @@ category: 09-Deep-Learning
 
 Mettons en pratique BoW, TF-IDF et N-grams pour classifier du texte
 
-[← N-grams](ngrams_demos.html) [🏠 Index Module 3](index.html) [🏠 Index Général](../index.html)
+[← N-grams](ngrams_demos.md) [🏠 Index Module 3](index.md) [🏠 Index Général](../index.html)
 
 ## 🏆 Félicitations ! Vous maîtrisez les représentations textuelles !
 
@@ -207,7 +207,7 @@ Index Module 3
 
 Retour au sommaire
 
-](index.html)[
+](index.md)[
 
 🚀
 
@@ -215,7 +215,7 @@ Module 4 : Word Embeddings
 
 Continuez votre apprentissage
 
-](../module4/index.html)[
+](../module4/index.md)[
 
 📚
 

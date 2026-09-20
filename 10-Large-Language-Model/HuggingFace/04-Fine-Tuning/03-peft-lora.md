@@ -544,4 +544,4 @@ print("Adaptateurs LoRA sauvegardés !")
 
 ## Suite du cours
 
-Le module suivant ([../Embeddings/01-sentence-transformers.md](../Embeddings/01-sentence-transformers.md)) présente la bibliothèque `sentence-transformers` pour calculer des embeddings de phrases et effectuer de la recherche sémantique.
+Le module suivant ([../Embeddings/01-sentence-transformers.md](../05-Embeddings/01-sentence-transformers.md)) présente la bibliothèque `sentence-transformers` pour calculer des embeddings de phrases et effectuer de la recherche sémantique.

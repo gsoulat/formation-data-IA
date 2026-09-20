@@ -145,7 +145,7 @@ Templates adaptatifs, prompts contextuels, systèmes auto-améliorés. Créez de
 *   📈 Métriques de qualité standardisées
 *   🔍 Analyseur de cohérence et logique
 
-[🚀 Commencer le Module 10](notebooks/01_Techniques_Avancees.ipynb) [🎯 Guide des Frameworks](frameworks_prompting.html) [🧠 Frameworks Avancés](frameworks_avances.html) [🛠️ Générateur de Prompts](generateur_prompts.html)
+[🚀 Commencer le Module 10](notebooks/01_Techniques_Avancees.ipynb) [🎯 Guide des Frameworks](frameworks_prompting.md) [🧠 Frameworks Avancés](frameworks_avances.md) [🛠️ Générateur de Prompts](generateur_prompts.md)
 
 ## 📚 Ressources Complémentaires
 

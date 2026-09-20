@@ -210,6 +210,6 @@ Exploration de l'écosystème...
 
 8
 
-[BERT en Détail →](module7_bert_detail.html)
+[BERT en Détail →](module7_bert_detail.md)
 
 // Animation de la barre de progression window.addEventListener('load', function() { setTimeout(() => { document.getElementById('progressBar').style.width = '100%'; }, 1000); }); // Comparaison de modèles de sentiment function compareSentimentModels() { const input = document.getElementById('sentimentInput').value.trim(); if (!input) { document.getElementById('sentimentComparison').textContent = 'Comparaison des modèles apparaîtra ici...'; return; } // Simulation de différents modèles let comparisonHTML = '<strong>📊 Comparaison des Approches :</strong><br><br>'; // Analyse avec différents modèles const analyses = \[ { model: 'TF-IDF + Logistic Regression', sentiment: 'Neutre', confidence: '67%', </x-turndown>

@@ -577,4 +577,4 @@ DOCUMENTATION ACTUELLE :
 | Absence d'info | Détecter et refuser explicitement (pas d'hallucination) |
 | Streaming | Préférer `.stream()` pour les UIs en temps réel |
 
-La suite : [Evaluation/01-metriques.md](../Evaluation/01-metriques.md) — Mesurer la qualité de votre système RAG
+La suite : [Evaluation/01-metriques.md](../03-Evaluation/01-metriques.md) — Mesurer la qualité de votre système RAG

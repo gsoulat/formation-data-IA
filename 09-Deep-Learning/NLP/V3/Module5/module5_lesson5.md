@@ -391,4 +391,4 @@ model.compile(
 *   ✅ **Données :** Qualité > Quantité, équilibrage important
 *   ✅ **Reproductibilité :** Fixez les seeds pour comparer les expériences
 
-[← Leçon 4 : Applications](module5_lesson4.html) [Module 6 : Transformers →](../module6/index.html)
+[← Leçon 4 : Applications](module5_lesson4.md) [Module 6 : Transformers →](../module6/index.md)

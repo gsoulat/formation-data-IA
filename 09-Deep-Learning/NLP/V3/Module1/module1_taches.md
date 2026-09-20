@@ -7,7 +7,7 @@ tags:
 category: 09-Deep-Learning
 ---
 
-[🏠 Introduction](module1_intro.html) → [🚧 Défis](module1_defis.html) → 🎯 Tâches Principales
+[🏠 Introduction](module1_intro.md) → [🚧 Défis](module1_defis.md) → 🎯 Tâches Principales
 
 # 🎯 Principales Tâches du NLP
 
@@ -218,7 +218,7 @@ Réponse
 
 ⭐⭐⭐⭐⭐
 
-[⬅️ Retour Défis](module1_defis.html) [📈 Voir l'Évolution Historique](module1_evolution.html)
+[⬅️ Retour Défis](module1_defis.md) [📈 Voir l'Évolution Historique](module1_evolution.md)
 
 ### 📈 Prochaine Étape
 

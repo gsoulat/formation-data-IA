@@ -497,4 +497,4 @@ def test_context_recall_minimum(scores):
 | Coût | ~$0.01-0.05 par question évaluée (appels LLM internes) |
 | Recommandation | Évaluer sur 20-50 questions représentatives minimum |
 
-La suite : [Avance/01-rag-conversationnel.md](../Avance/01-rag-conversationnel.md) — RAG multi-tours avec historique
+La suite : [Avance/01-rag-conversationnel.md](../04-Avance/01-rag-conversationnel.md) — RAG multi-tours avec historique

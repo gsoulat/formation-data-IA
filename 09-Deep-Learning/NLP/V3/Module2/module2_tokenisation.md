@@ -7,7 +7,7 @@ tags:
 category: 09-Deep-Learning
 ---
 
-[📚 Module 2](index.html) → [🏠 Introduction](module2_intro.html) → [🧹 Nettoyage](module2_nettoyage.html) → ✂️ Tokenisation
+[📚 Module 2](index.md) → [🏠 Introduction](module2_intro.md) → [🧹 Nettoyage](module2_nettoyage.md) → ✂️ Tokenisation
 
 # ✂️ Tokenisation
 
@@ -279,12 +279,12 @@ Entrez du texte et cliquez sur "Comparer" pour voir les différences...
 *   Adaptable au domaine
 *   Performance prévisible
 
-[⬅️ Retour Nettoyage](module2_nettoyage.html) [⚙️ Techniques Avancées](module2_avance.html)
+[⬅️ Retour Nettoyage](module2_nettoyage.md) [⚙️ Techniques Avancées](module2_avance.md)
 
 ### ⚙️ Prochaine Étape
 
 Excellent ! Vous maîtrisez maintenant la tokenisation. Passons aux techniques avancées : stopwords, lemmatisation et stemming !
 
-[Découvrir les Techniques Avancées 🚀](module2_avance.html)
+[Découvrir les Techniques Avancées 🚀](module2_avance.md)
 
 // Gestion des onglets function showTab(tabId) { // Cacher tous les contenus const contents = document.querySelectorAll('.tab-content'); contents.forEach(content => content.classList.remove('active')); // Désactiver tous les onglets const tabs = document.querySelectorAll('.tab'); tabs.forEach(tab => tab.classList.remove('active')); // Activer l'onglet et contenu sélectionnés document.getElementById(tabId).classList.add('active'); event.target.classList.add('active'); } // Démonstration comparative de tokenisation function compareTokenization() { const input = document.getElementById('tokenInput').value.trim(); const resultDiv = document.getElementById('tokenResults'); if (!input) { resultDiv.textContent = 'Veuillez entrer du texte à tokeniser'; return; } // Méthode 1: Split par espaces const method1 = input.split(/\\s+/); // Méthode 2: Regex simple const method2 = input.match(/\\w+/g) || \[\]; // Méthode 3: Simulation NLTK (gestion contractions) let method3 = input; // Simulation de la gestion des contractions method3 = method3.replace(/n'(\\w)/g, "n' $1"); method3 = method3.replace(/j'(\\w)/g, "j' $1"); method3 = method3.replace(/c'(\\w)/g, "c' $1"); method3 = method3.replace(/qu'(\\w)/g, "qu' $1"); const nltkTokens = method3.split(/\\s+/).filter(t => t.trim().length > 0); // Méthode 4: Simulation spaCy (plus sophistiquée) let method4 = input; method4 = method4.replace(/(\[.!?\])/g, ' $1'); method4 = method4.replace(/(\[,;:\])/g, ' $1'); method4 = method4.replace(/-/g, ' - '); method4 = method4.replace(/'/g, "' "); const spacyTokens = method4.split(/\\s+/).filter(t => t.trim().length > 0); resultDiv.innerHTML = \` <strong>🔬 Comparaison des méthodes de tokenisation :</strong> 📝 <strong>Texte original :</strong> "${input}" 📊 <strong>Résultats :</strong> 1️⃣ <strong>Split simple (${method1.length} tokens) :</strong> \[${method1.map(t => \`"${t}"\`).join(', ')}\] 2️⃣ <strong>Regex \\\\w+ (${method2.length} tokens) :</strong> \[${method2.map(t => \`"${t}"\`).join(', ')}\] 3️⃣ <strong>Style NLTK (${nltkTokens.length} tokens) :</strong> \[${nltkTokens.map(t => \`"${t}"\`).join(', ')}\] 4️⃣ <strong>Style spaCy (${spacyTokens.length} tokens) :</strong> \[${spacyTokens.map(t => \`"${t}"\`).join(', ')}\] 💡 <strong>Observations :</strong> • Split simple : ${method1.some(t => t.includes(',') || t.includes('.')) ? 'Garde la ponctuation attachée' : 'Sépare bien les mots'} • Regex : ${method2.length < method1.length ? 'Supprime la ponctuation' : 'Préserve les mots'} • NLTK : ${nltkTokens.some(t => t.includes("'")) ? 'Gère bien les contractions françaises' : 'Tokenisation standard'} • spaCy : ${spacyTokens.length > method1.length ? 'Sépare finement (ponctuation isolée)' : 'Tokenisation conservative'} 🎯 <strong>Recommandation pour ce texte :</strong> ${getBestMethod(input, method1, method2, nltkTokens, spacyTokens)} \`; } function getBestMethod(input, method1, method2, nltk, spacy) { if (input.includes("'") && (input.includes("n'") || input.includes("j'"))) { return "spaCy ou NLTK pour gérer les contractions françaises"; } else if (input.includes(",") || input.includes(".")) { return "spaCy pour séparer proprement la ponctuation"; } else { return "Split simple suffit pour ce cas basique"; } } // Exemples automatiques au clic document.addEventListener('DOMContentLoaded', function() { const examples = \[ "J'adore les self-services, n'est-ce pas ?", "C'est vraiment génial ! Qu'est-ce que tu en penses ?", "Rendez-vous à 14h30 pour discuter du e-commerce.", "L'anti-inflammatoire coûte vingt-trois euros.", "Marie-Claire habite à Saint-Étienne depuis l'année dernière." \]; const input = document.getElementById('tokenInput'); if (input) { input.addEventListener('click', function() { if (!this.value) { const randomExample = examples\[Math.floor(Math.random() \* examples.length)\]; this.value = randomExample; } }); } });

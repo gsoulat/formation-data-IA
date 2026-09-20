@@ -55,7 +55,7 @@ Concevoir des architectures microservices scalables pour le NLP avec FastAPI, Re
 *   Cache et Queue management
 *   Base de données et Vector stores
 
-[Commencer →](module8_architecture_production.html)
+[Commencer →](module8_architecture_production.md)
 
 ⚡
 
@@ -68,7 +68,7 @@ Techniques avancées pour réduire la latence et l'empreinte mémoire : quantiza
 *   Pruning et compression
 *   ONNX Runtime & TensorRT
 
-[Commencer →](module8_optimisation_modeles.html)
+[Commencer →](module8_optimisation_modeles.md)
 
 🐳
 
@@ -81,7 +81,7 @@ Containerisation, orchestration Kubernetes, CI/CD pour modèles NLP en productio
 *   CI/CD avec tests automatisés
 *   Rolling updates & Blue-Green
 
-[Commencer →](module8_deploiement_production.html)
+[Commencer →](module8_deploiement_production.md)
 
 📊
 
@@ -94,7 +94,7 @@ Surveillance temps réel, détection de dérive, alerting et debugging des syst�
 *   Logging structuré
 *   Alerting et incident response
 
-[Commencer →](module8_monitoring_observabilite.html)
+[Commencer →](module8_monitoring_observabilite.md)
 
 ## 🎯 Objectifs d'Apprentissage
 
@@ -116,7 +116,7 @@ Compétences Business
 *   Assurer SLA et disponibilité
 *   Optimiser les coûts cloud
 
-[← Module 7](../Module7/index.html)
+[← Module 7](../Module7/index.md)
 
 **Module 8 - NLP en Production**  
 4 chapitres • 3 notebooks • Projets pratiques

@@ -457,5 +457,5 @@ Adaptive RAG
 | Corrective RAG | Fallback web si KB insuffisante | Moyen | Moyen |
 | Adaptive RAG | Router vers la meilleure stratégie | Très élevé | Élevé |
 
-Retour au début : [Concepts/01-introduction-rag.md](../Concepts/01-introduction-rag.md)
+Retour au début : [Concepts/01-introduction-rag.md](../01-Concepts/01-introduction-rag.md)
 Passer aux exercices : [exercices/exercice-01-rag-documents.md](../exercices/exercice-01-rag-documents.md)

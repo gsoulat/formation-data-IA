@@ -402,4 +402,4 @@ print(answer)
 
 ## Suite du cours
 
-Le module suivant ([../Datasets/01-charger-dataset.md](../Datasets/01-charger-dataset.md)) explique comment charger et explorer des datasets avec la bibliothèque `datasets` pour préparer les données d'entraînement.
+Le module suivant ([../Datasets/01-charger-dataset.md](../03-Datasets/01-charger-dataset.md)) explique comment charger et explorer des datasets avec la bibliothèque `datasets` pour préparer les données d'entraînement.

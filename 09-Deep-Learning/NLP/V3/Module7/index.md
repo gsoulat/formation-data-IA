@@ -79,7 +79,7 @@ Fondamental
 
 Découvrez l'architecture révolutionnaire de BERT, le Masked Language Modeling et ses applications en compréhension de texte.
 
-[Découvrir BERT →](module7_bert_architecture.html)
+[Découvrir BERT →](module7_bert_architecture.md)
 
 Intermédiaire
 
@@ -87,7 +87,7 @@ Intermédiaire
 
 Explorez l'évolution de GPT-1 à GPT-4, la génération de texte et les fondements de ChatGPT.
 
-[Explorer GPT →](module7_gpt_architecture.html)
+[Explorer GPT →](module7_gpt_architecture.md)
 
 Pratique
 
@@ -95,7 +95,7 @@ Pratique
 
 Maîtrisez l'art du fine-tuning : adapter BERT et GPT pour vos tâches spécifiques avec peu de données.
 
-[Maîtriser →](module7_fine_tuning.html)
+[Maîtriser →](module7_fine_tuning.md)
 
 Avancé
 
@@ -103,7 +103,7 @@ Avancé
 
 Projets complets : chatbots, analyse de sentiment, génération créative et déploiement en production.
 
-[Construire →](module7_applications.html)
+[Construire →](module7_applications.md)
 
 ### 📓 Notebooks Interactifs
 
@@ -122,27 +122,27 @@ Transfer Learning • Optimisation [📓 Notebook Fine-tuning →](notebooks/03_
 
 🗺️ Parcours de Formation NLP
 
-[1](../Module1/index.html "Module 1: Introduction au NLP")
+[1](../Module1/index.md "Module 1: Introduction au NLP")
 
 Intro NLP
 
-[2](../Module2/index.html "Module 2: Prétraitement")
+[2](../Module2/index.md "Module 2: Prétraitement")
 
 Prétraitement
 
-[3](../Module3/index.html "Module 3: TF-IDF & N-grammes")
+[3](../Module3/index.md "Module 3: TF-IDF & N-grammes")
 
 TF-IDF
 
-[4](../Module4/index.html "Module 4: Word Embeddings")
+[4](../Module4/index.md "Module 4: Word Embeddings")
 
 Embeddings
 
-[5](../Module5/index.html "Module 5: RNN & LSTM")
+[5](../Module5/index.md "Module 5: RNN & LSTM")
 
 RNN/LSTM
 
-[6](../Module6/index.html "Module 6: Transformers")
+[6](../Module6/index.md "Module 6: Transformers")
 
 Transformers
 
@@ -150,16 +150,16 @@ Transformers
 
 BERT/GPT
 
-[8](../Module8/index.html "Module 8: Production")
+[8](../Module8/index.md "Module 8: Production")
 
 Production
 
-[← Module 6: Transformers](../Module6/index.html)
+[← Module 6: Transformers](../Module6/index.md)
 
 **Module 7 - BERT & GPT**  
 Les modèles qui dominent l'IA moderne
 
-[Module 8: Production →](../Module8/index.html)
+[Module 8: Production →](../Module8/index.md)
 
 // Animation de fade-in progressive document.addEventListener('DOMContentLoaded', function() { const cards = document.querySelectorAll('.module-card'); cards.forEach((card, index) => { card.style.animation = \`slideUp 0.5s ease-out ${index \* 0.1}s forwards\`; }); });
 

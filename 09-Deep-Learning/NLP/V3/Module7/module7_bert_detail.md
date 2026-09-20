@@ -253,7 +253,7 @@ Système Q&A BERT en action...
 
 Réponse intelligente de BERT...
 
-[← Introduction BERT & GPT](module7_intro_bert_gpt.html)
+[← Introduction BERT & GPT](module7_intro_bert_gpt.md)
 
 7.1
 

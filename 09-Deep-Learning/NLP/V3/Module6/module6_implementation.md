@@ -15,7 +15,7 @@ Construisez votre propre Transformer et explorez ses applications
 
 Explorez les Transformers étape par étape
 
-[🏠 Index Module 6](index.html) [👁️ Mécanismes d'Attention](module6_attention_mechanisms.html) [🏗️ Architecture](module6_transformer_architecture.html)
+[🏠 Index Module 6](index.md) [👁️ Mécanismes d'Attention](module6_attention_mechanisms.md) [🏗️ Architecture](module6_transformer_architecture.md)
 
 🚀 Implémentation (Actuel)
 
@@ -88,6 +88,6 @@ Félicitations ! Vous maîtrisez maintenant les Transformers
 **✅ Compétences acquises :**  
 Self-Attention • Multi-Head Attention • Architecture Encoder-Decoder • Implémentation Pratique
 
-[🏗️ ← Réviser l'Architecture](module6_transformer_architecture.html) [🤖 Module 7: BERT & GPT →](../Module7/index.html)
+[🏗️ ← Réviser l'Architecture](module6_transformer_architecture.md) [🤖 Module 7: BERT & GPT →](../Module7/index.md)
 
 **🚀 Prochaine étape :** Découvrez BERT, GPT et les modèles de langage modernes

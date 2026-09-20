@@ -404,4 +404,4 @@ tokenizer(
 
 ## Suite du cours
 
-Le module suivant ([../Models/01-charger-modele.md](../Models/01-charger-modele.md)) montre comment charger les modèles complets avec `AutoModel` et utiliser les sorties du tokenizer pour effectuer une inférence manuelle, sans passer par le pipeline.
+Le module suivant ([../Models/01-charger-modele.md](../02-Models/01-charger-modele.md)) montre comment charger les modèles complets avec `AutoModel` et utiliser les sorties du tokenizer pour effectuer une inférence manuelle, sans passer par le pipeline.

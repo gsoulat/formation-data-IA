@@ -388,4 +388,4 @@ class ArticleViewSet(viewsets.ModelViewSet):
 
 ## Prochaine étape
 
-Passez au module [Avancé — Middleware](../Avance/01-middleware.md) pour approfondir les fonctionnalités Django.
+Passez au module [Avancé — Middleware](../04-Avance/01-middleware.md) pour approfondir les fonctionnalités Django.

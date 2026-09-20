@@ -274,4 +274,4 @@ Patterns complexes sur longue durée
 *   ✅ **Complexité** : RNN < GRU < LSTM
 *   ✅ **Règle d'or** : Commencez par GRU, ajustez selon vos besoins
 
-[← Leçon 2 : LSTM](module5_lesson2.html) [Leçon 4 : Applications →](module5_lesson4.html)
+[← Leçon 2 : LSTM](module5_lesson2.md) [Leçon 4 : Applications →](module5_lesson4.md)

@@ -49,4 +49,4 @@ Dans ce module, nous utiliserons principalement :
 *   **Pandas** : Pour la manipulation des données
 *   **Matplotlib/Seaborn** : Pour la visualisation
 
-[← Module Précédent](../module2/index.html) [Commencer le Module →](module3_bow_concepts.html)
+[← Module Précédent](../module2/index.md) [Commencer le Module →](module3_bow_concepts.md)

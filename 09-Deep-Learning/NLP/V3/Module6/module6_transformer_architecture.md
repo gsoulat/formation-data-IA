@@ -15,11 +15,11 @@ Comprendre la structure révolutionnaire qui a transformé l'IA
 
 Explorez les Transformers étape par étape
 
-[🏠 Index Module 6](index.html) [👁️ Mécanismes d'Attention](module6_attention_mechanisms.html)
+[🏠 Index Module 6](index.md) [👁️ Mécanismes d'Attention](module6_attention_mechanisms.md)
 
 🏗️ Architecture (Actuel)
 
-[🚀 Implémentation →](module6_implementation.html)
+[🚀 Implémentation →](module6_implementation.md)
 
 ## 🏗️ Vue d'Ensemble de l'Architecture
 
@@ -286,6 +286,6 @@ Vous comprenez maintenant l'architecture révolutionnaire des Transformers ! Pas
 
 Implémentez votre propre Transformer et découvrez ses applications
 
-[🚀 Implémentation & Applications →](module6_implementation.html) [🤖 Module 7: BERT & GPT](../Module7/index.html)
+[🚀 Implémentation & Applications →](module6_implementation.md) [🤖 Module 7: BERT & GPT](../Module7/index.md)
 
 // Animation de la barre de progression window.addEventListener('load', function() { setTimeout(() => { document.getElementById('progressBar').style.width = '75%'; }, 1000); }); // Gestion des onglets function showTab(tabName) { // Cacher tous les contenus d'onglets const contents = document.querySelectorAll('.tab-content'); contents.forEach(content => content.classList.remove('active')); // Désactiver tous les onglets const tabs = document.querySelectorAll('.tab'); tabs.forEach(tab => tab.classList.remove('active')); // Activer l'onglet et le contenu sélectionnés document.getElementById(tabName).classList.add('active'); event.target.classList.add('active'); } // Highlight des blocs transformer function highlightBlock(block, type) { // Reset all blocks document.querySelectorAll('.transformer-block').forEach(b => { b.style.transform = 'scale(1)'; b.style.boxShadow = ''; }); // Highlight clicked block block.style.transform = 'scale(1.1)'; block.style.boxShadow = '0 12px 30px rgba(255, 107, 107, 0.6)'; // Reset after 2 seconds setTimeout(() => { block.style.transform = 'scale(1)'; block.style.boxShadow = ''; }, 2000); }

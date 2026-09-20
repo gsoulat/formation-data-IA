@@ -11,7 +11,7 @@ category: 09-Deep-Learning
 
 Pondération Intelligente : Tous les mots ne se valent pas !
 
-[🏠 Index Module 3](index.html) [← BoW Démo](module3_bow_demo.html) [Démonstrations →](module3_tfidf_demo.html)
+[🏠 Index Module 3](index.md) [← BoW Démo](module3_bow_demo.md) [Démonstrations →](module3_tfidf_demo.md)
 
 ## 🤔 Le Problème du Bag of Words
 
@@ -280,4 +280,4 @@ BoW plus sûr
 
 ### Navigation
 
-[🏠 Index Module 3](index.html) [← BoW Démo](module3_bow_demo.html) [TF-IDF Démo →](module3_tfidf_demo.html) [🏠 Accueil Formation](../index.html)
+[🏠 Index Module 3](index.md) [← BoW Démo](module3_bow_demo.md) [TF-IDF Démo →](module3_tfidf_demo.md) [🏠 Accueil Formation](../index.html)

@@ -136,4 +136,4 @@ plt.tight_layout()
 plt.show()
 ```
 
-[← Retour aux concepts TF-IDF](module3_tfidf_concepts.html) [Suivant : N-grammes →](module3_ngrams_concepts.html)
+[← Retour aux concepts TF-IDF](module3_tfidf_concepts.md) [Suivant : N-grammes →](module3_ngrams_concepts.md)

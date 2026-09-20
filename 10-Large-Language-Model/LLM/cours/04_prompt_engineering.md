@@ -91,7 +91,7 @@ Le Prompt Engineering est un processus itératif. N'hésitez jamais à reformule
 
 Pour mettre en pratique ces concepts, nous avons créé un petit outil interactif qui vous aide à construire des prompts structurés en suivant les bonnes pratiques.
 
-**[🔧 Accéder au Générateur de Prompt](../exemple/04_générateur_de_prompt.html)**
+**[🔧 Accéder au Générateur de Prompt](../exemple/04_g%C3%A9n%C3%A9rateur_de_prompt.md)**
 
 Cet outil vous guidera pour définir un persona, spécifier le format de sortie, ajouter des contraintes et bien plus encore. C'est un excellent moyen de s'exercer.
 

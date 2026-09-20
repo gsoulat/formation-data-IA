@@ -55,7 +55,7 @@ Fondamentaux du NLP
 
 Débutant
 
-[📖 Cours](Module1/index.html) [🐍 Scripts](Module1/Scripts/)
+[📖 Cours](Module1/index.md) [🐍 Scripts](Module1/Scripts/)
 
 🛠️
 
@@ -73,7 +73,7 @@ Préprocessing Avancé
 
 Débutant
 
-[📖 Cours](Module2/index.html) [🐍 Scripts](Module2/Scripts/)
+[📖 Cours](Module2/index.md) [🐍 Scripts](Module2/Scripts/)
 
 📊
 
@@ -91,7 +91,7 @@ Représentations Classiques
 
 Intermédiaire
 
-[📖 Cours](Module3/index.html) [🐍 Scripts](Module3/Scripts/)
+[📖 Cours](Module3/index.md) [🐍 Scripts](Module3/Scripts/)
 
 🌟
 
@@ -109,7 +109,7 @@ Word Embeddings
 
 Intermédiaire
 
-[📖 Cours](Module4/index.html) [🐍 Scripts](Module4/Scripts/)
+[📖 Cours](Module4/index.md) [🐍 Scripts](Module4/Scripts/)
 
 🔄
 
@@ -127,7 +127,7 @@ Réseaux Récurrents
 
 Avancé
 
-[📖 Cours](Module5/index.html) [🐍 Scripts](Module5/Scripts/)
+[📖 Cours](Module5/index.md) [🐍 Scripts](Module5/Scripts/)
 
 👁️
 
@@ -145,7 +145,7 @@ Attention & Transformers
 
 Avancé
 
-[📖 Cours](Module6/index.html) [🐍 Scripts](Module6/Scripts/)
+[📖 Cours](Module6/index.md) [🐍 Scripts](Module6/Scripts/)
 
 🤖
 
@@ -163,7 +163,7 @@ BERT & Applications
 
 Avancé
 
-[📖 Cours](Module7/index.html) [🐍 Scripts](Module7/Scripts/)
+[📖 Cours](Module7/index.md) [🐍 Scripts](Module7/Scripts/)
 
 🚀
 
@@ -181,7 +181,7 @@ Déploiement Production
 
 Avancé
 
-[📖 Cours](Module8/index.html) [🐍 Scripts](Module8/Scripts/)
+[📖 Cours](Module8/index.md) [🐍 Scripts](Module8/Scripts/)
 
 ## 📚 Ressources Complémentaires
 

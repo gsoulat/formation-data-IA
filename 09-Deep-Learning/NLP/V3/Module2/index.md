@@ -77,7 +77,7 @@ Comprendre l'importance du preprocessing. Problèmes du texte brut, démonstrati
 
 ⏱️ 45 minutes
 
-](module2_intro.html)[
+](module2_intro.md)[
 
 ### 🧹 2. Nettoyage et Normalisation
 
@@ -85,7 +85,7 @@ Techniques de nettoyage : casse, ponctuation, URLs, emojis. Normalisation des ac
 
 ⏱️ 60 minutes
 
-](module2_nettoyage.html)[
+](module2_nettoyage.md)[
 
 ### ✂️ 3. Tokenisation
 
@@ -93,7 +93,7 @@ Stratégies de découpage en mots. Spécificités du français : contractions, m
 
 ⏱️ 60 minutes
 
-](module2_tokenisation.html)[
+](module2_tokenisation.md)[
 
 ### ⚙️ 4. Techniques Avancées
 
@@ -101,9 +101,9 @@ Stopwords, lemmatisation vs stemming, normalisation d'entités. Pipeline complet
 
 ⏱️ 75 minutes
 
-](module2_avance.html)
+](module2_avance.md)
 
-[🚀 Commencer le Module 2](module2_intro.html)
+[🚀 Commencer le Module 2](module2_intro.md)
 
 ### 📋 Prérequis
 

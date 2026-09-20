@@ -7,7 +7,7 @@ tags:
 category: 09-Deep-Learning
 ---
 
-[📚 Module 1](../module1/module1_intro.html) → 🧹 Module 2 : Preprocessing
+[📚 Module 1](../module1/module1_intro.md) → 🧹 Module 2 : Preprocessing
 
 # 🧹 Module 2 : Preprocessing et Tokenisation
 
@@ -155,12 +155,12 @@ Tapez du texte "sale" et voyez la transformation :
 
 • Pipeline personnalisé
 
-[⬅️ Module 1 Terminé](../module1/module1_resume.html) [🧹 Commencer le Nettoyage](module2_nettoyage.html)
+[⬅️ Module 1 Terminé](../module1/module1_resume.md) [🧹 Commencer le Nettoyage](module2_nettoyage.md)
 
 ### 🚀 Prochaine Étape
 
 Maintenant que vous comprenez l'importance du preprocessing, plongeons dans les techniques concrètes de nettoyage de texte !
 
-[Maîtriser le Nettoyage ✨](module2_nettoyage.html)
+[Maîtriser le Nettoyage ✨](module2_nettoyage.md)
 
 // Stopwords français basiques pour la démo const stopwordsFrancais = new Set(\[ 'le', 'de', 'et', 'à', 'un', 'il', 'être', 'et', 'en', 'avoir', 'que', 'pour', 'dans', 'ce', 'son', 'une', 'sur', 'avec', 'ne', 'se', 'pas', 'tout', 'plus', 'par', 'grand', 'en', 'le', 'son', 'que', 'ce', 'lui', 'au', 'du', 'des', 'la', 'les', 'je', 'tu', 'nous', 'vous', 'ils', 'elles', 'mon', 'ma', 'mes', 'ton', 'ta', 'tes', 'sa', 'ses', 'notre', 'nos', 'votre', 'vos', 'leur', 'leurs', 'est', 'sont', 'était', 'étaient', 'ai', 'as', 'a', 'avons', 'avez', 'ont' \]); function processText() { const rawText = document.getElementById('rawText').value.trim(); if (!rawText) { alert('Veuillez entrer du texte à préprocesser !'); return; } // Afficher la section des étapes document.getElementById('processingSteps').style.display = 'block'; // Étape 0 : Texte original document.getElementById('step0').textContent = rawText; // Étape 1 : Nettoyage initial let step1 = rawText.toLowerCase(); step1 = step1.replace(/https?:\\/\\/\[^\\s\]+/g, '\[URL\]'); // URLs step1 = step1.replace(/@\\w+/g, '\[MENTION\]'); // Mentions step1 = step1.replace(/#\\w+/g, '\[HASHTAG\]'); // Hashtags step1 = step1.replace(/rt\\s+/g, ''); // Retweets document.getElementById('step1').textContent = step1; // Étape 2 : Suppression ponctuation et emojis let step2 = step1.replace(/\[^\\w\\s\]/g, ' '); // Garde seulement lettres, chiffres et espaces step2 = step2.replace(/\\s+/g, ' ').trim(); // Normalise les espaces document.getElementById('step2').textContent = step2; // Étape 3 : Tokenisation let tokens = step2.split(/\\s+/).filter(token => token.length > 0); document.getElementById('step3').textContent = '\["' + tokens.join('", "') + '"\]'; // Étape 4 : Filtrage let filteredTokens = tokens.filter(token => { return token.length > 2 && // Mots de plus de 2 caractères !stopwordsFrancais.has(token) && // Pas un stopword !/^\\d+$/.test(token) && // Pas un nombre pur token !== 'url' && token !== 'mention' && token !== 'hashtag'; // Pas nos marqueurs }); document.getElementById('step4').textContent = '\["' + filteredTokens.join('", "') + '"\]'; // Résultat final avec statistiques const originalWords = rawText.split(/\\s+/).length; const finalWords = filteredTokens.length; const reduction = Math.round((1 - finalWords / originalWords) \* 100); document.getElementById('finalResult').innerHTML = \` <strong>Tokens finaux :</strong> \["${filteredTokens.join('", "')}"\]<br> <strong>Statistiques :</strong><br> • Mots originaux : ${originalWords}<br> • Mots après preprocessing : ${finalWords}<br> • Réduction : ${reduction}% \`; // Faire défiler vers les résultats document.getElementById('processingSteps').scrollIntoView({ behavior: 'smooth', block: 'center' }); } function resetDemo() { document.getElementById('rawText').value = ''; document.getElementById('processingSteps').style.display = 'none'; } // Exemples préremplis au clic document.getElementById('rawText').addEventListener('click', function() { if (!this.value) { const examples = \[ "RT @user: LOL!!! C'est GÉNIAL 😍😍😍 https://bit.ly/xyz #amazing #best J'ADOOORE ce produit!!!", "Bof... pas terrible 😕 Service client = 💩 N'achetez PAS !!!", "Salut! Comment ça va??? J'espère que tout va BIEN 🙂 @marie #bonnejournée" \]; this.value = examples\[Math.floor(Math.random() \* examples.length)\]; } });

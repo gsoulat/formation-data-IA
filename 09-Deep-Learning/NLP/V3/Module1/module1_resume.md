@@ -7,7 +7,7 @@ tags:
 category: 09-Deep-Learning
 ---
 
-[📚 Module 1](index.html) → [🏠 Introduction](module1_intro.html) → [🚧 Défis](module1_defis.html) → [🎯 Tâches](module1_taches.html) → [📈 Évolution](module1_evolution.html) → 📋 Résumé
+[📚 Module 1](index.md) → [🏠 Introduction](module1_intro.md) → [🚧 Défis](module1_defis.md) → [🎯 Tâches](module1_taches.md) → [📈 Évolution](module1_evolution.md) → 📋 Résumé
 
 # 📋 Module 1 : Résumé et Conclusion
 
@@ -129,13 +129,13 @@ RNN, LSTM et réseaux de neurones pour le texte
 Vous avez acquis les bases solides du NLP ! Choisissez votre prochaine étape :
 
 [🏠  
-Retour à l'Index Principal](../nlp_course_index.html) [🧹  
-Commencer Module 2](../Module2/index.html)
+Retour à l'Index Principal](../nlp_course_index.md) [🧹  
+Commencer Module 2](../Module2/index.md)
 
 ### 💡 Conseil pour la Suite
 
 Le Module 2 sur le Preprocessing est crucial ! C'est la fondation technique qui détermine la qualité de tous vos projets NLP futurs. Prenez le temps de bien maîtriser le nettoyage et la tokenisation.
 
-[⬅️ Retour Évolution](module1_evolution.html) [📚 Index Module 1](index.html)
+[⬅️ Retour Évolution](module1_evolution.md) [📚 Index Module 1](index.md)
 
 function selectOption(element, isCorrect) { // Désélectionner toutes les options de cette question const allOptions = element.parentNode.querySelectorAll('.quiz-option'); allOptions.forEach(option => { option.classList.remove('correct', 'incorrect'); }); // Marquer la réponse if (isCorrect) { element.classList.add('correct'); } else { element.classList.add('incorrect'); // Aussi marquer la bonne réponse allOptions.forEach(option => { if (option.onclick.toString().includes('true')) { option.classList.add('correct'); } }); } } // Animation au chargement window.addEventListener('load', function () { // Marquer le module comme terminé dans localStorage let completedModules = JSON.parse(localStorage.getItem('completedModules') || '\[\]'); if (!completedModules.includes(1)) { completedModules.push(1); localStorage.setItem('completedModules', JSON.stringify(completedModules)); } });

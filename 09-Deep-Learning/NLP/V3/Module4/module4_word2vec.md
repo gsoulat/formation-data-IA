@@ -14,7 +14,7 @@ La révolution qui a transformé le traitement du langage naturel
 **🎯 L'idée géniale de Word2Vec :**  
 "Les mots qui apparaissent dans des contextes similaires ont des significations similaires"
 
-[← Index Module 4](index.html)
+[← Index Module 4](index.md)
 
 **Word2Vec - De débutant à expert**  
 Google Research, 2013
@@ -293,7 +293,7 @@ Word2Vec a ouvert la voie à une révolution en NLP. Voici l'évolution :
 *   **Pédagogique :** Excellent pour apprendre les concepts
 *   **Toujours utilisé :** Dans beaucoup d'applications industrielles
 
-[← Index Module 4](index.html)
+[← Index Module 4](index.md)
 
 **Prêt pour la pratique ?**  
 Essayez le notebook interactif

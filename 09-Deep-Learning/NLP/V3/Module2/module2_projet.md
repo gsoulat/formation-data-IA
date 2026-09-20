@@ -7,7 +7,7 @@ tags:
 category: 09-Deep-Learning
 ---
 
-[📚 Module 2](index.html) → [🏠 Introduction](module2_intro.html) → [⚙️ Techniques Avancées](module2_avance.html) → 🚀 Mini-Projet
+[📚 Module 2](index.md) → [🏠 Introduction](module2_intro.md) → [⚙️ Techniques Avancées](module2_avance.md) → 🚀 Mini-Projet
 
 # 🚀 Mini-Projet : Preprocessing Complet
 
@@ -169,10 +169,10 @@ Notebook de support avec les données du projet, fonctions utilitaires et ressou
 
 [🎪 Accéder aux Ressources](notebook/donnees_et_utils.ipynb)
 
-[⬅️ Retour Techniques Avancées](module2_avance.html) [📊 Module 3 : Représentation Vectorielle](../module3/index.html)
+[⬅️ Retour Techniques Avancées](module2_avance.md) [📊 Module 3 : Représentation Vectorielle](../module3/index.md)
 
 ### 🎉 Félicitations !
 
 En complétant ce mini-projet, vous maîtriserez les fondamentaux du preprocessing NLP et serez prêt(e) à aborder la vectorisation et les modèles avancés !
 
-[🚀 Commencer Maintenant](notebook/mini_projet_preprocessing.ipynb) [👀 Aperçu Module 3](../module3/index.html)
+[🚀 Commencer Maintenant](notebook/mini_projet_preprocessing.ipynb) [👀 Aperçu Module 3](../module3/index.md)

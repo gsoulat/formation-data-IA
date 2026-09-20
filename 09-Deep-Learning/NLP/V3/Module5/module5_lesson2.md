@@ -338,4 +338,4 @@ Préférez des architectures plus simples (RNN vanilla ou GRU) pour des tâches 
 *   ✅ Parfaits pour les tâches nécessitant une mémoire à long terme
 *   ✅ Plus complexes mais plus puissants que les RNN simples
 
-[← Leçon 1 : Introduction RNN](module5_lesson1.html) [Leçon 3 : GRU →](module5_lesson3.html)
+[← Leçon 1 : Introduction RNN](module5_lesson1.md) [Leçon 3 : GRU →](module5_lesson3.md)

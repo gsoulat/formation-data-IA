@@ -343,4 +343,4 @@ Mettez en pratique tout ce que vous avez appris !
 
 🚀 Prochaine étape : Les Transformers et l'attention mechanism !
 
-[← Leçon 3 : GRU](module5_lesson3.html) [Module 6 : Transformers →](../module6/index.html)
+[← Leçon 3 : GRU](module5_lesson3.md) [Module 6 : Transformers →](../module6/index.md)

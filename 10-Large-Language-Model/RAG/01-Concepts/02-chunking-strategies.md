@@ -528,4 +528,4 @@ tester_retrieval(vectorstore, questions_tests)
 | Semantic | Élevé | Moyen (API) | Docs longs et hétérogènes |
 | Parent Document | Élevé | Minimal | Synthèse sur docs longs |
 
-La suite : [Pipeline/01-ingestion.md](../Pipeline/01-ingestion.md) — Ingestion complète d'un corpus documentaire
+La suite : [Pipeline/01-ingestion.md](../02-Pipeline/01-ingestion.md) — Ingestion complète d'un corpus documentaire

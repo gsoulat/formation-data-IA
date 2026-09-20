@@ -413,4 +413,4 @@ docker compose down -v
 
 ---
 
-**Module suivant :** [Producers-Consumers/01-producer-python.md](../Producers-Consumers/01-producer-python.md)
+**Module suivant :** [Producers-Consumers/01-producer-python.md](../02-Producers-Consumers/01-producer-python.md)

@@ -23,45 +23,45 @@
 
 | Module | Contenu |
 |--------|---------|
-| [01 — Introduction](Fondamentaux/01-introduction.md) | MVT, installation, premier projet |
-| [02 — Modèles](Fondamentaux/02-modeles.md) | ORM, champs, relations |
-| [03 — Vues](Fondamentaux/03-vues.md) | FBV, CBV, mixins |
-| [04 — Templates](Fondamentaux/04-templates.md) | Moteur de templates, héritage |
-| [05 — Admin](Fondamentaux/05-admin.md) | Interface admin, personnalisation |
+| [01 — Introduction](01-Fondamentaux/01-introduction.md) | MVT, installation, premier projet |
+| [02 — Modèles](01-Fondamentaux/02-modeles.md) | ORM, champs, relations |
+| [03 — Vues](01-Fondamentaux/03-vues.md) | FBV, CBV, mixins |
+| [04 — Templates](01-Fondamentaux/04-templates.md) | Moteur de templates, héritage |
+| [05 — Admin](01-Fondamentaux/05-admin.md) | Interface admin, personnalisation |
 
 ### 2. ORM Django
 
 | Module | Contenu |
 |--------|---------|
-| [01 — Requêtes](ORM-Django/01-requetes.md) | QuerySet, filter, annotate |
-| [02 — Relations](ORM-Django/02-relations.md) | FK, M2M, O2O, optimisations |
-| [03 — Migrations](ORM-Django/03-migrations.md) | makemigrations, data migrations |
+| [01 — Requêtes](02-ORM-Django/01-requetes.md) | QuerySet, filter, annotate |
+| [02 — Relations](02-ORM-Django/02-relations.md) | FK, M2M, O2O, optimisations |
+| [03 — Migrations](02-ORM-Django/03-migrations.md) | makemigrations, data migrations |
 
 ### 3. Django REST Framework
 
 | Module | Contenu |
 |--------|---------|
-| [README DRF](DRF/README.md) | Vue d'ensemble DRF |
-| [01 — Introduction](DRF/01-introduction.md) | Sérialiseurs, vues, routeurs |
-| [02 — Sérialiseurs](DRF/02-serializers.md) | ModelSerializer, validation |
-| [03 — ViewSets](DRF/03-viewsets.md) | ViewSet, ModelViewSet, Router |
-| [04 — Authentification](DRF/04-authentification.md) | Token, JWT |
-| [05 — Permissions](DRF/05-permissions.md) | Permissions, sécurité |
+| [README DRF](03-DRF/README.md) | Vue d'ensemble DRF |
+| [01 — Introduction](03-DRF/01-introduction.md) | Sérialiseurs, vues, routeurs |
+| [02 — Sérialiseurs](03-DRF/02-serializers.md) | ModelSerializer, validation |
+| [03 — ViewSets](03-DRF/03-viewsets.md) | ViewSet, ModelViewSet, Router |
+| [04 — Authentification](03-DRF/04-authentification.md) | Token, JWT |
+| [05 — Permissions](03-DRF/05-permissions.md) | Permissions, sécurité |
 
 ### 4. Avancé
 
 | Module | Contenu |
 |--------|---------|
-| [01 — Middleware](Avance/01-middleware.md) | Création et usage de middlewares |
-| [02 — Signaux](Avance/02-signals.md) | Système de signaux Django |
-| [03 — Cache](Avance/03-cache.md) | Stratégies de cache Redis |
+| [01 — Middleware](04-Avance/01-middleware.md) | Création et usage de middlewares |
+| [02 — Signaux](04-Avance/02-signals.md) | Système de signaux Django |
+| [03 — Cache](04-Avance/03-cache.md) | Stratégies de cache Redis |
 
 ### 5. Déploiement
 
 | Module | Contenu |
 |--------|---------|
-| [01 — Settings production](Deploiement/01-settings-prod.md) | Configuration sécurisée |
-| [02 — Docker](Deploiement/02-docker.md) | Dockerfile, docker-compose |
+| [01 — Settings production](05-Deploiement/01-settings-prod.md) | Configuration sécurisée |
+| [02 — Docker](05-Deploiement/02-docker.md) | Dockerfile, docker-compose |
 
 ### 6. Exercices
 

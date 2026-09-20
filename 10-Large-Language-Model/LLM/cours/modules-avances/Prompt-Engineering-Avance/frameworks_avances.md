@@ -160,4 +160,4 @@ Prompt 1 : "Identifie les 3 problèmes principaux de \[ton secteur\]" \[Construi
 *   **Contraintes** : Mentionnez les limites (budget, temps, ressources)
 *   **Persona consistency** : Maintenez le même rôle tout au long de la conversation
 
-[🔙 Module 10](index.html) [🎯 Frameworks de Base](frameworks_prompting.html) [🛠️ Générateur de Prompts](generateur_prompts.html)
+[🔙 Module 10](index.md) [🎯 Frameworks de Base](frameworks_prompting.md) [🛠️ Générateur de Prompts](generateur_prompts.md)

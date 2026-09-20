@@ -346,4 +346,4 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = False
 
 ## Prochaine étape
 
-Passez au module [Déploiement — Settings production](../Deploiement/01-settings-prod.md).
+Passez au module [Déploiement — Settings production](../05-Deploiement/01-settings-prod.md).

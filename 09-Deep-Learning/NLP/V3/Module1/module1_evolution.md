@@ -7,7 +7,7 @@ tags:
 category: 09-Deep-Learning
 ---
 
-[🏠 Introduction](module1_intro.html) → [🚧 Défis](module1_defis.html) → [🎯 Tâches](module1_taches.html) → 📈 Évolution Historique
+[🏠 Introduction](module1_intro.md) → [🚧 Défis](module1_defis.md) → [🎯 Tâches](module1_taches.md) → 📈 Évolution Historique
 
 # 📈 Évolution Historique du NLP
 
@@ -244,12 +244,12 @@ RNN, LSTM, Attention (avant les Transformers)
 **Module 7-8 :** Transformers  
 BERT, GPT, Fine-tuning (état de l'art actuel)
 
-[⬅️ Retour Tâches](module1_taches.html) [📋 Résumé du Module](module1_resume.html)
+[⬅️ Retour Tâches](module1_taches.md) [📋 Résumé du Module](module1_resume.md)
 
 ### 🎯 Prochaine Étape
 
 Maintenant que vous comprenez l'évolution historique, récapitulons tout ce que vous avez appris dans ce premier module !
 
-[Résumé et Conclusion 📝](module1_resume.html)
+[Résumé et Conclusion 📝](module1_resume.md)
 
 // Animation pour les étapes de progression document.querySelectorAll('.era-step').forEach(step => { step.addEventListener('click', function() { // Retirer la classe active de tous document.querySelectorAll('.era-step').forEach(s => s.classList.remove('active')); // Ajouter la classe active à celui cliqué this.classList.add('active'); // Optionnel : faire défiler vers la section correspondante const era = this.dataset.era; const eraElement = document.querySelector(\`.era-${era}\`); if (eraElement) { eraElement.scrollIntoView({ behavior: 'smooth', block: 'center' }); } }); }); // Animation au défilement window.addEventListener('scroll', function() { const timelineItems = document.querySelectorAll('.timeline-item'); timelineItems.forEach(item => { const rect = item.getBoundingClientRect(); const isVisible = rect.top < window.innerHeight && rect.bottom > 0; if (isVisible) { item.style.opacity = '1'; item.style.transform = 'translateY(0)'; } }); }); // Initialisation de l'animation document.querySelectorAll('.timeline-item').forEach(item => { item.style.opacity = '0'; item.style.transform = 'translateY(50px)'; item.style.transition = 'all 0.6s ease'; });

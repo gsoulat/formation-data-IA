@@ -594,4 +594,4 @@ finally:
 | `__op`             | Opération CDC : `c`=create, `u`=update, `d`=delete        |
 | Snapshot           | Lecture initiale de toute la table lors du démarrage      |
 
-**Module suivant :** [Integration/01-kafka-spark.md](../Integration/01-kafka-spark.md)
+**Module suivant :** [Integration/01-kafka-spark.md](../05-Integration/01-kafka-spark.md)

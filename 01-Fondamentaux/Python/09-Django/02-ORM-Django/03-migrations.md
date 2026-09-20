@@ -419,4 +419,4 @@ migrations.RenameModel(
 
 ## Prochaine étape
 
-Passez au module [DRF — Introduction](../DRF/01-introduction.md) pour apprendre à créer une API REST avec Django.
+Passez au module [DRF — Introduction](../03-DRF/01-introduction.md) pour apprendre à créer une API REST avec Django.

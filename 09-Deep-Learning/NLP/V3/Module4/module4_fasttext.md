@@ -14,7 +14,7 @@ Comprendre les mots en les décomposant
 **🎯 L'innovation de FastText :**  
 "Et si on pouvait comprendre des mots qu'on n'a jamais vus ?"
 
-[← Word2Vec](module4_word2vec.html)
+[← Word2Vec](module4_word2vec.md)
 
 **FastText - La puissance des sous-mots**  
 Facebook AI Research, 2016
@@ -331,7 +331,7 @@ Pour "superordinateur" (mot jamais vu) :
 *   Il combine ces informations pour créer un vecteur cohérent
 *   Le résultat : un vecteur proche de "ordinateur" avec une nuance de "super"
 
-[← Word2Vec](module4_word2vec.html)
+[← Word2Vec](module4_word2vec.md)
 
 **Prêt à expérimenter ?**  
 Testez FastText dans le notebook

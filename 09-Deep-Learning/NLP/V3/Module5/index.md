@@ -74,7 +74,7 @@ Fondamental
 
 Découvrez les concepts de base des réseaux de neurones récurrents, leur mémoire et pourquoi ils sont essentiels pour les séquences.
 
-[Commencer →](module5_lesson1.html)
+[Commencer →](module5_lesson1.md)
 
 Intermédiaire
 
@@ -82,7 +82,7 @@ Intermédiaire
 
 Explorez l'architecture LSTM avec ses 3 portes magiques qui résolvent le problème de la mémoire à long terme.
 
-[Explorer →](module5_lesson2.html)
+[Explorer →](module5_lesson2.md)
 
 Intermédiaire
 
@@ -90,7 +90,7 @@ Intermédiaire
 
 Découvrez les GRU, version simplifiée des LSTM, et apprenez à choisir la bonne architecture pour vos projets.
 
-[Comparer →](module5_lesson3.html)
+[Comparer →](module5_lesson3.md)
 
 Avancé
 
@@ -98,7 +98,7 @@ Avancé
 
 Mettez en pratique vos connaissances avec des projets concrets : génération de texte, sentiment, traduction.
 
-[Pratiquer →](module5_lesson4.html)
+[Pratiquer →](module5_lesson4.md)
 
 Expert
 
@@ -106,7 +106,7 @@ Expert
 
 Maîtrisez le debugging et évitez les pièges : overfitting, underfitting, gradient explosion et optimisation.
 
-[Optimiser →](module5_lesson5.html)
+[Optimiser →](module5_lesson5.md)
 
 ### 📓 Notebooks Interactifs
 
@@ -122,19 +122,19 @@ Architectures avancées • Comparaisons • Benchmarks [📓 Ouvrir le Notebook
 
 🗺️ Parcours de Formation NLP
 
-[1](../Module1/index.html "Module 1: Introduction au NLP")
+[1](../Module1/index.md "Module 1: Introduction au NLP")
 
 Intro NLP
 
-[2](../Module2/index.html "Module 2: Prétraitement")
+[2](../Module2/index.md "Module 2: Prétraitement")
 
 Prétraitement
 
-[3](../Module3/index.html "Module 3: TF-IDF & N-grammes")
+[3](../Module3/index.md "Module 3: TF-IDF & N-grammes")
 
 TF-IDF
 
-[4](../Module4/index.html "Module 4: Word Embeddings")
+[4](../Module4/index.md "Module 4: Word Embeddings")
 
 Embeddings
 
@@ -142,24 +142,24 @@ Embeddings
 
 RNN/LSTM
 
-[6](../Module6/index.html "Module 6: Transformers")
+[6](../Module6/index.md "Module 6: Transformers")
 
 Transformers
 
-[7](../Module7/index.html "Module 7: BERT & GPT")
+[7](../Module7/index.md "Module 7: BERT & GPT")
 
 BERT/GPT
 
-[8](../Module8/index.html "Module 8: Production")
+[8](../Module8/index.md "Module 8: Production")
 
 Production
 
-[← Module 4: Embeddings](../Module4/index.html)
+[← Module 4: Embeddings](../Module4/index.md)
 
 **Module 5 - RNN & LSTM**  
 Réseaux de neurones récurrents
 
-[Module 6: Transformers →](../Module6/index.html)
+[Module 6: Transformers →](../Module6/index.md)
 
 // Animation de fade-in progressive document.addEventListener('DOMContentLoaded', function() { const cards = document.querySelectorAll('.module-card'); cards.forEach((card, index) => { card.style.animation = \`slideUp 0.5s ease-out ${index \* 0.1}s forwards\`; }); });
 

@@ -539,4 +539,4 @@ print(f"Val batches   : {len(loaders['validation'])}")
 
 ## Suite du cours
 
-Le module suivant ([../Fine-Tuning/01-introduction.md](../Fine-Tuning/01-introduction.md)) présente les stratégies de fine-tuning : quand fine-tuner, la différence entre fine-tuning complet et PEFT, et les critères pour choisir le bon modèle de base.
+Le module suivant ([../Fine-Tuning/01-introduction.md](../04-Fine-Tuning/01-introduction.md)) présente les stratégies de fine-tuning : quand fine-tuner, la différence entre fine-tuning complet et PEFT, et les critères pour choisir le bon modèle de base.

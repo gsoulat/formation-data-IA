@@ -146,4 +146,4 @@ Parce que c'est le **même réseau** (avec les mêmes paramètres) qui est utili
 *   ✅ Ils sont parfaits pour les tâches nécessitant du contexte
 *   ✅ Les RNN simples ont des limitations (mémoire courte)
 
-[← Retour au Module 5](index.html) [Leçon 2 : LSTM →](module5_lesson2.html)
+[← Retour au Module 5](index.md) [Leçon 2 : LSTM →](module5_lesson2.md)

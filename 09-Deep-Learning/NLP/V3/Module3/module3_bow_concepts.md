@@ -11,7 +11,7 @@ category: 09-Deep-Learning
 
 Transformer le texte en nombres : la méthode fondamentale
 
-[🏠 Index Module 3](index.html) [← Introduction](module3_intro.html) [Démonstrations →](module3_bow_demo.html)
+[🏠 Index Module 3](index.md) [← Introduction](module3_intro.md) [Démonstrations →](module3_bow_demo.md)
 
 ## 🧠 Le Concept Fondamental
 
@@ -266,4 +266,4 @@ La similarité cosinus mesure l'angle entre deux vecteurs (0 = orthogonaux, 1 = 
 
 ### Navigation
 
-[🏠 Index Module 3](index.html) [← Introduction](module3_intro.html) [Démonstrations →](module3_bow_demo.html) [🏠 Accueil Formation](../index.html)
+[🏠 Index Module 3](index.md) [← Introduction](module3_intro.md) [Démonstrations →](module3_bow_demo.md) [🏠 Accueil Formation](../index.html)

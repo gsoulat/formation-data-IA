@@ -658,4 +658,4 @@ python json_producer.py
 | `sink=[topic]`     | Envoyer automatiquement la sortie dans un topic          |
 | `yield`            | Émettre un message de sortie depuis un agent             |
 
-**Module suivant :** [Patterns/01-event-sourcing.md](../Patterns/01-event-sourcing.md)
+**Module suivant :** [Patterns/01-event-sourcing.md](../04-Patterns/01-event-sourcing.md)

@@ -14,12 +14,12 @@ L'histoire de la révolution qui a changé l'Intelligence Artificielle
 **🎯 Question fondamentale :**  
 "Comment permettre aux machines de comprendre le langage comme les humains ?"
 
-[← Index Module 6](index.html)
+[← Index Module 6](index.md)
 
 **Introduction aux Transformers**  
 L'histoire d'une révolution
 
-[Mécanismes d'Attention →](module6_attention_mechanisms.html)
+[Mécanismes d'Attention →](module6_attention_mechanisms.md)
 
 ## 1\. 🕰️ Le Contexte Historique
 
@@ -265,9 +265,9 @@ Maintenant que vous comprenez **pourquoi** les Transformers sont révolutionnair
 • Variantes : GPT, BERT, T5  
 • Applications pratiques
 
-[← Index Module 6](index.html)
+[← Index Module 6](index.md)
 
 **Prêt pour la technique ?**  
 Découvrez les mécanismes d'attention
 
-[Mécanismes d'Attention →](module6_attention_mechanisms.html)
+[Mécanismes d'Attention →](module6_attention_mechanisms.md)

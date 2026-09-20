@@ -98,7 +98,7 @@ Découvrez comment les Transformers ont vaincu les vieux dragons RNN et LSTM ! U
 
 Histoire 📚 Drama 🎭
 
-[Commencer l'Aventure →](module6_introduction.html) [📓 Notebook Magique →](notebooks/01_Attention_Mechanisms.ipynb)
+[Commencer l'Aventure →](module6_introduction.md) [📓 Notebook Magique →](notebooks/01_Attention_Mechanisms.ipynb)
 
 2️⃣
 
@@ -115,7 +115,7 @@ Plongez dans le cerveau des Transformers ! Découvrez Query, Key, Value et comme
 
 Q-K-V 🔑 Magic ✨
 
-[Explorer l'Attention →](module6_attention_mechanisms.html) [📓 Notebook Fun →](notebooks/01_Attention_Mechanisms.ipynb)
+[Explorer l'Attention →](module6_attention_mechanisms.md) [📓 Notebook Fun →](notebooks/01_Attention_Mechanisms.ipynb)
 
 3️⃣
 
@@ -132,7 +132,7 @@ Construisez le château fort des Transformers ! Encoder, Decoder, Positional Enc
 
 Architecture 🏗️ Power 💪
 
-[Construire →](module6_transformer_architecture.html) [📓 Notebook Build →](notebooks/02_Transformer_Architecture.ipynb)
+[Construire →](module6_transformer_architecture.md) [📓 Notebook Build →](notebooks/02_Transformer_Architecture.ipynb)
 
 4️⃣
 
@@ -147,14 +147,14 @@ Devenez un vrai sorcier de l'IA ! Construisez votre propre Transformer, explorez
 
 Code 💻 Magic ✨
 
-[Coder →](module6_implementation.html) [📓 Notebook Code →](notebooks/02_Transformer_Architecture.ipynb)
+[Coder →](module6_implementation.md) [📓 Notebook Code →](notebooks/02_Transformer_Architecture.ipynb)
 
-[← Module 5: Deep Learning](../Module5/index.html)
+[← Module 5: Deep Learning](../Module5/index.md)
 
 **🎮 Module 6 - Transformers 🎮**  
 Level Up Your AI Game!
 
-[Module 7: BERT & GPT →](../Module7/index.html)
+[Module 7: BERT & GPT →](../Module7/index.md)
 
 // Animation d'apparition progressive des cartes document.addEventListener('DOMContentLoaded', function() { const cards = document.querySelectorAll('.lesson-card'); const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }; const observer = new IntersectionObserver(function(entries) { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; } }); }, observerOptions); cards.forEach(card => { observer.observe(card); }); }); // Effet de hover fun sur les cartes document.querySelectorAll('.lesson-card').forEach(card => { card.addEventListener('mouseenter', function() { // Ajouter des particules emoji au hover for(let i = 0; i < 3; i++) { setTimeout(() => { const particle = document.createElement('div'); particle.innerHTML = \['✨', '🌟', '💫', '⭐'\]\[Math.floor(Math.random() \* 4)\]; particle.style.position = 'absolute'; particle.style.left = Math.random() \* 100 + '%'; particle.style.top = Math.random() \* 100 + '%'; particle.style.fontSize = '20px'; particle.style.pointerEvents = 'none'; particle.style.animation = 'float 2s ease-out forwards'; this.appendChild(particle); setTimeout(() => particle.remove(), 2000); }, i \* 100); } }); }); // Animation des statistiques au scroll function animateStats() { const statNumbers = document.querySelectorAll('.stat-number'); statNumbers.forEach(stat => { stat.style.animation = 'bounce 1s ease-out'; }); } // Observer pour les statistiques const statsSection = document.querySelector('.stats-section'); const statsObserver = new IntersectionObserver(function(entries) { entries.forEach(entry => { if (entry.isIntersecting) { animateStats(); statsObserver.unobserve(entry.target); } }); }, { threshold: 0.5 }); if (statsSection) { statsObserver.observe(statsSection); } // Effet de particules au clic document.addEventListener('click', function(e) { if (e.target.classList.contains('lesson-link') || e.target.classList.contains('nav-button')) { const x = e.clientX; const y = e.clientY; for(let i = 0; i < 8; i++) { const particle = document.createElement('div'); particle.innerHTML = \['🚀', '✨', '💫', '🌟', '⚡'\]\[Math.floor(Math.random() \* 5)\]; particle.style.position = 'fixed'; particle.style.left = x + 'px'; particle.style.top = y + 'px'; particle.style.fontSize = '25px'; particle.style.pointerEvents = 'none'; particle.style.transform = \`rotate(${Math.random() \* 360}deg)\`; particle.style.transition = 'all 1s ease-out'; document.body.appendChild(particle); setTimeout(() => { particle.style.transform = \`translate(${(Math.random() - 0.5) \* 200}px, ${(Math.random() - 0.5) \* 200}px) rotate(${Math.random() \* 720}deg) scale(0)\`; particle.style.opacity = '0'; }, 10); setTimeout(() => particle.remove(), 1000); } } });
 

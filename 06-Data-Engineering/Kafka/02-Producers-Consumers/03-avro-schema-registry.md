@@ -583,4 +583,4 @@ producer.flush()
 | Union `["null", X]`| Rendre un champ optionnel                                    |
 | Aliases            | Renommer un champ de façon compatible                        |
 
-**Module suivant :** [Kafka-Streams/01-introduction.md](../Kafka-Streams/01-introduction.md) — Stream processing
+**Module suivant :** [Kafka-Streams/01-introduction.md](../03-Kafka-Streams/01-introduction.md) — Stream processing
