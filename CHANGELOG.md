@@ -1,3 +1,28 @@
+# [2.22.0](https://github.com/gsoulat/formation-data-IA/compare/v2.21.0...v2.22.0) (2026-09-20)
+
+
+### Bug Fixes
+
+* **donnees:** versionner les 52 jeux de donnees masques par la regle « data/ » ([0502dc4](https://github.com/gsoulat/formation-data-IA/commit/0502dc4bbfa97b5f16a4fee3a91a1a996286b0f4))
+* **liens:** reparer 291 liens internes casses sur les 459 recenses ([6da4c48](https://github.com/gsoulat/formation-data-IA/commit/6da4c4887c762c186532e3f89c19ca5e948ca794))
+
+
+### Features
+
+* **data-analyst:** cadrage ML au PATH + DAX avancé/RLS + Power Query dimensionnel + maths inférentiel ([a8eb29d](https://github.com/gsoulat/formation-data-IA/commit/a8eb29dc26a5a09b4d6a9a0a7f73cf49d352f950))
+* **data-analyst:** publier le parcours WSC et le module tableur de la semaine 39 ([92667be](https://github.com/gsoulat/formation-data-IA/commit/92667bea59b6eac22176d668dad616ae54e620a5))
+* **data-analyst:** vidéos ML (8 chapitres) + 3 notebooks BI guidés NordRetail ([ab8aa49](https://github.com/gsoulat/formation-data-IA/commit/ab8aa49e798a19201fb71aeb9e15a52e89e2b553))
+* **data-engineer:** 2 briefs senior SNCF (temps réel/Airflow) + RTE (batch time-series/Dagster) ([2fb2155](https://github.com/gsoulat/formation-data-IA/commit/2fb215523ff51b292842490153ec7c2aa112f826))
+* **deep-learning:** chapitre 0 intuition/analogies + brief classification d'images + index briefs Dev-IA ([a399d58](https://github.com/gsoulat/formation-data-IA/commit/a399d5888349927121ce59685739bfb4bbb99ee4))
+* **deep-learning:** module 00 Fondamentaux — vidéos (3Blue1Brown) + brief premier réseau ([2280caf](https://github.com/gsoulat/formation-data-IA/commit/2280caf0601de0b42b4a3df4ffa5fbd167508975))
+* **deep-learning:** module 01 Vision (CNN) — dédup legacy + vidéos + notebook convolution ([1478887](https://github.com/gsoulat/formation-data-IA/commit/1478887a6ad063245829bd7478f6db5c97754167))
+* **deep-learning:** module 02 Séquences & NLP — V3 canonique + dédup racine + brief sentiments ([cb614f4](https://github.com/gsoulat/formation-data-IA/commit/cb614f4e6a83173859d87cd455b2418c08db709b))
+* **deep-learning:** module 03 Modèles génératifs (NOUVEAU) — autoencodeurs, VAE, GAN, diffusion ([691c597](https://github.com/gsoulat/formation-data-IA/commit/691c597d23d60a874a76bd8c6827bdfdb8dcef8f))
+* **deep-learning:** module 04 Avancé — ViT, multimodal (CLIP), auto-supervision, GNN ([94e25a1](https://github.com/gsoulat/formation-data-IA/commit/94e25a1dd7e8c96755281d70f4f4f2fb2cf5bf0b))
+* **dev-ia:** unifier les 2 pistes LLM (README fil directeur + renvois découverte→production) ([4dc71bf](https://github.com/gsoulat/formation-data-IA/commit/4dc71bf8568894a52a0ebc244f25e9cf9e04e555))
+* **devops:** K8s production (probes, HPA, RBAC, Helm) + Argo Rollouts (canary/blue-green réel) ([1897c77](https://github.com/gsoulat/formation-data-IA/commit/1897c770aa01150fd6849eeeeb364e7a2f45b26b))
+* **machine-learning:** chapitre 23 — choisir son modèle et ses métriques (synthèse méthodo) ([643b3cc](https://github.com/gsoulat/formation-data-IA/commit/643b3ccebe8b4b09d79fd3dfd97f4146dd40add9))
+
 # [2.21.0](https://github.com/gsoulat/formation-data-engineer/compare/v2.20.0...v2.21.0) (2026-07-15)
 
 
