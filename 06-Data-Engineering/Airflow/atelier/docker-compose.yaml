@@ -1,0 +1,183 @@
+# Airflow 3 en local pour le cours — dérivé du docker-compose.yaml officiel (3.3.2).
+#
+#   cp .env.example .env            # puis compléter (voir README de l'atelier)
+#   docker compose up airflow-init  # une seule fois : crée la base et le compte admin
+#   docker compose up -d            # démarre la stack
+#
+# Interface : http://localhost:8080   (airflow / airflow)
+#
+# ---------------------------------------------------------------------------
+# CE QUI CHANGE PAR RAPPORT AU FICHIER OFFICIEL
+# ---------------------------------------------------------------------------
+# - LocalExecutor au lieu de CeleryExecutor : plus de Redis ni de worker.
+#   Les tâches tournent comme des processus lancés par le scheduler.
+#   Suffisant sur un portable, et deux conteneurs de moins à comprendre.
+# - build: . au lieu de image: -> on étend l'image officielle (voir Dockerfile).
+# - Exemples de DAG désactivés, dossiers data/, tests/ et secrets/ montés.
+#
+# ---------------------------------------------------------------------------
+# LES SERVICES, ET CE QUI SE PASSE SI L'UN D'EUX S'ARRÊTE
+# ---------------------------------------------------------------------------
+# postgres        base de MÉTADONNÉES d'Airflow (DAG, exécutions, états).
+#                 Ce n'est pas l'entrepôt : les données vont dans Snowflake.
+# airflow-apiserver  l'interface web et l'API. Arrêté : plus d'interface,
+#                 mais les DAG continuent de tourner.
+# airflow-scheduler  décide quoi lancer et quand, puis exécute les tâches
+#                 (LocalExecutor). Arrêté : plus rien ne démarre.
+# airflow-dag-processor  lit les fichiers de dags/. Arrêté : un nouveau DAG
+#                 ou une modification n'apparaît jamais dans l'interface.
+# airflow-triggerer  fait patienter les tâches DIFFÉRÉES (capteurs asynchrones).
+#                 Arrêté : ces tâches restent bloquées en « deferred ».
+# airflow-init    s'exécute une fois puis s'arrête (c'est normal).
+
+x-airflow-common:
+  &airflow-common
+  build: .
+  image: formation-airflow:3.3.2
+  env_file:
+    - .env
+  environment:
+    &airflow-common-env
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__CORE__AUTH_MANAGER: airflow.providers.fab.auth_manager.fab_auth_manager.FabAuthManager
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+    AIRFLOW__CORE__FERNET_KEY: ${FERNET_KEY:-}
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
+    AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+    AIRFLOW__CORE__EXECUTION_API_SERVER_URL: 'http://airflow-apiserver:8080/execution/'
+    AIRFLOW__API_AUTH__JWT_SECRET: ${AIRFLOW__API_AUTH__JWT_SECRET:-airflow_jwt_secret}
+    AIRFLOW__API_AUTH__JWT_ISSUER: ${AIRFLOW__API_AUTH__JWT_ISSUER:-airflow}
+    AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: 'true'
+    # Adresse de l'interface : sert à construire les liens vers les logs (alertes).
+    AIRFLOW__API__BASE_URL: 'http://localhost:${AIRFLOW_PORT:-8080}'
+    # Un nouveau fichier de DAG est repéré en 30 s au lieu de 5 min (confort de cours).
+    AIRFLOW__DAG_PROCESSOR__REFRESH_INTERVAL: '30'
+    AIRFLOW_CONFIG: '/opt/airflow/config/airflow.cfg'
+    # Dossier des fichiers téléchargés, lisible depuis les DAG via os.environ.
+    TAXI_DATA_DIR: /opt/airflow/data
+  volumes:
+    - ./dags:/opt/airflow/dags
+    - ./logs:/opt/airflow/logs
+    - ./config:/opt/airflow/config
+    - ./plugins:/opt/airflow/plugins
+    - ./data:/opt/airflow/data
+    - ./tests:/opt/airflow/tests
+    - ./secrets:/opt/airflow/secrets:ro
+  user: "${AIRFLOW_UID:-50000}:0"
+  depends_on:
+    &airflow-common-depends-on
+    postgres:
+      condition: service_healthy
+
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - postgres-db-volume:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 10s
+      retries: 5
+      start_period: 5s
+    restart: always
+
+  airflow-apiserver:
+    <<: *airflow-common
+    command: api-server
+    ports:
+      - "${AIRFLOW_PORT:-8080}:8080"
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/api/v2/monitor/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: always
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
+
+  airflow-scheduler:
+    <<: *airflow-common
+    command: scheduler
+    healthcheck:
+      test: ["CMD-SHELL", 'airflow jobs check --job-type SchedulerJob --hostname "$${HOSTNAME}"']
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: always
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
+
+  airflow-dag-processor:
+    <<: *airflow-common
+    command: dag-processor
+    healthcheck:
+      test: ["CMD-SHELL", 'airflow jobs check --job-type DagProcessorJob --hostname "$${HOSTNAME}"']
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: always
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
+
+  airflow-triggerer:
+    <<: *airflow-common
+    command: triggerer
+    healthcheck:
+      test: ["CMD-SHELL", 'airflow jobs check --job-type TriggererJob --hostname "$${HOSTNAME}"']
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: always
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
+
+  airflow-init:
+    <<: *airflow-common
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        mkdir -v -p /opt/airflow/{logs,dags,plugins,config,data}
+        /entrypoint airflow version
+        /entrypoint airflow config list >/dev/null
+        chown -R "${AIRFLOW_UID:-50000}:0" /opt/airflow/{logs,dags,plugins,config,data}
+    environment:
+      <<: *airflow-common-env
+      _AIRFLOW_DB_MIGRATE: 'true'
+      _AIRFLOW_WWW_USER_CREATE: 'true'
+      _AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-airflow}
+      _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}
+    user: "0:0"
+
+  # Lancer une commande airflow ponctuelle :
+  #   docker compose run --rm airflow-cli airflow dags list
+  airflow-cli:
+    <<: *airflow-common
+    profiles:
+      - debug
+    environment:
+      <<: *airflow-common-env
+      CONNECTION_CHECK_MAX_COUNT: "0"
+    command:
+      - bash
+      - -c
+      - airflow
+
+volumes:
+  postgres-db-volume:

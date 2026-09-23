@@ -1,0 +1,16 @@
+# Secrets
+.env
+secrets/*
+!secrets/.gitkeep
+
+# Fichiers produits par Airflow et par les DAG
+logs/
+data/*
+!data/.gitkeep
+config/airflow.cfg
+*.parquet
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
