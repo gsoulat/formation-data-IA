@@ -1,0 +1,31 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: rouleo_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-rouleo}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+      POSTGRES_DB: ${POSTGRES_DB:-carburants}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-rouleo} -d ${POSTGRES_DB:-carburants}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # Serveur SMTP de test : rien ne sort vers l'exterieur.
+  # Interface web de reception : http://localhost:8025
+  mailhog:
+    image: mailhog/mailhog:latest
+    container_name: rouleo_mailhog
+    restart: unless-stopped
+    ports:
+      - "${SMTP_PORT:-1025}:1025"
+      - "${MAILHOG_UI_PORT:-8025}:8025"
+
+volumes:
+  pgdata:

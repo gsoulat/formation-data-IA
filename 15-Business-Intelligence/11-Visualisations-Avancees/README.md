@@ -6,3 +6,5 @@
 ## Cours
 
 - [01 — Visualisations avancées & interactivité](01-viz-avancees.md)
+- [02 — Dataviz interactive & dynamique en Python (Plotly & Bokeh)](02-dataviz-interactive-python.md)
+- [03 — Cartographie de données avec Folium](03-cartographie-folium.md)

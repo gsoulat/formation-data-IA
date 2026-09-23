@@ -1,0 +1,23 @@
+# Kit de démarrage — PostgreSQL pour le référentiel TVA.
+# Lancement : docker compose up -d      Arrêt : docker compose down (-v pour purger)
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: meridian_tva_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-meridian}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-meridian}
+      POSTGRES_DB: ${POSTGRES_DB:-tva}
+    ports:
+      - "${POSTGRES_PORT:-5435}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-meridian} -d ${POSTGRES_DB:-tva}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  pgdata:

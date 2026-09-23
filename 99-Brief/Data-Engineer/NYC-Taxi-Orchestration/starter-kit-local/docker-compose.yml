@@ -1,0 +1,65 @@
+# Airflow en mode standalone, avec DuckDB et dbt-duckdb preinstalles.
+#
+#     cp .env.example .env
+#     docker compose up -d --build          # la 1re construction prend ~2 min
+#     docker compose logs airflow | grep -i "Password for user"
+#
+# Interface Airflow : http://localhost:8080  (utilisateur : admin)
+#
+# ---------------------------------------------------------------------------
+# CE QUI EST MONTE DEPUIS VOTRE PROJET
+# ---------------------------------------------------------------------------
+#   ./dags   -> /opt/airflow/dags     vos DAG (c'est VOTRE travail)
+#   ./dbt    -> /opt/airflow/dbt      votre projet dbt
+#   ./data   -> /opt/airflow/data     la base DuckDB et les Parquet telecharges
+#
+# Ces trois dossiers sont partages entre votre machine et le conteneur : vous
+# editez avec votre editeur habituel, Airflow voit les changements.
+#
+# ---------------------------------------------------------------------------
+# ATTENTION DISQUE
+# ---------------------------------------------------------------------------
+# Le jeu de donnees complet (2024 -> aujourd'hui) represente ~8 Go de Parquet,
+# plus la base DuckDB. Prevoyez 15 Go libres. Verifiez AVANT le backfill :
+#     df -h .
+#
+# ---------------------------------------------------------------------------
+# UN SEUL CONTENEUR : pourquoi, et quand en changer
+# ---------------------------------------------------------------------------
+# Le mode "standalone" lance l'API, le scheduler et le triggerer dans un seul
+# conteneur, avec une base SQLite. C'est parfait pour apprendre et deboguer.
+# Ses limites font partie du programme : parallelisme reduit, pas de haute
+# disponibilite. Passer a un vrai deploiement (Postgres + CeleryExecutor) est
+# un bonus explicitement prevu — et vous devrez alors justifier le changement.
+
+services:
+  airflow:
+    build: .
+    container_name: nyctaxi_airflow
+    restart: unless-stopped
+    environment:
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__API_AUTH__JWT_SECRET: ${AIRFLOW_JWT_SECRET:-change-me-in-env}
+      # Chemins lisibles depuis vos DAG via os.environ
+      DUCKDB_PATH: /opt/airflow/data/nyc_taxi.duckdb
+      DBT_PROFILES_DIR: /opt/airflow/dbt
+      DBT_PROJECT_DIR: /opt/airflow/dbt
+    ports:
+      - "${AIRFLOW_PORT:-8080}:8080"
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./dbt:/opt/airflow/dbt
+      - ./data:/opt/airflow/data
+      - ./plugins:/opt/airflow/plugins
+      - ./tests:/opt/airflow/tests
+      - airflow_home:/opt/airflow/airflow_home
+    command: standalone
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:8080/api/v2/version || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 20
+      start_period: 60s
+
+volumes:
+  airflow_home:

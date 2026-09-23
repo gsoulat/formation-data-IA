@@ -33,7 +33,9 @@ dedans. »**
 2. Lis l'onglet `Dictionnaire` **et** l'onglet `Journal_nettoyage`.
 3. Sur l'onglet `Ventes_2025`, place-toi dans les données et fais `Ctrl + L` (`⌘ + T` sur Mac) pour
    convertir en **tableau structuré**. Dans *Création de tableau › Nom du tableau*, saisis
-   **`T_Ventes`**.
+   **`T_Ventes`**. Tu travailles dans **Excel en ligne** ou **Google Sheets** ? Suis le tableau pas à
+   pas du [cours, section 3](01-statistiques-descriptives.md#avant-la-première-formule--créer-le-tableau-t_ventes),
+   puis vérifie que `=LIGNES(T_Ventes)` renvoie **613**.
 4. Crée un nouvel onglet nommé **`Position`**. Tout ton travail de la partie A s'y fera.
 
 > 🧰 Grâce au tableau structuré, tu écriras `T_Ventes[Montant_TTC]` au lieu de `Ventes_2025!K2:K614`.
@@ -143,6 +145,48 @@ Formules à utiliser : `NB.SI.ENS`, `SOMME.SI.ENS`, `MOYENNE.SI.ENS`.
 
 ## A6 · Moyenne simple contre moyenne pondérée (30 min)
 
+### Comprendre avant de calculer
+
+Tu connais déjà la moyenne pondérée : c'est ta **moyenne du bac**. Un 15 en maths coefficient 7
+compte plus qu'un 15 en option coefficient 2. Chaque note est multipliée par son **poids** (son
+coefficient) avant d'être additionnée.
+
+Ici, le poids d'une note sera le **montant de la commande**. Prenons trois commandes seulement :
+
+| Commande | Montant TTC (= poids) | Note | Note × Montant | Part du poids total |
+|---|---|---|---|---|
+| Réparation | 19 € | 5 | 95 | 0,6 % |
+| Casque | 50 € | 4 | 200 | 1,6 % |
+| VAE | 3 000 € | 2 | 6 000 | 97,8 % |
+| **Total** | **3 069 €** | | **6 295** | **100 %** |
+
+- **Moyenne simple** : (5 + 4 + 2) / 3 = **3,67**. Chaque commande compte pour une voix.
+- **Somme pondérée** : 5 × 19 + 4 × 50 + 2 × 3 000 = **6 295**. C'est la somme de la colonne
+  « Note × Montant ». Seule, elle ne veut rien dire : son unité est « points × euros ». Elle
+  sert uniquement de numérateur.
+- **Somme des poids** : 19 + 50 + 3 000 = **3 069**.
+- **Moyenne pondérée** = somme pondérée ÷ somme des poids = 6 295 / 3 069 = **2,05**. Chaque
+  **euro** compte pour une voix.
+
+$$\text{moyenne pondérée} = \frac{\sum (note_i \times montant_i)}{\sum montant_i}$$
+
+La dernière colonne l'explique : le VAE porte 97,8 % du poids, donc la moyenne pondérée (2,05)
+est presque égale à sa note (2). Une moyenne pondérée est **attirée vers les valeurs des lignes
+les plus lourdes**.
+
+Dans le tableur, chaque morceau de la formule correspond à une ligne du calcul ci-dessus :
+
+| Morceau du calcul | Formule |
+|---|---|
+| Somme pondérée (numérateur) | `SOMMEPROD(Notes; Montants)` : multiplie les deux colonnes ligne à ligne, puis additionne |
+| Somme des poids (dénominateur) | `SOMME(Montants)` |
+
+> 🧰 **Vérifie avant de passer au vrai fichier.** Recopie ce petit tableau dans un coin de l'onglet
+> `Position` (pas dans `Ventes_2025`, qui doit rester intact). `SOMMEPROD` sur tes deux colonnes doit
+> renvoyer **6 295**, et la moyenne pondérée **2,05**.
+
+### Calculer sur Cyclo'Nord
+
 Calcule la note moyenne de deux façons :
 
 ```excel
@@ -151,9 +195,13 @@ Moyenne pondérée  =SOMMEPROD(T_Ventes[Note_client]; T_Ventes[Montant_TTC])
                    / SOMME(T_Ventes[Montant_TTC])
 ```
 
+✅ Moyenne simple **4,10** · moyenne pondérée **3,64**
+
 **Question A6.** Les deux résultats diffèrent. Lequel utiliserais-tu, et pour dire quoi ?
 Attention : la formule pondérée traite les 53 notes vides comme des zéros. En quoi cela fausse-t-il
 le résultat, et comment le corrigerais-tu ?
+
+✅ Moyenne pondérée corrigée : **4,07**
 
 ## A7 · La phrase de restitution (15 min)
 
@@ -336,15 +384,4 @@ ta phrase de restitution de l'étape A7. C'est la première chose que ton correc
 
 **Positionnement** : ● Acquis · ◐ En cours d'acquisition · ○ Non acquis
 
----
 
-## Pour aller plus loin (facultatif)
-
-- Recalcule tout le résumé à cinq nombres **par magasin**, et repère celui dont la distribution est
-  la plus régulière (CV le plus faible).
-- Utilise `MOYENNE.REDUITE(T_Ventes[Montant_TTC]; 0,1)` (`TRIMMEAN`) : la moyenne après exclusion
-  des 5 % extrêmes de chaque côté. Compare-la à la moyenne et à la médiane. Dans quel cas
-  l'utiliserais-tu ?
-- Construis la table des effectifs par tranche de 250 € avec `FREQUENCE`, puis l'histogramme.
-  Combien de bosses vois-tu ?
-- Refais trois calculs dans **Google Sheets** et note les différences de nom de fonction.

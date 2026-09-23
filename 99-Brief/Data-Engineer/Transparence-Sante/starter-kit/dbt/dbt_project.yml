@@ -1,0 +1,22 @@
+# Squelette de projet dbt fourni pour que vous ne perdiez pas de temps sur
+# l'outillage. Il tourne tel quel une fois la source chargée dans PostgreSQL.
+# Tout le reste — modèles, descriptions, glossaire, tags PII, tests — est votre travail.
+
+name: eclairage
+version: "1.0.0"
+config-version: 2
+
+profile: eclairage
+
+model-paths: ["models"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  eclairage:
+    staging:
+      +materialized: view
+      +schema: staging
+    marts:
+      +materialized: table
+      +schema: marts

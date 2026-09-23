@@ -1,0 +1,121 @@
+# Stack complete du brief, en UNE SEULE commande :
+#
+#     cp .env.example .env       # puis adaptez les mots de passe
+#     docker compose up -d
+#     docker compose ps          # attendez que tout soit "healthy" (5 a 10 min au 1er lancement)
+#
+# Ce fichier assemble trois choses :
+#   1. MinIO             -> zone brute (stockage objet compatible S3)
+#   2. PostgreSQL        -> zone travaillee (les donnees d'Eclairage)
+#   3. OpenMetadata      -> le catalogue, via son compose OFFICIEL non modifie
+#                           (openmetadata/docker-compose-postgres.yml, version 1.13.1)
+#
+# Interfaces web :
+#   OpenMetadata  http://localhost:8585      (admin@open-metadata.org / admin)
+#   MinIO console http://localhost:9001      (identifiants : votre .env)
+#   Airflow (ingestion OpenMetadata) http://localhost:8080
+#
+# ---------------------------------------------------------------------------
+# ATTENTION RAM — a lire avant le premier demarrage
+# ---------------------------------------------------------------------------
+# La stack complete demande environ 5 a 6 Go. Verifiez ce dont Docker dispose :
+#
+#     docker info | grep "Total Memory"
+#
+# Sur une machine 8 Go, ca passe, mais fermez navigateur superflu et IDE lourds.
+# Si c'est trop juste, deux soupapes, dans cet ordre :
+#
+#   1. Arreter le service d'ingestion planifiee (Airflow), ~1 Go gagne.
+#      Vous lancerez alors vos ingestions en ligne de commande plutot que
+#      depuis l'interface (voir le chapitre 9 du cours, SDK Python) :
+#          docker compose stop ingestion
+#
+#   2. Reduire la memoire d'Elasticsearch : decommentez le bloc "elasticsearch"
+#      en bas de ce fichier (512 Mo au lieu de 1 Go).
+#
+# En dernier recours seulement, la sandbox en ligne https://sandbox.open-metadata.org
+# est un repli accepte, a condition de le documenter (voir le brief).
+#
+# ---------------------------------------------------------------------------
+# PORTS — pourquoi PostgreSQL est sur 5433 et pas 5432
+# ---------------------------------------------------------------------------
+# OpenMetadata embarque SA PROPRE base PostgreSQL, qui occupe deja le 5432.
+# La base d'Eclairage (vos donnees) est donc exposee sur 5433. Ne les confondez
+# pas : celle d'OpenMetadata contient ses metadonnees, pas vos donnees.
+#
+# ---------------------------------------------------------------------------
+# MinIO en ligne de commande
+# ---------------------------------------------------------------------------
+# L'alias `mc` par defaut dans le conteneur n'a pas d'identifiants ("Access Denied").
+# Configurez-le avant usage :
+#   docker exec eclairage_minio mc alias set loc http://localhost:9000 <user> <password>
+#   docker exec eclairage_minio mc ls -r loc/<votre-bucket>
+#
+# AUCUN BUCKET N'EST CREE : definir les zones de stockage fait partie du travail
+# (combien de buckets, quel nommage, quels formats, quelle retention). Voir Phase 1.
+
+include:
+  # Compose OFFICIEL d'OpenMetadata, version 1.13.1, non modifie.
+  # Le garder tel quel permet de le mettre a jour en remplacant simplement le
+  # fichier. Vous devez savoir dire ce qu'il demarre : serveur, base de
+  # metadonnees, moteur de recherche, service d'ingestion.
+  - path: openmetadata/docker-compose-postgres.yml
+
+services:
+  minio:
+    image: minio/minio:latest
+    container_name: eclairage_minio
+    restart: unless-stopped
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-eclairage}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-changeme123}
+    ports:
+      - "${MINIO_API_PORT:-9000}:9000"      # API S3 : vos scripts et OpenMetadata
+      - "${MINIO_CONSOLE_PORT:-9001}:9001"  # Console web
+    volumes:
+      - miniodata:/data
+    networks:
+      # Meme reseau qu'OpenMetadata : indispensable pour que le catalogue
+      # puisse joindre MinIO. Depuis OpenMetadata, l'endpoint S3 n'est PAS
+      # localhost:9000 mais http://minio:9000 — souvenez-vous-en en Phase 3.
+      - app_net
+    healthcheck:
+      test: ["CMD-SHELL", "mc ready local || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+  postgres_eclairage:
+    image: postgres:16
+    container_name: eclairage_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-eclairage}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+      POSTGRES_DB: ${POSTGRES_DB:-transparence}
+    ports:
+      - "${POSTGRES_PORT:-5433}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      # Idem : depuis OpenMetadata, l'hote de cette base est "postgres_eclairage",
+      # port 5432 (le port interne), et non localhost:5433.
+      - app_net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-eclairage} -d ${POSTGRES_DB:-transparence}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # --- Soupape RAM n°2 : decommentez pour reduire Elasticsearch a 512 Mo ---
+  # elasticsearch:
+  #   environment:
+  #     - discovery.type=single-node
+  #     - ES_JAVA_OPTS=-Xms512m -Xmx512m
+  #     - xpack.security.enabled=false
+
+volumes:
+  miniodata:
+  pgdata:

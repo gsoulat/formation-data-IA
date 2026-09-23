@@ -1,0 +1,16 @@
+# Archives telechargees par bootstrap.py (32 Mo compresses, 386 Mo decompresses)
+data/
+
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Sauvegardes
+*.dump
+*.sql.gz
+backups/

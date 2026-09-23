@@ -27,6 +27,7 @@ Parcours détaillé semaine par semaine : **[PATH_DATA_ANALYST](../PATH_DATA_ANA
 Parcours : **[PATH_DATA_ENGINEER](../PATH_DATA_ENGINEER.md)**
 
 - **Briefs métier** → [`Data-Engineer/`](Data-Engineer/) : Clean Code, POO, Terraform+CI/CD, PostgreSQL, API+Scraping, Data Lake, BigQuery, Snowflake+dbt, Éolienne (Fabric), ECO2-RTE, Maintenance DWH, Gouvernance, Kafka, Qualité de l'eau, Pipeline NYC.
+- **Paire de mini-briefs (1 semaine)** → [Bouquineo-Scraping](Data-Engineer/Bouquineo-Scraping/BRIEF_SCRAPING.md) (J1-J2, scraping en profondeur) puis [Bouquineo-API](Data-Engineer/Bouquineo-API/BRIEF_API.md) (J3-J5, exposer via une API REST : CRUD, rôles, quota). À enchaîner dans la même semaine ; suppose le pipeline déjà acquis.
 - **Capstone couplé au cours** → [Data Warehouse & Data Marts BigQuery](../05-Databases/DataWarehouse/brief/Brief.md) (module DataWarehouse)
 - **Projet final** → [Pipeline ETL E-Commerce](FINAL_PROJECT_TEMPLATES/DATA_ENGINEER_ETL.md)
 

@@ -80,6 +80,32 @@ répartition des notes.
 
 ## 3. Les trois indicateurs de position
 
+### Avant la première formule : créer le tableau `T_Ventes`
+
+Toutes les formules de ce cours écrivent `T_Ventes[Montant_TTC]` au lieu de `K2:K614`. Ce nom
+n'existe pas encore dans le fichier : c'est à toi de le créer, **une seule fois**, sur l'onglet
+`Ventes_2025`. Sans lui, chaque formule renvoie l'erreur `#NOM?` (`#NAME?` dans Google Sheets).
+
+| Étape | Excel sur ordinateur | Excel en ligne | Google Sheets |
+|---|---|---|---|
+| **0. Préparer** | — | Ouvre le fichier depuis OneDrive. Si le menu *Insertion* est grisé, clique sur **Modifier** | Si un badge **.XLSX** s'affiche à côté du nom du fichier, fais d'abord *Fichier › Enregistrer au format Google Sheets* |
+| **1. Convertir** | Clique dans les données, puis `Ctrl + L` (`⌘ + T` sur Mac) ou *Insertion › Tableau* | Clique dans les données, puis *Insertion › Tableau* (le raccourci `Ctrl + L` peut être capté par le navigateur) | Sélectionne les données, puis *Format › Convertir en tableau* (`Ctrl + Alt + T`, `⌘ + Option + T` sur Mac) |
+| **2. Valider** | Vérifie la plage `$A$1:$M$614`, coche **« Mon tableau comporte des en-têtes »**, puis **OK** | Pareil | Contrôle le type proposé pour chaque colonne |
+| **3. Nommer** | Onglet *Création de tableau* (*Tableau* sur Mac) › **Nom du tableau** : remplace `Tableau1` par `T_Ventes`, puis `Entrée` | Onglet *Création de tableau* › **Nom du tableau** : pareil | Menu **Tableau**, à côté du nom affiché au-dessus du tableau › **Renommer le tableau** › `T_Ventes` |
+
+**Vérifie** dans une cellule vide :
+
+```excel
+=LIGNES(T_Ventes)          → 613                [ROWS]
+```
+
+Tu obtiens 613 et non 614 : `T_Ventes` désigne **les données, sans la ligne d'en-tête**, dans Excel
+comme dans Google Sheets.
+
+> ⚠️ **Nom refusé ?** Dans Excel, un nom de tableau commence par une lettre et ne contient ni espace
+> ni tiret : `T Ventes` et `T-Ventes` sont refusés. Google Sheets accepte l'espace mais le remplace par
+> `_` dans les formules. Tape directement `T_Ventes` partout, et le nom sera le même dans les deux outils.
+
 ### 3.1 La moyenne (arithmétique)
 
 La somme des valeurs divisée par leur nombre. C'est le **point d'équilibre** de la distribution :
@@ -128,8 +154,29 @@ La valeur la **plus fréquente**. C'est le seul indicateur de position qui march
 =MODE.SIMPLE(T_Ventes[Montant_TTC])      → 19,00 €         [MODE.SNGL]
 ```
 
-Sur une variable **qualitative**, le tableur n'a pas de fonction `MODE` textuelle simple ; on passe
-par un comptage (ou, plus simplement, par le TCD de mercredi) :
+**Sur du texte**, `MODE.SIMPLE` ne suffit plus : elle ignore le texte et renvoie une erreur. Pour
+obtenir directement le mode d'une colonne texte, on combine trois fonctions :
+
+```excel
+=MODE.SIMPLE(T_Ventes[Canal])            → #N/A            ← MODE ne lit que des nombres
+=INDEX(T_Ventes[Canal];MODE.SIMPLE(EQUIV(T_Ventes[Canal];T_Ventes[Canal];0)))
+                                         → Magasin         [INDEX, MATCH]
+```
+
+Lis la formule de l'intérieur vers l'extérieur :
+
+1. `EQUIV(T_Ventes[Canal];T_Ventes[Canal];0)` remplace chaque canal par un **nombre** : la position
+   de sa première apparition dans la colonne. Toutes les lignes « Magasin » reçoivent le même numéro.
+2. `MODE.SIMPLE(...)` travaille enfin sur des nombres : elle trouve le numéro le plus fréquent.
+3. `INDEX(T_Ventes[Canal];...)` retraduit ce numéro en texte : `Magasin`.
+
+> 🧰 **Valider la formule.** Dans Excel 365 et Excel en ligne, `Entrée` suffit. Dans Excel 2019 ou
+> plus ancien, LibreOffice Calc et Google Sheets, valide avec `Ctrl + Maj + Entrée` : la formule
+> travaille sur toute une colonne à la fois (formule matricielle).
+
+Cette formule donne le **gagnant**, pas le **score**. En cas d'égalité, elle renvoie la valeur
+rencontrée en premier, sans prévenir. Pour voir l'écart avec les autres valeurs, compte-les une à une
+(ou, plus simplement, fais le TCD de mercredi) :
 
 ```excel
 =NB.SI.ENS(T_Ventes[Canal];"Magasin")    → 354            [COUNTIFS]
@@ -266,6 +313,7 @@ l'écart entre les deux calculs se chiffre.)*
 | Moyenne | `MOYENNE` | `AVERAGE` |
 | Médiane | `MEDIANE` | `MEDIAN` |
 | Mode | `MODE.SIMPLE` | `MODE.SNGL` |
+| Mode d'une colonne texte | `INDEX` + `MODE.SIMPLE` + `EQUIV` | `INDEX` + `MODE.SNGL` + `MATCH` |
 | Somme | `SOMME` | `SUM` |
 | Compter des nombres | `NB` | `COUNT` |
 | Compter des cellules non vides | `NBVAL` | `COUNTA` |
@@ -276,9 +324,10 @@ l'écart entre les deux calculs se chiffre.)*
 | Moyenne pondérée | `SOMMEPROD` / `SOMME` | `SUMPRODUCT` / `SUM` |
 | Minimum / maximum | `MIN` / `MAX` | `MIN` / `MAX` |
 
-> 🧰 **Astuce tableau structuré.** Si tu convertis ta plage en tableau (`Ctrl + L`) et que tu le
-> nommes `T_Ventes`, tu écris `T_Ventes[Montant_TTC]` au lieu de `K2:K614`. La formule devient
-> lisible, et elle s'étend toute seule quand des lignes arrivent. Prends l'habitude dès aujourd'hui.
+> 🧰 **Pourquoi le tableau structuré ?** `T_Ventes[Montant_TTC]` se lit mieux que `K2:K614`, et la
+> formule s'étend toute seule quand des lignes arrivent. Prends l'habitude dès aujourd'hui : la
+> création pas à pas (Excel, Excel en ligne, Google Sheets) est au
+> [début de la section 3](#avant-la-première-formule--créer-le-tableau-t_ventes).
 
 ---
 
