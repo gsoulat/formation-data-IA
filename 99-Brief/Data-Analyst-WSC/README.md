@@ -6,6 +6,7 @@
 |---|---|---|
 | 1 | S1 | [B01 — Enquête sur données ouvertes : première analyse et publication GitHub](B01-donnees-ouvertes.md) |
 | 2 | S2 | [B02 — Portrait statistique d'un territoire : indicateurs, dispersion et pièges de la moyenne](B02-portrait-statistique.md) — *version guidée, niveau 1* |
+| 2 · I | S2 · lun–mar PM | [**B02-I** — Dites-moi ce qu'il y a dedans : les ventes Cyclo'Nord *(niveau 1 · imiter)*](B02-I-imiter-ventes-cyclonord.md) |
 | 2 bis | S2 · mer–jeu | [**B02-A** — Le carburant est-il vraiment plus cher chez nous ? *(niveau 2 · adapter)*](B02-A-adapter-prix-carburants.md) |
 | 2 ter | S2 · ven (FOAD) | [**B02-T** — Portrait statistique d'un territoire : la commande est à vous *(niveau 3 · transposer)*](B02-T-transposer-portrait-territoire.md) |
 | 3 | S3 | [B03 — Croiser pour décider : TCD, corrélations et première restitution client](B03-croiser-restituer.md) |
@@ -42,7 +43,7 @@ plutôt qu'en un brief unique, pour faire monter C3.1 · C4.2 · C4.5 du niveau 
 
 | Niveau | Support | Quand | Modalité |
 |---|---|---|---|
-| 1 · Imiter | [Exercice guidé Cyclo'Nord](../../15-Business-Intelligence/00-Tableur-Statistiques-TCD/05-exercice-guide-cyclonord.md) | lun PM + mar PM | individuel |
+| 1 · Imiter | [B02-I — Ventes Cyclo'Nord](B02-I-imiter-ventes-cyclonord.md) · [exercice guidé](../../15-Business-Intelligence/00-Tableur-Statistiques-TCD/05-exercice-guide-cyclonord.md) | lun PM + mar PM | individuel |
 | 2 · Adapter | [B02-A — Prix des carburants](B02-A-adapter-prix-carburants.md) | mer + jeu | binôme |
 | 3 · Transposer | [B02-T — Portrait de territoire](B02-T-transposer-portrait-territoire.md) | ven (FOAD) | individuel |
 

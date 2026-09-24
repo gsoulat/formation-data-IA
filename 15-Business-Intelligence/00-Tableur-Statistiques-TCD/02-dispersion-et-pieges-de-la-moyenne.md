@@ -180,18 +180,27 @@ $$[\; Q1 - 1{,}5 \times IQR \;;\; Q3 + 1{,}5 \times IQR \;]$$
 Q1       =QUARTILE.INCLURE(T_Ventes[Montant_TTC];1)          →     50,15
 Q3       =QUARTILE.INCLURE(T_Ventes[Montant_TTC];3)          →  1 790,00
 IQR      =Q3-Q1                                              →  1 739,85
+Seuil_bas  =Q1 - 1,5*IQR                                     → −2 559,62
 Seuil_haut =Q3 + 1,5*IQR                                     →  4 399,77
-Nb       =NB.SI.ENS(T_Ventes[Montant_TTC];">"&Seuil_haut)    →         14
+Nb_bas   =NB.SI.ENS(T_Ventes[Montant_TTC];"<"&Seuil_bas)     →          0
+Nb_haut  =NB.SI.ENS(T_Ventes[Montant_TTC];">"&Seuil_haut)    →         14
 ```
 
+> ⚠️ **Un seuil bas négatif n'est pas une erreur de calcul.** Q1 est tout près de zéro (50 €) et
+> l'IQR est large (1 740 €) : en retirant 1,5 × IQR, on passe sous zéro. Un montant ne pouvant pas
+> être négatif, **aucune commande ne peut être atypique par le bas** : la règle ne détecte ici que
+> les valeurs extrêmes à droite. C'est la signature d'une distribution **asymétrique à droite** —
+> la règle de Tukey, pensée pour des distributions à peu près symétriques, ne « fonctionne » que
+> d'un côté. Garde le calcul et écris-le : « seuil bas négatif, sans objet pour un montant ».
+
 > 🧰 **Deux gestes nouveaux dans ce bloc.**
-> `Q1`, `Q3`, `IQR` et `Seuil_haut` ne sont pas des mots magiques : ce sont **les cellules où tu
+> `Q1`, `Q3`, `IQR`, `Seuil_bas` et `Seuil_haut` ne sont pas des mots magiques : ce sont **les cellules où tu
 > viens de ranger ces valeurs**. Soit tu écris leur référence (`=B3-B2`), soit tu sélectionnes la
 > cellule et tu lui donnes ce nom dans la **zone Nom**, à gauche de la barre de formule.
 > Et `">"&Seuil_haut` colle l'opérateur `>` à la valeur de la cellule : un critère doit arriver à
 > Excel **en un seul morceau**, d'où le `&`.
 
-**14 commandes sur 613** dépassent le seuil haut (2,3 %). Aucune ne passe sous le seuil bas — ce qui
+**14 commandes sur 613** dépassent le seuil haut (2,3 %). Aucune ne passe sous le seuil bas — et pour cause, il est négatif — ce qui
 confirme l'étalement vers la droite vu hier.
 
 Pour regarder ces valeurs plutôt que les compter, `GRANDE.VALEUR` donne la n-ième plus grande :

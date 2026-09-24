@@ -30,7 +30,7 @@ tu **transposes** vendredi.
 
 | Niveau | Support | Quand |
 |---|---|---|
-| **1 · Imiter** | [Exercice guidé — Faire parler les ventes Cyclo'Nord](05-exercice-guide-cyclonord.md) | lundi PM + mardi PM |
+| **1 · Imiter** | [Brief B02-I — Les ventes Cyclo'Nord](../../99-Brief/Data-Analyst-WSC/B02-I-imiter-ventes-cyclonord.md) · [exercice guidé pas à pas](05-exercice-guide-cyclonord.md) | lundi PM + mardi PM |
 | **2 · Adapter** | [Brief B02-A — Le carburant est-il plus cher chez nous ?](../../99-Brief/Data-Analyst-WSC/B02-A-adapter-prix-carburants.md) | mercredi + jeudi |
 | **3 · Transposer** | [Brief B02-T — Portrait statistique d'un territoire](../../99-Brief/Data-Analyst-WSC/B02-T-transposer-portrait-territoire.md) | vendredi (FOAD) |
 
