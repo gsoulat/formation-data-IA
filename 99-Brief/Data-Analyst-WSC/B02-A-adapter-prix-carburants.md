@@ -9,9 +9,9 @@
 | **Compétences visées** | C3.1 · C4.2 · C4.5 — **niveau 2 · ADAPTER** |
 | **Cours support** | [Module 00 — Tableur : statistiques & TCD](../../15-Business-Intelligence/00-Tableur-Statistiques-TCD/README.md) |
 
-> **Niveau 2 · ADAPTER** — tu transposes à un contexte nouveau les gestes vus en cours et pratiqués
-> lundi et mardi sur Cyclo'Nord. Les ressources sont fournies, la méthode ne l'est plus : c'est toi
-> qui décides quels indicateurs calculer et quels graphiques produire.
+> **Niveau 2 · ADAPTER** — vous appliquez à un contexte nouveau les gestes vus en cours et pratiqués
+> lundi et mardi sur Cyclo'Nord. Les ressources sont fournies, la méthode ne l'est plus : c'est vous
+> qui décidez quels indicateurs calculer et quels graphiques produire.
 
 ## Description
 
@@ -35,12 +35,11 @@ L'avertissement : *« Si on publie un chiffre faux, on passe pour des imbéciles
 ne veux pas d'un titre avant d'avoir vu vos calculs. Et je ne veux pas non plus d'un article qui
 dit "c'est compliqué" — trouvez-moi ce qui est **vrai** et ce qui est **intéressant**. »*
 
-Vous allez découvrir deux choses. La première, c'est que la réponse à la question du lecteur est
-probablement non — mais que ce « non » dépend de l'indicateur que vous choisissez, et qu'il faut
-savoir le dire. La seconde, plus intéressante pour l'article, c'est que la question n'était
-peut-être pas la bonne : l'écart de prix entre deux stations **d'une même ville** est plus grand que
-l'écart entre la région la moins chère et la plus chère de France. Ce n'est pas *où l'on habite* qui
-compte, c'est *où l'on fait le plein*.
+Deux conseils avant de vous lancer. D'abord, votre réponse dépendra en partie de l'indicateur que
+vous choisirez : repérez **ce qui change** quand vous passez de l'un à l'autre, et dites-le.
+Ensuite, la question du lecteur n'est peut-être pas la plus intéressante : ne vous arrêtez pas à
+« oui » ou « non ». Cherchez **où se trouvent vraiment les écarts de prix** — c'est peut-être là
+qu'est l'article.
 
 ## Objectifs pédagogiques
 
@@ -119,7 +118,8 @@ Un chiffre publié sans son périmètre sera compté comme faux, même s'il est 
 - **Producteur** : Ministère de l'Économie et des Finances
 - **Page** : https://data.economie.gouv.fr/explore/dataset/prix-des-carburants-en-france-flux-instantane-v2/
 - **Licence** : **Licence Ouverte 2.0 (Etalab)** — la source doit être citée dans votre rendu
-- **Périmètre** : 9 800 stations, 6 carburants, extraction du 18/09/2026
+- **Périmètre** : France métropolitaine, 9 342 stations ayant déclaré au moins un prix (9 800 stations
+  référencées dans l'onglet `Stations`), 6 carburants, extraction du 18/09/2026
 - **Format** : format *long* — 1 ligne = 1 station × 1 carburant. Directement exploitable en TCD.
 
 **Structure du fichier** : `ID_station`, `Region`, `Departement`, `Code_departement`,
@@ -190,7 +190,7 @@ contournement est documentée.
 - [Cours 03 — Tableaux croisés dynamiques](../../15-Business-Intelligence/00-Tableur-Statistiques-TCD/03-tableaux-croises-dynamiques.md)
 - [Cours 04 — Choisir le bon graphique](../../15-Business-Intelligence/00-Tableur-Statistiques-TCD/04-choisir-le-bon-graphique.md)
 - Microsoft — [créer un tableau croisé dynamique](https://support.microsoft.com/fr-fr/office/cr%C3%A9er-un-tableau-crois%C3%A9-dynamique-pour-analyser-des-donn%C3%A9es-de-feuille-de-calcul-a9a84538-bfe9-40a9-a8e9-f99134456576)
-- Microsoft — [fonctions statistiques Excel](https://support.microsoft.com/fr-fr/office/fonctions-statistiques-r%C3%A9f%C3%A9rence-624dac86-a375-4435-bc25-76d6df3c5b6f)
+- Microsoft — [fonctions Excel par catégorie (section Statistiques)](https://support.microsoft.com/fr-fr/office/fonctions-excel-par-cat%C3%A9gorie-5f91f4e9-7b42-46d2-9bd1-63f26a86c0eb)
 - data.economie.gouv.fr — [jeu de données source](https://data.economie.gouv.fr/explore/dataset/prix-des-carburants-en-france-flux-instantane-v2/)
 - Etalab — [Licence Ouverte 2.0](https://www.etalab.gouv.fr/licence-ouverte-open-licence/)
 

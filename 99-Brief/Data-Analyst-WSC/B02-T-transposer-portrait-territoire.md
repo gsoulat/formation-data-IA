@@ -139,15 +139,19 @@ connues : [`donnees/SOURCES.md`](../../15-Business-Intelligence/00-Tableur-Stati
 | Piste | Où |
 |---|---|
 | Emploi, chômage, diplômes, revenus par commune | INSEE — [Dossier complet](https://www.insee.fr/fr/statistiques/zones/2011101) |
-| Commerces, santé, écoles, services | INSEE — [Base permanente des équipements](https://www.insee.fr/fr/statistiques/3568638) |
+| Revenus, pauvreté, population par commune et intercommunalité | INSEE — [Base du comparateur de territoires](https://www.insee.fr/fr/statistiques/2521169) *(fichier de 2,9 millions de lignes : trop gros pour être ouvert tel quel dans Excel, filtrez-le à l'import)* |
+| Commerces, santé, écoles, services | INSEE — [Base permanente des équipements](https://www.insee.fr/fr/metadonnees/source/serie/s1161) |
 | Équipements sportifs | [Data ES — Ministère des Sports](https://www.data.gouv.fr/datasets/recensement-des-equipements-sportifs-espaces-et-sites-de-pratiques) |
 | Données régionales | [Géo2France](https://www.geo2france.fr/) |
 | Tout le reste | [data.gouv.fr](https://www.data.gouv.fr/datasets/) |
 
-> ⚠️ **Deux pièges connus du socle.** 1 970 communes sur 3 782 n'ont **pas** de marché immobilier
+> ⚠️ **Trois pièges connus.** 1 970 communes sur 3 782 n'ont **pas** de marché immobilier
 > mesuré en 2024 : leur absence n'est pas un trou de données, c'est une information. Et une médiane
 > de prix calculée sur 5 ventes ne vaut pas une médiane sur 3 000 : la colonne `Nb_ventes_2024` doit
-> accompagner tout usage du prix.
+> accompagner tout usage du prix. Enfin, n'ouvrez pas un fichier CSV de l'INSEE par double-clic :
+> Excel convertit les codes INSEE en nombres (`02001` devient `2001`) et la jointure avec le socle
+> échoue en silence pour toute l'Aisne. Importez-le (*Données › À partir d'un fichier texte/CSV*) en
+> déclarant la colonne du code en **Texte**.
 
 ## Livrables attendus
 

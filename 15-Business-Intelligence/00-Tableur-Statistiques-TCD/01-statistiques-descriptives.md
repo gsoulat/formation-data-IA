@@ -355,7 +355,7 @@ Coche seulement si tu sais répondre **sans relire** :
 ## 10. Pour aller plus loin
 
 - INSEE — [définitions : moyenne, médiane, mode](https://www.insee.fr/fr/metadonnees/definitions)
-- Microsoft — [fonctions statistiques Excel](https://support.microsoft.com/fr-fr/office/fonctions-statistiques-r%C3%A9f%C3%A9rence-624dac86-a375-4435-bc25-76d6df3c5b6f)
+- Microsoft — [fonctions Excel par catégorie (section Statistiques)](https://support.microsoft.com/fr-fr/office/fonctions-excel-par-cat%C3%A9gorie-5f91f4e9-7b42-46d2-9bd1-63f26a86c0eb)
 - Microsoft — [MOYENNE.SI.ENS](https://support.microsoft.com/fr-fr/office/moyenne-si-ens-fonction-moyenne-si-ens-48910c45-1fc0-4389-a028-f7c5c3001690)
 - Google — [liste des fonctions Google Sheets](https://support.google.com/docs/table/25273)
 
