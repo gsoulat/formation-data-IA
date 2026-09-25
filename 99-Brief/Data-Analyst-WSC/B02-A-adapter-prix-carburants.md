@@ -2,12 +2,12 @@
 
 ## Informations
 
-| | |
-|---|---|
-| **Semaine** | S2 · mercredi 23 – jeudi 24 sept 2026 · 2 jours · Guillaume |
-| **Modalité · Évaluation** | Binôme · Formatif (revue croisée jeudi 16 h) |
-| **Compétences visées** | C3.1 · C4.2 · C4.5 — **niveau 2 · ADAPTER** |
-| **Cours support** | [Module 00 — Tableur : statistiques & TCD](../../15-Business-Intelligence/00-Tableur-Statistiques-TCD/README.md) |
+|                           |                                                                                                                  |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| **Semaine**               | S2 · mercredi 23 – jeudi 24 sept 2026 · 2 jours · Guillaume                                                      |
+| **Modalité · Évaluation** | Binôme · Formatif (revue croisée jeudi 16 h)                                                                     |
+| **Compétences visées**    | C3.1 · C4.2 · C4.5 — **niveau 2 · ADAPTER**                                                                      |
+| **Cours support**         | [Module 00 — Tableur : statistiques & TCD](../../15-Business-Intelligence/00-Tableur-Statistiques-TCD/README.md) |
 
 > **Niveau 2 · ADAPTER** — tu transposes à un contexte nouveau les gestes vus en cours et pratiqués
 > lundi et mardi sur Cyclo'Nord. Les ressources sont fournies, la méthode ne l'est plus : c'est toi
@@ -21,37 +21,37 @@ qu'ailleurs. » Le rédacteur en chef veut publier. Avant, il veut savoir si c'e
 
 ## Contexte
 
-Vous êtes en stage au **pôle données de *L'Écho des Hauts-de-France***, un quotidien régional de
+Vous êtes en stage au **pôle données de _L'Écho des Hauts-de-France_**, un quotidien régional de
 Lille. La rédaction reçoit régulièrement des courriers de lecteurs sur le prix des carburants. Le
 dernier en date est assez argumenté pour intéresser le rédacteur en chef, Malik Ferhaoui, qui
-envisage un article : *« Carburant : les Hauts-de-France paient-ils plus cher ? »*
+envisage un article : _« Carburant : les Hauts-de-France paient-ils plus cher ? »_
 
 Il vient vous voir avec une consigne claire et un avertissement.
 
-La consigne : *« Le ministère publie tous les prix de toutes les stations de France, en temps réel.
-Prenez ce fichier et dites-moi si le lecteur a raison. »*
+La consigne : _« Le ministère publie tous les prix de toutes les stations de France, en temps réel.
+Prenez ce fichier et dites-moi si le lecteur a raison. »_
 
-L'avertissement : *« Si on publie un chiffre faux, on passe pour des imbéciles pendant six mois. Je
+L'avertissement : _« Si on publie un chiffre faux, on passe pour des imbéciles pendant six mois. Je
 ne veux pas d'un titre avant d'avoir vu vos calculs. Et je ne veux pas non plus d'un article qui
-dit "c'est compliqué" — trouvez-moi ce qui est **vrai** et ce qui est **intéressant**. »*
+dit "c'est compliqué" — trouvez-moi ce qui est **vrai** et ce qui est **intéressant**. »_
 
 Vous allez découvrir deux choses. La première, c'est que la réponse à la question du lecteur est
 probablement non — mais que ce « non » dépend de l'indicateur que vous choisissez, et qu'il faut
 savoir le dire. La seconde, plus intéressante pour l'article, c'est que la question n'était
 peut-être pas la bonne : l'écart de prix entre deux stations **d'une même ville** est plus grand que
-l'écart entre la région la moins chère et la plus chère de France. Ce n'est pas *où l'on habite* qui
-compte, c'est *où l'on fait le plein*.
+l'écart entre la région la moins chère et la plus chère de France. Ce n'est pas _où l'on habite_ qui
+compte, c'est _où l'on fait le plein_.
 
 ## Objectifs pédagogiques
 
 À l'issue de ce brief, vous serez capable de :
 
 - **C3.1** — Utiliser les statistiques descriptives afin de modéliser les données et en faire
-  émerger des informations pertinentes *(niveau 2 — adapter)*
+  émerger des informations pertinentes _(niveau 2 — adapter)_
 - **C4.2** — Utiliser les visualisations descriptives : histogrammes, boîtes à moustaches, nuages de
-  points *(niveau 2 — adapter)*
+  points _(niveau 2 — adapter)_
 - **C4.5** — Utiliser un tableur et des tableaux croisés dynamiques pour proposer des croisements de
-  variables *(niveau 2 — adapter)*
+  variables _(niveau 2 — adapter)_
 
 Concrètement, vous passerez du « je reproduis les formules du cours » au « je choisis les
 indicateurs qui répondent à **cette** question-là ».
@@ -111,7 +111,7 @@ Un chiffre publié sans son périmètre sera compté comme faux, même s'il est 
 
 ## Données fournies (source exacte)
 
-> Le journal *L'Écho des Hauts-de-France* est **fictif**. Les **données sont réelles** et publiques.
+> Le journal _L'Écho des Hauts-de-France_ est **fictif**. Les **données sont réelles** et publiques.
 
 - **Fichier** : [`carburants_france_releve.xlsx`](../../15-Business-Intelligence/00-Tableur-Statistiques-TCD/donnees/carburants_france_releve.xlsx)
   — onglets `Releve_prix` (31 277 lignes), `Stations`, `Dictionnaire`, `Perimetre_et_source`
@@ -120,7 +120,7 @@ Un chiffre publié sans son périmètre sera compté comme faux, même s'il est 
 - **Page** : https://data.economie.gouv.fr/explore/dataset/prix-des-carburants-en-france-flux-instantane-v2/
 - **Licence** : **Licence Ouverte 2.0 (Etalab)** — la source doit être citée dans votre rendu
 - **Périmètre** : 9 800 stations, 6 carburants, extraction du 18/09/2026
-- **Format** : format *long* — 1 ligne = 1 station × 1 carburant. Directement exploitable en TCD.
+- **Format** : format _long_ — 1 ligne = 1 station × 1 carburant. Directement exploitable en TCD.
 
 **Structure du fichier** : `ID_station`, `Region`, `Departement`, `Code_departement`,
 `Code_postal`, `Ville`, `Adresse`, `Type_de_station` (Route / Autoroute), `Energie`, `Carburant`,
@@ -129,7 +129,7 @@ Un chiffre publié sans son périmètre sera compté comme faux, même s'il est 
 > ⚠️ **Trois limites à lire avant de commencer** (onglet `Perimetre_et_source`) : c'est une
 > photographie et toutes les stations ne déclarent pas au même moment ; seules les stations
 > déclarantes figurent ; le fichier ne contient **aucun volume vendu**, donc toute moyenne est une
-> moyenne *par station*, pas *par litre consommé*. Ces limites doivent apparaître dans votre note.
+> moyenne _par station_, pas _par litre consommé_. Ces limites doivent apparaître dans votre note.
 
 ## Livrables attendus
 
@@ -151,7 +151,7 @@ Un chiffre publié sans son périmètre sera compté comme faux, même s'il est 
 4. **`graphiques/`** — les trois graphiques exportés en image, nommés explicitement.
 
 > 🔧 **Travail en binôme, un seul dépôt.** L'un des deux le crée, ajoute l'autre en collaborateur
-> dans *Settings › Collaborators*. Les deux doivent apparaître dans l'historique des commits : un
+> dans _Settings › Collaborators_. Les deux doivent apparaître dans l'historique des commits : un
 > dépôt où une seule personne a poussé sera lu comme un travail fait par une seule personne.
 
 ## Critères de performance
