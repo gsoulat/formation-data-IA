@@ -1,350 +1,336 @@
 # 05 — Exercice guidé : faire parler les ventes Cyclo'Nord
 
-> **Niveau 1 · IMITER** — tu reproduis, sur un jeu de données fourni, les manipulations montrées en
-> cours. Toutes les valeurs attendues sont données : tu peux te corriger seul, au fur et à mesure.
+> **Niveau 1 · IMITER.** Tu refais, sur Google Sheets, les gestes montrés le matin. Chaque étape
+> te dit **où** écrire, **quoi** écrire, et **quel résultat** tu dois obtenir : tu te corriges seul,
+> au fur et à mesure. Ce qui t'appartient, ce sont les réponses aux questions.
 
 | | |
 |---|---|
-| **Quand** | Lundi 21/09 après-midi (partie A) · Mardi 22/09 après-midi (partie B) |
-| **Durée** | 2 × 3 h · correction collective mardi 16 h |
-| **Modalité** | **Individuel** · formatif, non noté |
-| **Compétences** | **C3.1** (niveau 1) · **C4.2** (niveau 1) · **C4.5** (niveau 1) |
-| **Fichier** | [`donnees/cyclonord_ventes_2025_fiable.xlsx`](donnees/cyclonord_ventes_2025_fiable.xlsx) |
-| **Livrable** | `cyclonord_stats.xlsx` + `README.md`, poussés sur ton **dépôt GitHub** mardi 17 h 30 |
+| **Quand** | lundi (partie A) · mardi (partie B) · mercredi (partie C) · jeudi matin (partie D) |
+| **Organisation** | individuel ; entraide encouragée, chacun son classeur |
+| **Fichier** | [`donnees/cyclonord_ventes_2025_fiable.xlsx`](donnees/cyclonord_ventes_2025_fiable.xlsx) — 613 commandes |
+| **À rendre** | **jeudi 12 h 30**, un seul rendu pour les quatre parties (voir la fin de la page) |
+
+**Le contexte en deux lignes.** La semaine dernière, tu as audité le fichier des commandes 2025 de
+Cyclo'Nord, un réseau de 8 magasins de vélos. Il a été corrigé. La responsable commerciale, Nadia
+Oumejjoud, te demande : **« Dites-moi ce qu'il y a dedans. »**
 
 ---
 
-## Contexte
+## Mise en place (lundi, 20 min)
 
-C'est le même fichier que la semaine dernière — **corrigé**. Les 14 lignes que ton audit avait
-signalées comme inexploitables ont été retirées, les villes normalisées, les montants recalculés.
-Il reste **613 commandes**. L'onglet `Journal_nettoyage` documente chaque correction : lis-le, il
-fait partie de l'exercice.
+1. Ouvre https://sheets.new. Nomme le classeur `NOM_Prenom_cyclonord` (en haut à gauche).
+2. **Fichier › Paramètres › Général › Paramètres régionaux : France** › *Enregistrer*.
+   Désormais, dans les formules, les arguments se séparent par des **points-virgules** (`;`).
+3. **Fichier › Importer › Importer** › glisse le fichier › **Remplacer la feuille de calcul** ›
+   *Importer les données*. Tu obtiens les onglets `Ventes_2025`, `Dictionnaire` et `Journal_nettoyage`.
+4. Lis l'onglet `Dictionnaire` (ce que contient chaque colonne) et `Journal_nettoyage` (ce qui a
+   été corrigé).
+5. **Crée les plages nommées** : *Données › Plages nommées › Ajouter une plage*. Pour chacune,
+   tape le nom puis la plage, et clique sur *OK*.
 
-Nadia Oumejjoud, responsable commerciale, te demande une chose : **« Dites-moi ce qu'il y a
-dedans. »**
+| Nom | Plage |
+|---|---|
+| `Montant` | `Ventes_2025!K2:K614` |
+| `Note` | `Ventes_2025!M2:M614` |
+| `Statut` | `Ventes_2025!L2:L614` |
+| `Categorie` | `Ventes_2025!E2:E614` |
+| `Magasin` | `Ventes_2025!C2:C614` |
 
----
+6. Crée un onglet (bouton **+** en bas) et nomme-le `Position`.
 
-## Étape 0 — Préparer le classeur (10 min)
+✅ **Vérification** : dans une cellule de `Position`, tape `=COUNT(Montant)` → **613**. Efface-la ensuite.
 
-1. Ouvre `cyclonord_ventes_2025_fiable.xlsx` et **enregistre-le immédiatement** sous
-   `NOM_Prenom_cyclonord_stats.xlsx`.
-2. Lis l'onglet `Dictionnaire` **et** l'onglet `Journal_nettoyage`.
-3. Sur l'onglet `Ventes_2025`, place-toi dans les données et fais `Ctrl + L` (`⌘ + T` sur Mac) pour
-   convertir en **tableau structuré**. Dans *Création de tableau › Nom du tableau*, saisis
-   **`T_Ventes`**.
-4. Crée un nouvel onglet nommé **`Position`**. Tout ton travail de la partie A s'y fera.
-
-> 🧰 Grâce au tableau structuré, tu écriras `T_Ventes[Montant_TTC]` au lieu de `Ventes_2025!K2:K614`.
-> Si tu vois apparaître `K2:K614` dans tes formules, c'est que l'étape 3 a échoué : recommence.
+> ⚠️ **Règle d'or : on ne modifie jamais l'onglet `Ventes_2025`.** Tout ton travail se fait dans
+> tes propres onglets.
 
 ---
 
 # PARTIE A — Position *(lundi après-midi)*
 
-## A1 · Typer les colonnes (20 min)
+Tout se passe dans l'onglet `Position`. Mets toujours **le libellé en colonne A et la formule en
+colonne B**, sur la même ligne : dans une semaine, tu sauras encore relire ton classeur.
 
-Dans l'onglet `Position`, recopie ce tableau et **complète les deux dernières colonnes** :
+## A1 · Moyenne, médiane, mode (30 min)
 
-| Colonne | Type (quantitative continue / discrète / qualitative nominale / ordinale / date / identifiant) | Moyenne possible ? (oui/non) |
+| Cellule | Tape | Résultat attendu |
 |---|---|---|
-| `ID_commande` | | |
-| `Date_commande` | | |
-| `Magasin` | | |
-| `Departement` | | |
-| `Categorie` | | |
-| `Produit` | | |
-| `Canal` | | |
-| `Quantite` | | |
-| `Prix_unitaire_TTC` | | |
-| `Remise` | | |
-| `Montant_TTC` | | |
-| `Statut` | | |
-| `Note_client` | | |
+| A1 | `Moyenne du montant` | |
+| B1 | `=AVERAGE(Montant)` *(MOYENNE)* | **1 679,77** |
+| A2 | `Médiane du montant` | |
+| B2 | `=MEDIAN(Montant)` *(MEDIANE)* | **177** |
+| A3 | `Mode du montant` | |
+| B3 | `=MODE(Montant)` | **19** |
 
-> ❓ Pour `Note_client`, justifie ta réponse en une phrase : la moyenne est-elle **interdite**, ou
-> seulement **discutable** ?
+Mets B1:B3 au format monétaire : *Format › Nombre › Devise*.
 
-## A2 · Les trois indicateurs de position (30 min)
+❓ **Question A1.** La moyenne vaut près de dix fois la médiane. Qu'est-ce que ça dit des commandes
+de Cyclo'Nord ? (2 lignes. Indice : quelques très grosses commandes.)
 
-**Exemple montré en cours**, à reproduire tel quel dans `Position` :
+## A2 · Compter avant de commenter (20 min)
 
-```excel
-=MOYENNE(T_Ventes[Montant_TTC])
-=MEDIANE(T_Ventes[Montant_TTC])
-=MODE.SIMPLE(T_Ventes[Montant_TTC])
+| Cellule | Tape | Résultat attendu |
+|---|---|---|
+| A5 / B5 | `Notes renseignées` / `=COUNT(Note)` *(NB)* | **560** |
+| A6 / B6 | `Notes vides` / `=COUNTBLANK(Note)` *(NB.VIDE)* | **53** |
+| A7 / B7 | `Note moyenne` / `=AVERAGE(Note)` | **4,10** |
+
+❓ **Question A2.** Nadia veut écrire : « Nos 613 commandes obtiennent une note moyenne de 4,1/5 ».
+Cette phrase est-elle exacte ? Réécris-la.
+
+## A3 · Le périmètre : commandé ou livré ? (30 min)
+
+| Cellule | Tape | Résultat attendu |
+|---|---|---|
+| A9 / B9 | `Montant total commandé` / `=SUM(Montant)` *(SOMME)* | **1 029 700,50 €** |
+| A10 / B10 | `Montant livré` / `=SUMIFS(Montant; Statut; "Livrée")` *(SOMME.SI.ENS)* | **343 877,45 €** |
+| A11 / B11 | `Part livrée` / `=B10/B9` puis *Format › Nombre › Pourcentage* | **33,40 %** |
+
+`SUMIFS(ce que j'additionne ; où je regarde ; ce que je cherche)` : « additionne les montants des
+lignes dont le statut est Livrée ».
+
+❓ **Question A3.** Nadia veut annoncer « 1 029 700 € de chiffre d'affaires en 2025 ». Que lui
+dis-tu ?
+
+## A4 · Un calcul par catégorie (45 min)
+
+1. En **A13:D13**, tape les titres : `Catégorie`, `Nb commandes`, `Montant total`, `Montant moyen`.
+2. En **A14 à A18**, tape les cinq catégories, **exactement** comme dans les données :
+   `Accessoires`, `Atelier`, `VAE`, `VTT`, `Vélo urbain`.
+3. En **B14**, **C14** et **D14**, tape :
+
+```
+=COUNTIFS(Categorie; A14)
+=SUMIFS(Montant; Categorie; A14)
+=AVERAGEIFS(Montant; Categorie; A14)
 ```
 
-✅ **Valeurs attendues :** 1 679,77 € · 177,00 € · 19,00 €
+*(NB.SI.ENS, SOMME.SI.ENS, MOYENNE.SI.ENS)*
 
-Puis **reproduis les trois mêmes formules** sur `Prix_unitaire_TTC` et sur `Note_client`.
+4. Sélectionne **B14:D14** et tire le petit carré bleu jusqu'à la ligne **18**.
+5. En **A19**, tape `Total`, en **B19** `=SUM(B14:B18)`, en **C19** `=SUM(C14:C18)`.
 
-✅ `Prix_unitaire_TTC` : moyenne **892,28 €** · médiane **89,00 €** · mode **19,00 €**
-✅ `Note_client` : moyenne **4,10** · médiane **4** · mode **5**
+✅ **Résultat attendu**
 
-**Question A2.** L'écart entre moyenne et médiane est énorme sur `Montant_TTC` et
-`Prix_unitaire_TTC`, presque nul sur `Note_client`. Qu'est-ce que cela t'apprend sur la **forme**
-de chacune de ces trois distributions ? *(3 lignes)*
-
-## A3 · Compter avant de commenter (20 min)
-
-```excel
-=NB(T_Ventes[Montant_TTC])       → ?
-=NB(T_Ventes[Note_client])       → ?
-=NB.VIDE(T_Ventes[Note_client])  → ?
-```
-
-✅ 613 · 560 · 53
-
-**Question A3.** Nadia veut écrire dans sa présentation : *« Nos 613 commandes obtiennent une note
-moyenne de 4,1/5. »* Cette phrase est-elle exacte ? Réécris-la correctement.
-
-## A4 · Le périmètre (30 min)
-
-```excel
-=SOMME(T_Ventes[Montant_TTC])                                      → ?
-=SOMME.SI.ENS(T_Ventes[Montant_TTC]; T_Ventes[Statut]; "Livrée")   → ?
-=NB.SI.ENS(T_Ventes[Statut]; "Livrée")                             → ?
-```
-
-✅ 1 029 700,50 € · 343 877,45 € · 360
-
-**Question A4.** Calcule la part du montant total qui correspond à des commandes **livrées**
-(une formule, en %). Que dirais-tu à Nadia si elle voulait annoncer « 1 029 700 € de chiffre
-d'affaires 2025 » ?
-
-✅ Part attendue : **33,4 %**
-
-## A5 · Calculer par sous-ensemble (45 min)
-
-Construis, **avec des formules** (pas de TCD, pas de filtre manuel), le tableau suivant :
-
-| Catégorie | Nb commandes | CA total | Montant moyen |
+| Catégorie | Nb commandes | Montant total | Montant moyen |
 |---|---|---|---|
-| Accessoires | | | |
-| Atelier | | | |
-| VAE | | | |
-| VTT | | | |
-| Vélo urbain | | | |
-| **Total** | | | |
+| Accessoires | 189 | 15 730,75 € | 83,23 € |
+| Atelier | 134 | 7 874,70 € | 58,77 € |
+| VAE | 97 | 672 822,50 € | 6 936,31 € |
+| VTT | 88 | 157 276,05 € | 1 787,23 € |
+| Vélo urbain | 105 | 175 996,50 € | 1 676,16 € |
+| **Total** | **613** | **1 029 700,50 €** | |
 
-Formules à utiliser : `NB.SI.ENS`, `SOMME.SI.ENS`, `MOYENNE.SI.ENS`.
+> ⚠️ Si ton total n'est pas 613, une catégorie est mal tapée (espace en trop, accent oublié).
 
-✅ **Contrôle** : la colonne « Nb commandes » doit totaliser **613** et le CA total
-**1 029 700,50 €**. Si ce n'est pas le cas, une modalité t'échappe.
+❓ **Question A4.** Quelle part des commandes représentent les VAE ? Quelle part du montant ?
+Commente l'écart en une phrase.
 
-✅ VAE : 97 commandes · 672 822,50 € · 6 936,31 €
+## A5 · La phrase pour Nadia (15 min)
 
-**Question A5.** Le VAE représente quel pourcentage des **commandes** ? Quel pourcentage du
-**montant** ? Commente l'écart en une phrase.
-
-✅ 15,8 % des commandes · 65,3 % du montant
-
-## A6 · Moyenne simple contre moyenne pondérée (30 min)
-
-Calcule la note moyenne de deux façons :
-
-```excel
-Moyenne simple    =MOYENNE(T_Ventes[Note_client])
-Moyenne pondérée  =SOMMEPROD(T_Ventes[Note_client]; T_Ventes[Montant_TTC])
-                   / SOMME(T_Ventes[Montant_TTC])
-```
-
-**Question A6.** Les deux résultats diffèrent. Lequel utiliserais-tu, et pour dire quoi ?
-Attention : la formule pondérée traite les 53 notes vides comme des zéros. En quoi cela fausse-t-il
-le résultat, et comment le corrigerais-tu ?
-
-## A7 · La phrase de restitution (15 min)
-
-Écris, dans une cellule de l'onglet `Position`, **une seule phrase** décrivant le montant typique
-d'une commande Cyclo'Nord. Elle doit contenir un indicateur de position, son périmètre, et ne pas
-induire Nadia en erreur.
+En **A21**, écris **une seule phrase** qui décrit le montant d'une commande type, sans induire
+Nadia en erreur. Elle doit contenir un indicateur, son chiffre, et le périmètre (quelles commandes).
 
 ---
 
 # PARTIE B — Dispersion *(mardi après-midi)*
 
-Crée un onglet **`Dispersion`**.
+Crée un onglet `Dispersion`. Même règle : libellé en A, formule en B.
 
-## B1 · Étendue, écart-type, coefficient de variation (30 min)
+## B1 · L'étendue et les quartiles (45 min)
 
-```excel
-=MIN(T_Ventes[Montant_TTC])                  → ?
-=MAX(T_Ventes[Montant_TTC])                  → ?
-=MAX(...) - MIN(...)                         → ?
-=ECARTYPE.STANDARD(T_Ventes[Montant_TTC])    → ?
-=ECARTYPE.PEARSON(T_Ventes[Montant_TTC])     → ?
+| Cellule | Libellé (colonne A) | Formule (colonne B) | Résultat attendu |
+|---|---|---|---|
+| ligne 1 | Minimum | `=MIN(Montant)` | **15,20 €** |
+| ligne 2 | 1er quartile (Q1) | `=QUARTILE(Montant; 1)` | **50,15 €** |
+| ligne 3 | Médiane | `=MEDIAN(Montant)` | **177,00 €** |
+| ligne 4 | 3e quartile (Q3) | `=QUARTILE(Montant; 3)` | **1 790,00 €** |
+| ligne 5 | Maximum | `=MAX(Montant)` | **379 050,00 €** |
+| ligne 6 | Étendue | `=B5-B1` | **379 034,80 €** |
+| ligne 7 | Écart-type | `=STDEV(Montant)` *(ECARTYPE)* | **15 504,58 €** |
+
+❓ **Question B1.** Complète : « La moitié des commandes Cyclo'Nord se situe entre ___ € et ___ €. »
+
+## B2 · Les commandes géantes (45 min)
+
+1. En **A9**, tape `Les 5 plus grosses commandes`. En **A10 à A14**, tape `1`, `2`, `3`, `4`, `5`.
+2. En **B10**, tape `=LARGE(Montant; A10)` *(GRANDE.VALEUR)* et tire jusqu'en **B14**.
+
+✅ **Résultat attendu** : 379 050 · 59 415 · 7 980 · 7 980 · 7 980.
+
+3. Qui a passé la plus grosse commande ? Sans toucher à `Ventes_2025`, affiche sa ligne complète :
+   en **A15**, tape
+
+```
+=FILTER(Ventes_2025!A2:M614; Montant=MAX(Montant))
 ```
 
-✅ 15,20 € · 379 050,00 € · 379 034,80 € · 15 504,58 € · 15 491,93 €
+   « montre la ligne de `Ventes_2025` dont le montant est le maximum ». Toute la ligne s'affiche en A15:M15.
 
-Calcule le **coefficient de variation** (écart-type ÷ moyenne).
+✅ **CMD-20250566** · Arras · VAE · quantité **100** · **Annulée**.
 
-✅ **9,23** soit **923 %**
+4. Que valent la moyenne et la médiane **sans** cette commande ? En **A17** et **A18** :
 
-**Question B1.** Les deux écarts-types diffèrent de 12 € sur 15 500. Explique en deux lignes
-laquelle des deux fonctions convient ici, et pourquoi la différence est si faible.
-
-## B2 · Le résumé à cinq nombres (30 min)
-
-| | Formule | Valeur |
+| Libellé | Formule | Résultat attendu |
 |---|---|---|
-| Effectif | `=NB(...)` | |
-| Minimum | `=MIN(...)` | |
-| Q1 | `=QUARTILE.INCLURE(...;1)` | |
-| Médiane | `=MEDIANE(...)` | |
-| Q3 | `=QUARTILE.INCLURE(...;3)` | |
-| Maximum | `=MAX(...)` | |
-| IQR | `=Q3-Q1` | |
+| Moyenne sans la commande géante | `=AVERAGE(FILTER(Montant; Montant<379050))` | **1 063,15 €** |
+| Médiane sans la commande géante | `=MEDIAN(FILTER(Montant; Montant<379050))` | **177,00 €** |
 
-✅ 613 · 15,20 € · 50,15 € · 177,00 € · 1 790,00 € · 379 050,00 € · 1 739,85 €
+`FILTER(les valeurs ; la condition)` *(FILTRE)* : « garde seulement les montants inférieurs à 379 050 ».
 
-**Question B2.** Complète la phrase : « La moitié des commandes Cyclo'Nord se situe entre ____ € et
-____ €. »
+❓ **Question B2.** Une seule commande sur 613 fait perdre 37 % à la moyenne. Et la médiane ?
+Lequel des deux indicateurs donnerais-tu à Nadia, et pourquoi ?
 
-## B3 · Repérer les valeurs atypiques (40 min)
+## B3 · La médiane par magasin : le cas Arras (45 min)
 
-Reproduis la règle vue en cours :
+1. En **A20:D20** : `Magasin`, `Montant total`, `Montant livré`, `Montant médian`.
+2. En **A21 à A28**, les 8 magasins : `Amiens`, `Arras`, `Beauvais`, `Dunkerque`, `Lens`, `Lille`,
+   `Roubaix`, `Valenciennes`.
+3. En **B21**, **C21**, **D21** :
 
-```excel
-Seuil_bas   = Q1 - 1,5*IQR       → ?
-Seuil_haut  = Q3 + 1,5*IQR       → ?
-Nb au-dessus du seuil haut  =NB.SI.ENS(T_Ventes[Montant_TTC]; ">"&Seuil_haut)   → ?
-Nb en dessous du seuil bas  =NB.SI.ENS(T_Ventes[Montant_TTC]; "<"&Seuil_bas)    → ?
+```
+=SUMIFS(Montant; Magasin; A21)
+=SUMIFS(Montant; Magasin; A21; Statut; "Livrée")
+=MEDIAN(FILTER(Montant; Magasin=A21))
 ```
 
-✅ −2 559,62 € · 4 399,77 € · **14** · **0**
+4. Sélectionne **B21:D21** et tire jusqu'à la ligne **28**.
 
-Utilise ensuite `GRANDE.VALEUR` pour afficher les **cinq plus gros montants**, puis retrouve les
-lignes correspondantes (tri décroissant sur `Montant_TTC`, ou double-clic dans un TCD demain).
+✅ **Résultat attendu (extrait)**
 
-✅ Top 3 : **379 050 €** (CMD-20250566, Arras, VAE, quantité 100, **Annulée**) ·
-**59 415 €** (CMD-20250284, Lens, Vélo urbain, quantité 100, En cours) · **7 980 €** (4 ex æquo)
-
-**Question B3.** Le seuil bas est négatif. Est-ce un bug ? Que faut-il en conclure sur la forme de
-la distribution ?
-
-**Question B4.** Pour chacune des trois commandes de quantité 100, dis si tu la gardes, si tu
-l'écartes ou si tu l'analyses à part — et **justifie**. Aucune des trois réponses n'est
-automatiquement fausse ; c'est la justification qui compte.
-
-## B4 · Mesurer l'effet d'une seule ligne (30 min)
-
-Recalcule moyenne, médiane, écart-type et IQR **en excluant la seule commande CMD-20250566**
-(filtre ou `MOYENNE.SI.ENS` avec le critère `<>CMD-20250566`), et remplis :
-
-| Mesure | Avec | Sans | Variation en % |
+| Magasin | Montant total | Montant livré | Montant médian |
 |---|---|---|---|
-| Moyenne | 1 679,77 € | | |
-| Médiane | 177,00 € | | |
-| Écart-type | 15 504,58 € | | |
-| IQR | 1 739,85 € | | |
-
-✅ Sans : 1 063,15 € (−37 %) · 177,00 € (0 %) · 2 707,51 € (−83 %) · 1 673,10 € (−4 %)
-
-**Question B5.** Classe ces quatre indicateurs du plus **robuste** au plus **sensible**.
-
-## B5 · La boîte à moustaches (30 min)
-
-Insère une boîte à moustaches de `Montant_TTC` **par catégorie** :
-*Insertion › Graphiques statistiques › Boîte à moustaches*.
-
-Habille-la : titre porteur de message, axe des ordonnées nommé « Montant TTC (€) », note de source.
-
-**Question B6.** Deux catégories ont une boîte écrasée près de zéro. Lesquelles, et pourquoi ?
-Que proposerais-tu pour les rendre lisibles ?
-
-## B6 · Le cas Arras (30 min)
-
-Construis, avec des formules, le tableau suivant :
-
-| Magasin | CA **toutes commandes** | CA **livré** | Panier **médian** |
-|---|---|---|---|
-
-*(Pour le panier médian par magasin, il n'existe pas de `MEDIANE.SI.ENS`. Note cette limite dans
-ton classeur — c'est une vraie contrainte du tableur.)*
-
-> ⚠️ **Piège : `MEDIANE` ne voit pas les filtres.** Si tu filtres sur Arras puis tapes
-> `=MEDIANE(T_Ventes[Montant_TTC])`, tu obtiens **177,00 €** — la médiane de tout le fichier —
-> **sans aucun message d'erreur**. Tu croirais avoir bon. Deux méthodes qui marchent vraiment :
-> ```excel
-> =AGREGAT(12;5; T_Ventes[Montant_TTC])    ← 12 = médiane, 5 = ignorer les lignes masquées
-> ```
-> ou, plus sûr et valable sur tous les tableurs : copier les lignes filtrées dans un onglet à
-> part et calculer la médiane dessus.
-
-✅ **Les huit magasins**, pour que tu puisses te corriger ligne par ligne :
-
-| Magasin | CA toutes commandes | CA livré | Panier médian |
-|---|---|---|---|
-| Arras | 442 616,80 € | 29 214,80 € | 90,00 € |
+| Arras | 442 616,80 € | **29 214,80 €** | **90,00 €** |
 | Lens | 144 276,20 € | 56 878,50 € | 549,00 € |
-| Amiens | 85 184,10 € | 47 930,05 € | 507,82 € |
-| Lille | 82 683,35 € | 47 768,75 € | 549,00 € |
-| Beauvais | 72 294,50 € | 42 822,10 € | 207,00 € |
 | Dunkerque | 71 939,00 € | 53 362,40 € | 549,00 € |
-| Valenciennes | 71 647,20 € | 36 357,35 € | 92,20 € |
 | Roubaix | 59 059,35 € | 29 543,50 € | 101,05 € |
 
-Contrôle : la colonne « CA toutes commandes » doit totaliser **1 029 700,50 €**.
+❓ **Question B3.** Arras est 1er sur une colonne et dernier sur une autre. Écris deux phrases :
+une qui décrit le fait, une qui l'explique (indice : B2).
 
-**Question B7.** Arras est premier sur une colonne et dernier sur une autre. Rédige les **deux
-phrases** que tu mettrais dans un rapport : celle qui décrit le fait, et celle qui l'explique.
+## B4 · L'histogramme (40 min)
 
----
+Un histogramme montre **comment les commandes se répartissent** entre petits et gros montants.
 
-## Livrable
+1. Essaie d'abord : sélectionne la colonne `Montant_TTC` de `Ventes_2025`, *Insertion › Graphique*,
+   type **Histogramme**. Que vois-tu ? *(Une seule barre géante : la commande de 379 050 € écrase
+   l'échelle.)* Supprime ce graphique.
+2. Crée un onglet `Histogramme`. En **A1**, tape `Commandes de 5 000 € ou moins`, et en **A2** :
 
-**Sur ton dépôt GitHub**, celui que tu as créé en semaine 1 et qui te sert de portfolio, dans un
-dossier `02-cyclonord-stats/`. Dernier push **mardi 22/09 avant 17 h 30**.
+```
+=FILTER(Montant; Montant<=5000)
+```
 
-**1. `cyclonord_stats.xlsx`** contenant :
+✅ La colonne A se remplit toute seule : **607 commandes** (les 6 plus grosses sont écartées).
 
-| Onglet | Contenu |
-|---|---|
-| `Ventes_2025` | **intact** — aucune modification de la donnée source |
-| `Dictionnaire`, `Journal_nettoyage` | conservés tels quels |
-| `Position` | A1 à A7, formules apparentes |
-| `Dispersion` | B1 à B6, formules apparentes, + la boîte à moustaches |
-| `Conclusion` | **10 lignes maximum** répondant à : *« que faut-il retenir de ces 613 commandes, et quel chiffre unique donneriez-vous à la direction ? »* |
+3. Clique sur la lettre **A** (toute la colonne), puis *Insertion › Graphique* › **Histogramme**.
+4. Dans l'éditeur, onglet *Personnaliser* › *Histogramme* › **Taille des segments : 250**.
+5. Titre du graphique (onglet *Personnaliser* › *Titres*) : un titre qui dit ce qu'on voit.
+   Écris sous le graphique : « 6 commandes de plus de 5 000 € ne sont pas représentées. »
 
-**2. `README.md`** — cinq lignes suffisent : de quoi parle le classeur, ce que tu as calculé, et
-ta phrase de restitution de l'étape A7. C'est la première chose que ton correcteur lira.
-
-> 📌 Les indicateurs doivent être **calculés par formule**, jamais saisis en dur. Un correcteur qui
-> clique sur une cellule doit voir la formule.
-
-> 🔧 **Un classeur est un fichier binaire.** Git le versionne sans problème, mais il ne saura pas
-> te montrer ce qui a changé d'une version à l'autre. Raison de plus pour que ton `README.md` dise
-> ce que contient le fichier — et pour committer au fur et à mesure plutôt qu'en une fois à 17 h 25.
+❓ **Question B4.** Décris la forme de l'histogramme en une phrase. Où sont la plupart des commandes ?
 
 ---
 
-## Critères de réussite (auto-évaluation)
+# PARTIE C — Tableaux croisés dynamiques *(mercredi après-midi)*
 
-| | Critère | Compétence |
-|---|---|---|
-| ☐ | La donnée source est intacte | C4.5 |
-| ☐ | Toutes les valeurs attendues sont retrouvées | C3.1 |
-| ☐ | Les indicateurs sont obtenus par formule, avec références structurées | C4.5 |
-| ☐ | Chaque calcul indique son **périmètre** | C3.1 |
-| ☐ | L'écart moyenne / médiane est commenté en termes de forme | C3.1 |
-| ☐ | Les valeurs atypiques sont identifiées **et** une décision est justifiée | C3.1 |
-| ☐ | La boîte à moustaches est titrée, légendée, avec unité | C4.2 |
-| ☐ | La conclusion propose un chiffre unique **et** le défend | C3.1 |
+Un **tableau croisé dynamique** (TCD) fait en quelques clics ce que tu as fait avec des formules
+lundi et mardi. Cliquez dans `Ventes_2025`, puis *Insertion › Tableau croisé dynamique* ›
+**Nouvelle feuille** › *Créer*. À droite s'ouvre l'**éditeur** : Lignes, Colonnes, Valeurs, Filtres.
 
-**Positionnement** : ● Acquis · ◐ En cours d'acquisition · ○ Non acquis
+## C1 · Le montant par magasin et par statut (30 min)
+
+- **Lignes** : `Magasin` · **Colonnes** : `Statut` · **Valeurs** : `Montant_TTC`, résumé par **SUM**.
+- Renomme l'onglet `TCD_magasins`.
+
+✅ **Résultat attendu** : Arras, colonne *Annulée* : **392 145,75 €** ; ligne *Total général* :
+**1 029 700,50 €**. La colonne *Livrée* redonne les chiffres de B3.
+
+## C2 · La médiane dans un TCD (20 min)
+
+Dans le même TCD, clique sur la valeur `SUM de Montant_TTC` et change **Résumer par : MEDIAN**.
+Retire `Statut` des colonnes.
+
+✅ Arras **90**, Lens **549**, Roubaix **101,05** : les mêmes médianes que ta formule de B3, en
+deux clics. *(Google Sheets sait calculer la médiane directement dans un TCD.)*
+
+## C3 · Qui achète quoi, et par quel canal ? (30 min)
+
+Nouveau TCD : **Lignes** `Categorie` · **Colonnes** `Canal` · **Valeurs** `ID_commande` résumé par
+**COUNTA** (nombre de commandes).
+
+✅ **Résultat attendu**
+
+| | Click & Collect | Magasin | Site web | Total |
+|---|---|---|---|---|
+| Accessoires | 31 | 87 | 71 | 189 |
+| Atelier | | 134 | | 134 |
+| VAE | 20 | 50 | 27 | 97 |
+| VTT | 11 | 35 | 42 | 88 |
+| Vélo urbain | 18 | 48 | 39 | 105 |
+| **Total** | **80** | **354** | **179** | **613** |
+
+Puis, dans *Valeurs*, change **Afficher en tant que : % du total de la ligne**.
+
+❓ **Question C3.** Pourquoi la ligne *Atelier* n'a-t-elle qu'une seule case remplie ? Quelle
+catégorie se vend le plus sur le site web, en proportion ?
+
+## C4 · Le chiffre d'affaires livré mois par mois (40 min)
+
+Nouveau TCD : **Lignes** `Date_commande` · **Valeurs** `Montant_TTC` (SUM) · **Filtres** `Statut` =
+**Livrée** uniquement.
+
+1. Le TCD affiche une ligne par jour : trop détaillé. Clic droit sur une date du TCD ›
+   **Créer un groupe de dates de tableau croisé dynamique** › **Mois**.
+2. Insère un graphique en **courbe** à partir du TCD (sélectionne le TCD › *Insertion › Graphique*).
+
+✅ **Résultat attendu** : 12 lignes ; janvier **30 273,05 €**, mai **17 145,30 €** (le plus bas),
+novembre **37 249,55 €** (le plus haut) ; total **343 877,45 €**.
+
+❓ **Question C4.** Écris une phrase de lecture de la courbe pour Nadia.
 
 ---
 
-## Pour aller plus loin (facultatif)
+# PARTIE D — Graphiques *(jeudi matin, après la démo du cours 04)*
 
-- Recalcule tout le résumé à cinq nombres **par magasin**, et repère celui dont la distribution est
-  la plus régulière (CV le plus faible).
-- Utilise `MOYENNE.REDUITE(T_Ventes[Montant_TTC]; 0,1)` (`TRIMMEAN`) : la moyenne après exclusion
-  des 5 % extrêmes de chaque côté. Compare-la à la moyenne et à la médiane. Dans quel cas
-  l'utiliserais-tu ?
-- Construis la table des effectifs par tranche de 250 € avec `FREQUENCE`, puis l'histogramme.
-  Combien de bosses vois-tu ?
-- Refais trois calculs dans **Google Sheets** et note les différences de nom de fonction.
+## D1 · Le CA livré par magasin, en barres triées (40 min)
+
+1. Nouveau TCD : **Lignes** `Magasin` · **Valeurs** `Montant_TTC` (SUM) · **Filtres** `Statut` = **Livrée**.
+   Dans *Lignes*, trie par `SUM de Montant_TTC`, ordre **décroissant**.
+2. Sélectionne le TCD **sans la ligne Total général**, *Insertion › Graphique* › **Graphique à barres**.
+3. *Personnaliser* : un titre qui dit le message, l'axe des montants qui part de **0**, pas de légende.
+
+✅ **Résultat attendu** : Lens en haut (56 878,50 €), Arras en bas (29 214,80 €).
+
+## D2 · Finir la courbe de C4 (20 min)
+
+Reprends la courbe du CA livré par mois : titre qui dit le message, axes nommés (« Mois »,
+« CA livré (€) »), source en sous-titre.
+
+## D3 · L'exercice express (20 min)
+
+Recopie dans un onglet `Graphiques_choix` ta réponse aux 5 questions de l'exercice express du
+cours 04 : pour chacune, le type de graphique et le titre que tu écrirais.
+
+---
+
+## Le rendu (jeudi 12 h 30)
+
+**Un seul rendu pour les parties A, B, C et D.**
+
+1. **Partage le classeur** : bouton *Partager* › *Accès général* › **Tous les utilisateurs disposant
+   du lien** › **Lecteur** › *Copier le lien*.
+2. Sur ton dépôt GitHub (celui de la semaine 1), crée le dossier **`P2-cyclonord/`** avec :
+   - `README.md` : 5 lignes — ce que contient le classeur, **le lien** vers ton Google Sheets, ta
+     phrase de l'étape A5, ton nom ;
+   - `cyclonord.xlsx` : *Fichier › Télécharger › Microsoft Excel*.
+3. Tes réponses aux questions sont **dans le classeur**, dans une cellule à côté de chaque tableau.
+
+## Auto-évaluation
+
+- [ ] Mes formules donnent les résultats attendus, et l'onglet `Ventes_2025` est intact.
+- [ ] Chaque résultat a un libellé en colonne A.
+- [ ] Je sais dire pourquoi la médiane résume mieux ces commandes que la moyenne.
+- [ ] Je sais dire ce qu'est le périmètre d'un chiffre (commandé ≠ livré ; 560 notes ≠ 613 commandes).
+- [ ] Je sais construire un TCD, changer « Résumer par » et grouper des dates par mois.
+- [ ] Mes graphiques ont un titre qui dit le message, des axes nommés et une source.

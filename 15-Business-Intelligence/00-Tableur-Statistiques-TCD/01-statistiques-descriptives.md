@@ -1,313 +1,249 @@
-# 01 — Statistiques descriptives : moyenne, médiane, mode
+# 01 — Position : moyenne, médiane, mode
 
-> 🎬 **Le fil rouge de la semaine — Cyclo'Nord.**
-> La semaine dernière, tu as **audité** l'export de commandes de Cyclo'Nord : doublons, villes mal
-> orthographiées, montants faux, dates de 2015. Tu as rendu un rapport. La direction a corrigé.
-> Ce lundi matin, la responsable commerciale, Nadia Oumejjoud, revient avec le fichier propre et une
-> question simple : **« Bon. Maintenant, dites-moi ce qu'il y a dedans. »**
-> Elle veut un chiffre. Un seul. « Notre commande moyenne, c'est combien ? »
-> Tu vas lui en donner un — puis lui expliquer pourquoi il ne veut presque rien dire.
+> 🎬 **Fil rouge — Cyclo'Nord.** La semaine dernière, tu as audité l'export de commandes. La
+> direction a corrigé le fichier. Ce lundi, Nadia Oumejjoud, la responsable commerciale, revient
+> avec une question simple : **« Notre commande moyenne, c'est combien ? »**
+> Tu vas lui donner ce chiffre, puis lui expliquer pourquoi il ne suffit pas.
 
-| | |
-|---|---|
-| **Jour** | Lundi 21/09/2026 · matin (apport) + après-midi (exercice) |
-| **Durée** | ≈ 7 h |
-| **Compétences** | **C3.1** (niveau 1) · **C4.5** (niveau 1) |
-| **Outils** | Excel (LibreOffice Calc / Google Sheets acceptés) |
-| **Données** | [`donnees/cyclonord_ventes_2025_fiable.xlsx`](donnees/cyclonord_ventes_2025_fiable.xlsx) |
-| **Pré-requis** | Semaine P1 : trier, filtrer, tableau structuré |
-
----
-
-## Objectifs pédagogiques
-
-À la fin de la journée, tu sauras :
-
-1. Distinguer une variable **quantitative** d'une variable **qualitative**, et savoir quels calculs
-   chacune autorise.
-2. Calculer une **moyenne**, une **médiane** et un **mode** avec les fonctions du tableur.
-3. Expliquer ce que chacun de ces trois indicateurs **dit** — et ce qu'il **cache**.
-4. Lire l'écart entre moyenne et médiane comme une information sur la **forme** de la distribution.
-5. Calculer un indicateur **sur un sous-ensemble** (`MOYENNE.SI.ENS`) et une **moyenne pondérée**.
-6. Écrire une phrase de restitution qui ne ment pas.
-
----
-
-## 1. Pourquoi un Data Analyst commence toujours par là
-
-Personne ne lit 613 lignes. Encore moins 31 000. Le premier travail d'un analyste, c'est de
-**résumer** : remplacer un tableau par quelques nombres qui en disent l'essentiel.
-
-Ce résumé s'appelle la **statistique descriptive**. Elle répond à trois questions, dans cet ordre :
-
-| Question | Famille d'indicateurs | Vu quand |
+| Jour | Durée démo | Mise en pratique |
 |---|---|---|
-| « Ça vaut combien, **en gros** ? » | **Position** (moyenne, médiane, mode) | aujourd'hui |
-| « Est-ce que ça **varie** beaucoup ? » | **Dispersion** (écart-type, quartiles, étendue) | [demain](02-dispersion-et-pieges-de-la-moyenne.md) |
-| « Est-ce que ça **dépend** d'autre chose ? » | **Croisements** (TCD) | [mercredi](03-tableaux-croises-dynamiques.md) |
+| Lundi (matin) | 45 min | [Exercice guidé, partie A](05-exercice-guide-cyclonord.md) (après-midi) |
 
-> ⚠️ **La faute n°1 en entreprise** : s'arrêter à la première question. Un chiffre de position seul
-> est presque toujours trompeur. On ne le publie jamais sans un chiffre de dispersion à côté.
+Outil : **Google Sheets**. Données : [`donnees/cyclonord_ventes_2025_fiable.xlsx`](donnees/cyclonord_ventes_2025_fiable.xlsx), onglet `Ventes_2025`, 613 commandes.
 
 ---
 
-## 2. Avant de calculer : de quel type est ma colonne ?
+## Ce que tu sauras faire
 
-Tu ne peux pas faire la moyenne de « Lille ». Ça paraît évident — et pourtant c'est la source de la
-moitié des erreurs. Classe tes colonnes **avant** d'ouvrir la boîte à formules.
-
-| Type | Définition | Dans Cyclo'Nord | Ce qu'on peut calculer |
-|---|---|---|---|
-| **Quantitative continue** | un nombre mesurable, les décimales ont un sens | `Montant_TTC`, `Prix_unitaire_TTC`, `Remise` | moyenne, médiane, mode, écart-type, somme |
-| **Quantitative discrète** | un nombre qui se compte, entier | `Quantite` | idem (mais « 1,78 vélo » se commente) |
-| **Qualitative nominale** | une étiquette, sans ordre | `Magasin`, `Departement`, `Categorie`, `Produit`, `Canal`, `Statut` | **effectifs**, pourcentages, **mode** |
-| **Qualitative ordinale** | une étiquette **ordonnée** | `Note_client` (1 à 5) | effectifs, mode, **médiane** — moyenne discutable |
-| **Date** | un point dans le temps | `Date_commande` | min, max, étendue, regroupements |
-| **Identifiant** | sert à désigner, pas à mesurer | `ID_commande` | **rien** — on compte, c'est tout |
-
-> 🧠 **Le test qui tranche.** Pose-toi la question : *« la somme de cette colonne a-t-elle un sens ? »*
-> Somme des montants = chiffre d'affaires ✅. Somme des `ID_commande` = rien du tout ❌.
-> Si la somme n'a pas de sens, la moyenne non plus.
-
-### Le cas piégeux : `Note_client`
-
-Une note de 1 à 5 est **ordinale**. On sait que 5 > 4, mais rien ne dit que l'écart entre 4 et 5
-vaut l'écart entre 1 et 2. Faire la moyenne revient à supposer que si. Tout le monde le fait
-(y compris Amazon), mais un analyste doit savoir qu'il prend une liberté — et donner **aussi** la
-répartition des notes.
+- Dire si une colonne permet de calculer une moyenne.
+- Calculer une moyenne, une médiane et un mode, et lire l'écart entre eux.
+- Compter les valeurs avant de commenter un chiffre.
+- Préciser le **périmètre** d'un calcul (commandé ≠ livré).
+- Calculer un indicateur par catégorie sans filtrer à la main.
 
 ---
 
-## 3. Les trois indicateurs de position
+## 0. Importer le fichier et créer les plages nommées
 
-### 3.1 La moyenne (arithmétique)
+**Importer.** Ouvre une feuille Google Sheets vierge, puis *Fichier › Importer*. Envoie le fichier
+`cyclonord_ventes_2025_fiable.xlsx` et choisis de **remplacer la feuille de calcul**. Tu retrouves
+l'onglet `Ventes_2025`, avec les en-têtes en ligne 1 et les commandes de la ligne 2 à la ligne 614.
 
-La somme des valeurs divisée par leur nombre. C'est le **point d'équilibre** de la distribution :
-pose tes valeurs sur une règle, la moyenne est l'endroit où la règle tient en équilibre.
+**Nommer.** Écrire `K2:K614` dans chaque formule, c'est illisible et source d'erreurs. Une **plage
+nommée** est un nom que tu donnes à un groupe de cellules : tu écris ensuite `Montant` au lieu de
+`Ventes_2025!K2:K614`. Menu *Données › Plages nommées*, puis ajoute une plage pour chaque ligne :
 
-```excel
-=MOYENNE(T_Ventes[Montant_TTC])          → 1 679,77 €
+| Nom | Plage |
+|---|---|
+| `Montant` | `Ventes_2025!K2:K614` |
+| `Note` | `Ventes_2025!M2:M614` |
+| `Statut` | `Ventes_2025!L2:L614` |
+| `Categorie` | `Ventes_2025!E2:E614` |
+| `Magasin` | `Ventes_2025!C2:C614` |
+
+Les plages commencent en ligne 2 : l'en-tête n'en fait pas partie. **Vérifie** dans une cellule vide :
+
+```
+=COUNTA(Montant)          → 613
 ```
 
-> 🇬🇧 En anglais : `AVERAGE`. Chaque formule de ce cours est donnée en français ; l'équivalent
-> anglais est indiqué la première fois.
+> 🇬🇧 Sheets affiche les fonctions **en anglais**. Le nom français est donné entre parenthèses la
+> première fois. Avec les paramètres régionaux France, on sépare les arguments par **`;`**.
+> `COUNTA` (NBVAL) compte les cellules non vides.
 
-**Ce qu'il faut savoir sur `MOYENNE` :**
+---
 
-- Elle **ignore les cellules vides** — elle ne les compte pas comme des zéros. Sur `Note_client`,
-  les 53 commandes sans note sont simplement exclues du calcul : `MOYENNE` porte sur 560 notes.
-- Elle **ignore le texte**. Une cellule contenant `N/A` saisi à la main n'est pas comptée.
-- Elle est **sensible aux valeurs extrêmes**. Une seule valeur énorme la déplace beaucoup.
+## 1. Avant de calculer : de quel type est ma colonne ?
 
-> 🎯 **Vérifie toujours combien de valeurs ont réellement servi au calcul.**
-> ```excel
-> =NB(T_Ventes[Note_client])          → 560   (valeurs numériques)      [COUNT]
-> =NBVAL(T_Ventes[Note_client])       → 560   (cellules non vides)      [COUNTA]
-> =NB.VIDE(T_Ventes[Note_client])     →  53   (cellules vides)          [COUNTBLANK]
-> ```
-> Une moyenne calculée sur 560 lignes annoncée comme « la note moyenne de nos 613 commandes » est
-> déjà une petite malhonnêteté.
+Tu ne peux pas faire la moyenne de « Lille ». Classe tes colonnes **avant** d'écrire une formule.
 
-### 3.2 La médiane
+| Type | Ce que c'est | Dans Cyclo'Nord | Calculs possibles |
+|---|---|---|---|
+| **Quantitative** | un nombre qui se mesure ou se compte | `Montant`, `Quantite`, `Prix` | moyenne, médiane, mode, somme |
+| **Qualitative** | une étiquette | `Magasin`, `Categorie`, `Canal`, `Statut` | compter, pourcentage, mode |
+| **Ordinale** | une étiquette **rangée dans un ordre** | `Note` (1 à 5) | compter, mode, médiane ; moyenne avec prudence |
+| **Identifiant** | un code qui désigne une ligne | `ID_commande` | compter, rien d'autre |
 
-Range toutes les valeurs par ordre croissant, prends celle du **milieu** : la moitié des commandes
+> 🧠 **Le test qui tranche** : *« la somme de cette colonne a-t-elle un sens ? »* La somme des
+> montants donne un total ✅. La somme des identifiants ne veut rien dire ❌. Pas de somme, pas de moyenne.
+
+Pour `Note`, 5 est mieux que 4, mais rien ne dit que l'écart entre 4 et 5 vaut celui entre 1 et 2.
+Tout le monde calcule quand même une note moyenne. Toi, tu donnes **aussi** la médiane ou le mode.
+
+---
+
+## 2. Trois façons de dire « en gros, ça vaut combien »
+
+Un **indicateur de position** résume une colonne de nombres par une seule valeur. Il en existe trois.
+
+**La moyenne** : la somme des valeurs divisée par leur nombre. C'est le point d'équilibre.
+
+```
+=AVERAGE(Montant)          → 1 679,77 €        (MOYENNE)
+```
+
+**La médiane** : range les valeurs dans l'ordre et prends celle du milieu. La moitié des commandes
 est en dessous, la moitié au-dessus.
 
-```excel
-=MEDIANE(T_Ventes[Montant_TTC])          → 177,00 €        [MEDIAN]
+```
+=MEDIAN(Montant)           → 177,00 €          (MEDIANE)
 ```
 
-La médiane se moque de l'ampleur des extrêmes. Que la plus grosse commande fasse 8 000 € ou
-380 000 €, la commande du milieu reste la même. On dit qu'elle est **robuste**.
+**Le mode** : la valeur la plus fréquente.
 
-### 3.3 Le mode
-
-La valeur la **plus fréquente**. C'est le seul indicateur de position qui marche aussi sur du texte.
-
-```excel
-=MODE.SIMPLE(T_Ventes[Montant_TTC])      → 19,00 €         [MODE.SNGL]
+```
+=MODE(Montant)             → 19,00 €           (MODE)
 ```
 
-Sur une variable **qualitative**, le tableur n'a pas de fonction `MODE` textuelle simple ; on passe
-par un comptage (ou, plus simplement, par le TCD de mercredi) :
+Le mode de 19 € correspond à un produit précis : le **changement de chambre à air**, vendu 28 fois
+par l'atelier. Ni la moyenne ni la médiane ne te l'auraient dit.
 
-```excel
-=NB.SI.ENS(T_Ventes[Canal];"Magasin")    → 354            [COUNTIFS]
-=NB.SI.ENS(T_Ventes[Canal];"Site web")   → 179
-=NB.SI.ENS(T_Ventes[Canal];"Click & Collect") → 80
-```
+### Le moment de vérité : les trois côte à côte
 
-Le mode de `Canal` est donc **« Magasin »** : c'est le canal dominant, avec 58 % des commandes.
-
-> 💡 **Le mode est sous-estimé.** Sur les ventes Cyclo'Nord il vaut 19 € : la commande la plus
-> fréquente, ce n'est ni un VAE ni un VTT, c'est **un changement de chambre à air**. Voilà une
-> information que ni la moyenne ni la médiane ne donnent : le magasin vit d'un flux d'atelier à très
-> petit ticket.
-
----
-
-## 4. Le moment de vérité : les trois chiffres côte à côte
-
-| Indicateur | Valeur sur `Montant_TTC` | Ce qu'il raconte |
+| Indicateur | Valeur | Ce qu'il raconte |
 |---|---|---|
-| **Mode** | **19 €** | La commande la plus fréquente : une réparation |
-| **Médiane** | **177 €** | La commande du milieu : un accessoire ou une petite prestation |
-| **Moyenne** | **1 679,77 €** | Un chiffre que presque **aucune** commande réelle n'atteint |
+| Mode | 19,00 € | la commande la plus fréquente : une réparation |
+| Médiane | 177,00 € | la commande « du milieu » : un accessoire |
+| Moyenne | 1 679,77 € | un montant que peu de commandes atteignent |
 
-La moyenne est **9,5 fois** plus grande que la médiane. Les trois indicateurs décrivent le même
-fichier et racontent trois histoires différentes.
+La moyenne est **9,5 fois** plus grande que la médiane. Même fichier, trois histoires.
 
-### Ce que l'écart moyenne / médiane t'apprend
+Pourquoi un tel écart ? Quelques très grosses commandes (des vélos électriques, et surtout une
+commande de 100 vélos à 379 050 €) **tirent la moyenne vers le haut**. La médiane, elle, ne bouge
+pas : que la plus grosse commande fasse 8 000 € ou 380 000 €, la commande du milieu reste la même.
+On dit que la médiane est **robuste**.
 
-C'est une règle de lecture que tu utiliseras toute ta carrière :
+Retiens cette règle de lecture :
 
-| Situation | Forme de la distribution | Exemple typique |
-|---|---|---|
-| moyenne ≈ médiane | **symétrique** | tailles, températures, notes d'examen |
-| **moyenne > médiane** | **étalée vers la droite** — quelques valeurs très grandes | salaires, prix, montants de commande |
-| moyenne < médiane | étalée vers la gauche — quelques valeurs très petites | âge au décès, notes très hautes |
+| Si… | alors la distribution est… |
+|---|---|
+| moyenne ≈ médiane | symétrique : autant de petites que de grandes valeurs |
+| **moyenne > médiane** | **étalée à droite** : quelques valeurs très grandes (montants, salaires, prix) |
+| moyenne < médiane | étalée à gauche : quelques valeurs très petites |
 
-![Les trois formes de distribution, avec la position de la moyenne et de la médiane sur chacune](images/formes-de-distribution.svg)
+Une **distribution**, c'est la façon dont les valeurs se répartissent. Cyclo'Nord est très étalée à
+droite. **Dans ce cas, pour dire « une commande typique », on donne la médiane.**
 
-> 📐 **Comment lire ces trois images.** Le trait bleu plein est la **médiane**, le trait noir
-> pointillé la **moyenne**. À gauche, ils se confondent. Au centre, la traîne de droite **tire la
-> moyenne** loin de la médiane : c'est le cas de Cyclo'Nord, et c'est la forme la plus fréquente
-> sur des montants. Retiens le geste : **la moyenne suit la traîne, la médiane reste sur le gros
-> du peloton.**
-
-Ici : moyenne ≫ médiane → **distribution fortement étalée vers la droite**. Une poignée de très
-grosses commandes (les VAE, et surtout une commande de flotte de 100 vélos cargo à 379 050 €)
-tire la moyenne vers le haut pendant que la masse des commandes reste sous 200 €.
-
-> 🚩 **La règle à retenir.**
-> **Distribution asymétrique → on communique la médiane.**
-> La moyenne reste utile pour une chose : multipliée par l'effectif, elle redonne le total.
-> `1 679,772431 × 613 = 1 029 700,50 €` — c'est le **total commandé** sur l'année.
-> ⚠️ Deux précautions. D'abord ce total **n'est pas le chiffre d'affaires** : on verra au §5
-> pourquoi, et c'est un vrai piège professionnel. Ensuite il faut la moyenne **non arrondie** :
-> avec 1 679,77 on retombe sur 1 029 699,01 €, soit 1,49 € d'écart. Un arrondi publié ne permet
-> plus de reconstruire le total.
+> 🚩 La moyenne garde un usage : multipliée par le nombre de commandes, elle redonne le total.
+> Mais pour décrire une commande « normale », elle trompe.
 
 ---
 
-## 5. Calculer sur un sous-ensemble
+## 3. Compter avant de commenter
 
-Un indicateur global ne sert presque jamais tel quel. Ce qu'on veut, c'est *« la moyenne **des VAE** »*,
-*« le panier médian **de Lille** »*. Deux familles de fonctions, à retenir maintenant :
+Avant d'annoncer un chiffre, vérifie **sur combien de valeurs** il est calculé.
 
-```excel
-=MOYENNE.SI.ENS(T_Ventes[Montant_TTC]; T_Ventes[Categorie]; "VAE")     [AVERAGEIFS]
-=SOMME.SI.ENS( T_Ventes[Montant_TTC]; T_Ventes[Magasin];   "Lille")    [SUMIFS]
-=NB.SI.ENS(    T_Ventes[Statut];      "Livrée")                        [COUNTIFS]
+```
+=COUNT(Note)           → 560     (NB)        cellules contenant un nombre
+=COUNTBLANK(Note)      → 53      (NB.VIDE)   cellules vides
+=AVERAGE(Note)         → 4,10
+=MEDIAN(Note)          → 4
+=MODE(Note)            → 5
 ```
 
-On peut empiler les critères — ils se cumulent avec un **ET** :
+`AVERAGE` **ignore les cellules vides** : elle ne les compte pas comme des zéros. La note moyenne
+de 4,10 porte donc sur 560 commandes, pas sur 613. Écrire « la note moyenne de nos 613 commandes »,
+c'est déjà inexact. La bonne phrase : « 4,10 sur 5, calculée sur les 560 commandes notées ».
 
-```excel
-=MOYENNE.SI.ENS(T_Ventes[Montant_TTC];
-                T_Ventes[Categorie]; "VAE";
-                T_Ventes[Statut];    "Livrée";
-                T_Ventes[Canal];     "Site web")
+Remarque aussi le mode : la note 5 revient 225 fois, la note 4 revient 224 fois. Le mode gagne
+d'une seule voix. Un mode aussi serré ne mérite pas d'être présenté comme « la note des clients ».
+
+---
+
+## 4. Le périmètre : quelles lignes je compte ?
+
+Le **périmètre**, c'est l'ensemble des lignes sur lesquelles porte ton calcul. `SUMIFS` (SOMME.SI.ENS)
+additionne une colonne **seulement pour les lignes qui respectent une condition**. Sa forme :
+`SUMIFS(colonne à additionner ; colonne à tester ; valeur voulue)`.
+
+```
+=SUM(Montant)                          → 1 029 700,50 €   (SOMME)      tout ce qui a été commandé
+=SUMIFS(Montant; Statut; "Livrée")     →   343 877,45 €                seulement ce qui a été livré
+=COUNTIFS(Statut; "Livrée")            →   360            (NB.SI.ENS)  commandes livrées
 ```
 
-> ⚠️ **Il n'existe pas de `MEDIANE.SI.ENS`.** C'est une vraie limite du tableur, et c'est précisément
-> une des raisons d'être du **TCD** de mercredi. En attendant, on passe par un filtre, ou par une
-> formule matricielle (`=MEDIANE(SI(...))`, hors programme aujourd'hui).
+Seulement **33,4 %** du montant commandé a été livré. Le reste a été annulé, retourné, ou est encore
+en cours. Aucun des deux chiffres n'est faux : ils ne répondent pas à la même question. Mais écrire
+« CA 2025 : 1 029 700 € » sans préciser, c'est tromper ton lecteur.
 
-### Le périmètre : la question qu'on oublie toujours
+> 📌 **Réflexe** : avant chaque calcul, écris en une phrase **sur quelles lignes** il porte.
 
-```excel
-=SOMME(T_Ventes[Montant_TTC])                                    → 1 029 700 €
-=SOMME.SI.ENS(T_Ventes[Montant_TTC]; T_Ventes[Statut]; "Livrée") →   343 877 €
+---
+
+## 5. Calculer par sous-ensemble
+
+Un chiffre global sert rarement tel quel. Nadia veut savoir ce que pèse **chaque catégorie**. Trois
+fonctions suivent la même logique que `SUMIFS` : on ajoute une colonne à tester et une valeur.
+
+Prépare un petit tableau : les 5 catégories en `O2:O6` (Accessoires, Atelier, VAE, VTT, Vélo urbain),
+puis écris en `P2`, `Q2` et `R2` et recopie vers le bas :
+
+```
+P2 : =COUNTIFS(Categorie; O2)                   nombre de commandes
+Q2 : =SUMIFS(Montant; Categorie; O2)            montant total
+R2 : =AVERAGEIFS(Montant; Categorie; O2)        montant moyen    (MOYENNE.SI.ENS)
 ```
 
-**Deux tiers du « chiffre d'affaires » correspondent à des commandes annulées, retournées ou encore
-en cours.** Aucun des deux chiffres n'est faux : ils ne répondent pas à la même question. Mais si tu
-écris « CA 2025 : 1 029 700 € » sans préciser, tu trompes ton lecteur.
+| Catégorie | Nb | Montant total | Moyenne |
+|---|---|---|---|
+| Accessoires | 189 | 15 730,75 € | 83,23 € |
+| Atelier | 134 | 7 874,70 € | 58,77 € |
+| VAE | 97 | 672 822,50 € | 6 936,31 € |
+| VTT | 88 | 157 276,05 € | 1 787,23 € |
+| Vélo urbain | 105 | 175 996,50 € | 1 676,16 € |
 
-> 📌 **Réflexe à installer dès maintenant** : avant tout calcul, écris noir sur blanc **sur quelles
-> lignes** il porte. Cette phrase ira dans ton livrable.
+Les VAE (vélos à assistance électrique) font 16 % des commandes mais 65 % du montant commandé.
+Voilà d'où vient la moyenne gonflée du §2.
 
----
+On peut **empiler les conditions** : elles se cumulent (condition 1 **et** condition 2).
 
-## 6. La moyenne pondérée
-
-« Note moyenne : 4,10 » — mais toutes les commandes pèsent-elles pareil ? Une réparation à 19 € et
-la flotte à 379 050 € comptent chacune pour une note. Si tu veux une note moyenne **pondérée par le
-chiffre d'affaires**, tu dois donner à chaque note un poids :
-
-$$\text{moyenne pondérée} = \frac{\sum (valeur_i \times poids_i)}{\sum poids_i}$$
-
-En tableur, une seule fonction fait le numérateur :
-
-```excel
-=SOMMEPROD(T_Ventes[Note_client]; T_Ventes[Montant_TTC]) / SOMME(T_Ventes[Montant_TTC])
 ```
-> `SOMMEPROD` = `SUMPRODUCT` : il multiplie les deux colonnes ligne à ligne, puis additionne.
+=AVERAGEIFS(Montant; Categorie; "VAE"; Statut; "Livrée")    → 2 904,31 €   (51 commandes)
+```
 
-⚠️ Cette formule suppose qu'aucune note n'est vide (une cellule vide vaut 0 dans `SOMMEPROD`, ce qui
-fausse le résultat). Sur un vrai fichier, on restreint d'abord aux lignes notées.
+Sur les seules commandes livrées, le VAE moyen tombe à 2 904,31 € : le périmètre change tout.
 
-**Quand pondérer ?** Dès qu'additionner des unités de tailles différentes n'a pas de sens :
-
-- moyenne des prix de 8 magasins → chaque magasin compte pour 1, même celui qui fait 5 ventes ;
-- **moyenne pondérée par le nombre de ventes** → chaque *vente* compte pour 1.
-
-Tu retrouveras exactement ce piège vendredi, sur les communes : une commune de 300 habitants doit-elle
-peser autant qu'une ville de 230 000 dans le « revenu moyen du territoire » ? *(Réponse : non, et
-l'écart entre les deux calculs se chiffre.)*
+> ⚠️ Il n'existe pas de `MEDIANIFS`. Pour une médiane par groupe, on utilisera demain `FILTER`
+> (FILTRE), puis le tableau croisé dynamique mercredi.
 
 ---
 
-## 7. Mémo des fonctions du jour
+## 6. Écrire une phrase qui ne ment pas
 
-| Besoin | Excel (FR) | Excel (EN) |
-|---|---|---|
-| Moyenne | `MOYENNE` | `AVERAGE` |
-| Médiane | `MEDIANE` | `MEDIAN` |
-| Mode | `MODE.SIMPLE` | `MODE.SNGL` |
-| Somme | `SOMME` | `SUM` |
-| Compter des nombres | `NB` | `COUNT` |
-| Compter des cellules non vides | `NBVAL` | `COUNTA` |
-| Compter des cellules vides | `NB.VIDE` | `COUNTBLANK` |
-| Compter sous condition | `NB.SI.ENS` | `COUNTIFS` |
-| Sommer sous condition | `SOMME.SI.ENS` | `SUMIFS` |
-| Moyenne sous condition | `MOYENNE.SI.ENS` | `AVERAGEIFS` |
-| Moyenne pondérée | `SOMMEPROD` / `SOMME` | `SUMPRODUCT` / `SUM` |
-| Minimum / maximum | `MIN` / `MAX` | `MIN` / `MAX` |
+Une bonne phrase de restitution donne **l'indicateur, le périmètre et l'effectif**.
 
-> 🧰 **Astuce tableau structuré.** Si tu convertis ta plage en tableau (`Ctrl + L`) et que tu le
-> nommes `T_Ventes`, tu écris `T_Ventes[Montant_TTC]` au lieu de `K2:K614`. La formule devient
-> lisible, et elle s'étend toute seule quand des lignes arrivent. Prends l'habitude dès aujourd'hui.
+- ❌ « La commande moyenne est de 1 680 €. »
+- ✅ « Sur les 613 commandes de 2025, la commande médiane est de 177 €. La moyenne (1 680 €) est
+  tirée vers le haut par quelques grosses commandes de vélos électriques. »
 
 ---
 
-## 8. À toi de jouer
+## Pour aller plus loin
 
-➡️ **[Exercice guidé — Faire parler les ventes Cyclo'Nord](05-exercice-guide-cyclonord.md), partie A**
-*(à faire cet après-midi, niveau 1 · imiter)*
-
----
-
-## 9. Auto-évaluation
-
-Coche seulement si tu sais répondre **sans relire** :
-
-- [ ] Je sais dire, pour chaque colonne du fichier, si je peux en faire la moyenne — et pourquoi.
-- [ ] Je sais que `MOYENNE` ignore les cellules vides, et je vérifie combien de valeurs ont servi.
-- [ ] Je sais lire l'écart moyenne / médiane comme une information sur la forme de la distribution.
-- [ ] Je sais dire pourquoi le mode de `Montant_TTC` vaut 19 € alors que la moyenne vaut 1 680 €.
-- [ ] Je sais calculer une moyenne sur un sous-ensemble sans filtrer à la main.
-- [ ] Je précise toujours le **périmètre** de mes calculs.
-- [ ] Je sais expliquer à quoi sert une moyenne pondérée et donner un cas où elle change le résultat.
+Quand toutes les lignes ne doivent pas peser pareil (par exemple une note pondérée par le montant),
+on calcule une **moyenne pondérée** ; ce n'est pas au programme de cette semaine.
 
 ---
 
-## 10. Pour aller plus loin
+## Mémo
 
-- INSEE — [définitions : moyenne, médiane, mode](https://www.insee.fr/fr/metadonnees/definitions)
-- Microsoft — [fonctions statistiques Excel](https://support.microsoft.com/fr-fr/office/fonctions-statistiques-r%C3%A9f%C3%A9rence-624dac86-a375-4435-bc25-76d6df3c5b6f)
-- Microsoft — [MOYENNE.SI.ENS](https://support.microsoft.com/fr-fr/office/moyenne-si-ens-fonction-moyenne-si-ens-48910c45-1fc0-4389-a028-f7c5c3001690)
-- Google — [liste des fonctions Google Sheets](https://support.google.com/docs/table/25273)
+| Besoin | Fonction Sheets (nom français) |
+|---|---|
+| Moyenne / médiane / mode | `AVERAGE` (MOYENNE) · `MEDIAN` (MEDIANE) · `MODE` (MODE) |
+| Compter nombres / non vides / vides | `COUNT` (NB) · `COUNTA` (NBVAL) · `COUNTBLANK` (NB.VIDE) |
+| Total | `SUM` (SOMME) |
+| Compter sous condition | `COUNTIFS` (NB.SI.ENS) |
+| Sommer / moyenne sous condition | `SUMIFS` (SOMME.SI.ENS) · `AVERAGEIFS` (MOYENNE.SI.ENS) |
+| Nommer une plage | *Données › Plages nommées* |
 
-➡️ **Demain : [02 — Dispersion : écart-type, quartiles et pièges de la moyenne](02-dispersion-et-pieges-de-la-moyenne.md)**
+---
+
+## Auto-évaluation
+
+- [ ] Je sais dire, pour chaque colonne, si je peux en faire la moyenne.
+- [ ] Je sais expliquer pourquoi la moyenne (1 679,77 €) est si loin de la médiane (177 €).
+- [ ] Je vérifie combien de valeurs ont servi avant de commenter un chiffre.
+- [ ] Je précise toujours le périmètre (commandé ou livré).
+- [ ] Je sais calculer une moyenne par catégorie avec `AVERAGEIFS`.
+
+➡️ **Demain : [02 — Dispersion et pièges de la moyenne](02-dispersion-et-pieges-de-la-moyenne.md)**

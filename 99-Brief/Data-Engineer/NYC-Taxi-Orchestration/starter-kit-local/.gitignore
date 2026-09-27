@@ -1,0 +1,29 @@
+# Donnees : ~8 Go de Parquet + la base DuckDB. Rien de tout cela ne va dans Git.
+data/*
+!data/.gitkeep
+*.parquet
+*.duckdb
+*.duckdb.wal
+
+# Secrets
+.env
+*.json
+!dbt/**/*.json
+
+# dbt
+dbt/target/
+dbt/dbt_packages/
+dbt/logs/
+dbt/profiles.yml
+
+# Airflow
+logs/
+airflow.db
+standalone_admin_password.txt
+simple_auth_manager_passwords.json.generated
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/

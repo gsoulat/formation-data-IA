@@ -6,3 +6,4 @@
 ## Cours
 
 - [01 — Concevoir un processus de collecte de données](01-processus-collecte.md)
+- [02 — Collecter des données par web scraping](02-web-scraping.md)

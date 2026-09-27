@@ -1,0 +1,101 @@
+# Stack fournie : Kafka (mode KRaft, mono-broker, sans ZooKeeper) + PostgreSQL.
+#
+# Elle est fournie parce que monter un broker n'est pas la competence evaluee ici.
+# Vous devez en revanche SAVOIR L'EXPLIQUER : chaque variable ci-dessous a une
+# raison d'etre, et on vous la demandera en soutenance.
+#
+#   docker compose up -d
+#   docker compose ps          # les deux services doivent etre "healthy"
+#
+# Creation d'un topic (a vous de decider nom, partitions, replication) :
+#   docker exec -it rebalance_kafka /opt/kafka/bin/kafka-topics.sh \
+#     --bootstrap-server kafka:29092 --create --topic <nom> --partitions <n>
+#
+# Lister les topics :
+#   docker exec -it rebalance_kafka /opt/kafka/bin/kafka-topics.sh \
+#     --bootstrap-server kafka:29092 --list
+#
+# ATTENTION : les commandes ci-dessus tournent DANS le conteneur, donc elles
+# visent le listener INTERNAL (kafka:29092). Vos scripts Python, eux, tournent
+# sur votre machine et visent EXTERNAL (localhost:9092). Voir les commentaires
+# sur les listeners plus bas : c'est la source de blocage numero 1 sur ce brief.
+
+services:
+  kafka:
+    image: apache/kafka:3.9.0
+    container_name: rebalance_kafka
+    restart: unless-stopped
+    ports:
+      # Port expose a votre machine : c'est celui qu'utilisent vos scripts Python.
+      - "${KAFKA_PORT:-9092}:9092"
+    environment:
+      # --- Mode KRaft : le broker est aussi son propre controleur ---
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@localhost:9093
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+
+      # --- Listeners : POURQUOI TROIS ? C'est LA question de la Phase 2. ---
+      #
+      # Un broker Kafka ne se contente pas d'accepter une connexion : il ANNONCE
+      # au client l'adresse a laquelle le rappeler. Si cette adresse annoncee
+      # n'est pas joignable par le client, la connexion reussit... puis echoue
+      # juste apres, avec un message qui ne dit pas pourquoi. D'ou trois listeners :
+      #
+      #   EXTERNAL (9092)  : pour vos scripts Python lances DEPUIS VOTRE MACHINE.
+      #                      Annonce localhost:<port expose>, donc suit KAFKA_PORT.
+      #   INTERNAL (29092) : pour tout ce qui tourne DANS le reseau Docker
+      #                      (les commandes kafka-*.sh via docker exec, un futur
+      #                      conteneur a vous). Annonce kafka:29092.
+      #   CONTROLLER (9093): usage interne KRaft, ne vous concerne pas.
+      #
+      # Notez aussi la syntaxe "://:9092" et non "://0.0.0.0:9092" : avec 0.0.0.0
+      # le formatage KRaft echoue au demarrage ("advertised.listeners cannot use
+      # the nonroutable meta-address").
+      KAFKA_LISTENERS: INTERNAL://:29092,EXTERNAL://:9092,CONTROLLER://:9093
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://kafka:29092,EXTERNAL://localhost:${KAFKA_PORT:-9092}
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+
+      # --- Mono-broker : on ne peut pas repliquer sur soi-meme plus d'une fois ---
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+
+      # Creation automatique de topic DESACTIVEE : c'est a vous de les creer,
+      # avec le nombre de partitions et la cle que vous aurez justifies.
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "false"
+
+      KAFKA_LOG_DIRS: /var/lib/kafka/data
+      CLUSTER_ID: ${CLUSTER_ID:-5L6g3nShT-eMCtK--X86sw}
+    volumes:
+      - kafkadata:/var/lib/kafka/data
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/kafka/bin/kafka-topics.sh --bootstrap-server kafka:29092 --list >/dev/null 2>&1"]
+      interval: 10s
+      timeout: 10s
+      retries: 12
+      start_period: 20s
+
+  postgres:
+    image: postgres:16
+    container_name: rebalance_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-rebalance}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+      POSTGRES_DB: ${POSTGRES_DB:-velos}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-rebalance} -d ${POSTGRES_DB:-velos}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  kafkadata:
+  pgdata:

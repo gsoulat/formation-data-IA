@@ -1,0 +1,15 @@
+# Copiez ce fichier vers ~/.dbt/profiles.yml (ou gardez-le ici et lancez dbt avec
+# --profiles-dir .). Ne commitez JAMAIS un profiles.yml contenant un vrai mot de passe.
+
+eclairage:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: "{{ env_var('PGHOST', 'localhost') }}"
+      port: "{{ env_var('PGPORT', '5432') | int }}"
+      user: "{{ env_var('PGUSER', 'eclairage') }}"
+      password: "{{ env_var('PGPASSWORD') }}"
+      dbname: "{{ env_var('PGDATABASE', 'transparence') }}"
+      schema: analytics
+      threads: 4

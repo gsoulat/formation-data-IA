@@ -28,6 +28,10 @@ Collecte, stockage, transformation et industrialisation de la donnée.
 - [Administration PostgreSQL (logistique)](Data-Engineer/PostgreSQL-Logistique/) · [Pipeline NYC Taxi](Data-Engineer/brief-pipeline-data-engineering.md)
 - [Lakehouse Éolien (Medallion)](Data-Engineer/Eolienne/) · [eCO2mix RTE](Data-Engineer/ECO2-RTE/) · [Qualité de l'eau (Azure)](Data-Engineer/BRIEF_QUALITE_EAU_FRANCE.md)
 
+**Variante « données réelles » (5 jours chacun)** — mêmes compétences que les 4 briefs Bouquineo, mais sur des sources publiques réelles, sans anomalie injectée :
+- [API + Scraping — bornes de recharge IRVE](Data-Engineer/IRVE-Bornes-Recharge/) · [Kafka — vélos en libre-service temps réel](Data-Engineer/Velos-Temps-Reel/)
+- [Gouvernance — Transparence-Santé](Data-Engineer/Transparence-Sante/) · [Maintenance DWH — prix des carburants](Data-Engineer/Carburants-DWH/)
+
 ## 📊 [Data-Analyst](Data-Analyst/)
 Recueil du besoin, analyse et tableaux de bord BI.
 - 4 briefs fil rouge (0 → 3) + 22 missions hebdomadaires — voir l'[index détaillé](Data-Analyst/README.md).

@@ -23,6 +23,9 @@ L'objectif n’est pas de tout faire, mais de suivre un parcours clair et progre
 ### [📊 Parcours 5 : Data Analyst](PATH_DATA_ANALYST.md)
 *Objectif : Être capable de recueillir un besoin métier, analyser des données et concevoir des tableaux de bord BI.*
 
+### [📊 Parcours 5bis : Data Analyst V2](PATH_DATA_ANALYST_V2.md)
+*Objectif : Variante plus technique — collecter (SQL, API, scraping), traiter en Python, modéliser (ML) et restituer (dataviz, cartographie, BI).*
+
 ---
 
 ## 🗺️ Roadmap Technique
@@ -42,7 +45,7 @@ L'objectif n’est pas de tout faire, mais de suivre un parcours clair et progre
 ## 🏗️ Structure du repository
 
 ```
-formation-data-engineer/
+formation-data-IA/
 ├── 01-Fondamentaux/           # Socle technique (Linux, Git, Python, SQL, FastAPI, Django, Java, Rust, Veille)
 ├── 02-Containerisation/       # Standardisation (Docker, Kubernetes)
 ├── 03-Infrastructure-as-Code/ # Automatisation (Ansible, Terraform)

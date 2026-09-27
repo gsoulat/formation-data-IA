@@ -1,0 +1,38 @@
+# Ce .gitignore est un garde-fou, PAS une garantie.
+# Verifiez ce que vous commitez : aucune donnee nominative ne doit entrer dans Git.
+
+# Secrets
+.env
+*.pem
+*.key
+
+# Donnees
+data/
+raw/
+staging/
+exports/
+*.csv
+*.json
+*.jsonl
+*.parquet
+*.ndjson
+*.gz
+*.zip
+*.sql.dump
+*.dump
+
+# Exceptions utiles : la documentation et les schemas restent versionnes.
+!docs/**/*.json
+!dbt_project.yml
+!models/**/*.yml
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# dbt
+target/
+dbt_packages/
+logs/
