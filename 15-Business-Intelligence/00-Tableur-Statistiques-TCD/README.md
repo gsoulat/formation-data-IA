@@ -7,6 +7,11 @@
 Cette page est ta **feuille de route** : chaque jour, elle te dit quoi ouvrir, quoi faire et quoi
 rendre. Tu n'as besoin d'aucun autre document pour t'organiser.
 
+![Infographie de synthèse du module : la médiane est plus robuste que la moyenne face aux valeurs extrêmes ; l'écart-type mesure la dispersion autour de la moyenne ; distribution symétrique (moyenne = médiane), étalée à droite (moyenne > médiane) ou à gauche (moyenne < médiane) ; toujours préciser le périmètre et l'effectif ; le TCD regroupe pour calculer ; un graphique = une intention (barres pour comparer, courbes pour l'évolution, histogrammes pour la distribution) ; éviter la 3D, les axes tronqués et les camemberts à plus de 3 parts](images/synthese-analyse-de-donnees.jpg)
+
+*Le module en une image. Attention, dans l'encadré rouge : le petit diagramme en barres du milieu est
+lui aussi un **mauvais exemple** : ses graduations (100, 175, 110, 105) ne sont pas dans l'ordre.*
+
 ---
 
 ## Le parcours en un coup d'œil
