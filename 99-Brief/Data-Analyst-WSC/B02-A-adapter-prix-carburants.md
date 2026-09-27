@@ -52,7 +52,7 @@ Pour rester dans le temps, on s'intéresse à **un seul carburant, le gazole**, 
 
 ## Déroulé
 
-**Jeudi 13 h 30 — lancement (30 min, tous ensemble).** Le formateur joue Malik. Ensemble, on
+**Jeudi 13 h 30 — lancement (30 min, tous ensemble).** Réunion avec Malik : ensemble, on
 transforme la phrase du lecteur en question qu'on peut vérifier avec les données.
 
 **Jeudi 14 h – 17 h, vendredi toute la journée, lundi 9 h – 14 h 30 — production.**
@@ -85,7 +85,7 @@ transforme la phrase du lecteur en question qu'on peut vérifier avec les donné
 voisin **sans rien dire**. Il dit à voix haute ce qu'il comprend. Si ce n'est pas ton message, tu
 corriges le titre ou le graphique.
 
-**Lundi 15 h 15 – 16 h 30 — finitions et dépôt.** Retour collectif du formateur de 16 h 30 à 17 h.
+**Lundi 15 h 15 – 16 h 30 — finitions et dépôt.** Retour collectif de 16 h 30 à 17 h.
 
 **Questions pour avancer.** Plus cher que quoi : que la moyenne nationale, ou que les autres
 régions ? Si deux régions ont la même médiane, laquelle est la plus chère ? Une station

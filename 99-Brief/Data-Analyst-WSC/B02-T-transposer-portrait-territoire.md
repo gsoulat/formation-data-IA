@@ -51,8 +51,8 @@ Lis les onglets `Sources` et `INSEE_Source` : ils disent d'où viennent les chif
 
 ### Mardi — comprendre, réunir les données
 
-- **9 h – 9 h 30 · lancement.** Le formateur joue Claire Vandamme. Pose-lui tes questions : c'est le
-  seul moment où tu peux cadrer la commande.
+- **9 h – 9 h 30 · lancement.** Réunion de cadrage avec Claire Vandamme. Prépare tes questions :
+  c'est le seul moment où tu peux cadrer la commande.
 - **9 h 45 – 10 h 30 · démo** du [cours 06](../../15-Business-Intelligence/00-Tableur-Statistiques-TCD/06-joindre-deux-tableaux-xlookup.md) : joindre deux tableaux, moyenne pondérée.
 - **Étape 1 — Réunir** (1 h). Un classeur `NOM_Prenom_territoire` ; importe le socle, puis le
   fichier INSEE en **nouvelles feuilles**.
@@ -107,8 +107,8 @@ pondérée **19,1 %** (le taux régional publié par l'INSEE est 19 %) ; médian
 - **12 h 30 · dépôt.**
 - **13 h 30 – 16 h 30 · restitutions** : 5 minutes chacun (3 minutes de présentation, 2 minutes de
   question), avec **une seule diapositive**. Elles se terminent par la phrase : *« J'accompagnerais en
-  priorité ______, parce que ______. »* Le formateur, dans le rôle de Claire, te posera toujours la
-  même question : *« Un élu me dit que votre critère est injuste. Je lui réponds quoi ? »*
+  priorité ______, parce que ______. »* Claire te posera toujours la même question : *« Un élu me
+  dit que votre critère est injuste. Je lui réponds quoi ? »*
 - **16 h 30 – 17 h · retour collectif.**
 
 ## Livrables (vendredi 12 h 30)
