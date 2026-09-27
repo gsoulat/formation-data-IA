@@ -124,6 +124,11 @@ Retiens cette règle de lecture :
 Une **distribution**, c'est la façon dont les valeurs se répartissent. Cyclo'Nord est très étalée à
 droite. **Dans ce cas, pour dire « une commande typique », on donne la médiane.**
 
+![Trois formes de distribution : symétrique (moyenne ≈ médiane), étalée vers la droite (moyenne > médiane, la queue part vers les grandes valeurs : salaires, prix, montants de commande, le cas Cyclo'Nord), étalée vers la gauche (moyenne < médiane)](images/formes-de-distribution.svg)
+
+*« Étalée à droite » se voit : la bosse est à gauche, près des petites valeurs, et une longue queue
+part vers la droite. La médiane reste dans la bosse, la moyenne est tirée dans la queue.*
+
 > 🚩 La moyenne garde un usage : multipliée par le nombre de commandes, elle redonne le total.
 > Mais pour décrire une commande « normale », elle trompe.
 

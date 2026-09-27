@@ -7,8 +7,8 @@
 | | |
 |---|---|
 | **Quand** | **Partie 1** (sections 1 à 4) le lundi · **Partie 2** (sections 5 à 7) le mardi ; la section 7 sert surtout au brief B02-T |
-| **Durée** | 30 min de lecture, 30 min d'exercices |
-| **Ce qu'il faut savoir faire** | Partie 1 : les quatre opérations. Partie 2 : en plus, un carré et une racine carrée (la calculatrice les fait) |
+| **Durée** | environ 1 h par partie, calculs à la main compris · 30 min d'exercices |
+| **Ce qu'il faut savoir faire** | Partie 1 : les quatre opérations. Partie 2 : rien de plus ; le carré et la racine carrée sont expliqués à la section 6 (et la calculatrice les fait) |
 
 ## Les 5 idées à retenir
 
@@ -140,17 +140,26 @@ Dans Sheets : `=MODE(plage)` pour des nombres.
 
 ## 4. Parts et évolutions en pourcentage
 
-**Une part** : `partie ÷ total`. 360 commandes livrées sur 613 → 360 ÷ 613 = 0,587 = **58,7 %**.
+**Lire en pourcentage** : une division donne un nombre à virgule (0,587). Pour le lire « sur
+100 », on le **multiplie par 100** : 0,587 × 100 = 58,7 %. Dans Sheets, *Format › Nombre ›
+Pourcentage* fait cette multiplication à l'affichage : la cellule contient toujours 0,587.
+
+**Une part** : `partie ÷ total`. 360 commandes livrées sur 613 → 360 ÷ 613 = 0,587, soit **58,7 %**.
 *Traduction : « sur 100 commandes, environ 59 sont livrées ».*
 
 **Une évolution** : `(nouvelle valeur − ancienne) ÷ ancienne`. Le chiffre d'affaires livré de
 Cyclo'Nord passe de 17 145 € en mai à 37 250 € en novembre :
-(37 250 − 17 145) ÷ 17 145 = **+117 %** (il a plus que doublé).
+(37 250 − 17 145) ÷ 17 145 = 1,17, soit **+117 %** (il a plus que doublé).
 *Traduction : « de combien j'ai bougé, par rapport à mon point de départ ».*
 
-> ⚠️ **Points ou pourcentage ?** Un taux qui passe de 16 % à 19 % augmente de **3 points**, pas
-> de 3 %. En pourcentage, c'est (19 − 16) ÷ 16 = +19 %. Dès qu'on compare **deux pourcentages**,
-> on parle en **points**.
+<details>
+<summary>🔎 Pour plus tard (brief B02-A) : points ou pourcentage ?</summary>
+
+Un taux qui passe de 16 % à 19 % augmente de **3 points**, pas de 3 %. En pourcentage, c'est
+(19 − 16) ÷ 16 = +19 %. Dès qu'on compare **deux pourcentages** entre eux, on parle en **points**.
+Tu n'en as pas besoin cette semaine ; tu y reviendras quand tu compareras des parts.
+
+</details>
 
 ---
 
@@ -168,22 +177,31 @@ la coupe en **quatre groupes de même taille**. Avec 100 clients : 25 dans chaqu
 [ 25 % des clients ] Q1 [ 25 % ] Q2 = médiane [ 25 % ] Q3 [ 25 % des clients ]
 ```
 
-| Repère | Sens | Nos 7 commandes (calcul Sheets) |
+Pour voir les coupures tomber sur de vraies valeurs, prenons **9 paniers** (un jour un peu plus
+chargé), rangés du plus petit au plus grand :
+
+```
+10   15  [20]  30  [40]  55  [70]  90   120
+          Q1        Q2        Q3
+```
+
+| Repère | Sens | Les 9 paniers |
 |---|---|---|
-| **Q1** | un quart des valeurs en dessous | **22 €** |
-| **Q2** = médiane | la moitié en dessous | **40 €** |
-| **Q3** | trois quarts en dessous | **72,50 €** |
+| **Q1** | un quart des valeurs en dessous | la 3ᵉ valeur → **20 €** |
+| **Q2** = médiane | la moitié en dessous | la 5ᵉ valeur → **40 €** |
+| **Q3** | trois quarts en dessous | la 7ᵉ valeur → **70 €** |
 
-La phrase à savoir dire : **« la moitié des commandes est entre Q1 et Q3 »**, ici entre 22 € et
-72,50 €. L'écart **Q3 − Q1** (50,50 €) s'appelle l'**écart interquartile**.
+La phrase à savoir dire : **« la moitié des paniers est entre Q1 et Q3 »**, ici entre 20 € et
+70 €. L'écart **Q3 − Q1** (50 €) s'appelle l'**écart interquartile**.
 
-Dans Sheets : `=QUARTILE(plage; 1)` et `=QUARTILE(plage; 3)`.
+Dans Sheets : `=QUARTILE(plage; 1)` et `=QUARTILE(plage; 3)`. Sur nos 7 commandes du début, Sheets
+donne Q1 = **22 €**, Q3 = **72,50 €** : la moitié des commandes est entre 22 € et 72,50 €.
 
 <details>
-<summary>🔎 Pour plus tard : pourquoi 22 € alors que 22 n'est pas dans la liste ?</summary>
+<summary>🔎 Pour plus tard : pourquoi 22 € alors que 22 n'est pas dans la liste des 7 commandes ?</summary>
 
 Avec 7 valeurs, on ne peut pas faire quatre groupes exactement égaux : Q1 tombe « entre » la
-2ᵉ valeur (19) et la 3ᵉ (25). Sheets prend alors un point intermédiaire : 19 + (25 − 19) ÷ 2 = 22.
+2ᵉ valeur (19) et la 3ᵉ (25). Sheets prend alors le point à mi-chemin : 19 + (25 − 19) ÷ 2 = 22.
 Il existe d'autres façons de faire, qui donnent des résultats un peu différents (au lycée, on prend
 souvent la 2ᵉ valeur, 19). Ce n'est pas une erreur : c'est une **convention**. Avec des centaines
 de lignes, les écarts entre conventions deviennent minuscules. Dans ce module, on utilise toujours
@@ -205,10 +223,19 @@ Série B :   1   5   5   9        → les valeurs sont loin de 5
 ```
 
 La moyenne ne voit pas la différence. Il faut un deuxième chiffre qui dise **à quel point les
-valeurs s'éloignent de la moyenne** : c'est l'**écart-type**. Sheets donne **0,82** pour A et
-**3,27** pour B.
+valeurs s'éloignent de la moyenne** : c'est l'**écart-type**. Calculé à la main comme ci-dessous,
+il vaut **0,71** pour A et **2,83** pour B : quatre fois plus dispersé.
 
 *Traduction : « en général, les valeurs sont à environ tant de la moyenne ».*
+
+### Deux outils avant de calculer : le carré et la racine carrée
+
+- **Le carré** d'un nombre, c'est le nombre **multiplié par lui-même** : le carré de 3 est
+  3 × 3 = 9. On l'écrit 3².
+- **Un nombre négatif au carré devient positif** : (−3) × (−3) = 9, parce que « moins fois moins
+  fait plus ». C'est pour cela qu'on va s'en servir : le carré efface le signe.
+- **La racine carrée** fait le chemin inverse : elle retrouve le nombre de départ. √9 = 3, √4 = 2,
+  √16 = 4. Quand ça ne tombe pas juste (√8), la calculatrice ou Sheets (`=SQRT(8)`) donne 2,83.
 
 ### Ensuite, calculer (une fois, pour comprendre)
 
@@ -233,13 +260,19 @@ Série : `2, 4, 4, 4, 5, 5, 7, 9` (8 valeurs, moyenne **5**).
 
 > ✅ **Lecture** : en général, les valeurs sont à **environ 2** de la moyenne 5.
 
+Même méthode pour les séries A et B du début : les écarts au carré de A font 1 + 0 + 0 + 1 = 2,
+donc 2 ÷ 4 = 0,5 et √0,5 = **0,71** ; ceux de B font 16 + 0 + 0 + 16 = 32, donc 32 ÷ 4 = 8 et
+√8 = **2,83**.
+
 <details>
 <summary>🔎 Pour plus tard : pourquoi Sheets donne 2,14 et pas 2 ?</summary>
 
-Quand les données ne sont qu'une **partie** de ce qu'on veut décrire (un **échantillon**), on divise
-par **n − 1** au lieu de n : 32 ÷ 7 = 4,57, puis √4,57 = **2,14**. C'est ce que fait `=STDEV(plage)`
-*(ECARTYPE)*, celui qu'on utilise dans le module. Avec beaucoup de lignes (613 commandes), les deux
-calculs donnent presque le même résultat.
+Si tu tapes `=STDEV(2;4;4;4;5;5;7;9)` dans Sheets, tu obtiens **2,14**, pas 2 (et 0,82 au lieu
+de 0,71 pour la série A, 3,27 au lieu de 2,83 pour B). Quand les données ne sont qu'une **partie**
+de ce qu'on veut décrire (un **échantillon**), Sheets divise par **n − 1** au lieu de n :
+32 ÷ 7 = 4,57, puis √4,57 = **2,14**. C'est ce que fait `=STDEV(plage)` *(ECARTYPE)*, celui qu'on
+utilise dans le module. Le raisonnement est le même, seul le diviseur change. Avec beaucoup de
+lignes (613 commandes), les deux calculs donnent presque le même résultat.
 
 </details>
 
@@ -323,8 +356,12 @@ Pour des territoires, le poids est souvent la **population** : chaque habitant c
 
 ![Infographie de synthèse du module : la médiane est plus robuste que la moyenne face aux valeurs extrêmes ; l'écart-type mesure la dispersion autour de la moyenne ; distribution symétrique (moyenne = médiane), étalée à droite (moyenne > médiane) ou à gauche (moyenne < médiane) ; toujours préciser le périmètre et l'effectif ; le TCD regroupe pour calculer ; un graphique = une intention (barres pour comparer, courbes pour l'évolution, histogrammes pour la distribution) ; éviter la 3D, les axes tronqués et les camemberts à plus de 3 parts](images/synthese-analyse-de-donnees.jpg)
 
-*Dans l'encadré rouge, le diagramme en barres du milieu est aussi un mauvais exemple : ses
-graduations (100, 175, 110, 105) ne sont pas dans l'ordre.*
+*Deux réserves sur cette image. Dans l'encadré rouge, le diagramme en barres du milieu est aussi un
+mauvais exemple : ses graduations (100, 175, 110, 105) ne sont pas dans l'ordre. Et les trois
+courbes « symétrique / étalée à droite / étalée à gauche » sont dessinées avec la même forme, seule
+la couleur change ; la vraie forme d'une distribution étalée est ci-dessous.*
+
+![Trois formes de distribution : symétrique (moyenne ≈ médiane, exemples : tailles, notes d'examen), étalée vers la droite (moyenne > médiane, la queue part vers les grandes valeurs : salaires, prix, montants de commande, le cas Cyclo'Nord), étalée vers la gauche (moyenne < médiane : âge au décès, notes très hautes)](images/formes-de-distribution.svg)
 
 ---
 

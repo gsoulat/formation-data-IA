@@ -9,8 +9,11 @@ rendre. Tu n'as besoin d'aucun autre document pour t'organiser.
 
 ![Infographie de synthèse du module : la médiane est plus robuste que la moyenne face aux valeurs extrêmes ; l'écart-type mesure la dispersion autour de la moyenne ; distribution symétrique (moyenne = médiane), étalée à droite (moyenne > médiane) ou à gauche (moyenne < médiane) ; toujours préciser le périmètre et l'effectif ; le TCD regroupe pour calculer ; un graphique = une intention (barres pour comparer, courbes pour l'évolution, histogrammes pour la distribution) ; éviter la 3D, les axes tronqués et les camemberts à plus de 3 parts](images/synthese-analyse-de-donnees.jpg)
 
-*Le module en une image. Attention, dans l'encadré rouge : le petit diagramme en barres du milieu est
-lui aussi un **mauvais exemple** : ses graduations (100, 175, 110, 105) ne sont pas dans l'ordre.*
+*Le module en une image, avec deux réserves. Dans l'encadré rouge, le petit diagramme en barres du
+milieu est lui aussi un **mauvais exemple** : ses graduations (100, 175, 110, 105) ne sont pas dans
+l'ordre. Et les trois courbes de distribution ont toutes la même forme de cloche : la vraie forme
+d'une distribution « étalée à droite » est dans le [cours 00](00-maths-a-la-main.md#en-une-image)
+et le [cours 01](01-statistiques-descriptives.md).*
 
 ### Les vidéos du module
 
@@ -37,8 +40,8 @@ qu'elle simplifie ou invente.*
 
 | Jour | 9 h – 10 h | 10 h 15 – 12 h 30 | 13 h 30 – 16 h 30 | 16 h 30 – 17 h |
 |---|---|---|---|---|
-| **Lundi** | Démo : [cours 01 — Position](01-statistiques-descriptives.md) | Exercice guidé : mise en place + partie A | Partie A (suite) | Correction collective A |
-| **Mardi** | Démo : [cours 02 — Dispersion](02-dispersion-et-pieges-de-la-moyenne.md) | Partie B | Partie B (suite) | Correction collective B |
+| **Lundi** | Démo : [cours 01 — Position](01-statistiques-descriptives.md) | 10 h 15 – 11 h 15 : lecture du [cours 00, partie 1](00-maths-a-la-main.md) (à la main, sans Sheets) · puis exercice guidé : mise en place | Partie A | Correction collective A |
+| **Mardi** | Démo : [cours 02 — Dispersion](02-dispersion-et-pieges-de-la-moyenne.md) | 10 h 15 – 11 h 15 : lecture du [cours 00, partie 2](00-maths-a-la-main.md) + exercices · puis partie B | Partie B (suite) | Correction collective B |
 | **Mercredi** | Démo : [cours 03 — TCD](03-tableaux-croises-dynamiques.md) | Partie C | Partie C (suite) | Correction collective C |
 | **Jeudi** | Démo : [cours 04 — Graphiques](04-choisir-le-bon-graphique.md) | Partie D (graphiques) · **rendu Cyclo'Nord 12 h 30** | 13 h 30 : lancement de **B02-A**, production | Point d'étape |
 | **Vendredi** | B02-A : production | B02-A : production | B02-A : production | Point d'étape |
@@ -63,7 +66,7 @@ Pause du midi : 12 h 30 – 13 h 30. **Aucune échéance après 16 h 30.**
 | **Seul** | Tout le travail est individuel. L'entraide est encouragée : chacun son classeur. |
 | **On ne touche pas aux données** | L'onglet importé (`Ventes_2025`, `Releve_prix`, `Communes_HDF`, `INSEE_…`) n'est jamais modifié. Tu travailles dans tes propres onglets. |
 | **Un seul endroit pour rendre** | Ton dépôt GitHub de la semaine 1. Un dossier par rendu : **`P2-cyclonord/`**, **`P2-carburants/`** et **`P2-territoire/`**. Dans chacun : un `README.md` avec **le lien** vers ton Google Sheets partagé en *Lecteur*, et l'export `.xlsx` du classeur. |
-| **Les maths à la main** | Le [cours 00 — Les maths à la main](00-maths-a-la-main.md) refait chaque calcul (moyenne, médiane, quartiles, écart-type, pourcentages, moyenne pondérée) sur 7 nombres. À lire le lundi et le mardi, puis à garder ouvert. |
+| **Les maths à la main** | Le [cours 00 — Les maths à la main](00-maths-a-la-main.md) refait chaque calcul (moyenne, médiane, quartiles, écart-type, pourcentages, moyenne pondérée) sur quelques nombres, sans aucun prérequis. Partie 1 le lundi, partie 2 le mardi, une heure chacune dans le planning, puis à garder ouvert. |
 | **Les cours sont des démos** | Le matin, le formateur montre les gestes pendant 45 min ; tu refais avec lui. Le texte du cours sert ensuite de mémo : inutile de le lire en entier avant. |
 
 ## Ce que tu sauras faire à la fin des deux semaines

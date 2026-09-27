@@ -80,6 +80,15 @@ Regarde aussi les distances : de Q1 à la médiane, il y a 127 €. De la média
 Les petites commandes sont serrées, les grosses sont très étalées. On dit que la distribution est
 **étalée à droite**, comme on l'a vu hier avec l'écart entre moyenne et médiane.
 
+Ces cinq repères se dessinent en une **boîte à moustaches** : la boîte va de Q1 à Q3 (la moitié
+centrale des commandes), le trait au milieu est la médiane, les traits qui dépassent vont jusqu'aux
+valeurs « normales », et les points isolés sont les valeurs atypiques.
+
+![Boîte à moustaches des montants Cyclo'Nord : minimum 15 €, Q1 50 €, médiane 177 €, Q3 1 790 €, seuil haut 4 400 €, puis 14 valeurs atypiques dont la flotte à 379 050 € ; la médiane est collée à gauche, distribution étalée vers la droite](images/boite-a-moustaches-anatomie.svg)
+
+*Google Sheets ne dessine pas ce graphique (voir cours 04) : on le lit ici pour comprendre, et on
+donne les quartiles dans un tableau.*
+
 ---
 
 ## 4. L'écart-type, en une phrase

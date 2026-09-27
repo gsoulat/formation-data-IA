@@ -5,8 +5,11 @@
 > par mois. »* Avec `SUMIFS`, ce serait des dizaines de formules. Avec un tableau croisé dynamique,
 > c'est quelques clics.
 
-| Jour | Mercredi matin | Durée démo | 45 min | Mise en pratique | [Exercice guidé, partie C](05-exercice-guide-cyclonord.md) |
-|---|---|---|---|---|---|
+| Jour | Durée démo | Mise en pratique |
+|---|---|---|
+| Mercredi matin | 45 min | [Exercice guidé, partie C](05-exercice-guide-cyclonord.md) (après-midi) |
+
+Pré-requis : [cours 01](01-statistiques-descriptives.md) et [cours 02](02-dispersion-et-pieges-de-la-moyenne.md) (`SUMIFS`, `FILTER`, plages nommées).
 
 ## Ce que tu sauras faire
 

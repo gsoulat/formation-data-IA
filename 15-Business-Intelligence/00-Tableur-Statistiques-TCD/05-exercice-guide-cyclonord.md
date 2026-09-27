@@ -173,10 +173,10 @@ Crée un onglet `Dispersion`. Même règle : libellé en A, formule en B.
 
 | Libellé | Formule | Résultat attendu |
 |---|---|---|
-| Moyenne sans la commande géante | `=AVERAGE(FILTER(Montant; Montant<379050))` | **1 063,15 €** |
-| Médiane sans la commande géante | `=MEDIAN(FILTER(Montant; Montant<379050))` | **177,00 €** |
+| Moyenne sans la commande géante | `=AVERAGE(FILTER(Montant; Montant<>379050))` | **1 063,15 €** |
+| Médiane sans la commande géante | `=MEDIAN(FILTER(Montant; Montant<>379050))` | **177,00 €** |
 
-`FILTER(les valeurs ; la condition)` *(FILTRE)* : « garde seulement les montants inférieurs à 379 050 ».
+`FILTER(les valeurs ; la condition)` *(FILTRE)* : « garde seulement les montants différents de 379 050 » (`<>` veut dire « différent de »).
 
 ❓ **Question B2.** Une seule commande sur 613 fait perdre 37 % à la moyenne. Et la médiane ?
 Lequel des deux indicateurs donnerais-tu à Nadia, et pourquoi ?
@@ -235,7 +235,7 @@ Un histogramme montre **comment les commandes se répartissent** entre petits et
 # PARTIE C — Tableaux croisés dynamiques *(mercredi après-midi)*
 
 Un **tableau croisé dynamique** (TCD) fait en quelques clics ce que tu as fait avec des formules
-lundi et mardi. Cliquez dans `Ventes_2025`, puis *Insertion › Tableau croisé dynamique* ›
+lundi et mardi. Clique dans `Ventes_2025`, puis *Insertion › Tableau croisé dynamique* ›
 **Nouvelle feuille** › *Créer*. À droite s'ouvre l'**éditeur** : Lignes, Colonnes, Valeurs, Filtres.
 
 ## C1 · Le montant par magasin et par statut (30 min)
