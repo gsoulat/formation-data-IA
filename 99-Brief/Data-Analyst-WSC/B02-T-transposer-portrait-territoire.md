@@ -1,5 +1,9 @@
 # Brief B02-T — Portrait statistique d'un territoire : la commande est à vous
 
+> ⏸️ **Brief reporté.** Il ne fait plus partie de la semaine « Tableur : statistiques & TCD ». Il
+> sera reprogrammé après l'apprentissage de `XLOOKUP` (joindre deux fichiers), dont il a besoin. Les
+> horaires ci-dessous sont à adapter à ce moment-là (fin de journée : 17 h).
+
 ## Informations
 
 | | |

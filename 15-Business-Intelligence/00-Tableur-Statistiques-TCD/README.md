@@ -1,70 +1,74 @@
-# Module 00 — Tableur : statistiques descriptives & TCD
+# Module 00 — Tableur : statistiques descriptives et TCD, sur Google Sheets
 
 > Sous-module du parcours [Data Analyst](../../PATH_DATA_ANALYST.md) — module Business Intelligence.
 > Sommaire complet : [README du module BI](../README.md).
 
-Semaine **P2 · S39 · 21–25 septembre 2026** · Socle · 35 h · Excel (LibreOffice Calc ou Google Sheets acceptés).
+**Une semaine · 9 h – 17 h · outil unique : Google Sheets.**
+Cette page est ta **feuille de route** : chaque jour, elle te dit quoi ouvrir, quoi faire et quoi
+rendre. Tu n'as besoin d'aucun autre document pour t'organiser.
 
-Ce module est la suite directe de la semaine « Prise en main & tableur » (P1) : tu y avais **audité** un
-fichier de ventes. Ici tu le fais **parler**.
+---
+
+## La semaine en un coup d'œil
+
+| Jour | 9 h – 10 h | 10 h 15 – 12 h 30 | 13 h 30 – 16 h 30 | 16 h 30 – 17 h | À rendre |
+|---|---|---|---|---|---|
+| **Lundi** | Démo : [cours 01 — Position](01-statistiques-descriptives.md) | [Exercice guidé](05-exercice-guide-cyclonord.md) : mise en place + partie A | Exercice guidé, partie A (suite) | Correction collective de la partie A | rien |
+| **Mardi** | Démo : [cours 02 — Dispersion](02-dispersion-et-pieges-de-la-moyenne.md) | Exercice guidé, partie B | Exercice guidé, partie B (suite) | Correction collective de la partie B | rien |
+| **Mercredi** | Démo : [cours 03 — TCD](03-tableaux-croises-dynamiques.md) | Exercice guidé, partie C | Partie C (suite), rendu à **16 h 30** | Correction collective de la partie C | **Cyclo'Nord**, 16 h 30 |
+| **Jeudi** | Démo : [cours 04 — Graphiques](04-choisir-le-bon-graphique.md) | Exercice express du cours 04 (20 min), puis, dans ton classeur Cyclo'Nord, les graphiques des questions 1 et 2 (barres du CA livré par magasin, courbe du CA livré par mois) | 13 h 30 : lancement du [brief B02-A](../../99-Brief/Data-Analyst-WSC/B02-A-adapter-prix-carburants.md), puis production | Point d'étape | rien |
+| **Vendredi** | Brief B02-A : production | Brief B02-A : production | 14 h 30 revue croisée · 15 h 15 note et dépôt | **16 h 30** : retour collectif | **B02-A**, 16 h 30 |
+
+Pause du midi : 12 h 30 – 13 h 30. **Aucune échéance après 16 h 30.**
+
+## Les règles, valables toute la semaine
+
+| Règle | Détail |
+|---|---|
+| **Un seul outil** | Google Sheets. Paramètres régionaux **France** (*Fichier › Paramètres*) : dans les formules, les arguments se séparent par des **points-virgules** (`;`). Les fonctions s'écrivent en anglais (`MEDIAN`, `FILTER`…), le nom français est donné entre parenthèses. |
+| **Seul** | Tout le travail de la semaine est individuel. L'entraide est encouragée : chacun son classeur. |
+| **On ne touche pas aux données** | L'onglet importé (`Ventes_2025`, `Releve_prix`) n'est jamais modifié. Tu travailles dans tes propres onglets. |
+| **Un seul endroit pour rendre** | Ton dépôt GitHub de la semaine 1. Un dossier par rendu : **`P2-cyclonord/`** (mercredi) et **`P2-carburants/`** (vendredi). Dans chacun : un `README.md` avec **le lien** vers ton Google Sheets partagé en *Lecteur*, et l'export `.xlsx` du classeur. |
+| **Les cours sont des démos** | Le matin, le formateur montre les gestes pendant 45 min ; tu refais avec lui. Le texte du cours sert ensuite de mémo : inutile de le lire en entier avant. |
+
+## Ce que tu sauras faire vendredi soir
+
+- Résumer une colonne de chiffres avec une **médiane** et des **quartiles**, et dire pourquoi la
+  moyenne peut tromper.
+- Donner chaque chiffre avec son **périmètre** (quelles lignes ont été comptées).
+- Calculer par groupe avec `COUNTIFS`, `SUMIFS`, `MEDIAN(FILTER(…))`.
+- Construire un **tableau croisé dynamique** et y demander une somme, un nombre ou une médiane.
+- Choisir le bon **graphique** et le rendre lisible : titre qui dit le message, axes, source.
+
+## Les données
+
+Tout est dans [`donnees/`](donnees/) — origine, licence et limites dans [`donnees/SOURCES.md`](donnees/SOURCES.md).
+
+| Fichier | Lignes | Quand |
+|---|---|---|
+| `cyclonord_ventes_2025_fiable.xlsx` | 613 commandes | lundi → jeudi matin (exercice guidé) |
+| `carburants_france_releve.xlsx` | 31 277 relevés de prix | jeudi après-midi → vendredi (brief B02-A) |
 
 ## Compétences travaillées (référentiel WCS)
 
-| Code | Compétence | Niveau visé cette semaine |
+| Code | Compétence | Niveau visé |
 |---|---|---|
-| **C3.1** | Utiliser les statistiques descriptives pour faire émerger l'information | 1 → 3 |
-| **C4.2** | Visualisations descriptives : histogrammes, boîtes à moustache, nuages de points | 1 → 3 |
-| **C4.5** | Tableur et tableaux croisés dynamiques | 1 → 3 |
+| **C3.1** | Utiliser les statistiques descriptives pour faire émerger l'information | 1 (exercice guidé) → 2 (B02-A) |
+| **C4.2** | Visualisations descriptives | 1 → 2 |
+| **C4.5** | Tableur et tableaux croisés dynamiques | 1 → 2 |
 
-La semaine monte les trois niveaux : tu **imites** lundi et mardi, tu **adaptes** mercredi et jeudi,
-tu **transposes** vendredi.
+> Le niveau 3 (« transposer » : portrait statistique d'un territoire, brief B02-T) est **reporté** à
+> plus tard dans la formation, après l'apprentissage de la recherche entre deux fichiers
+> (`XLOOKUP`), dont il a besoin.
 
-## Cours
+## Avant de commencer
 
-- [01 — Statistiques descriptives : moyenne, médiane, mode](01-statistiques-descriptives.md) *(lundi)*
-- [02 — Dispersion : écart-type, quartiles et pièges de la moyenne](02-dispersion-et-pieges-de-la-moyenne.md) *(mardi)*
-- [03 — Tableaux croisés dynamiques et croisements](03-tableaux-croises-dynamiques.md) *(mercredi)*
-- [04 — Choisir le bon graphique](04-choisir-le-bon-graphique.md) *(jeudi)*
-
-## Mise en pratique
-
-| Niveau | Support | Quand |
-|---|---|---|
-| **1 · Imiter** | [Brief B02-I — Les ventes Cyclo'Nord](../../99-Brief/Data-Analyst-WSC/B02-I-imiter-ventes-cyclonord.md) · [exercice guidé pas à pas](05-exercice-guide-cyclonord.md) | lundi PM + mardi PM |
-| **2 · Adapter** | [Brief B02-A — Le carburant est-il plus cher chez nous ?](../../99-Brief/Data-Analyst-WSC/B02-A-adapter-prix-carburants.md) | mercredi + jeudi |
-| **3 · Transposer** | [Brief B02-T — Portrait statistique d'un territoire](../../99-Brief/Data-Analyst-WSC/B02-T-transposer-portrait-territoire.md) | vendredi (FOAD) |
-
-## Déroulé de la semaine
-
-| Jour | Matin | Après-midi |
-|---|---|---|
-| **Lun 21** | Cours 01 — position (moyenne, médiane, mode) | Exercice guidé, partie A |
-| **Mar 22** | Cours 02 — dispersion et pièges de la moyenne | Exercice guidé, partie B · correction collective |
-| **Mer 23** | Cours 03 — TCD | Lancement du brief **Adapter** |
-| **Jeu 24** | Cours 04 — choisir le bon graphique | Production brief Adapter · revue croisée 16 h |
-| **Ven 25** | FOAD — brief **Transposer** | Dépôt 17 h 30 · restitutions 16 h |
-
-## Jeux de données
-
-Tout est dans [`donnees/`](donnees/) — voir [`donnees/SOURCES.md`](donnees/SOURCES.md) pour l'origine,
-la licence et les limites de chaque fichier.
-
-| Fichier | Lignes | Usage |
-|---|---|---|
-| `cyclonord_ventes_2025_fiable.xlsx` | 613 | Cours + exercice guidé |
-| `cyclonord_commandes_2025_brut.xlsx` | 627 | Rappel P1 (fichier avant nettoyage) |
-| `carburants_france_releve.xlsx` | 31 277 | Brief Adapter |
-| `portrait_territoire_hdf_socle.xlsx` | 3 782 communes | Brief Transposer (socle de départ) |
-
-## Pré-requis
-
-La semaine P1 : ouvrir un classeur, trier, filtrer, mise en forme conditionnelle, tableau structuré
-(`Ctrl + L`). Aucune formule complexe n'est supposée connue.
+Il faut savoir trier, filtrer et appliquer une mise en forme conditionnelle (semaine 1), et avoir
+un compte Google.
 
 ## Ce qui vient après
 
-- **P3 (S40)** — Python : tu recalculeras ces mêmes indicateurs en code.
-- **P6 (S43)** — pandas & matplotlib : les mêmes graphiques, en Python — voir
+- **Python** : tu recalculeras ces mêmes indicateurs en code, et les chiffres devront tomber juste.
+- **pandas et matplotlib** : les mêmes graphiques, en Python — voir
   [04-Analyse-Exploratoire-EDA](../04-Analyse-Exploratoire-EDA/README.md).
-- **P25 (S11)** — Tableur expert : TCD avancés, segments, `RECHERCHEX`, Plotly — voir
-  [19-Tableur-Avance](../19-Tableur-Avance/README.md).
+- **Tableur avancé** : `XLOOKUP`, segments, tableaux de bord — voir [19-Tableur-Avance](../19-Tableur-Avance/README.md).

@@ -1,307 +1,243 @@
-# 03 — Tableaux croisés dynamiques et croisements
+# 03 — Tableaux croisés dynamiques dans Google Sheets
 
-> 🎬 **Suite du fil rouge.**
-> Mardi soir, Nadia a lu ton analyse. Elle est convaincue — et elle en veut plus :
-> *« Le CA par magasin, très bien. Mais je voudrais le CA par magasin **et** par catégorie.
-> Et par canal. Et par mois. Et le taux d'annulation par magasin. Pour jeudi. »*
-> Avec les fonctions d'hier, cela ferait environ **trois cents formules `SOMME.SI.ENS`**.
-> Tu vas apprendre à produire la même chose en quarante secondes — et à la modifier en cinq.
+> 🎬 **Suite du fil rouge.** Nadia a aimé ton « cas Arras ». Elle en veut plus : *« Le CA par
+> magasin **et** par statut. Le nombre de commandes par catégorie et par canal. Et le CA livré mois
+> par mois. »* Avec `SUMIFS`, ce serait des dizaines de formules. Avec un tableau croisé dynamique,
+> c'est quelques clics.
 
-| | |
-|---|---|
-| **Jour** | Mercredi 23/09/2026 · matin (apport) + après-midi (lancement du brief Adapter) |
-| **Durée** | ≈ 7 h |
-| **Compétences** | **C4.5** (niveau 1 → 2) · **C3.1** (niveau 2) |
-| **Données** | [`donnees/cyclonord_ventes_2025_fiable.xlsx`](donnees/cyclonord_ventes_2025_fiable.xlsx) |
-| **Pré-requis** | Cours [01](01-statistiques-descriptives.md) et [02](02-dispersion-et-pieges-de-la-moyenne.md) |
-
----
-
-## Objectifs pédagogiques
-
-À la fin de la journée, tu sauras :
-
-1. Expliquer ce qu'est un TCD : **regrouper, puis agréger**.
-2. Construire un TCD et placer correctement les champs dans les quatre zones.
-3. Changer la **fonction d'agrégation** (somme, moyenne, nombre, max…) en connaissant le piège du
-   `Nombre` par défaut.
-4. Afficher les valeurs en **pourcentage** (du total, de la ligne, de la colonne).
-5. **Grouper** des dates par mois / trimestre et des nombres par tranches.
-6. Filtrer un TCD avec les **segments** et lire un **graphique croisé dynamique**.
-7. Connaître les **limites** du TCD — notamment l'absence de médiane — et savoir les contourner.
-
----
-
-## 1. Ce qu'est un TCD, en une phrase
-
-> Un tableau croisé dynamique **regroupe** les lignes qui se ressemblent, puis **calcule un
-> indicateur** sur chaque groupe.
-
-C'est exactement ce que tu faisais hier avec `SOMME.SI.ENS`, mais :
-
-| Avec des formules | Avec un TCD |
-|---|---|
-| Une formule par case | Un glisser-déposer pour tout le tableau |
-| Tu dois connaître les valeurs à l'avance (« Lille », « Arras »…) | Il découvre les modalités tout seul |
-| Ajouter un magasin = réécrire | Ajouter un magasin = actualiser |
-| Changer somme → moyenne = tout réécrire | Deux clics |
-
-> 🧠 **L'idée à retenir** : un TCD transforme des **lignes de détail** en **tableau de synthèse**.
-> C'est le geste le plus rentable de toute la bureautique d'analyse.
-
----
-
-## 2. Préparer les données (l'étape que tout le monde saute)
-
-Un TCD exige une **table plate** : une ligne = une observation, une colonne = une variable, une
-seule ligne d'en-tête, aucune cellule fusionnée, aucune ligne vide, aucun total intercalé.
-
-**Check-list avant de cliquer :**
-
-- [ ] Une seule ligne d'en-tête, en ligne 1
-- [ ] Aucun en-tête vide ni en double
-- [ ] Aucune ligne ni colonne entièrement vide au milieu de la plage
-- [ ] Aucune cellule fusionnée
-- [ ] Les dates sont des **dates** (alignées à droite), pas du texte
-- [ ] Les nombres sont des **nombres** (pas de `1 250 €` saisi en texte)
-- [ ] La plage est convertie en **tableau structuré** (`Ctrl + L`), nommée `T_Ventes`
-
-> 🧰 **Pourquoi le tableau structuré ?** Parce que la source du TCD devient `T_Ventes` au lieu de
-> `A1:M614`. Si le mois prochain le fichier passe à 900 lignes, tu fais *Actualiser* et c'est fini.
-> Sinon, tu dois retoucher la plage à la main — et neuf fois sur dix, on oublie.
-
----
-
-## 3. Créer son premier TCD
-
-**Insertion › Tableau croisé dynamique › Nouvelle feuille de calcul.**
-
-Le volet de droite propose la liste des champs et **quatre zones** :
-
-```
-┌─────────────────────────────┬───────────────────────────────┐
-│  FILTRES                    │  COLONNES                     │
-│  (un filtre global au-dessus│  (les modalités se déploient  │
-│   du tableau)               │   horizontalement)            │
-├─────────────────────────────┼───────────────────────────────┤
-│  LIGNES                     │  VALEURS                      │
-│  (les modalités se déploient│  (le calcul : somme, moyenne, │
-│   verticalement)            │   nombre…)                    │
-└─────────────────────────────┴───────────────────────────────┘
-```
-
-| Zone | Ce qu'on y met | Exemple Cyclo'Nord |
-|---|---|---|
-| **Lignes** | une variable **qualitative** | `Magasin`, `Categorie` |
-| **Colonnes** | une deuxième variable qualitative, peu de modalités | `Canal` (3 modalités) |
-| **Valeurs** | une variable **quantitative** à agréger | `Montant_TTC` |
-| **Filtres** | ce qui restreint le périmètre | `Statut` |
-
-> ⚠️ **Règle de lisibilité** : en colonnes, **jamais plus de 6 à 8 modalités**. Un TCD de 40 colonnes
-> ne se lit pas. Si tu as beaucoup de modalités, mets-les en lignes.
-
-### Le premier résultat : `Categorie` × `Canal`, somme des montants
-
-| Catégorie | Click & Collect | Magasin | Site web | **Total** |
-|---|---|---|---|---|
-| Accessoires | 2 506 € | 7 292 € | 5 932 € | 15 731 € |
-| Atelier | — | 7 875 € | — | 7 875 € |
-| VAE | 52 088 € | 526 876 € | 93 858 € | 672 822 € |
-| VTT | 21 787 € | 68 396 € | 67 093 € | 157 276 € |
-| Vélo urbain | 16 299 € | 56 346 € | 103 352 € | 175 996 € |
-| **Total** | **92 680 €** | **666 785 €** | **270 235 €** | **1 029 700 €** |
-
-Deux informations sautent aux yeux, qu'aucun tri ni filtre ne t'aurait données aussi vite :
-
-1. **L'Atelier est à 100 % en magasin.** Zéro en ligne, zéro en Click & Collect. Structurellement
-   logique (on ne répare pas un vélo à distance) — mais c'est un angle mort : aucune prise de
-   rendez-vous en ligne n'existe.
-2. **Le VAE pèse 65 % du montant total** alors qu'il ne représente que 97 commandes sur 613 (16 %).
-   Le chiffre d'affaires de l'enseigne tient à une catégorie minoritaire en volume.
-
----
-
-## 4. Changer le calcul : la zone Valeurs
-
-**Clic droit sur une valeur › Paramètres des champs de valeurs** (ou double-clic sur l'en-tête de
-la valeur).
-
-| Fonction | Question à laquelle elle répond |
-|---|---|
-| **Somme** | « combien ça pèse ? » |
-| **Nombre** | « combien de fois ? » |
-| **Moyenne** | « combien en moyenne par commande ? » |
-| **Max / Min** | « quelle est la plus grosse / petite ? » |
-| **Écart-type** | « est-ce régulier ? » |
-
-> 🚩 **Le piège numéro un du TCD.** Quand tu glisses un champ dans *Valeurs*, Excel choisit
-> **Somme** si la colonne ne contient que des nombres, et **Nombre** dès qu'elle contient **une
-> seule** cellule vide ou textuelle. Sur `Note_client` (53 cellules vides), tu obtiendras un
-> « Nombre de Note_client » par défaut. Beaucoup de rapports faux naissent exactement là.
-> **Vérifie systématiquement l'intitulé de ta valeur.**
-
-### Le même croisement, en moyenne
-
-| Catégorie | Click & Collect | Magasin | Site web |
-|---|---|---|---|
-| Accessoires | 81 € | 84 € | 84 € |
-| VAE | 2 604 € | **10 538 €** | 3 476 € |
-| VTT | 1 981 € | 1 954 € | 1 597 € |
-| Vélo urbain | 905 € | 1 174 € | 2 650 € |
-
-Le 10 538 € du VAE en magasin doit te faire tiquer immédiatement : c'est la commande de flotte
-annulée à 379 050 € qui gonfle la case. **Un TCD ne protège de rien** — les pièges d'hier
-s'appliquent case par case.
-
-### Afficher en pourcentage
-
-*Paramètres des champs de valeurs › onglet « Afficher les valeurs »* :
-
-| Option | Utilité |
-|---|---|
-| **% du total général** | poids de chaque case dans l'ensemble |
-| **% du total de la ligne** | répartition **au sein** de chaque catégorie |
-| **% du total de la colonne** | répartition au sein de chaque canal |
-| **% de** (valeur de référence) | tout comparer à une modalité choisie |
-| **Différence par rapport à** | écart au mois précédent, par exemple |
-
-C'est le moyen le plus rapide de produire un taux. Exemple : `Magasin` en lignes, `Statut` en
-colonnes, `ID_commande` en valeurs (Nombre), affichage **% du total de la ligne** :
-
-| Magasin | Annulée | En cours | **Livrée** | Retournée | **Annulée + Retournée** |
+| Jour | Mercredi matin | Durée démo | 45 min | Mise en pratique | [Exercice guidé, partie C](05-exercice-guide-cyclonord.md) |
 |---|---|---|---|---|---|
-| Lens | 11,7 % | 11,7 % | **68,8 %** | 7,8 % | 19,5 % |
-| Dunkerque | 16,1 % | 11,3 % | 67,7 % | 4,8 % | 21,0 % |
-| Lille | 12,0 % | 9,6 % | 63,9 % | 14,5 % | 26,5 % |
-| Amiens | 15,9 % | 15,9 % | 57,3 % | 11,0 % | 26,8 % |
-| Beauvais | 6,2 % | 15,4 % | 56,9 % | 21,5 % | 27,7 % |
-| Roubaix | 12,9 % | 18,6 % | 50,0 % | 18,6 % | 31,4 % |
-| Valenciennes | 13,8 % | 6,2 % | 58,8 % | 21,2 % | 35,0 % |
-| **Arras** | **20,2 %** | 16,0 % | 48,9 % | 14,9 % | **35,1 %** |
 
-Arras cumule le plus fort taux d'annulation **et** le plus faible taux de livraison. L'histoire des
-deux jours précédents se confirme sous un troisième angle.
+## Ce que tu sauras faire
+
+- Dire en une phrase à quoi sert un tableau croisé dynamique.
+- Créer un TCD dans Google Sheets et placer les champs dans Lignes, Colonnes, Valeurs et Filtres.
+- Choisir le calcul : `SUM`, `COUNTA`, `AVERAGE` ou `MEDIAN`.
+- Afficher un résultat en pourcentage du total.
+- Regrouper des dates par mois.
 
 ---
 
-## 5. Grouper
+## 1. À quoi sert un TCD
 
-### Grouper des dates
+Un **tableau croisé dynamique** (TCD) est un tableau de synthèse que Sheets construit pour toi. Il
+fait deux choses :
 
-C'est la fonction la plus utile du TCD et la moins connue. Mets `Date_commande` en lignes →
-**clic droit › Grouper** → coche *Mois*, *Trimestres*, *Années*.
+1. il **regroupe** les lignes qui ont la même valeur (toutes les commandes d'Arras ensemble) ;
+2. il **calcule** un indicateur sur chaque groupe (la somme, le nombre, la médiane…).
 
-Excel crée les niveaux tout seuls. Tu n'as **pas besoin** d'ajouter une colonne `Mois` au fichier
-source.
+C'est exactement ce que tu as fait lundi avec `SUMIFS` et `COUNTIFS`. La différence : tu n'écris
+aucune formule, Sheets trouve tout seul la liste des magasins, et changer « somme » en « médiane »
+prend deux clics.
 
-| Mois | Nb commandes livrées | CA livré |
+---
+
+## 2. Préparer les données
+
+Un TCD a besoin d'un tableau propre. Vérifie trois choses avant de cliquer :
+
+- **une ligne = une commande** : pas de ligne de total, pas de ligne vide au milieu ;
+- **une seule ligne d'en-têtes**, en ligne 1, chaque colonne avec un nom unique ;
+- **les types sont bons** : les dates sont des dates, les montants des nombres.
+
+L'onglet `Ventes_2025` coche déjà ces cases : 613 commandes, lignes 2 à 614, en-têtes en ligne 1.
+
+---
+
+## 3. Créer le TCD
+
+1. Clique dans n'importe quelle cellule du tableau `Ventes_2025`.
+2. *Insertion › Tableau croisé dynamique*.
+3. Vérifie la plage de données proposée : `Ventes_2025!A1:M614`.
+4. Choisis d'insérer dans une **nouvelle feuille**, puis *Créer*.
+
+Sheets ouvre une feuille vide et, à droite, le panneau **Éditeur de tableau croisé dynamique**. Il
+contient quatre sections, chacune avec un bouton *Ajouter* qui liste les colonnes de ta source :
+
+| Section | Ce qu'on y met | Exemple Cyclo'Nord |
 |---|---|---|
-| Janvier | 32 | 30 273 € |
-| … | … | … |
-| Septembre | 44 | **36 588 €** |
-| Novembre | 35 | 37 250 € |
+| **Lignes** | une colonne de catégories, affichée de haut en bas | `Magasin` |
+| **Colonnes** | une deuxième colonne de catégories, avec peu de valeurs différentes | `Statut` (4 valeurs) |
+| **Valeurs** | ce qu'on calcule | `Montant_TTC` |
+| **Filtres** | ce qu'on garde ou qu'on écarte | `Statut` = Livrée |
 
-> ⚠️ Si *Grouper* est grisé, c'est que ta colonne de dates contient **du texte** ou **une cellule
-> vide**. Retour au nettoyage.
+> ⚠️ En Colonnes, garde une colonne qui a **peu de valeurs** (3 ou 4). Un tableau de 50 colonnes ne
+> se lit pas.
 
-### Grouper des nombres par tranches
+### Exemple 1 — CA par magasin et par statut
 
-Même geste sur une colonne numérique : *clic droit › Grouper*, puis pas de 500. Tu obtiens en trois
-clics la **table des effectifs** dont tu auras besoin demain pour l'histogramme.
+Lignes : `Magasin`. Colonnes : `Statut`. Valeurs : `Montant_TTC`. Résultat attendu :
+
+| Magasin | Annulée | En cours | Livrée | Retournée | Total |
+|---|---|---|---|---|---|
+| Amiens | 14 760,20 | 11 402,80 | 47 930,05 | 11 091,05 | 85 184,10 |
+| Arras | **392 145,75** | 7 828,85 | **29 214,80** | 13 427,40 | 442 616,80 |
+| Beauvais | 3 293,00 | 14 642,05 | 42 822,10 | 11 537,35 | 72 294,50 |
+| Dunkerque | 10 829,40 | 7 044,20 | 53 362,40 | 703,00 | 71 939,00 |
+| Lens | 12 432,90 | 64 260,20 | 56 878,50 | 10 704,60 | 144 276,20 |
+| Lille | 22 957,70 | 2 066,40 | 47 768,75 | 9 890,50 | 82 683,35 |
+| Roubaix | 4 764,45 | 8 765,65 | 29 543,50 | 15 985,75 | 59 059,35 |
+| Valenciennes | 12 795,75 | 4 915,20 | 36 357,35 | 17 578,90 | 71 647,20 |
+| **Total** | 473 979,15 | 120 925,35 | **343 877,45** | 90 918,55 | **1 029 700,50** |
+
+L'histoire d'hier saute aux yeux en une seule image : Arras a le plus gros CA total, mais presque
+tout est dans la colonne *Annulée*. En CA livré, Arras est dernier.
 
 ---
 
-## 6. Segments et graphiques croisés
+## 4. Choisir le calcul : « Résumer par »
 
-**Segments** (*Analyse du TCD › Insérer un segment*) : des boutons de filtre visuels. Bien plus
-lisibles que la liste déroulante, et un même segment peut piloter **plusieurs TCD** à la fois
-(*Connexions de rapport*) — c'est l'embryon d'un tableau de bord.
+Dans la section Valeurs, chaque champ a une liste déroulante **Résumer par**. Pour un nombre, Sheets
+choisit `SUM` par défaut. Les quatre calculs à connaître :
 
-**Chronologie** (*Insérer une chronologie*) : le même principe sur un champ de type date, avec un
-curseur mois / trimestre / année.
-
-**Graphique croisé dynamique** (*Analyse du TCD › Graphique croisé dynamique*) : il se met à jour en
-même temps que le TCD et hérite de ses filtres. C'est le pont vers le cours de demain.
-
----
-
-## 7. Les limites du TCD (à connaître avant de se faire piéger)
-
-| Limite | Contournement |
+| Résumer par | Question à laquelle il répond |
 |---|---|
-| **Pas de médiane** dans les fonctions d'agrégation | Passer par un filtre + `MEDIANE`, ou une formule matricielle, ou Python (semaine P6) |
-| Le TCD **ne se recalcule pas tout seul** quand la source change | *Données › Actualiser tout* — à faire **avant** toute capture d'écran |
-| Une source en plage figée (`A1:M614`) ignore les lignes ajoutées | Toujours partir d'un **tableau structuré** |
-| Les **cellules vides** deviennent des blancs ambigus | *Options du TCD › « Pour les cellules vides, afficher : » 0* — et dire dans la note si 0 signifie « zéro » ou « pas de donnée » |
-| Les **totaux de moyennes** ne sont pas la moyenne des moyennes | Le total général est recalculé sur toutes les lignes : c'est correct, mais ne colle pas à la somme de la colonne |
-| Une modalité mal orthographiée crée une **ligne en double** | C'est le travail de la semaine P1 : nettoyer avant |
+| `SUM` (somme) | Combien ça pèse en euros ? |
+| `COUNTA` (NBVAL : compte les cellules non vides) | Combien de commandes ? |
+| `AVERAGE` (moyenne) | Combien en moyenne par commande ? |
+| `MEDIAN` (médiane) | Quelle est la commande « typique » ? |
 
-> 🚩 **L'absence de médiane n'est pas un détail.** Sur des données asymétriques — c'est-à-dire la
-> plupart des données économiques — le TCD te pousse structurellement vers la moyenne, donc vers le
-> chiffre le plus trompeur. Sache-le, et compense.
+> 🚩 **Lis toujours l'en-tête de ta valeur.** Sheets l'écrit en clair, par exemple
+> `SUM de Montant_TTC`. Si tu lis « SUM » alors que tu voulais un nombre de commandes, ton tableau
+> est faux.
+
+### Exemple 2 — Nombre de commandes par catégorie et par canal
+
+Lignes : `Categorie`. Colonnes : `Canal`. Valeurs : `ID_commande`, Résumer par `COUNTA`. On compte
+une colonne de texte, donc on prend `COUNTA` : chaque identifiant rempli = une commande.
+
+| Catégorie | Click & Collect | Magasin | Site web | Total |
+|---|---|---|---|---|
+| Accessoires | 31 | 87 | 71 | 189 |
+| Atelier | | 134 | | 134 |
+| VAE | 20 | 50 | 27 | 97 |
+| VTT | 11 | 35 | 42 | 88 |
+| Vélo urbain | 18 | 48 | 39 | 105 |
+| **Total** | 80 | 354 | 179 | **613** |
+
+Les cases vides de l'Atelier ne sont pas une erreur : aucune réparation n'est commandée en ligne. Une
+case vide dans un TCD veut dire « aucune ligne », pas « zéro euro saisi ».
+
+### Exemple 3 — Médiane du montant par magasin
+
+Lignes : `Magasin`. Valeurs : ajoute **deux fois** `Montant_TTC`, l'une en `AVERAGE`, l'autre en
+`MEDIAN`.
+
+| Magasin | AVERAGE de Montant_TTC | MEDIAN de Montant_TTC |
+|---|---|---|
+| Amiens | 1 038,83 | 507,82 |
+| Arras | **4 708,69** | **90,00** |
+| Beauvais | 1 112,22 | 207,00 |
+| Dunkerque | 1 160,31 | 549,00 |
+| Lens | 1 873,72 | 549,00 |
+| Lille | 996,18 | 549,00 |
+| Roubaix | 843,70 | 101,05 |
+| Valenciennes | 895,59 | 92,20 |
+| **Total** | 1 679,77 | 177,00 |
+
+> ✅ **Un vrai avantage de Sheets** : il propose `MEDIAN` directement dans le TCD. Hier, tu devais
+> écrire `MEDIAN(FILTER(Montant; Magasin="Arras"))` magasin par magasin ; ici, les huit médianes
+> arrivent d'un coup. Arras a la plus forte moyenne et la plus faible médiane : la commande annulée
+> de 379 050 € tire la moyenne vers le haut, pas la médiane.
 
 ---
 
-## 8. Les quatre croisements qui valent toujours le coup
+## 5. Filtrer et afficher en % du total
 
-Face à un fichier inconnu, ces quatre TCD donnent 80 % de la compréhension en dix minutes :
+**Filtrer.** Dans la section Filtres, ajoute `Statut`. Ouvre la liste *Statut*, décoche tout sauf
+*Livrée*, puis *OK*. Le TCD ne calcule plus que sur les 360 commandes livrées.
 
-1. **Volume** — une dimension en lignes, `Nombre` en valeurs. *Qui est gros, qui est petit ?*
-2. **Poids** — même chose en `Somme`. *Où est l'argent (ou le volume) ?*
-3. **Intensité** — même chose en `Moyenne`. *Qui a le plus gros ticket ?*
-4. **Temps** — la date en lignes, groupée par mois. *Est-ce que ça monte ou ça descend ?*
+**Afficher en %.** Dans la section Valeurs, la liste **Afficher en tant que** vaut *Par défaut*.
+Choisis *% du total général* : chaque case devient sa part du total.
 
-Les trois premiers ne disent pas la même chose, et **l'écart entre eux est souvent l'information
-principale** : le VAE, c'est 16 % des commandes (volume), 65 % du montant (poids) et le plus gros
-ticket (intensité). Trois réponses, un seul fichier.
+### Exemple 4 — Part de chaque magasin dans le CA livré
+
+Lignes : `Magasin`. Valeurs : `Montant_TTC` en `SUM`, affiché en % du total général. Filtre :
+`Statut` = Livrée.
+
+| Magasin | Part du CA livré |
+|---|---|
+| Amiens | 13,9 % |
+| Arras | **8,5 %** |
+| Beauvais | 12,5 % |
+| Dunkerque | 15,5 % |
+| Lens | **16,5 %** |
+| Lille | 13,9 % |
+| Roubaix | 8,6 % |
+| Valenciennes | 10,6 % |
+| **Total** | 100 % |
+
+Le total fait toujours 100 % : c'est ta vérification. Le même réglage existe en % du total de la
+ligne ou de la colonne, pour répartir *à l'intérieur* d'un magasin ou d'un statut.
 
 ---
 
-## 9. Mémo des gestes du jour
+## 6. Grouper les dates par mois
+
+Mettre `Date_commande` en Lignes donne une ligne par jour : illisible. Pour regrouper :
+
+1. dans le TCD, fais un **clic droit sur une date** ;
+2. *Créer un groupe de dates de tableau croisé dynamique › Mois*.
+
+Tu n'as ajouté aucune colonne `Mois` à tes données : c'est le TCD qui regroupe.
+
+### Exemple 5 — CA livré par mois en 2025
+
+Lignes : `Date_commande` groupée par mois. Valeurs : `Montant_TTC` en `SUM`, et `ID_commande` en
+`COUNTA`. Filtre : `Statut` = Livrée.
+
+| Mois | Commandes livrées | CA livré |
+|---|---|---|
+| Janvier | 32 | 30 273,05 |
+| Février | 34 | 28 189,30 |
+| Mars | 31 | 31 668,40 |
+| Avril | 22 | 22 178,95 |
+| Mai | 26 | **17 145,30** |
+| Juin | 33 | 34 781,80 |
+| Juillet | 25 | 18 912,00 |
+| Août | 20 | 21 964,40 |
+| Septembre | 44 | 36 587,90 |
+| Octobre | 29 | 32 625,50 |
+| Novembre | 35 | **37 249,55** |
+| Décembre | 29 | 32 301,30 |
+| **Total** | **360** | **343 877,45** |
+
+Mai est le mois le plus faible, novembre le plus fort. Septembre a le plus de commandes livrées (44).
+
+---
+
+## 7. Le TCD se met à jour tout seul
+
+Quand les données de sa plage changent (par exemple quand on importe le fichier du mois suivant),
+le TCD se recalcule immédiatement, sans bouton à cliquer. Seule limite : il ne lit que sa plage
+(`A1:M614`). S'il y a plus de lignes, élargis la plage en haut du panneau de l'éditeur.
+
+> 🕵️ Un chiffre te surprend ? Affiche les lignes qui sont derrière la case avec `FILTER`, sans
+> toucher à `Ventes_2025` : `=FILTER(Ventes_2025!A2:M614; Magasin="Arras"; Statut="Annulée")`.
+> C'est ainsi qu'on repère la commande CMD-20250566 à 379 050 €.
+
+---
+
+## Mémo
 
 | Geste | Où |
 |---|---|
 | Créer un TCD | *Insertion › Tableau croisé dynamique* |
-| Changer somme / moyenne / nombre | Clic droit sur une valeur › *Paramètres des champs de valeurs* |
-| Afficher en % | idem › onglet *Afficher les valeurs* |
-| Grouper des dates ou des tranches | Clic droit sur une étiquette de ligne › *Grouper* |
-| Actualiser après modification de la source | *Données › Actualiser tout* (`Ctrl + Alt + F5`) |
-| Insérer un segment | *Analyse du TCD › Insérer un segment* |
-| Graphique croisé | *Analyse du TCD › Graphique croisé dynamique* |
-| Aller voir les lignes derrière une case | **Double-clic sur la case** → Excel extrait le détail |
+| Placer les champs | Panneau de l'éditeur : Lignes, Colonnes, Valeurs, Filtres › *Ajouter* |
+| Changer le calcul | Valeurs › **Résumer par** : `SUM`, `COUNTA`, `AVERAGE`, `MEDIAN` |
+| Afficher en % | Valeurs › **Afficher en tant que** › % du total général |
+| Garder un seul statut | Filtres › `Statut` › cocher *Livrée* |
+| Grouper par mois | Clic droit sur une date › *Créer un groupe de dates de tableau croisé dynamique › Mois* |
 
-> 🕵️ Le **double-clic sur une case** est le meilleur outil de vérification qui existe. Un chiffre te
-> surprend ? Double-clique : Excel crée une feuille avec les lignes exactes qui le composent. C'est
-> comme ça qu'on trouve la commande à 379 050 € en quinze secondes.
+## Auto-évaluation
 
----
+- [ ] Je sais dire en une phrase ce que fait un TCD : regrouper, puis calculer.
+- [ ] Je sais placer un champ dans Lignes, Colonnes, Valeurs ou Filtres.
+- [ ] Je lis l'en-tête de ma valeur pour vérifier `SUM`, `COUNTA`, `AVERAGE` ou `MEDIAN`.
+- [ ] Je sais obtenir la médiane par magasin directement dans le TCD.
+- [ ] Je sais afficher en % du total et regrouper des dates par mois.
 
-## 10. À toi de jouer
-
-➡️ **Lancement cet après-midi : [Brief B02-A — Le carburant est-il plus cher chez nous ?](../../99-Brief/Data-Analyst-WSC/B02-A-adapter-prix-carburants.md)**
-*(niveau 2 · adapter — 31 277 lignes de données réelles, en binôme, rendu jeudi 17 h 30)*
-
----
-
-## 11. Auto-évaluation
-
-- [ ] Je sais dire en une phrase ce que fait un TCD.
-- [ ] Je connais la check-list de préparation d'une table plate.
-- [ ] Je sais placer un champ dans la bonne zone, et pourquoi pas plus de 8 modalités en colonnes.
-- [ ] Je vérifie toujours si ma valeur est en *Somme* ou en *Nombre*.
-- [ ] Je sais afficher un pourcentage de ligne, de colonne et du total général.
-- [ ] Je sais grouper des dates par mois sans ajouter de colonne au fichier source.
-- [ ] Je sais que le TCD ne propose pas la médiane, et ce que je fais à la place.
-- [ ] Je pense à *Actualiser* avant de lire ou de capturer un TCD.
-- [ ] Je sais retrouver les lignes derrière n'importe quelle case.
-
----
-
-## 12. Pour aller plus loin
-
-- Microsoft — [créer un tableau croisé dynamique](https://support.microsoft.com/fr-fr/office/cr%C3%A9er-un-tableau-crois%C3%A9-dynamique-pour-analyser-des-donn%C3%A9es-de-feuille-de-calcul-a9a84538-bfe9-40a9-a8e9-f99134456576)
-- Microsoft — [afficher des calculs dans un TCD](https://support.microsoft.com/fr-fr/office/afficher-diff%C3%A9rents-calculs-dans-les-champs-de-valeurs-d-un-tableau-crois%C3%A9-dynamique-011bf0e6-2db8-4dd1-9b2e-4be2b6dd6ea1)
-- Microsoft — [grouper ou dissocier des données dans un TCD](https://support.microsoft.com/fr-fr/office/grouper-ou-dissocier-des-donn%C3%A9es-dans-un-tableau-crois%C3%A9-dynamique-c9d1ddd0-6580-47d1-82bc-c84a5a340725)
-- Google — [créer des tableaux croisés dynamiques dans Sheets](https://support.google.com/docs/answer/1272900)
+⬅️ Retour : [02 — Dispersion et pièges de la moyenne](02-dispersion-et-pieges-de-la-moyenne.md)
+· 🛠️ Mise en pratique : [exercice guidé, partie C](05-exercice-guide-cyclonord.md)
 
 ➡️ **Demain : [04 — Choisir le bon graphique](04-choisir-le-bon-graphique.md)**
