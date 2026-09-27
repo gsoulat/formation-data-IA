@@ -81,6 +81,14 @@ Dans Sheets : `=MODE(plage)`.
 
 Nos 7 commandes : moyenne 120 € > médiane 40 € → étalées à droite → on donne la médiane.
 
+> 🎬 **Vidéo — La médiane robuste** (7 min) : les 7 commandes de cette page, puis la commande
+> géante de Cyclo'Nord (moyenne 1 680 € → 1 063 € sans elle, médiane toujours 177 €).
+>
+> [![La médiane robuste, vidéo de 7 minutes](images/video-mediane-robuste.jpg)](videos/la-mediane-robuste.mp4)
+>
+> *Dans la vidéo, on « trie » le fichier pour trouver la plus grosse commande. Dans ce module, on ne
+> trie jamais `Ventes_2025` : on utilise `=LARGE(Montant; 1)` ou `FILTER` (cours 02).*
+
 ---
 
 ## 4. L'étendue et les quartiles
@@ -142,6 +150,14 @@ beaucoup de valeurs (613 commandes), les deux calculs donnent presque le même r
 | grand par rapport à la moyenne | les valeurs sont très dispersées, la moyenne résume mal |
 
 Cyclo'Nord : moyenne 1 680 €, écart-type 15 505 € → neuf fois la moyenne : très dispersé.
+
+> 🎬 **Vidéo — L'écart-type : quand la moyenne vous ment** (1 min) : un écart-type neuf fois plus
+> grand que la moyenne, sur les commandes de Cyclo'Nord.
+>
+> [![L'écart-type, vidéo d'une minute](images/video-ecart-type.jpg)](videos/ecart-type-quand-la-moyenne-ment.mp4)
+>
+> *Une nuance : la vidéo dit que « l'écrasante majorité » des commandes fait moins de 200 €. En
+> réalité, c'est **la moitié** (314 sur 613), ce que dit la médiane de 177 €.*
 
 ---
 

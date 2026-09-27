@@ -100,6 +100,14 @@ moyenne ne décrit pas une commande « normale ».
 
 Retiens juste ceci : comme la moyenne, l'écart-type est **sensible** aux valeurs extrêmes.
 
+> 🎬 **Vidéo — L'écart-type : quand la moyenne vous ment** (1 min) : un écart-type neuf fois plus
+> grand que la moyenne, sur les commandes de Cyclo'Nord.
+>
+> [![L'écart-type, vidéo d'une minute](images/video-ecart-type.jpg)](videos/ecart-type-quand-la-moyenne-ment.mp4)
+>
+> *Une nuance : la vidéo dit que « l'écrasante majorité » des commandes fait moins de 200 €. En
+> réalité, c'est **la moitié** (314 sur 613), ce que dit la médiane de 177 €.*
+
 ---
 
 ## 5. Les valeurs extrêmes
@@ -187,6 +195,14 @@ jamais menti : Arras vend surtout de petites commandes.
 
 Ce que tu réponds au directeur : *« En chiffre livré, Arras est dernier avec 29 214,80 €. Le total
 de 442 616,80 € vient d'une commande de flotte annulée. »*
+
+> 🎬 **Vidéo — Le mirage du magasin numéro un** (1 min) : le cas Arras en une minute.
+>
+> [![Le mirage du magasin numéro un, vidéo d'une minute](images/video-mirage-magasin.jpg)](videos/le-mirage-du-magasin-numero-un.mp4)
+>
+> *Seuls les chiffres d'Arras sont réels (442 617 € commandés, 29 215 € livrés, commande de
+> 379 050 € annulée). Le « 7 250 000 € » de l'écran d'accueil et les montants des autres magasins
+> sont des illustrations : les vrais sont dans ton classeur. **Exercice** : repère les écarts.*
 
 ---
 

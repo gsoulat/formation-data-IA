@@ -12,6 +12,17 @@ rendre. Tu n'as besoin d'aucun autre document pour t'organiser.
 *Le module en une image. Attention, dans l'encadré rouge : le petit diagramme en barres du milieu est
 lui aussi un **mauvais exemple** : ses graduations (100, 175, 110, 105) ne sont pas dans l'ordre.*
 
+### Les vidéos du module
+
+| Vidéo | Durée | Où elle sert |
+|---|---|---|
+| [La médiane robuste](videos/la-mediane-robuste.mp4) | 7 min | [cours 00](00-maths-a-la-main.md), section 3 · lundi |
+| [L'écart-type : quand la moyenne vous ment](videos/ecart-type-quand-la-moyenne-ment.mp4) | 1 min | [cours 02](02-dispersion-et-pieges-de-la-moyenne.md), section 4 · mardi |
+| [Le mirage du magasin numéro un](videos/le-mirage-du-magasin-numero-un.mp4) | 1 min | [cours 02](02-dispersion-et-pieges-de-la-moyenne.md), section 7 (le cas Arras) · mardi |
+
+*Vidéos générées avec NotebookLM à partir des cours. Chacune est suivie, dans le cours, de ce
+qu'elle simplifie ou invente.*
+
 ---
 
 ## Le parcours en un coup d'œil
