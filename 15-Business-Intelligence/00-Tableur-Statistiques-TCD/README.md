@@ -103,6 +103,17 @@ un compte Google.
 
 ## Ce qui vient après
 
+Les gestes de ce module ne disparaissent pas quand l'outil change : ils changent de nom.
+
+| Dans Google Sheets | En SQL | Dans Power BI |
+|---|---|---|
+| un onglet de données (`Ventes_2025`) | une table | une table du modèle |
+| un filtre, `FILTER(…; condition)` | `WHERE` | un filtre ou un segment |
+| un TCD : regrouper, puis additionner ou compter | `GROUP BY` + `SUM`, `COUNT` | un visuel agrégé |
+| `XLOOKUP` sur un code | `JOIN` | une relation entre deux tables |
+| une colonne calculée par formule | une expression dans le `SELECT` | une colonne calculée ou une mesure DAX |
+
+
 - **Python** : tu recalculeras ces mêmes indicateurs en code, et les chiffres devront tomber juste.
 - **pandas et matplotlib** : les mêmes graphiques, en Python — voir
   [04-Analyse-Exploratoire-EDA](../04-Analyse-Exploratoire-EDA/README.md).
