@@ -47,6 +47,7 @@ Pause du midi : 12 h 30 – 13 h 30. **Aucune échéance après 16 h 30.**
 | **Seul** | Tout le travail est individuel. L'entraide est encouragée : chacun son classeur. |
 | **On ne touche pas aux données** | L'onglet importé (`Ventes_2025`, `Releve_prix`, `Communes_HDF`, `INSEE_…`) n'est jamais modifié. Tu travailles dans tes propres onglets. |
 | **Un seul endroit pour rendre** | Ton dépôt GitHub de la semaine 1. Un dossier par rendu : **`P2-cyclonord/`**, **`P2-carburants/`** et **`P2-territoire/`**. Dans chacun : un `README.md` avec **le lien** vers ton Google Sheets partagé en *Lecteur*, et l'export `.xlsx` du classeur. |
+| **Les maths à la main** | Le [cours 00 — Les maths à la main](00-maths-a-la-main.md) refait chaque calcul (moyenne, médiane, quartiles, écart-type, pourcentages, moyenne pondérée) sur 7 nombres. À lire le lundi et le mardi, puis à garder ouvert. |
 | **Les cours sont des démos** | Le matin, le formateur montre les gestes pendant 45 min ; tu refais avec lui. Le texte du cours sert ensuite de mémo : inutile de le lire en entier avant. |
 
 ## Ce que tu sauras faire à la fin des deux semaines
