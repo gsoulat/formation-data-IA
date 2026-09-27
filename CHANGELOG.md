@@ -1,3 +1,17 @@
+# [2.24.0](https://github.com/gsoulat/formation-data-IA/compare/v2.23.1...v2.24.0) (2026-09-27)
+
+
+### Bug Fixes
+
+* **data-analyst:** relecture des briefs B02-A et B02-T contre les données ([870d666](https://github.com/gsoulat/formation-data-IA/commit/870d66617857dd5998403a5aa5c0eaab24fc1018))
+
+
+### Features
+
+* **data-analyst:** brief B02-I (niveau imiter) et seuil bas négatif expliqué ([fe7c7e7](https://github.com/gsoulat/formation-data-IA/commit/fe7c7e731cafe82e8e1fee52fb332d1b5d4a2390))
+* **data-analyst:** cours 00 « les maths à la main » et deux quiz Kahoot de 25 questions ([d47dfc0](https://github.com/gsoulat/formation-data-IA/commit/d47dfc0eb5d0893929be273a24501bf0ad0b9e65))
+* **data-analyst:** module tableur sur deux semaines, B02-T réintégré et accompagné ([051f708](https://github.com/gsoulat/formation-data-IA/commit/051f7089e02fac4c3e22a0f77824aca6dc31aa33))
+
 ## [2.23.1](https://github.com/gsoulat/formation-data-IA/compare/v2.23.0...v2.23.1) (2026-09-20)
 
 
