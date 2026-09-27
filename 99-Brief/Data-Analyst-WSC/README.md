@@ -6,9 +6,9 @@
 |---|---|---|
 | 1 | S1 | [B01 — Enquête sur données ouvertes : première analyse et publication GitHub](B01-donnees-ouvertes.md) |
 | 2 | S2 | [B02 — Portrait statistique d'un territoire : indicateurs, dispersion et pièges de la moyenne](B02-portrait-statistique.md) — *version guidée, niveau 1* |
-| 2 · I | S2 · lun–mer | [Exercice guidé — Faire parler les ventes Cyclo'Nord *(niveau 1 · imiter)*](../../15-Business-Intelligence/00-Tableur-Statistiques-TCD/05-exercice-guide-cyclonord.md) |
-| 2 bis | S2 · jeu PM–ven | [**B02-A** — Le carburant est-il vraiment plus cher chez nous ? *(niveau 2 · adapter)*](B02-A-adapter-prix-carburants.md) |
-| 2 ter | **reporté** | [**B02-T** — Portrait statistique d'un territoire : la commande est à vous *(niveau 3 · transposer)*](B02-T-transposer-portrait-territoire.md) — à programmer après l'apprentissage de `XLOOKUP` |
+| 2 · I | S2 · lun → jeu matin | [Exercice guidé — Faire parler les ventes Cyclo'Nord *(niveau 1 · imiter)*](../../15-Business-Intelligence/00-Tableur-Statistiques-TCD/05-exercice-guide-cyclonord.md) |
+| 2 bis | S2 jeu PM → S3 lun | [**B02-A** — Le carburant est-il vraiment plus cher chez nous ? *(niveau 2 · adapter)*](B02-A-adapter-prix-carburants.md) |
+| 2 ter | S3 · mar → ven | [**B02-T** — Portrait statistique d'un territoire : quels territoires aider en priorité ? *(niveau 3 · transposer, accompagné)*](B02-T-transposer-portrait-territoire.md) |
 | 3 | S3 | [B03 — Croiser pour décider : TCD, corrélations et première restitution client](B03-croiser-restituer.md) |
 | 4 | S4 | [B04 — Audit d'une base inconnue : exploration, diagnostic qualité et requêtage SQL](B04-audit-base-sql.md) |
 | 5 | S5 | [B05 — Concevoir la base d'une médiathèque : modélisation, intégrité et performance](B05-modeliser-mediatheque.md) |
@@ -38,17 +38,17 @@
 
 ## Note sur la semaine S2 — Tableur : statistiques & TCD (Google Sheets)
 
-La semaine se fait **entièrement sur Google Sheets**, en individuel, de 9 h à 17 h. Sa feuille de
+Le module dure **deux semaines**, **entièrement sur Google Sheets**, en individuel, de 9 h à 17 h. Sa feuille de
 route est le [README du module](../../15-Business-Intelligence/00-Tableur-Statistiques-TCD/README.md).
 
 | Niveau | Support | Quand | Rendu |
 |---|---|---|---|
-| 1 · Imiter | [Exercice guidé Cyclo'Nord](../../15-Business-Intelligence/00-Tableur-Statistiques-TCD/05-exercice-guide-cyclonord.md), parties A, B, C | lun → mer | mercredi 16 h 30 |
-| 2 · Adapter | [B02-A — Prix du gazole](B02-A-adapter-prix-carburants.md) | jeu PM + ven | vendredi 16 h 30 |
-| 3 · Transposer | [B02-T — Portrait de territoire](B02-T-transposer-portrait-territoire.md) | **reporté** | — |
+| 1 · Imiter | [Exercice guidé Cyclo'Nord](../../15-Business-Intelligence/00-Tableur-Statistiques-TCD/05-exercice-guide-cyclonord.md), parties A à D | lun → jeu matin | jeudi 12 h 30 |
+| 2 · Adapter | [B02-A — Prix du gazole](B02-A-adapter-prix-carburants.md) | jeu PM → lun | lundi 16 h 30 |
+| 3 · Transposer | [cours 06](../../15-Business-Intelligence/00-Tableur-Statistiques-TCD/06-joindre-deux-tableaux-xlookup.md) + [B02-T — Portrait de territoire](B02-T-transposer-portrait-territoire.md) | mar → ven | vendredi 12 h 30 |
 
-**Pourquoi B02-T est reporté** : il exige de joindre une source externe au socle (clé = code INSEE),
-ce qui suppose `XLOOKUP`, enseigné plus tard ; et il ne tenait pas dans une journée pour des débutants.
+**B02-T est accompagné** : la source INSEE est fournie, `XLOOKUP` est enseigné le mardi matin (cours 06),
+et chaque jour a son point de contrôle. L'apprenant choisit la maille, les critères et la règle.
 
 **[B02](B02-portrait-statistique.md) reste disponible** : version *guidée* du portrait de territoire,
 à utiliser à la place de B02-T si le groupe en a besoin, pas en plus.

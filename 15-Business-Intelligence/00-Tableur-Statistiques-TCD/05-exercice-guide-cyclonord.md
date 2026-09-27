@@ -6,10 +6,10 @@
 
 | | |
 |---|---|
-| **Quand** | lundi après-midi (partie A) · mardi après-midi (partie B) · mercredi après-midi (partie C) |
+| **Quand** | lundi (partie A) · mardi (partie B) · mercredi (partie C) · jeudi matin (partie D) |
 | **Organisation** | individuel ; entraide encouragée, chacun son classeur |
 | **Fichier** | [`donnees/cyclonord_ventes_2025_fiable.xlsx`](donnees/cyclonord_ventes_2025_fiable.xlsx) — 613 commandes |
-| **À rendre** | **mercredi 16 h 30**, un seul rendu pour les trois parties (voir la fin de la page) |
+| **À rendre** | **jeudi 12 h 30**, un seul rendu pour les quatre parties (voir la fin de la page) |
 
 **Le contexte en deux lignes.** La semaine dernière, tu as audité le fichier des commandes 2025 de
 Cyclo'Nord, un réseau de 8 magasins de vélos. Il a été corrigé. La responsable commerciale, Nadia
@@ -291,9 +291,32 @@ novembre **37 249,55 €** (le plus haut) ; total **343 877,45 €**.
 
 ---
 
-## Le rendu (mercredi 16 h 30)
+# PARTIE D — Graphiques *(jeudi matin, après la démo du cours 04)*
 
-**Un seul rendu pour les parties A, B et C.**
+## D1 · Le CA livré par magasin, en barres triées (40 min)
+
+1. Nouveau TCD : **Lignes** `Magasin` · **Valeurs** `Montant_TTC` (SUM) · **Filtres** `Statut` = **Livrée**.
+   Dans *Lignes*, trie par `SUM de Montant_TTC`, ordre **décroissant**.
+2. Sélectionne le TCD **sans la ligne Total général**, *Insertion › Graphique* › **Graphique à barres**.
+3. *Personnaliser* : un titre qui dit le message, l'axe des montants qui part de **0**, pas de légende.
+
+✅ **Résultat attendu** : Lens en haut (56 878,50 €), Arras en bas (29 214,80 €).
+
+## D2 · Finir la courbe de C4 (20 min)
+
+Reprends la courbe du CA livré par mois : titre qui dit le message, axes nommés (« Mois »,
+« CA livré (€) »), source en sous-titre.
+
+## D3 · L'exercice express (20 min)
+
+Recopie dans un onglet `Graphiques_choix` ta réponse aux 5 questions de l'exercice express du
+cours 04 : pour chacune, le type de graphique et le titre que tu écrirais.
+
+---
+
+## Le rendu (jeudi 12 h 30)
+
+**Un seul rendu pour les parties A, B, C et D.**
 
 1. **Partage le classeur** : bouton *Partager* › *Accès général* › **Tous les utilisateurs disposant
    du lien** › **Lecteur** › *Copier le lien*.
@@ -310,3 +333,4 @@ novembre **37 249,55 €** (le plus haut) ; total **343 877,45 €**.
 - [ ] Je sais dire pourquoi la médiane résume mieux ces commandes que la moyenne.
 - [ ] Je sais dire ce qu'est le périmètre d'un chiffre (commandé ≠ livré ; 560 notes ≠ 613 commandes).
 - [ ] Je sais construire un TCD, changer « Résumer par » et grouper des dates par mois.
+- [ ] Mes graphiques ont un titre qui dit le message, des axes nommés et une source.

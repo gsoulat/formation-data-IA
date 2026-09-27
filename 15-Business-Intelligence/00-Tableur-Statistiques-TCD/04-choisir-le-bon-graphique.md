@@ -10,7 +10,7 @@
 | **Jour** | Jeudi · matin |
 | **Durée démo** | 45 min |
 | **Données** | [`donnees/cyclonord_ventes_2025_fiable.xlsx`](donnees/cyclonord_ventes_2025_fiable.xlsx) |
-| **Mise en pratique** | Jeudi après-midi : lancement du [brief B02-A — Adapter (prix des carburants)](../../99-Brief/Data-Analyst-WSC/B02-A-adapter-prix-carburants.md) · vendredi : production · dépôt **vendredi 16 h 30** |
+| **Mise en pratique** | Jeudi matin : [exercice guidé, partie D](05-exercice-guide-cyclonord.md) (rendu 12 h 30) · jeudi après-midi : lancement du [brief B02-A](../../99-Brief/Data-Analyst-WSC/B02-A-adapter-prix-carburants.md), dépôt **lundi 16 h 30** |
 
 ---
 

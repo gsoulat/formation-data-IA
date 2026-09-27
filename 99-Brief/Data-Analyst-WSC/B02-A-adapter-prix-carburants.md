@@ -4,7 +4,7 @@
 
 | | |
 |---|---|
-| **Quand** | jeudi après-midi (lancement) et vendredi · **dépôt vendredi 16 h 30** |
+| **Quand** | jeudi après-midi (lancement), vendredi, lundi · **dépôt lundi 16 h 30** |
 | **Organisation** | individuel ; entraide encouragée, chacun son classeur |
 | **Outil** | Google Sheets |
 | **Compétences visées** | C3.1 · C4.2 · C4.5 — **niveau 2 · ADAPTER** |
@@ -18,7 +18,7 @@
 
 Un lecteur écrit au journal : « Chez nous, dans le Nord, on paye le gazole plus cher qu'ailleurs. »
 Le rédacteur en chef veut savoir si c'est vrai avant de publier. Tu as les prix réels de toutes les
-stations de France et un jour et demi.
+stations de France et deux jours et demi.
 
 ## Contexte
 
@@ -55,7 +55,7 @@ Pour rester dans le temps, on s'intéresse à **un seul carburant, le gazole**, 
 **Jeudi 13 h 30 — lancement (30 min, tous ensemble).** Le formateur joue Malik. Ensemble, on
 transforme la phrase du lecteur en question qu'on peut vérifier avec les données.
 
-**Jeudi 14 h – 17 h et vendredi 9 h – 14 h 30 — production.**
+**Jeudi 14 h – 17 h, vendredi toute la journée, lundi 9 h – 14 h 30 — production.**
 
 1. **Importer et préparer** (30 min). Nouveau classeur `NOM_Prenom_carburants`, paramètres
    régionaux France, import du fichier. Crée un onglet `Cadrage` et écris-y la question, en
@@ -81,18 +81,18 @@ transforme la phrase du lecteur en question qu'on peut vérifier avec les donné
    - un **histogramme** des prix du gazole (toute la France).
    Chacun a un titre qui dit le message, des axes avec l'unité (€/L) et la source.
 
-**Vendredi 14 h 30 – 15 h 15 — revue croisée.** Par deux : tu montres **un** graphique à ton
+**Lundi 14 h 30 – 15 h 15 — revue croisée.** Par deux : tu montres **un** graphique à ton
 voisin **sans rien dire**. Il dit à voix haute ce qu'il comprend. Si ce n'est pas ton message, tu
 corriges le titre ou le graphique.
 
-**Vendredi 15 h 15 – 16 h 30 — note et dépôt.** Retour collectif du formateur de 16 h 30 à 17 h.
+**Lundi 15 h 15 – 16 h 30 — finitions et dépôt.** Retour collectif du formateur de 16 h 30 à 17 h.
 
 **Questions pour avancer.** Plus cher que quoi : que la moyenne nationale, ou que les autres
 régions ? Si deux régions ont la même médiane, laquelle est la plus chère ? Une station
 d'autoroute doit-elle compter dans le prix d'une région ? Qu'est-ce qui fait le plus varier le prix :
 la région, le type de station, ou la station elle-même ?
 
-## Livrables (vendredi 16 h 30)
+## Livrables (lundi 16 h 30)
 
 1. **Le classeur Google Sheets**, partagé en **Lecteur** par lien, avec les onglets `Cadrage`, un
    onglet par axe (TCD visibles), et `Graphiques`. L'onglet `Releve_prix` n'est pas modifié.

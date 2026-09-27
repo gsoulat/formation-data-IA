@@ -101,7 +101,29 @@ indicateurs manquants fait partie du travail.
 ### Onglet `Sources`
 
 Liste des pistes d'enrichissement (INSEE Dossier complet, Base permanente des équipements,
-Data ES, Géo2France) avec les URL. C'est le point de départ du travail d'autonomie du vendredi.
+Data ES, Géo2France) avec les URL. Elles servent au « pour aller plus loin » du brief B02-T.
+*(Le lien de la Base permanente des équipements indiqué dans cet onglet est mort ; adresse à jour :
+https://www.insee.fr/fr/metadonnees/source/serie/s1161)*
+
+## 5. `insee_revenus_population_hdf.xlsx` · 3 782 communes et 92 intercommunalités · **données réelles**
+
+Source complémentaire **fournie** pour le brief B02-T (et la démo du cours 06).
+
+| | |
+|---|---|
+| **Source** | INSEE, *Base du comparateur de territoires* — https://www.insee.fr/fr/statistiques/2521169 |
+| **Millésimes** | niveau de vie et taux de pauvreté : Filosofi 2023 · population : recensements 2017 et 2023 · géographie au 1er janvier 2026 |
+| **Licence** | Licence Ouverte 2.0 |
+| **Extraction** | 24/09/2026. Le fichier complet compte 2,9 millions de lignes (trop pour un tableur) : extrait filtré sur les communes et intercommunalités des Hauts-de-France, mis en colonnes, sans autre modification |
+| **Onglets** | `INSEE_Communes` (clé `Code_INSEE`, texte) · `INSEE_EPCI` (clé `Code_EPCI`, texte) · `INSEE_Source` |
+
+**Limites à faire dire aux apprenants**
+- Le niveau de vie et le taux de pauvreté sont couverts par le **secret statistique** pour les
+  petites communes : les cases contiennent « non publié » (taux publié pour 520 communes sur 3 782,
+  mais pour les 92 intercommunalités).
+- Deux intercommunalités débordent sur la Normandie (CC des Villes Sœurs, CC Interrégionale Aumale –
+  Blangy-sur-Bresle) : l'INSEE les mesure en entier, le socle n'en contient que les communes picardes.
+
 
 ---
 
