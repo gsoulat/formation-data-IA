@@ -48,7 +48,8 @@ route est le [README du module](../../15-Business-Intelligence/00-Tableur-Statis
 | 3 · Transposer | [cours 06](../../15-Business-Intelligence/00-Tableur-Statistiques-TCD/06-joindre-deux-tableaux-xlookup.md) + [B02-T — Portrait de territoire](B02-T-transposer-portrait-territoire.md) | mar → ven | vendredi 12 h 30 |
 
 **B02-T est accompagné** : la source INSEE est fournie, `XLOOKUP` est enseigné le mardi matin (cours 06),
-et chaque jour a son point de contrôle. L'apprenant choisit la maille, les critères et la règle.
+et chaque jour a son point de contrôle. La maille est imposée (les 92 intercommunalités) ; l'apprenant
+choisit les critères, la règle et les limites.
 
 **[B02](B02-portrait-statistique.md) reste disponible** : version *guidée* du portrait de territoire,
 à utiliser à la place de B02-T si le groupe en a besoin, pas en plus.

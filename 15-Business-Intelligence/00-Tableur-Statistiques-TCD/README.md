@@ -51,9 +51,9 @@ qu'elle simplifie ou invente.*
 | Jour | 9 h – 10 h 30 | 10 h 45 – 12 h 30 | 13 h 30 – 16 h 30 | 16 h 30 – 17 h |
 |---|---|---|---|---|
 | **Lundi** | B02-A : production | B02-A : note | 14 h 30 revue croisée · 15 h 15 finitions · **rendu B02-A 16 h 30** | Retour collectif B02-A |
-| **Mardi** | 9 h lancement de **B02-T** · démo : [cours 06 — Joindre deux tableaux](06-joindre-deux-tableaux-xlookup.md) | B02-T : étapes 1 et 2 | B02-T : étape 3 | Point de contrôle |
-| **Mercredi** | B02-T : étape 4 | B02-T : étapes 4 et 5 | B02-T : étape 6 | Point de contrôle |
-| **Jeudi** | B02-T : étape 7 | B02-T : étape 7 | B02-T : étape 8 (graphiques) | Point de contrôle |
+| **Mardi** | 9 h lancement de **B02-T** · démo : [cours 06 — Joindre deux tableaux](06-joindre-deux-tableaux-xlookup.md) | B02-T : étape 1 (import) et étape 2 (tableau `Analyse`) | B02-T : étape 2, suite | Point de contrôle |
+| **Mercredi** | B02-T : étape 3 (position et dispersion) | B02-T : étapes 3 et 4 (ce qui manque) | B02-T : étape 5 (choix des critères) | Point de contrôle |
+| **Jeudi** | B02-T : étape 6 (la règle) | B02-T : étape 6 | B02-T : étape 7 (graphiques) | Point de contrôle |
 | **Vendredi** | Note et diapositive | Note · **rendu B02-T 12 h 30** | **Restitutions** (5 min chacun) | Retour collectif |
 
 Pause du midi : 12 h 30 – 13 h 30. **Aucune échéance après 16 h 30.**
