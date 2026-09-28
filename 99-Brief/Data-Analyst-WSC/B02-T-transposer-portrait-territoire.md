@@ -63,7 +63,7 @@ pondérée** (cours 02), que tu compareras à la moyenne simple.
 |---|---|---|
 | `Communes_HDF` | une commune (3 782 lignes) | `Code_EPCI`, `EPCI`, `Population`, `Superficie_km2` |
 | `Marche_immobilier_2024` | une commune où il y a eu des ventes (1 812 lignes) | pas utilisé, sauf « pour aller plus loin » |
-| `Dictionnaire` · `Sources` | la description des colonnes · l'origine des chiffres | à lire une fois |
+| `Dictionnaire` · `Sources` | la description des colonnes · l'origine des chiffres | à lire une fois. Les lignes « Facultatif » de `Sources` ne servent qu'au « pour aller plus loin » : **tu n'as rien à télécharger** pour faire le brief |
 
 **Fichier 2 — [`insee_revenus_population_hdf.xlsx`](../../15-Business-Intelligence/00-Tableur-Statistiques-TCD/donnees/insee_revenus_population_hdf.xlsx)** (source : INSEE, comparateur de territoires)
 
