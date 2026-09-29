@@ -10,7 +10,7 @@
 | Mardi de la 2ᵉ semaine, matin | 45 min | [Brief B02-T — Portrait d'un territoire](../../99-Brief/Data-Analyst-WSC/B02-T-transposer-portrait-territoire.md) (mardi → vendredi) |
 
 Données : [`donnees/portrait_territoire_hdf_socle.xlsx`](donnees/portrait_territoire_hdf_socle.xlsx)
-et [`donnees/insee_revenus_population_hdf.xlsx`](donnees/insee_revenus_population_hdf.xlsx).
+et [`donnees/insee_revenus_population_hdf-v.xlsx`](donnees/insee_revenus_population_hdf-v.xlsx).
 
 ---
 
@@ -100,9 +100,11 @@ de pauvreté. Ce n'est **pas** une erreur de jointure.
 L'INSEE ne publie pas ce chiffre pour les petites communes (**secret statistique** : on pourrait
 reconnaître les foyers). Les 520 communes publiées regroupent pourtant 72 % des habitants.
 
-> 🧭 **Conséquence pour ton analyse** : à la maille de la commune, le taux de pauvreté manque pour
-> 86 % des communes. À la maille de l'**intercommunalité** (onglet `INSEE_EPCI`), il est publié pour
-> les 92 EPCI. Le choix de la maille décide de ce que tu peux mesurer.
+> 🧭 **Conséquence pour le brief** : à l'échelle de la commune, le taux de pauvreté manque pour
+> 86 % des communes. À l'échelle de l'**intercommunalité** (onglet `INSEE_EPCI`), il est publié pour
+> les 92. C'est pour ça que le brief B02-T travaille sur les 92 intercommunalités : l'échelle
+> choisie décide de ce qu'on peut mesurer. Le même `XLOOKUP` s'écrit alors avec `Code_EPCI` comme
+> clé et `INSEE_EPCI` comme table où chercher.
 
 ---
 

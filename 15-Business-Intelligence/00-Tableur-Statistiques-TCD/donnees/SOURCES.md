@@ -68,8 +68,10 @@ Biocarburant / Gaz). Lignes sans prix retirées ; prix conservés entre 0,30 et 
 
 ## 4. `portrait_territoire_hdf_socle.xlsx` · 3 782 communes · **données réelles**
 
-Socle de départ du brief B02-T. Volontairement **minimal** : à ce niveau, aller chercher les
-indicateurs manquants fait partie du travail.
+Socle de départ du brief B02-T, complété par `insee_revenus_population_hdf-v.xlsx` (§ 5). Les deux
+fichiers suffisent pour tout le brief. Les lignes « Facultatif (pour aller plus loin) » de l'onglet
+`Sources` listent des sources supplémentaires pour le bonus du brief ; **rien n'est à télécharger**
+pour les étapes obligatoires.
 
 ### Onglet `Communes_HDF` — 3 782 lignes
 
@@ -105,7 +107,7 @@ Data ES, Géo2France) avec les URL. Elles servent au « pour aller plus loin » 
 *(Le lien de la Base permanente des équipements indiqué dans cet onglet est mort ; adresse à jour :
 https://www.insee.fr/fr/metadonnees/source/serie/s1161)*
 
-## 5. `insee_revenus_population_hdf.xlsx` · 3 782 communes et 92 intercommunalités · **données réelles**
+## 5. `insee_revenus_population_hdf-v.xlsx` · 3 782 communes et 92 intercommunalités · **données réelles**
 
 Source complémentaire **fournie** pour le brief B02-T (et la démo du cours 06).
 

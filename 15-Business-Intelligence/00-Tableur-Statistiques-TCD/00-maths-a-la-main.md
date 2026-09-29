@@ -6,23 +6,55 @@
 
 | | |
 |---|---|
-| **Quand** | à lire le lundi (sections 1 à 3) et le mardi (sections 4 à 6) ; la section 7 sert au brief B02-T |
-| **Durée** | 30 min de lecture, 30 min d'exercices |
-| **Niveau** | aucune connaissance en maths au-delà des 4 opérations |
+| **Quand** | **Partie 1** (sections 1 à 4) le lundi · **Partie 2** (sections 5 à 7) le mardi ; la section 7 sert surtout au brief B02-T |
+| **Durée** | environ 1 h par partie, calculs à la main compris · 30 min d'exercices |
+| **Ce qu'il faut savoir faire** | Partie 1 : les quatre opérations. Partie 2 : rien de plus ; le carré et la racine carrée sont expliqués à la section 6 (et la calculatrice les fait) |
+
+## Les 5 idées à retenir
+
+1. **Une ligne = une chose observée** (une commande), **une colonne = une information** sur elle (le montant).
+2. **La moyenne peut ne ressembler à aucune valeur réelle** : une seule très grosse valeur la tire vers le haut.
+3. **La médiane**, la valeur du milieu, **résiste** à ces très grosses valeurs.
+4. **Un chiffre seul ne suffit pas** : il faut aussi dire si les valeurs sont **serrées ou dispersées**.
+5. **Un chiffre sans son périmètre ne veut rien dire** : toujours préciser *sur combien de lignes, lesquelles*.
+
+Tu n'as pas besoin de retenir les formules mathématiques. Ce qui compte : savoir dire **ce que
+représente un résultat**, et si on peut s'en servir pour décider.
 
 ---
 
-## 1. Le vocabulaire
+# Partie 1 — L'indispensable
 
-| Mot | Sens | Exemple Cyclo'Nord |
+## 1. Une question, et un tableau
+
+Voici 7 commandes d'un magasin de vélos. *(Extrait inventé, avec les mêmes colonnes que le fichier
+`Ventes_2025` que tu ouvriras tout à l'heure.)*
+
+| ID_commande | Magasin | Categorie | Montant_TTC |
+|---|---|---|---|
+| CMD-001 | Lille | Accessoires | 12 € |
+| CMD-002 | Lens | Pièces | 19 € |
+| CMD-003 | Lille | Accessoires | 25 € |
+| CMD-004 | Arras | Atelier | 40 € |
+| CMD-005 | Lille | Accessoires | 55 € |
+| CMD-006 | Amiens | Atelier | 90 € |
+| CMD-007 | Lille | Vélo urbain | 600 € |
+
+> ❓ **La question du jour** : si on doit résumer ces 7 commandes par **un seul chiffre**, lequel
+> choisir ? « Une commande, c'est en gros combien ? »
+
+Avant de répondre, les mots qu'on va utiliser :
+
+| Mot | Sens | Dans le tableau ci-dessus |
 |---|---|---|
-| **Individu** | ce qu'on observe, une ligne du tableau | une commande |
-| **Variable** | ce qu'on mesure, une colonne | le montant, le magasin |
-| **Effectif** (`n`) | le nombre d'individus | 613 commandes |
-| **Valeur** | le contenu d'une case | 177 € |
-| **Distribution** | la façon dont les valeurs se répartissent | beaucoup de petites commandes, peu de grosses |
+| **Individu** | ce qu'on observe : **une ligne** | une commande, par exemple CMD-004 |
+| **Variable** | une information sur chaque individu : **une colonne** | `Magasin`, `Montant_TTC` |
+| **Valeur** | le contenu **d'une case** | 40 € |
+| **Effectif** (`n`) | le **nombre de lignes** | 7 (613 dans le vrai fichier) |
+| **Valeur extrême** | une valeur **très éloignée de la plupart des autres** | 600 € |
+| **Distribution** | la façon dont les valeurs se répartissent | beaucoup de petites commandes, une très grosse |
 
-Toute la suite utilise ces **7 commandes**, déjà rangées de la plus petite à la plus grande :
+Pour les calculs, on n'utilise que la colonne `Montant_TTC`, rangée de la plus petite à la plus grande :
 
 ```
 12 €   19 €   25 €   40 €   55 €   90 €   600 €
@@ -39,86 +71,175 @@ Toute la suite utilise ces **7 commandes**, déjà rangées de la plus petite à
 841 ÷ 7 = 120,14 €
 ```
 
-En écriture mathématique, on la note **x̄** (« x barre ») :
+Dans Sheets : `=AVERAGE(plage)` *(en français : MOYENNE)*.
+*Traduction : « j'additionne tout, et je partage à parts égales ».*
 
-$$\bar{x} = \frac{x_1 + x_2 + \dots + x_n}{n} = \frac{\sum x_i}{n}$$
+> ⚠️ **120 € ne ressemble à aucune des 7 commandes** : six font moins de 100 €, une fait 600 €.
+> Personne n'a dépensé 120 €. C'est la commande de 600 € qui tire la moyenne vers le haut. Sans
+> elle, la moyenne des six autres tombe à **40,17 €**.
 
-Le signe **Σ** (sigma) veut simplement dire « additionne tout ».
-
-Dans Sheets : `=AVERAGE(plage)` *(MOYENNE)*.
-
-> ⚠️ **120 € ne ressemble à aucune des 7 commandes** : six font moins de 100 €. C'est la commande de
-> 600 € qui tire la moyenne vers le haut. Sans elle, la moyenne des six autres tombe à **40,17 €**.
+Même chose avec trois salaires : 1 500 €, 1 600 € et 9 000 €. Moyenne : 4 033 €. Aucune des trois
+personnes ne gagne « à peu près » 4 033 €.
 
 ---
 
-## 3. La médiane et le mode
+## 3. La médiane (et le mode)
 
-**La médiane** : on range les valeurs dans l'ordre, et on prend **celle du milieu**.
+**La médiane** : on range les valeurs dans l'ordre, et on prend **celle du milieu**. Imagine les 7
+clients alignés du plus petit au plus gros panier : la médiane, c'est la personne **au centre** de la file.
+
+```
+12   19   25  [40]  55   90   600
+ ←  3 en dessous    3 au-dessus  →
+```
 
 - **Nombre impair** de valeurs (ici 7) : la valeur du milieu est la 4ᵉ → **40 €**.
-  Trois commandes en dessous, trois au-dessus.
-- **Nombre pair** : on fait la moyenne des deux du milieu. Sans la commande de 600 €, il reste
-  6 valeurs : les deux du milieu sont 25 et 40 → (25 + 40) ÷ 2 = **32,50 €**.
+- **Nombre pair** : il y a **deux** personnes au centre ; on prend la moyenne des deux. Sans la
+  commande de 600 €, il reste 6 valeurs, les deux du milieu sont 25 et 40 → (25 + 40) ÷ 2 = **32,50 €**.
 
 Dans Sheets : `=MEDIAN(plage)` *(MEDIANE)*.
+*Traduction : « la moitié des valeurs est en dessous, la moitié au-dessus ».*
 
 > 💡 La médiane de nos 7 commandes (40 €) ne bouge pas si la plus grosse vaut 600 € ou 600 000 € :
 > on dit qu'elle est **robuste**. La moyenne, elle, s'envolerait.
 
-**Le mode** : la valeur **la plus fréquente**. Dans `2, 4, 4, 4, 5, 5, 7, 9`, le mode est **4**
-(présent trois fois). Dans nos 7 commandes, aucune valeur ne se répète : pas de mode.
-
-Dans Sheets : `=MODE(plage)`.
-
 ### Moyenne ou médiane ?
 
-| Si… | la distribution est… | on donne plutôt… |
+| Si… | ça veut dire… | on donne plutôt… |
 |---|---|---|
-| moyenne ≈ médiane | symétrique | la moyenne, ou les deux |
-| moyenne > médiane | étalée à droite (quelques très grandes valeurs) | **la médiane** |
-| moyenne < médiane | étalée à gauche (quelques très petites valeurs) | **la médiane** |
+| moyenne ≈ médiane | pas de valeur extrême qui tire d'un côté | la moyenne, ou les deux |
+| moyenne **nettement plus grande** que la médiane | **quelques très grosses valeurs** tirent la moyenne vers le haut | **la médiane** |
+| moyenne **nettement plus petite** que la médiane | **quelques très petites valeurs** tirent la moyenne vers le bas | **la médiane** |
 
-Nos 7 commandes : moyenne 120 € > médiane 40 € → étalées à droite → on donne la médiane.
+Nos 7 commandes : moyenne 120 € et médiane 40 € → une grosse commande tire la moyenne → on donne la médiane.
 
-> 🎬 **Vidéo — La médiane robuste** (7 min) : les 7 commandes de cette page, puis la commande
-> géante de Cyclo'Nord (moyenne 1 680 € → 1 063 € sans elle, médiane toujours 177 €).
+> 📚 **Le mot savant**, que tu croiseras dans les cours suivants : quand quelques très grosses valeurs
+> tirent la moyenne vers le haut, on dit que la distribution est **étalée à droite** (la « queue » des
+> grosses valeurs part vers la droite du graphique). L'inverse : **étalée à gauche**. Sans valeur
+> extrême : **symétrique**.
+
+> 🎬 **Vidéo — La médiane robuste** (7 min).
+> **Avant de regarder** : sur les 613 vraies commandes de Cyclo'Nord, la moyenne vaut 1 680 €. À ton
+> avis, la médiane est-elle plus grande ou plus petite ?
 >
 > [![La médiane robuste, vidéo de 7 minutes](images/video-mediane-robuste.jpg)](videos/la-mediane-robuste.mp4)
+>
+> **Après** : que devient la médiane quand on retire la commande de 379 050 € ? Pourquoi ?
 >
 > *Dans la vidéo, on « trie » le fichier pour trouver la plus grosse commande. Dans ce module, on ne
 > trie jamais `Ventes_2025` : on utilise `=LARGE(Montant; 1)` ou `FILTER` (cours 02).*
 
+**Le mode** *(notion secondaire)* : la valeur **la plus fréquente**. Il sert surtout pour les
+**catégories** : dans le tableau de la section 1, le magasin le plus fréquent est **Lille** (4
+commandes sur 7). Sur des montants, il est rarement utile : nos 7 montants sont tous différents, il
+n'y a pas de mode.
+
+Dans Sheets : `=MODE(plage)` pour des nombres.
+
 ---
 
-## 4. L'étendue et les quartiles
+## 4. Parts et évolutions en pourcentage
+
+**Lire en pourcentage** : une division donne un nombre à virgule (0,587). Pour le lire « sur
+100 », on le **multiplie par 100** : 0,587 × 100 = 58,7 %. Dans Sheets, *Format › Nombre ›
+Pourcentage* fait cette multiplication à l'affichage : la cellule contient toujours 0,587.
+
+**Une part** : `partie ÷ total`. 360 commandes livrées sur 613 → 360 ÷ 613 = 0,587, soit **58,7 %**.
+*Traduction : « sur 100 commandes, environ 59 sont livrées ».*
+
+**Une évolution** : `(nouvelle valeur − ancienne) ÷ ancienne`. Le chiffre d'affaires livré de
+Cyclo'Nord passe de 17 145 € en mai à 37 250 € en novembre :
+(37 250 − 17 145) ÷ 17 145 = 1,17, soit **+117 %** (il a plus que doublé).
+*Traduction : « de combien j'ai bougé, par rapport à mon point de départ ».*
+
+<details>
+<summary>🔎 Pour plus tard (brief B02-A) : points ou pourcentage ?</summary>
+
+Un taux qui passe de 16 % à 19 % augmente de **3 points**, pas de 3 %. En pourcentage, c'est
+(19 − 16) ÷ 16 = +19 %. Dès qu'on compare **deux pourcentages** entre eux, on parle en **points**.
+Tu n'en as pas besoin cette semaine ; tu y reviendras quand tu compareras des parts.
+
+</details>
+
+---
+
+# Partie 2 — Approfondir (mardi)
+
+## 5. L'étendue et les quartiles
 
 **L'étendue** : la plus grande valeur moins la plus petite. `600 − 12 = 588 €`. Elle ne regarde
 que deux valeurs, donc une seule valeur extrême la fausse.
 
-**Les quartiles** coupent la liste rangée en **quatre parts égales** :
+**Les quartiles** : on reprend la file des clients rangés du plus petit au plus gros panier, et on
+la coupe en **quatre groupes de même taille**. Avec 100 clients : 25 dans chaque groupe.
 
-| Repère | Sens | Nos 7 commandes (calcul Sheets) |
+```
+[ 25 % des clients ] Q1 [ 25 % ] Q2 = médiane [ 25 % ] Q3 [ 25 % des clients ]
+```
+
+Pour voir les coupures tomber sur de vraies valeurs, prenons **9 paniers** (un jour un peu plus
+chargé), rangés du plus petit au plus grand :
+
+```
+10   15  [20]  30  [40]  55  [70]  90   120
+          Q1        Q2        Q3
+```
+
+| Repère | Sens | Les 9 paniers |
 |---|---|---|
-| **Q1** | 25 % des valeurs en dessous | **22 €** |
-| **Q2** = médiane | 50 % en dessous | **40 €** |
-| **Q3** | 75 % en dessous | **72,50 €** |
+| **Q1** | un quart des valeurs en dessous | la 3ᵉ valeur → **20 €** |
+| **Q2** = médiane | la moitié en dessous | la 5ᵉ valeur → **40 €** |
+| **Q3** | trois quarts en dessous | la 7ᵉ valeur → **70 €** |
 
-La phrase à savoir dire : **« la moitié des commandes est entre Q1 et Q3 »**, ici entre 22 € et
-72,50 €. L'écart **Q3 − Q1** (50,50 €) s'appelle l'**écart interquartile**.
+La phrase à savoir dire : **« la moitié des paniers est entre Q1 et Q3 »**, ici entre 20 € et
+70 €. L'écart **Q3 − Q1** (50 €) s'appelle l'**écart interquartile**.
 
-> 🔎 **Pourquoi 22 € alors que 22 n'est pas dans la liste ?** Q1 tombe « entre » la 2ᵉ valeur (19) et
-> la 3ᵉ (25). Sheets prend alors un point intermédiaire : 19 + (25 − 19) ÷ 2 = 22. Il existe d'autres
-> façons de faire, qui donnent des résultats un peu différents (au lycée, on prend souvent la
-> 2ᵉ valeur, 19). Ce n'est pas une erreur : c'est une **convention**. Dans ce module, on utilise
-> toujours celle de Sheets : `=QUARTILE(plage; 1)` et `=QUARTILE(plage; 3)`.
+Dans Sheets : `=QUARTILE(plage; 1)` et `=QUARTILE(plage; 3)`. Sur nos 7 commandes du début, Sheets
+donne Q1 = **22 €**, Q3 = **72,50 €** : la moitié des commandes est entre 22 € et 72,50 €.
+
+<details>
+<summary>🔎 Pour plus tard : pourquoi 22 € alors que 22 n'est pas dans la liste des 7 commandes ?</summary>
+
+Avec 7 valeurs, on ne peut pas faire quatre groupes exactement égaux : Q1 tombe « entre » la
+2ᵉ valeur (19) et la 3ᵉ (25). Sheets prend alors le point à mi-chemin : 19 + (25 − 19) ÷ 2 = 22.
+Il existe d'autres façons de faire, qui donnent des résultats un peu différents (au lycée, on prend
+souvent la 2ᵉ valeur, 19). Ce n'est pas une erreur : c'est une **convention**. Avec des centaines
+de lignes, les écarts entre conventions deviennent minuscules. Dans ce module, on utilise toujours
+celle de Sheets.
+
+</details>
 
 ---
 
-## 5. L'écart-type, pas à pas
+## 6. L'écart-type
 
-L'écart-type mesure **à quelle distance les valeurs sont, en général, de la moyenne**. On le calcule
-sur une série simple : `2, 4, 4, 4, 5, 5, 7, 9` (8 valeurs, moyenne **5**).
+### D'abord, voir
+
+Deux séries, **même moyenne (5)**, **même médiane (5)** :
+
+```
+Série A :   4   5   5   6        → les valeurs sont serrées autour de 5
+Série B :   1   5   5   9        → les valeurs sont loin de 5
+```
+
+La moyenne ne voit pas la différence. Il faut un deuxième chiffre qui dise **à quel point les
+valeurs s'éloignent de la moyenne** : c'est l'**écart-type**. Calculé à la main comme ci-dessous,
+il vaut **0,71** pour A et **2,83** pour B : quatre fois plus dispersé.
+
+*Traduction : « en général, les valeurs sont à environ tant de la moyenne ».*
+
+### Deux outils avant de calculer : le carré et la racine carrée
+
+- **Le carré** d'un nombre, c'est le nombre **multiplié par lui-même** : le carré de 3 est
+  3 × 3 = 9. On l'écrit 3².
+- **Un nombre négatif au carré devient positif** : (−3) × (−3) = 9, parce que « moins fois moins
+  fait plus ». C'est pour cela qu'on va s'en servir : le carré efface le signe.
+- **La racine carrée** fait le chemin inverse : elle retrouve le nombre de départ. √9 = 3, √4 = 2,
+  √16 = 4. Quand ça ne tombe pas juste (√8), la calculatrice ou Sheets (`=SQRT(8)`) donne 2,83.
+
+### Ensuite, calculer (une fois, pour comprendre)
+
+Série : `2, 4, 4, 4, 5, 5, 7, 9` (8 valeurs, moyenne **5**).
 
 | Valeur | Écart à la moyenne (valeur − 5) | Écart au carré |
 |---|---|---|
@@ -135,24 +256,36 @@ sur une série simple : `2, 4, 4, 4, 5, 5, 7, 9` (8 valeurs, moyenne **5**).
 1. **On mesure l'écart** de chaque valeur à la moyenne.
 2. **On met au carré** : sinon les écarts négatifs et positifs s'annuleraient (leur somme fait 0).
 3. **On fait la moyenne des carrés** : 32 ÷ 8 = **4**. C'est la **variance**.
-4. **On prend la racine carrée** pour revenir dans l'unité de départ : √4 = **2**. C'est l'**écart-type**.
+4. **On prend la racine carrée** pour revenir dans l'unité de départ (des euros, par exemple) : √4 = **2**. C'est l'**écart-type**.
 
 > ✅ **Lecture** : en général, les valeurs sont à **environ 2** de la moyenne 5.
 
-**Une subtilité** : quand les données sont un **échantillon** (une partie seulement de ce qu'on veut
-décrire), on divise par **n − 1** au lieu de n : 32 ÷ 7 = 4,57, puis √4,57 = **2,14**. C'est ce que
-fait `=STDEV(plage)` *(ECARTYPE)* dans Sheets, et c'est celui qu'on utilise dans le module. Avec
-beaucoup de valeurs (613 commandes), les deux calculs donnent presque le même résultat.
+Même méthode pour les séries A et B du début : les écarts au carré de A font 1 + 0 + 0 + 1 = 2,
+donc 2 ÷ 4 = 0,5 et √0,5 = **0,71** ; ceux de B font 16 + 0 + 0 + 16 = 32, donc 32 ÷ 4 = 8 et
+√8 = **2,83**.
+
+<details>
+<summary>🔎 Pour plus tard : pourquoi Sheets donne 2,14 et pas 2 ?</summary>
+
+Si tu tapes `=STDEV(2;4;4;4;5;5;7;9)` dans Sheets, tu obtiens **2,14**, pas 2 (et 0,82 au lieu
+de 0,71 pour la série A, 3,27 au lieu de 2,83 pour B). Quand les données ne sont qu'une **partie**
+de ce qu'on veut décrire (un **échantillon**), Sheets divise par **n − 1** au lieu de n :
+32 ÷ 7 = 4,57, puis √4,57 = **2,14**. C'est ce que fait `=STDEV(plage)` *(ECARTYPE)*, celui qu'on
+utilise dans le module. Le raisonnement est le même, seul le diviseur change. Avec beaucoup de
+lignes (613 commandes), les deux calculs donnent presque le même résultat.
+
+</details>
 
 | Écart-type… | veut dire… |
 |---|---|
-| petit par rapport à la moyenne | les valeurs sont regroupées, la moyenne les résume bien |
-| grand par rapport à la moyenne | les valeurs sont très dispersées, la moyenne résume mal |
+| petit par rapport à la moyenne | les valeurs sont regroupées : la moyenne les résume bien |
+| grand par rapport à la moyenne | les valeurs sont très dispersées : la moyenne résume mal |
 
 Cyclo'Nord : moyenne 1 680 €, écart-type 15 505 € → neuf fois la moyenne : très dispersé.
 
-> 🎬 **Vidéo — L'écart-type : quand la moyenne vous ment** (1 min) : un écart-type neuf fois plus
-> grand que la moyenne, sur les commandes de Cyclo'Nord.
+> 🎬 **Vidéo — L'écart-type : quand la moyenne vous ment** (1 min).
+> **Avant de regarder** : un écart-type neuf fois plus grand que la moyenne, qu'est-ce que ça dit
+> de la moyenne ?
 >
 > [![L'écart-type, vidéo d'une minute](images/video-ecart-type.jpg)](videos/ecart-type-quand-la-moyenne-ment.mp4)
 >
@@ -161,25 +294,13 @@ Cyclo'Nord : moyenne 1 680 €, écart-type 15 505 € → neuf fois la moyenne 
 
 ---
 
-## 6. Pourcentages et évolutions
-
-**Une part** : `partie ÷ total`. 360 commandes livrées sur 613 → 360 ÷ 613 = 0,587 = **58,7 %**.
-
-**Une évolution** : `(nouvelle valeur − ancienne) ÷ ancienne`. Les gares des Hauts-de-France sont
-passées de 110,6 à 126,8 millions de voyageurs : (126,8 − 110,6) ÷ 110,6 = **+14,6 %**.
-
-> ⚠️ **Points ou pourcentage ?** Un taux qui passe de 16,1 % à 19,1 % augmente de **3 points**, pas
-> de 3 %. En pourcentage, c'est (19,1 − 16,1) ÷ 16,1 = +18,6 %. On parle en **points** quand on
-> compare deux pourcentages.
-
----
-
 ## 7. La moyenne pondérée
 
-Quand toutes les valeurs ne comptent pas pareil, on leur donne un **poids** (un coefficient).
+Parfois, **certains nombres comptent plus que d'autres**. Le « poids » (ou coefficient) dit combien
+de fois chaque nombre compte.
 
 **Exemple du bac** : 12 en maths (coefficient 2), 15 en français (coefficient 4), 10 en sport
-(coefficient 1).
+(coefficient 1). Le français compte **4 fois**, comme si on avait eu 15, 15, 15 et 15.
 
 ```
 Moyenne simple   : (12 + 15 + 10) ÷ 3                   = 12,33
@@ -188,22 +309,30 @@ Moyenne pondérée : (12×2 + 15×4 + 10×1) ÷ (2 + 4 + 1)   = 94 ÷ 7 = 13,43
 
 Le français pèse plus lourd : la moyenne pondérée se rapproche de 15.
 
-$$\text{moyenne pondérée} = \frac{\sum (valeur_i \times poids_i)}{\sum poids_i}$$
-
-Dans Sheets : `=SUMPRODUCT(valeurs; poids) / SUM(poids)` *(SOMMEPROD)*. Pour des territoires, le
-poids est souvent la **population** : chaque habitant compte pour une voix (brief B02-T).
+Dans Sheets : `=SUMPRODUCT(valeurs; poids) / SUM(poids)` *(SOMMEPROD)*.
+*Traduction : « chaque valeur compte autant de fois que son poids ».*
+Pour des territoires, le poids est souvent la **population** : chaque habitant compte pour une voix
+(brief B02-T).
 
 ---
 
 ## Exercices (30 min)
 
-Série : `3, 5, 5, 6, 8, 9, 20` (7 valeurs).
+> Fais-les **avant** d'ouvrir les réponses. Série : `3, 5, 5, 6, 8, 9, 20` (7 valeurs).
+
+**Série 1 — Calculer**
 
 1. Calcule la moyenne.
 2. Donne la médiane et le mode.
 3. Quelle est l'étendue ?
+
+**Série 2 — Interpréter**
+
 4. Moyenne ou médiane : laquelle résume le mieux cette série, et pourquoi ?
 5. Retire le 20 : que deviennent la moyenne et la médiane ?
+
+**Série 3 — Cas métier**
+
 6. Un magasin passe de 40 à 50 commandes par jour. Quelle évolution en % ?
 7. Deux classes : 10 élèves avec 12 de moyenne, 30 élèves avec 8. Quelle est la moyenne de tous
    les élèves ? (Attention : ce n'est pas 10.)
@@ -227,22 +356,39 @@ Série : `3, 5, 5, 6, 8, 9, 20` (7 valeurs).
 
 ![Infographie de synthèse du module : la médiane est plus robuste que la moyenne face aux valeurs extrêmes ; l'écart-type mesure la dispersion autour de la moyenne ; distribution symétrique (moyenne = médiane), étalée à droite (moyenne > médiane) ou à gauche (moyenne < médiane) ; toujours préciser le périmètre et l'effectif ; le TCD regroupe pour calculer ; un graphique = une intention (barres pour comparer, courbes pour l'évolution, histogrammes pour la distribution) ; éviter la 3D, les axes tronqués et les camemberts à plus de 3 parts](images/synthese-analyse-de-donnees.jpg)
 
-*Dans l'encadré rouge, le diagramme en barres du milieu est aussi un mauvais exemple : ses
-graduations (100, 175, 110, 105) ne sont pas dans l'ordre.*
+*Deux réserves sur cette image. Dans l'encadré rouge, le diagramme en barres du milieu est aussi un
+mauvais exemple : ses graduations (100, 175, 110, 105) ne sont pas dans l'ordre. Et les trois
+courbes « symétrique / étalée à droite / étalée à gauche » sont dessinées avec la même forme, seule
+la couleur change ; la vraie forme d'une distribution étalée est ci-dessous.*
+
+![Trois formes de distribution : symétrique (moyenne ≈ médiane, exemples : tailles, notes d'examen), étalée vers la droite (moyenne > médiane, la queue part vers les grandes valeurs : salaires, prix, montants de commande, le cas Cyclo'Nord), étalée vers la gauche (moyenne < médiane : âge au décès, notes très hautes)](images/formes-de-distribution.svg)
 
 ---
 
-## Mémo
+## Mémo : je calcule, je comprends
 
-| Notion | À la main | Dans Sheets |
-|---|---|---|
-| Moyenne | somme ÷ nombre | `AVERAGE` |
-| Médiane | valeur du milieu (rangées) | `MEDIAN` |
-| Mode | valeur la plus fréquente | `MODE` |
-| Étendue | max − min | `MAX(…) - MIN(…)` |
-| Quartiles | coupent en 4 parts égales | `QUARTILE(…; 1)`, `QUARTILE(…; 3)` |
-| Écart-type | racine de la moyenne des écarts au carré | `STDEV` |
-| Évolution | (nouveau − ancien) ÷ ancien | `=(B2-A2)/A2` |
-| Moyenne pondérée | Σ(valeur × poids) ÷ Σ poids | `SUMPRODUCT(…; …) / SUM(…)` |
+| Notion | Je calcule | Je comprends | Dans Sheets |
+|---|---|---|---|
+| Moyenne | somme ÷ nombre | le partage à parts égales ; **sensible** aux valeurs extrêmes | `AVERAGE` |
+| Médiane | valeur du milieu (rangées) | la valeur « habituelle » ; **résiste** aux valeurs extrêmes | `MEDIAN` |
+| Mode | valeur la plus fréquente | surtout utile pour des catégories | `MODE` |
+| Part | partie ÷ total | combien sur 100 | `=B2/B3` |
+| Évolution | (nouveau − ancien) ÷ ancien | de combien j'ai bougé, par rapport au départ | `=(B2-A2)/A2` |
+| Étendue | max − min | l'écart entre les deux extrêmes | `MAX(…) - MIN(…)` |
+| Quartiles | coupent en 4 groupes égaux | la moitié des valeurs est entre Q1 et Q3 | `QUARTILE(…; 1)`, `QUARTILE(…; 3)` |
+| Écart-type | racine de la moyenne des écarts au carré | les valeurs sont-elles serrées ou dispersées ? | `STDEV` |
+| Moyenne pondérée | Σ(valeur × poids) ÷ Σ poids | chaque valeur compte autant de fois que son poids | `SUMPRODUCT(…; …) / SUM(…)` |
+
+<details>
+<summary>📐 Pour aller plus loin : l'écriture mathématique</summary>
+
+Tu croiseras ces notations dans des livres ou des articles. Elles disent exactement la même chose
+que le mémo.
+
+- La moyenne se note **x̄** (« x barre ») : $\bar{x} = \frac{x_1 + x_2 + \dots + x_n}{n} = \frac{\sum x_i}{n}$
+- Le signe **Σ** (sigma) veut dire « additionne tout ».
+- La moyenne pondérée : $\frac{\sum (valeur_i \times poids_i)}{\sum poids_i}$
+
+</details>
 
 ➡️ Retour à la [feuille de route du module](README.md) · cours suivant : [01 — Position](01-statistiques-descriptives.md)

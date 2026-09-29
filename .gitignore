@@ -32,6 +32,8 @@ gcp.pub
 sa.json
 app-fastapi/
 app-django/
+
+07-methode-checklist-nouvelle-donnee.md
 # --- Jeux de donnees pedagogiques ---
 # NE PAS remettre une regle « data/ » nue : elle masquait 65 fichiers (18 Mo),
 # alors que les briefs annoncent aux apprenants « deja present dans le depot ».
