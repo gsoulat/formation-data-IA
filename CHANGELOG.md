@@ -1,3 +1,10 @@
+## [2.24.1](https://github.com/gsoulat/formation-data-IA/compare/v2.24.0...v2.24.1) (2026-09-29)
+
+
+### Bug Fixes
+
+* **data-analyst:** republier le fichier INSEE sous le nom insee_revenus_population_hdf-v.xlsx ([deb5ef1](https://github.com/gsoulat/formation-data-IA/commit/deb5ef14d79453d8d3d334942d0a56b9810cdfbf))
+
 # [2.24.0](https://github.com/gsoulat/formation-data-IA/compare/v2.23.1...v2.24.0) (2026-09-27)
 
 
