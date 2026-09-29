@@ -89,7 +89,7 @@ Tout est dans [`donnees/`](donnees/) — origine, licence et limites dans [`donn
 | `cyclonord_ventes_2025_fiable.xlsx` | 613 commandes | semaine 1, lundi → jeudi matin (exercice guidé) |
 | `carburants_france_releve.xlsx` | 31 277 relevés de prix | jeudi après-midi → lundi (brief B02-A) |
 | `portrait_territoire_hdf_socle.xlsx` | 3 782 communes | semaine 2, mardi → vendredi (brief B02-T) |
-| `insee_revenus_population_hdf.xlsx` | 3 782 communes · 92 intercommunalités | semaine 2, mardi → vendredi (brief B02-T) |
+| `insee_revenus_population_hdf-v.xlsx` | 3 782 communes · 92 intercommunalités | semaine 2, mardi → vendredi (brief B02-T) |
 
 ## Compétences travaillées (référentiel WCS)
 

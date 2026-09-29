@@ -10,7 +10,7 @@
 | Mardi de la 2ᵉ semaine, matin | 45 min | [Brief B02-T — Portrait d'un territoire](../../99-Brief/Data-Analyst-WSC/B02-T-transposer-portrait-territoire.md) (mardi → vendredi) |
 
 Données : [`donnees/portrait_territoire_hdf_socle.xlsx`](donnees/portrait_territoire_hdf_socle.xlsx)
-et [`donnees/insee_revenus_population_hdf.xlsx`](donnees/insee_revenus_population_hdf.xlsx).
+et [`donnees/insee_revenus_population_hdf-v.xlsx`](donnees/insee_revenus_population_hdf-v.xlsx).
 
 ---
 
