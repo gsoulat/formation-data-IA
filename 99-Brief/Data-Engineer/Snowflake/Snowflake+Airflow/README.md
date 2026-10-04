@@ -11,7 +11,6 @@ Brief guidé de 5 jours, en binôme. Les apprenants construisent un entrepôt Sn
 | `BRIEF.md` | apprenants | le brief, champ par champ, au format Simplonline |
 | `RESSOURCES.md` | apprenants | guides, documentation et vidéos, jour par jour |
 | `starter-kit/` | apprenants | fichiers SQL fournis, contrat de la couche RAW, schéma du pipeline, détail des étapes, configuration Airflow |
-| `starter-kit.zip` | apprenants | le même kit en une archive à télécharger |
 
 Ce dossier ne contient ni la solution ni la grille de notation : elles sont conservées hors de ce dépôt public.
 
@@ -31,7 +30,7 @@ Bases de Python et de SQL (SELECT, JOIN, GROUP BY), Git, terminal. Aucune connai
 
 ## Avant la première journée
 
-Demander aux apprenants d'installer Python 3.12, Docker, Astro CLI et Git, de créer leur compte d'essai Snowflake et de lancer `bash verifier_poste.sh` depuis le kit.
+Demander aux apprenants d'installer Python 3.12, Docker, Astro CLI et Git, de créer leur compte d'essai Snowflake, de récupérer le kit (commandes dans `RESSOURCES.md`) et d'y lancer `bash verifier_poste.sh`.
 
 ## Guides du cours utilisés par le brief
 

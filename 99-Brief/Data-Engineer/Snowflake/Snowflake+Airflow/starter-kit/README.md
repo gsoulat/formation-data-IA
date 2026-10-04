@@ -4,7 +4,7 @@ Point de départ du brief. Ce kit contient ce qui est fourni ; tout le reste est
 
 ## Pour démarrer
 
-1. Décompresser ce kit dans un nouveau dossier, y lancer `git init`, puis le pousser dans un dépôt GitHub public à votre nom.
+1. Récupérer ce kit sur votre poste avec les commandes données dans les ressources du brief. Dans le dossier obtenu, lancer `git init`, puis le pousser dans un dépôt GitHub public à votre nom.
 2. Vérifier le poste : `bash verifier_poste.sh`. Tout doit afficher `OK`.
 3. Créer le compte d'essai Snowflake (édition Enterprise, région européenne) et noter l'identifiant de compte, de la forme `ORGANISATION-COMPTE`.
 4. Regarder `docs/architecture.png` (ce que vous allez construire) et lire `CONTRAT_RAW.md`, puis suivre le brief journée par journée.

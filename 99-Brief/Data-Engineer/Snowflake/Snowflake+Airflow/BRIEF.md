@@ -56,7 +56,7 @@ Contraintes techniques :
 
 Pour démarrer, avant le premier jour :
 1. Installer Python 3.12, Docker, Astro CLI et Git. Le brief fonctionne sous macOS, Linux et Windows ; sous Windows, travailler dans WSL (Ubuntu), car les commandes sont celles d'un terminal Linux. Le `README.md` du kit de démarrage détaille l'installation par système.
-2. Télécharger le kit de démarrage (lien dans les ressources), le décompresser, en faire votre dépôt GitHub public, puis lancer `bash verifier_poste.sh` : tout doit afficher OK.
+2. Récupérer le kit de démarrage avec les commandes données dans les ressources, en faire votre dépôt GitHub public, puis lancer `bash verifier_poste.sh` : tout doit afficher OK.
 3. Créer un compte d'essai Snowflake (édition Enterprise, région européenne) et noter son identifiant de compte, de la forme ORGANISATION-COMPTE.
 4. Lire le `README.md` du kit de démarrage : il montre le schéma du pipeline à construire et indique ce qui est fourni, ce qui est à écrire et dans quel dossier se fait chaque journée.
 

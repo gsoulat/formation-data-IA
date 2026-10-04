@@ -6,7 +6,19 @@ Méthode : pour chaque jour, 1) suivre le guide pas à pas indiqué en premier (
 
 ## Kit de démarrage
 
-- Fichiers SQL fournis, contrat de la couche RAW, schéma du pipeline, détail des étapes, configuration Airflow : à parcourir https://github.com/gsoulat/formation-data-IA/tree/main/99-Brief/Data-Engineer/Snowflake/Snowflake+Airflow/starter-kit ou à télécharger en une archive https://raw.githubusercontent.com/gsoulat/formation-data-IA/main/99-Brief/Data-Engineer/Snowflake/Snowflake+Airflow/starter-kit.zip
+- Fichiers SQL fournis, contrat de la couche RAW, schéma du pipeline, détail des étapes, configuration Airflow : à parcourir sur https://github.com/gsoulat/formation-data-IA/tree/main/99-Brief/Data-Engineer/Snowflake/Snowflake+Airflow/starter-kit
+- Pour le récupérer sur votre poste, sans télécharger tout le dépôt de cours :
+  ```bash
+  git clone --depth 1 --filter=blob:none --sparse https://github.com/gsoulat/formation-data-IA.git
+  cd formation-data-IA
+  git sparse-checkout set "99-Brief/Data-Engineer/Snowflake/Snowflake+Airflow/starter-kit"
+  cd ..
+  cp -R "formation-data-IA/99-Brief/Data-Engineer/Snowflake/Snowflake+Airflow/starter-kit" nyc-taxi-pipeline
+  rm -rf formation-data-IA
+  cd nyc-taxi-pipeline
+  git init
+  ```
+  Vous obtenez un dossier `nyc-taxi-pipeline` : c'est votre projet.
 
 ## Avant le premier jour
 
