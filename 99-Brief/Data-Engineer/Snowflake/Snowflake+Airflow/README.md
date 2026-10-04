@@ -1,5 +1,7 @@
 # Brief Data Engineer — Pipeline médaillon NYC Yellow Taxi : Snowflake et Airflow
 
+> Apprenants : commencez par [`BRIEF.md`](BRIEF.md). Cette page s'adresse au formateur.
+
 Brief guidé de 5 jours, en binôme. Les apprenants construisent un entrepôt Snowflake (rôles, droits, utilisateur de service, couche RAW) et un pipeline Airflow qui charge chaque mois les fichiers publics de la TLC, exécute des transformations SQL fournies et contrôle la qualité des données.
 
 ![Le parcours en cinq journées](starter-kit/docs/parcours.png)
@@ -10,7 +12,7 @@ Brief guidé de 5 jours, en binôme. Les apprenants construisent un entrepôt Sn
 |---|---|---|
 | `BRIEF.md` | apprenants | le brief, champ par champ, au format Simplonline |
 | `RESSOURCES.md` | apprenants | guides, documentation et vidéos, jour par jour |
-| `starter-kit/` | apprenants | fichiers SQL fournis, contrat de la couche RAW, schéma du pipeline, détail des étapes, configuration Airflow |
+| `starter-kit/` | apprenants | fichiers SQL fournis, contrat de la couche RAW, détail des étapes, schéma du pipeline, modèles de fiche et de réponse, configuration Airflow |
 
 Ce dossier ne contient ni la solution ni la grille de notation : elles sont conservées hors de ce dépôt public.
 
@@ -26,7 +28,9 @@ Bases de Python et de SQL (SELECT, JOIN, GROUP BY), Git, terminal. Aucune connai
 
 1. Copier chaque section de `BRIEF.md` dans le champ du même nom (titre, description rapide, compétences, contexte, modalités pédagogiques, modalités d'évaluation, livrables, critères de performance). Les limites de caractères de chaque champ sont respectées.
 2. Copier le contenu de `RESSOURCES.md` dans le champ Ressources.
-3. Vérifier que l'image du parcours s'affiche dans les modalités pédagogiques ; sinon, la téléverser depuis `starter-kit/docs/parcours.png`.
+3. Les deux images du brief ont des chemins relatifs, qui s'affichent sur GitHub mais pas dans Simplonline. Y remplacer `starter-kit/docs/architecture.png` et `starter-kit/docs/parcours.png` par leurs adresses publiques, ou téléverser les images :
+   - `https://raw.githubusercontent.com/gsoulat/formation-data-IA/main/99-Brief/Data-Engineer/Snowflake/Snowflake+Airflow/starter-kit/docs/architecture.png`
+   - `https://raw.githubusercontent.com/gsoulat/formation-data-IA/main/99-Brief/Data-Engineer/Snowflake/Snowflake+Airflow/starter-kit/docs/parcours.png`
 
 ## Avant la première journée
 

@@ -1,7 +1,5 @@
 # Ressources — parcours d'apprentissage par jour
 
-À coller dans le champ « Ressources » de Simplonline. Liens de documentation vérifiés le 2 octobre 2026 sauf mention contraire ; existence des vidéos vérifiée le 4 octobre 2026.
-
 Méthode : pour chaque jour, 1) suivre le guide pas à pas indiqué en premier (les guides Snowflake se reproduisent sur votre compte, le guide Airflow se lit : son exemple n'est pas exécutable tel quel), 2) transposer aux données NYC Taxi, 3) aller chercher le détail dans la documentation officielle, 4) regarder une vidéo si un geste reste flou. Les vidéos en anglais ont des sous-titres automatiques français sur YouTube (Paramètres → Sous-titres → Traduire automatiquement).
 
 ## Kit de démarrage
@@ -24,7 +22,7 @@ Méthode : pour chaque jour, 1) suivre le guide pas à pas indiqué en premier (
 
 Installer :
 - Sous Windows uniquement, WSL avec Ubuntu (les commandes du brief sont celles d'un terminal Linux) : https://learn.microsoft.com/fr-fr/windows/wsl/install
-- Python 3.12 et savoir créer un environnement virtuel : https://docs.python.org/fr/3/tutorial/venv.html
+- Python 3.10 ou plus récent, et savoir créer un environnement virtuel : https://docs.python.org/fr/3/tutorial/venv.html
 - Docker Desktop ou équivalent : https://www.docker.com/products/docker-desktop/
 - Astro CLI : https://www.astronomer.io/docs/astro/cli/install-cli
 - Compte d'essai Snowflake, édition Enterprise, région européenne : https://www.snowflake.com/en/snowflake-trial/

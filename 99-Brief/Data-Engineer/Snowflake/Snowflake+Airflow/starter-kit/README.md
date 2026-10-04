@@ -2,14 +2,48 @@
 
 Point de départ du brief. Ce kit contient ce qui est fourni ; tout le reste est à construire.
 
-## Pour démarrer
+## Dans quel ordre lire
 
-1. Récupérer ce kit sur votre poste avec les commandes données dans les ressources du brief. Dans le dossier obtenu, lancer `git init`, puis le pousser dans un dépôt GitHub public à votre nom.
-2. Vérifier le poste : `bash verifier_poste.sh`. Tout doit afficher `OK`.
-3. Créer le compte d'essai Snowflake (édition Enterprise, région européenne) et noter l'identifiant de compte, de la forme `ORGANISATION-COMPTE`.
-4. Regarder `docs/architecture.png` (ce que vous allez construire) et lire `CONTRAT_RAW.md`, puis suivre le brief journée par journée.
+1. **Le brief** : la situation, ce qui est attendu, comment vous serez évalués.
+2. **Ce README** : ce que contient le kit.
+3. **`ETAPES.md`**, chaque matin : le détail de la journée, les pièges, le résultat à obtenir.
+4. **`CONTRAT_RAW.md`**, au jour 2 : les noms que votre entrepôt doit respecter.
+
+Avant le premier jour, lancez `bash verifier_poste.sh` : tout doit afficher `OK`.
+
+## Ce que vous allez construire
 
 ![Schéma du pipeline](docs/architecture.png)
+
+## Contenu du kit
+
+```
+.
+├── README.md                      ce fichier
+├── ETAPES.md                      le détail de chaque journée
+├── CONTRAT_RAW.md                 noms et colonnes que votre entrepôt doit contenir
+├── verifier_poste.sh              vérifie Python, Git, Docker, Astro CLI, OpenSSL
+├── .gitignore                     exclut les clés, le .env et les fichiers téléchargés
+├── snowflake/                     À ÉCRIRE : scripts d'infrastructure et de couche RAW
+├── ingestion/                     À ÉCRIRE : script Python de chargement d'un mois
+├── docs/
+│   ├── architecture.png           le schéma du pipeline
+│   ├── parcours.png               les cinq journées en un coup d'œil
+│   ├── FICHE_SOURCE_MODELE.md     modèle de fiche source (jour 1)
+│   └── REPONSE_MODELE.md          modèle de réponse à la direction (jour 5)
+└── airflow/
+    ├── requirements.txt           dépendances Python du projet Airflow
+    ├── .env.example               format de la connexion Snowflake
+    ├── dags/                      À ÉCRIRE : votre DAG
+    └── include/sql/               FOURNI : les fichiers SQL, à ne pas modifier
+        ├── 00_tables.sql          crée les trois tables alimentées mois par mois
+        ├── staging/               2 vues de renommage + les tables de codes
+        ├── intermediate/          trajets étiquetés, puis trajets valides enrichis
+        ├── marts/                 5 dimensions, la table de faits, 3 tables d'analyse
+        └── controles/             1 contrôle fourni comme modèle, les autres À ÉCRIRE
+```
+
+Les fichiers `.gitkeep` ne servent qu'à conserver les dossiers vides dans Git : vous pouvez les supprimer dès que vous y ajoutez un fichier.
 
 ## Selon votre système
 
@@ -17,61 +51,27 @@ Point de départ du brief. Ce kit contient ce qui est fourni ; tout le reste est
 |---|---|---|---|
 | macOS | Terminal | `brew install astro` | Docker Desktop ou OrbStack |
 | Linux | terminal habituel | `curl -sSL install.astronomer.io \| sudo bash -s` | Docker Engine suffit |
-| Windows | **WSL avec Ubuntu**, pas PowerShell | la commande Linux, dans Ubuntu | activer l'intégration WSL dans Docker Desktop ; cloner le dépôt dans le dossier personnel d'Ubuntu (`~`), pas sous `/mnt/c` : les droits des fichiers de clé n'y fonctionnent pas |
+| Windows | **WSL avec Ubuntu**, pas PowerShell | la commande Linux, dans Ubuntu | activer l'intégration WSL dans Docker Desktop ; placer le projet dans le dossier personnel d'Ubuntu (`~`), pas sous `/mnt/c` : les droits du fichier de clé n'y fonctionnent pas |
 
-Toutes les commandes du brief et des guides (`openssl`, `awk`, `bash`, `python3`) sont celles d'un terminal macOS ou Linux. Sous Windows, elles s'exécutent telles quelles dans Ubuntu (WSL). Les consignes Windows n'ont pas été testées sur un poste réel.
-
-## Contenu
-
-```
-.
-├── CONTRAT_RAW.md                 noms et colonnes que votre entrepôt doit contenir
-├── verifier_poste.sh              vérifie Python, Git, Docker, Astro CLI, OpenSSL
-├── .gitignore                     exclut les clés, le .env et les fichiers téléchargés
-├── snowflake/                     À ÉCRIRE : scripts d'infrastructure et de couche RAW
-├── ingestion/                     À ÉCRIRE : script Python de chargement d'un mois
-├── docs/
-│   ├── architecture.png           FOURNI : le schéma du pipeline à construire
-│   ├── parcours.png               FOURNI : les étapes des cinq journées
-│   ├── ETAPES.md                  FOURNI : le détail de chaque étape, journée par journée
-│   └── FICHE_SOURCE_MODELE.md     modèle de fiche source à copier et compléter
-└── airflow/
-    ├── requirements.txt           dépendances Python du projet Airflow
-    ├── .env.example               format de la connexion Snowflake (à copier en .env, jamais versionné)
-    ├── dags/                      À ÉCRIRE : votre DAG (créé par `astro dev init`)
-    └── include/sql/               FOURNI : les fichiers SQL, à ne pas modifier
-        ├── 00_tables.sql          crée les trois tables alimentées mois par mois
-        ├── staging/               2 vues de renommage + les tables de codes
-        ├── intermediate/          trajets étiquetés, puis trajets valides enrichis
-        ├── marts/                 5 dimensions, la table de faits, 3 tables d'analyse
-        └── controles/             1 contrôle FOURNI comme modèle, les autres À ÉCRIRE
-```
-
-## Le parcours en cinq journées
-
-![Parcours en cinq journées](docs/parcours.png)
-
-Le détail de chaque étape est dans [`docs/ETAPES.md`](docs/ETAPES.md).
-
-## Où se fait chaque journée
-
-| Jour | Dossier | Guide à suivre |
-|---|---|---|
-| 1 | `docs/`, `snowflake/` | Sécurité : rôles, droits et utilisateurs de service |
-| 2 | `snowflake/`, `ingestion/` | Charger des fichiers : format, stage, PUT, COPY INTO |
-| 3 | `airflow/dags/` | Airflow 3 avec Astro CLI, sections 1 à 5 |
-| 4 | `airflow/dags/`, `airflow/include/sql/controles/` | Airflow 3 avec Astro CLI, section 6 |
-
-Le contrôle fourni, `controles/raw_mois_charge.sql`, vérifie que le mois traité est bien présent dans RAW. Une requête de contrôle renvoie une seule ligne : si une de ses valeurs est fausse, la tâche échoue et la suite ne s'exécute pas. Écrivez les vôtres sur ce modèle.
-| 5 | `README.md`, `docs/` | |
-
-Les liens des guides sont dans le brief et dans ses ressources.
+Les commandes du brief et des guides (`openssl`, `awk`, `bash`, `python3`) sont celles d'un terminal macOS ou Linux. Sous Windows, elles s'exécutent telles quelles dans Ubuntu (WSL). Les consignes Windows n'ont pas été testées sur un poste réel.
 
 ## Lire les fichiers SQL fournis
 
-- Les noms sont complets (`NYC_TAXI.MARTS.FCT_TRIPS`) : la base, les schémas et les tables portent des noms imposés. Le nom du warehouse, du rôle et de l'utilisateur de service est libre.
-- `{{ ds }}` est remplacé par Airflow par le premier jour du mois traité (`2025-01-01`). Exécuté tel quel dans Snowsight, le fichier échoue : remplacez d'abord `{{ ds }}` à la main pour le tester.
-- `{{ params.xxx }}` est un paramètre à déclarer dans votre DAG :
+Chaque fichier crée une vue ou une table, ou alimente une table pour le mois traité.
+
+- **Les noms sont complets** (`NYC_TAXI.MARTS.FCT_TRIPS`) : la base, les schémas et les tables portent des noms imposés. Le nom du warehouse, du rôle et de l'utilisateur de service est libre.
+- **Pour trouver l'ordre d'exécution** : chaque fichier lit des tables (`FROM`, `JOIN`) et en crée une. Un fichier s'exécute après ceux qui créent les tables qu'il lit. `00_tables.sql` passe avant tout le reste.
+- **Ce qui est entre doubles accolades** est remplacé par Airflow avant l'exécution :
+
+| Dans le fichier | Remplacé par | Exemple pour janvier 2025 |
+|---|---|---|
+| `{{ ds }}` | le premier jour du mois traité | `2025-01-01` |
+| `{{ logical_date.strftime("%Y-%m") }}` | le mois traité | `2025-01` |
+| `{{ params.xxx }}` | un paramètre à déclarer dans votre DAG | voir ci-dessous |
+
+Exécuté tel quel dans Snowsight, un fichier qui contient des accolades échoue : remplacez-les d'abord à la main pour le tester.
+
+Les quatre paramètres attendus par les fichiers fournis :
 
 | Paramètre | Valeur | Utilisé par |
 |---|---|---|
@@ -80,7 +80,9 @@ Les liens des guides sont dans le brief et dans ses ressources.
 | `start_month` | `"2025-01-01"` | `marts/dim_date.sql` |
 | `end_month` | `"2025-04-01"` | `marts/dim_date.sql` |
 
-- Pour trouver l'ordre d'exécution : chaque fichier lit des tables (`FROM`, `JOIN`) et en crée une. Un fichier s'exécute après ceux qui créent les tables qu'il lit. `00_tables.sql` passe avant tout le reste.
+## Le contrôle fourni
+
+`controles/raw_mois_charge.sql` vérifie que le mois traité est bien présent dans RAW. Une requête de contrôle renvoie une seule ligne : si une de ses valeurs est fausse, la tâche échoue et la suite ne s'exécute pas. Écrivez les vôtres sur ce modèle.
 
 ## Mettre en place le projet Airflow (jour 3)
 
@@ -89,15 +91,21 @@ cd airflow
 astro dev init                    # le dossier n'est pas vide : répondre y
 ```
 
-`astro dev init` génère le `Dockerfile` et les fichiers du projet sans toucher à `requirements.txt` ni à `include/`. Supprimez ensuite `dags/exampledag.py`, créez `.env` à partir de `.env.example` (la clé privée y tient sur une seule ligne, voir le guide), puis :
+`astro dev init` génère le `Dockerfile` et les fichiers du projet, sans toucher à `requirements.txt` ni à `include/`. Ensuite :
+
+1. Supprimer `dags/exampledag.py`.
+2. Créer le fichier `airflow/.env` à partir de `airflow/.env.example`. La clé privée y tient sur une seule ligne : voir la section 3 du guide Airflow.
+3. Démarrer :
 
 ```bash
 astro dev start
 ```
 
-L'adresse de l'interface est affichée à la fin de la commande. Un DAG est en pause à sa création : activez-le avec son interrupteur. N'utilisez pas le bouton Trigger : il lance une exécution datée d'aujourd'hui.
+L'adresse de l'interface est affichée à la fin de la commande.
 
-Quand vous ajoutez des tâches à un DAG dont les exécutions sont déjà terminées, elles ne tournent pas toutes seules : ouvrez chaque exécution et relancez-la avec Clear.
+- L'identifiant de connexion à utiliser dans votre code est `snowflake_nyc_taxi`.
+- Un DAG est en pause à sa création : activez-le avec son interrupteur. N'utilisez pas le bouton Trigger pour le DAG de chargement : il lance une exécution datée d'aujourd'hui.
+- Quand vous ajoutez des tâches à un DAG dont les exécutions sont déjà terminées, elles ne tournent pas toutes seules : ouvrez chaque exécution et relancez-la avec Clear.
 
 ## Résultats attendus
 

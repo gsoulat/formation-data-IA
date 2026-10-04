@@ -16,4 +16,5 @@ airflow_settings.yaml
 
 # Fichiers téléchargés
 *.parquet
+taxi_zone_lookup.csv
 .DS_Store

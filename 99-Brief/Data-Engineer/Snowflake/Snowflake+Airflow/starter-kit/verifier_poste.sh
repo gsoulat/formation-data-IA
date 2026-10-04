@@ -5,7 +5,7 @@ verifier() {  # verifier "nom" "commande" "conseil"
   if sortie=$(eval "$2" 2>&1); then echo "OK    $1 : $(echo "$sortie" | head -1)"; ok=$((ok+1))
   else echo "MANQUE $1 -> $3"; ko=$((ko+1)); fi
 }
-verifier "Python 3.12"   "python3.12 --version"            "installer Python 3.12 (python.org ou gestionnaire de paquets)"
+verifier "Python 3.10+"  "python3 -c 'import sys; assert sys.version_info >= (3, 10), sys.version; print(sys.version.split()[0])'" "installer Python 3.10 ou plus récent"
 verifier "Git"           "git --version"                   "installer Git"
 verifier "Docker"        "docker --version"                "installer Docker Desktop ou équivalent"
 verifier "Docker démarré" "docker info --format '{{.ServerVersion}}'" "démarrer Docker avant de lancer Airflow"

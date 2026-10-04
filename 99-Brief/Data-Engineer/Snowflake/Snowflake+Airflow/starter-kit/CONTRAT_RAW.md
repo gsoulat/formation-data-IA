@@ -62,7 +62,7 @@ Attention au choix des types Snowflake : dans les fichiers, une même colonne pe
 
 Elles n'existent pas dans les fichiers : c'est le chargement qui les remplit.
 
-- `_source_file` contient le nom du fichier chargé, par exemple `yellow_tripdata_2025-01.parquet`. Les fichiers SQL en extraient le mois (`2025-01`) pour savoir à quel mois appartient chaque ligne : le nom doit conserver le motif `AAAA-MM`.
+- `_source_file` contient exactement le nom du fichier chargé, sans dossier devant, par exemple `yellow_tripdata_2025-01.parquet` : déposez les fichiers à la racine du stage. Les fichiers SQL en extraient le mois (`2025-01`) pour savoir à quel mois appartient chaque ligne : le nom doit conserver le motif `AAAA-MM`.
 - `_loaded_at` contient la date et l'heure du chargement. Elle sert à garder la première version d'un trajet présent deux fois.
 
 ## Vérifier le contrat
