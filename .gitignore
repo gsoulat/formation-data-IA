@@ -94,3 +94,6 @@ wheels/
 
 # Atelier Airflow local (configuration, journaux, clés) : jamais versionné
 06-Data-Engineering/Airflow/atelier/
+
+# Version du brief à coller dans Simplonline : générée en local, jamais versionnée
+simplonline/

@@ -10,7 +10,7 @@ Brief guidé de 5 jours, en binôme. Les apprenants construisent un entrepôt Sn
 
 | Fichier | Pour qui | Rôle |
 |---|---|---|
-| `BRIEF.md` | apprenants | le brief, champ par champ, au format Simplonline |
+| `BRIEF.md` | apprenants | le brief complet, à lire sur GitHub |
 | `RESSOURCES.md` | apprenants | guides, documentation et vidéos, jour par jour |
 | `starter-kit/` | apprenants | fichiers SQL fournis, contrat de la couche RAW, détail des étapes, schéma du pipeline, modèles de fiche et de réponse, configuration Airflow |
 
@@ -26,11 +26,9 @@ Bases de Python et de SQL (SELECT, JOIN, GROUP BY), Git, terminal. Aucune connai
 
 ## Publier le brief sur Simplonline
 
-1. Copier chaque section de `BRIEF.md` dans le champ du même nom (titre, description rapide, compétences, contexte, modalités pédagogiques, modalités d'évaluation, livrables, critères de performance). Les limites de caractères de chaque champ sont respectées.
-2. Copier le contenu de `RESSOURCES.md` dans le champ Ressources.
-3. Les deux images du brief ont des chemins relatifs, qui s'affichent sur GitHub mais pas dans Simplonline. Y remplacer `starter-kit/docs/architecture.png` et `starter-kit/docs/parcours.png` par leurs adresses publiques, ou téléverser les images :
-   - `https://raw.githubusercontent.com/gsoulat/formation-data-IA/main/99-Brief/Data-Engineer/Snowflake/Snowflake+Airflow/starter-kit/docs/architecture.png`
-   - `https://raw.githubusercontent.com/gsoulat/formation-data-IA/main/99-Brief/Data-Engineer/Snowflake/Snowflake+Airflow/starter-kit/docs/parcours.png`
+1. Copier chaque section de `BRIEF.md` dans le champ du même nom, puis `RESSOURCES.md` dans le champ Ressources. Les limites de caractères de chaque champ sont respectées.
+2. L'éditeur de Simplonline n'affiche pas les tableaux : les remplacer par des listes. Une version déjà convertie, un fichier par champ, est générée en local dans un dossier `simplonline/`, qui n'est pas versionné.
+3. Insérer les deux images avec le bouton image de l'éditeur : `starter-kit/docs/architecture.png` dans le contexte, `starter-kit/docs/parcours.png` dans les modalités pédagogiques.
 
 ## Avant la première journée
 
