@@ -34,7 +34,7 @@ Bases de Python et de SQL (SELECT, JOIN, GROUP BY), Git, terminal. Aucune connai
 
 ## Avant la première journée
 
-Demander aux apprenants d'installer Python 3.12, Docker, Astro CLI et Git, de créer leur compte d'essai Snowflake, de récupérer le kit (commandes dans `RESSOURCES.md`) et d'y lancer `bash verifier_poste.sh`.
+Demander aux apprenants d'installer Python (3.10 ou plus récent), Docker, Astro CLI et Git, de créer leur compte d'essai Snowflake, de récupérer le kit (commandes dans `RESSOURCES.md`) et d'y lancer `bash verifier_poste.sh`.
 
 ## Guides du cours utilisés par le brief
 
