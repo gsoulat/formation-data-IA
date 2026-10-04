@@ -6,7 +6,7 @@ Méthode : pour chaque jour, 1) suivre le guide pas à pas indiqué en premier (
 
 ## Kit de démarrage
 
-- Fichiers SQL fournis, contrat de la couche RAW, schéma du pipeline, détail des étapes, configuration Airflow : à parcourir https://github.com/gsoulat/formation-data-IA/tree/main/99-Brief/Data-Engineer/Snowflake+Airflow/starter-kit ou à télécharger en une archive https://raw.githubusercontent.com/gsoulat/formation-data-IA/main/99-Brief/Data-Engineer/Snowflake+Airflow/starter-kit.zip
+- Fichiers SQL fournis, contrat de la couche RAW, schéma du pipeline, détail des étapes, configuration Airflow : à parcourir https://github.com/gsoulat/formation-data-IA/tree/main/99-Brief/Data-Engineer/Snowflake/Snowflake+Airflow/starter-kit ou à télécharger en une archive https://raw.githubusercontent.com/gsoulat/formation-data-IA/main/99-Brief/Data-Engineer/Snowflake/Snowflake+Airflow/starter-kit.zip
 
 ## Avant le premier jour
 

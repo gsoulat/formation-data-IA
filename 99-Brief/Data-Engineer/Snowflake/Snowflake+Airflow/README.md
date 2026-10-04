@@ -35,6 +35,6 @@ Demander aux apprenants d'installer Python 3.12, Docker, Astro CLI et Git, de cr
 
 ## Guides du cours utilisés par le brief
 
-- Jour 1 : [Sécurité Snowflake : rôles, droits et utilisateurs de service](../../../04-Cloud-Platforms/snowflake/10-securite.md)
-- Jour 2 : [Charger des fichiers : format, stage, PUT, COPY INTO](../../../04-Cloud-Platforms/snowflake/11-chargement-stage-copy.md)
-- Jours 3 et 4 : [Airflow 3 avec Astro CLI](../../../06-Data-Engineering/Airflow/06-Airflow3-Astro/01-airflow3-astro-snowflake.md)
+- Jour 1 : [Sécurité Snowflake : rôles, droits et utilisateurs de service](../../../../04-Cloud-Platforms/snowflake/10-securite.md)
+- Jour 2 : [Charger des fichiers : format, stage, PUT, COPY INTO](../../../../04-Cloud-Platforms/snowflake/11-chargement-stage-copy.md)
+- Jours 3 et 4 : [Airflow 3 avec Astro CLI](../../../../06-Data-Engineering/Airflow/06-Airflow3-Astro/01-airflow3-astro-snowflake.md)
