@@ -24,7 +24,7 @@ Compétences fondamentales mobilisées par plusieurs parcours.
 Collecte, stockage, transformation et industrialisation de la donnée.
 - [API + Scraping (Bouquineo)](Data-Engineer/API-Scraping/) · [Streaming Kafka](Data-Engineer/Kafka-Streaming/)
 - [Gouvernance des données](Data-Engineer/Gouvernance-Donnees/) · [Maintenance Data Warehouse](Data-Engineer/Maintenance-Data-Warehouse/)
-- [Data Lake](Data-Engineer/DataLake/) · [BigQuery Medallion](Data-Engineer/BigQuery-Medallion/) · [Snowflake + dbt](Data-Engineer/Snowflake+Dbt/)
+- [Data Lake](Data-Engineer/DataLake/) · [BigQuery Medallion](Data-Engineer/BigQuery-Medallion/) · [Snowflake + dbt](Data-Engineer/Snowflake/Snowflake+Dbt/) · [Snowflake + Airflow](Data-Engineer/Snowflake/Snowflake+Airflow/)
 - [Administration PostgreSQL (logistique)](Data-Engineer/PostgreSQL-Logistique/) · [Pipeline NYC Taxi](Data-Engineer/brief-pipeline-data-engineering.md)
 - [Lakehouse Éolien (Medallion)](Data-Engineer/Eolienne/) · [eCO2mix RTE](Data-Engineer/ECO2-RTE/) · [Qualité de l'eau (Azure)](Data-Engineer/BRIEF_QUALITE_EAU_FRANCE.md)
 

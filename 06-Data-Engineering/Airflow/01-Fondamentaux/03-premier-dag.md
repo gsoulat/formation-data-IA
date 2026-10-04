@@ -549,7 +549,7 @@ tache_avec_gestion_erreurs = PythonOperator(
 )
 ```
 
-> Les arguments `email`, `email_on_failure` et `email_on_retry`, très présents dans les `default_args` des tutoriels Airflow 2, sont dépréciés en Airflow 3 (ils déclenchent un avertissement et disparaîtront en Airflow 4). Pour alerter par e-mail, on passe désormais un *notifier* au callback, par exemple `SmtpNotifier` du provider `smtp` ; les notifications sont abordées dans le [module 6](../06-Airflow3-Astro/01-airflow3-astro-snowflake-dbt.md).
+> Les arguments `email`, `email_on_failure` et `email_on_retry`, très présents dans les `default_args` des tutoriels Airflow 2, sont dépréciés en Airflow 3 (ils déclenchent un avertissement et disparaîtront en Airflow 4). Pour alerter par e-mail, on passe désormais un *notifier* au callback, par exemple `SmtpNotifier` du provider `smtp` ; les notifications sont abordées dans le [module 6](../06-Airflow3-Astro/01-airflow3-astro-snowflake.md).
 >
 > En Airflow 3, `retry_exponential_backoff` est un **multiplicateur** (0 = délai constant, 2.0 = le délai double à chaque tentative), et non plus un booléen comme en Airflow 2. Autre suppression à connaître : les SLA (`sla`, `sla_miss_callback`) n'existent plus.
 

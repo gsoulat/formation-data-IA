@@ -32,7 +32,7 @@ travailler. Les trois valident les mêmes compétences.
 
 ## Rapport avec le brief existant
 
-Le brief historique [`../Snowflake+Dbt/nyc_taxi_dbt_pipeline.md`](../Snowflake+Dbt/nyc_taxi_dbt_pipeline.md)
+Le brief historique [`../Snowflake/Snowflake+Dbt/nyc_taxi_dbt_pipeline.md`](../Snowflake/Snowflake+Dbt/nyc_taxi_dbt_pipeline.md)
 reste valable : il fait 3 jours et place dbt et l'orchestration en **options**. Ces trois
 variantes font 5 jours et mettent **dbt et l'orchestration dans le socle** — c'est la
 différence de fond, et la raison des deux jours supplémentaires.

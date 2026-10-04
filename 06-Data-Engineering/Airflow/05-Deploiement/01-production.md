@@ -11,7 +11,7 @@
 | AWS MWAA | AWS managé | Faible | Élevée |
 | Google Cloud Composer | GCP managé | Faible | Élevée |
 
-> Le déploiement sur un Airflow hébergé (Astro) est décrit dans [`../06-Airflow3-Astro/01-airflow3-astro-snowflake-dbt.md`](../06-Airflow3-Astro/01-airflow3-astro-snowflake-dbt.md). Ce chapitre traite du déploiement auto-géré sur Kubernetes.
+> Le déploiement sur un Airflow hébergé (Astro) est décrit dans [`../06-Airflow3-Astro/01-airflow3-astro-snowflake.md`](../06-Airflow3-Astro/01-airflow3-astro-snowflake.md). Ce chapitre traite du déploiement auto-géré sur Kubernetes.
 
 ### Les composants à déployer en Airflow 3
 

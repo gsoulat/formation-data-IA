@@ -49,7 +49,7 @@ Ce parcours est conçu pour vous emmener de la maîtrise du terminal à la mise 
 | :--- | :--- |
 | **Data Lake** | [Data Lake avec MinIO, Spark et Delta Lake](99-Brief/Data-Engineer/DataLake/BRIEF_DATALAKE.md) |
 | **Data Warehouse (Cloud)** | [Pipeline Data Warehouse E-commerce sur BigQuery (Medallion)](99-Brief/Data-Engineer/BigQuery-Medallion/BRIEF_BIGQUERY_MEDALLION.md) |
-| **DWH & dbt (Snowflake)** | [Pipeline NYC Taxi avec Snowflake + dbt](99-Brief/Data-Engineer/Snowflake+Dbt/nyc_taxi_dbt_pipeline.md) |
+| **DWH & dbt (Snowflake)** | [Pipeline NYC Taxi avec Snowflake + dbt](99-Brief/Data-Engineer/Snowflake/Snowflake+Dbt/nyc_taxi_dbt_pipeline.md) |
 | **Cloud & Lakehouse (Fabric)** | [Pipeline éolien sur Microsoft Fabric](99-Brief/Data-Engineer/Eolienne/Brief_Principal_Introduction.md) |
 | **Spark & Analyse énergétique** | [Analyse de la production énergétique française (eCO2mix RTE)](99-Brief/Data-Engineer/ECO2-RTE/BRIEF_ECO2MIX_RTE.md) |
 

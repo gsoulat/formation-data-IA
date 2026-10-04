@@ -121,7 +121,7 @@ astro dev init    # crée la structure du projet (dags/, Dockerfile, requirement
 astro dev start   # construit l'image et démarre Airflow en local
 ```
 
-C'est une alternative plus simple au quotidien. Elle est détaillée dans le module 6 : [Airflow 3 avec Astro CLI, Snowflake et dbt](../06-Airflow3-Astro/01-airflow3-astro-snowflake-dbt.md).
+C'est une alternative plus simple au quotidien. Elle est détaillée dans le module 6 : [Airflow 3 avec Astro CLI, Snowflake et dbt](../06-Airflow3-Astro/01-airflow3-astro-snowflake.md).
 
 ---
 
