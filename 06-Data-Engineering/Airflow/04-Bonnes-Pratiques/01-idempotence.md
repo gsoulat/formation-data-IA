@@ -16,13 +16,15 @@ Airflow re-exécute des tâches dans plusieurs situations :
 - **Retry automatique** après un échec (si `retries > 0`)
 - **Rejoue manuel** via "Clear" dans l'interface
 - **Backfill** pour rattraper des dates passées
-- **Catchup** au démarrage d'un nouveau DAG
+- **Catchup** au démarrage d'un nouveau DAG (si `catchup=True`)
 
 Si vos tâches ne sont pas idempotentes → **données dupliquées**.
 
 ---
 
 ## Exemples : idempotent vs non-idempotent
+
+Dans les exemples ci-dessous, `context['ds']` est la **date logique** du run au format `YYYY-MM-DD`. Le hook s'importe avec `from airflow.providers.postgres.hooks.postgres import PostgresHook`.
 
 ### INSERT simple — non-idempotent
 
@@ -100,18 +102,85 @@ def exporter(**context):
 
 ---
 
+## Quelle période traiter ? Date logique et intervalle de données
+
+Une tâche idempotente traite toujours **la même tranche de données** pour un run donné. Cette tranche doit donc être déduite du run (sa date logique, son intervalle de données), jamais de l'horloge (`datetime.now()`).
+
+> **Changement important en Airflow 3.** Avec une expression cron ou un préréglage (`@daily`, `@monthly`...), Airflow 3 utilise par défaut `CronTriggerTimetable` : la date logique est **l'instant du déclenchement**, et `data_interval_start == data_interval_end == logical_date`. En Airflow 2, le même `@daily` donnait un intervalle d'un jour, et le run déclenché le 10 janvier à minuit portait la date logique du 9 janvier. Un code qui traite « la période `[data_interval_start, data_interval_end)` » doit donc être adapté, sinon il traite une période vide.
+
+| Run planifié déclenché le 2024-01-10 à 00:00 UTC | `logical_date` / `ds` | `data_interval_start` | `data_interval_end` |
+|---|---|---|---|
+| `schedule='@daily'` (Airflow 3, `CronTriggerTimetable`) | 2024-01-10 | 2024-01-10 00:00 | 2024-01-10 00:00 |
+| `schedule=CronDataIntervalTimetable("0 0 * * *", timezone="UTC")` | 2024-01-09 | 2024-01-09 00:00 | 2024-01-10 00:00 |
+
+Deux façons correctes de traiter « les données de la veille » :
+
+```python
+from datetime import datetime
+from airflow.sdk import dag, task
+from airflow.timetables.interval import CronDataIntervalTimetable
+
+
+# Option A — intervalle de données explicite (sémantique d'Airflow 2)
+@dag(
+    dag_id='ventes_intervalle',
+    start_date=datetime(2024, 1, 1),
+    schedule=CronDataIntervalTimetable("0 0 * * *", timezone="UTC"),
+    catchup=False,
+)
+def ventes_intervalle():
+
+    @task
+    def charger(data_interval_start=None, data_interval_end=None):
+        # Run déclenché le 2024-01-10 à 00:00 → [2024-01-09 00:00, 2024-01-10 00:00)
+        print(f"Période traitée : [{data_interval_start}, {data_interval_end})")
+
+    charger()
+
+
+# Option B — @daily (CronTriggerTimetable) : la période se calcule depuis logical_date
+@dag(
+    dag_id='ventes_declenchement',
+    start_date=datetime(2024, 1, 1),
+    schedule='@daily',
+    catchup=False,
+)
+def ventes_declenchement():
+
+    @task
+    def charger(logical_date=None):
+        fin = logical_date                       # 2024-01-10 00:00
+        debut = logical_date.subtract(days=1)    # 2024-01-09 00:00
+        print(f"Période traitée : [{debut}, {fin})")
+
+    charger()
+
+
+ventes_intervalle()
+ventes_declenchement()
+```
+
+Dans les deux cas, rejouer le run redonne exactement la même période : c'est ce qui rend le `DELETE + INSERT` ou l'UPSERT sûrs.
+
+> Les variables `execution_date`, `prev_execution_date`, `next_execution_date`, `yesterday_ds` et `tomorrow_ds`, fréquentes dans les tutoriels Airflow 2, n'existent plus : utiliser `logical_date`, `ds`, `data_interval_start` et `data_interval_end`. L'option de configuration `[scheduler] create_cron_data_intervals = True` rétablit l'ancien comportement pour toutes les expressions cron, mais le choix explicite de la timetable dans le DAG est plus lisible.
+
+---
+
 ## Idempotence dans les pipelines complets
+
+Le pipeline ci-dessous utilise `CronDataIntervalTimetable` : pour un run planifié ou un backfill, `ds` désigne le **jour couvert par l'intervalle de données** (le run déclenché le 10 janvier à minuit traite la journée du 9).
 
 ```python
 # dags/pipeline_idempotent.py
 
 from datetime import datetime, timedelta
-from airflow.decorators import dag, task
+from airflow.sdk import dag, task
+from airflow.timetables.interval import CronDataIntervalTimetable
 
 @dag(
     dag_id='pipeline_etl_idempotent',
     start_date=datetime(2024, 1, 1),
-    schedule='@daily',
+    schedule=CronDataIntervalTimetable("0 0 * * *", timezone="UTC"),
     catchup=True,      # Peut rattraper les dates passées en toute sécurité
     default_args={'retries': 3, 'retry_delay': timedelta(minutes=5)},
     tags=['idempotent', 'bonnes-pratiques'],
@@ -239,17 +308,31 @@ dag = pipeline_etl_idempotent()
 
 ## Le paramètre catchup
 
-```python
-# catchup=True (comportement par défaut)
-# Airflow va créer des DAG Runs pour TOUTES les dates manquées
-# depuis start_date jusqu'à maintenant.
+> **Changement en Airflow 3 :** `catchup` vaut désormais `False` par défaut (c'était `True` en Airflow 2). Un nouveau DAG ne rattrape donc plus son historique, sauf si on le demande explicitement.
 
+```python
+from datetime import datetime
+from airflow.sdk import DAG
+
+# catchup=False (comportement par défaut en Airflow 3)
+# Airflow ne crée que le run le plus récent, pas les échéances manquées.
+with DAG(
+    dag_id='sans_catchup',
+    start_date=datetime(2024, 1, 1),
+    schedule='@daily',
+    catchup=False,   # Valeur par défaut, écrite ici pour être explicite
+) as dag:
+    pass
+
+# catchup=True : Airflow crée un DAG Run pour CHAQUE échéance manquée
+# entre start_date et maintenant.
+#
 # Exemple :
 # start_date = 2024-01-01
 # schedule = @daily
-# Aujourd'hui = 2024-01-10
-# → Airflow crée 9 DAG Runs (2024-01-01 à 2024-01-09)
-
+# Aujourd'hui = 2024-01-10 (dans la matinée)
+# → Airflow crée 10 DAG Runs (dates logiques 2024-01-01 à 2024-01-10)
+#   (9 runs, du 01 au 09, avec CronDataIntervalTimetable ou en Airflow 2)
 with DAG(
     dag_id='avec_catchup',
     start_date=datetime(2024, 1, 1),
@@ -258,22 +341,13 @@ with DAG(
     max_active_runs=3,  # Maximum 3 DAG Runs simultanés pendant le catchup
 ) as dag:
     pass
-
-# catchup=False : ne créer que le run le plus récent
-# → Recommandé quand le catchup n'a pas de sens
-with DAG(
-    dag_id='sans_catchup',
-    start_date=datetime(2024, 1, 1),
-    schedule='@daily',
-    catchup=False,
-) as dag:
-    pass
 ```
 
 ### Configuration globale du catchup
 
 ```ini
-# airflow.cfg — désactiver le catchup par défaut pour tous les DAGs
+# airflow.cfg — valeur par défaut de catchup pour tous les DAGs
+# (False en Airflow 3 ; passer à True pour retrouver le comportement d'Airflow 2)
 [scheduler]
 catchup_by_default = False
 ```
@@ -284,27 +358,39 @@ catchup_by_default = False
 
 Le backfill permet de re-exécuter un DAG sur des dates passées, même si `catchup=False`.
 
+> La commande `airflow dags backfill` d'Airflow 2 n'existe plus. En Airflow 3, un backfill est un objet créé par `airflow backfill create` (ou depuis l'interface) puis **exécuté par le Scheduler** : la commande rend la main immédiatement, et le suivi se fait dans l'interface.
+
 ```bash
-# Rejouer le DAG 'etl_ventes' pour janvier 2024
-airflow dags backfill \
-    --start-date 2024-01-01 \
-    --end-date 2024-01-31 \
-    etl_ventes
+# Rejouer le DAG 'etl_ventes' pour janvier 2024 (bornes incluses)
+airflow backfill create \
+    --dag-id etl_ventes \
+    --from-date 2024-01-01 \
+    --to-date 2024-01-31
 
 # Avec parallélisme (3 DAG Runs simultanés max)
-airflow dags backfill \
-    --start-date 2024-01-01 \
-    --end-date 2024-01-31 \
-    --max-active-runs 3 \
-    etl_ventes
+airflow backfill create \
+    --dag-id etl_ventes \
+    --from-date 2024-01-01 \
+    --to-date 2024-01-31 \
+    --max-active-runs 3
 
 # Simuler sans exécuter (dry run)
-airflow dags backfill \
-    --start-date 2024-01-01 \
-    --end-date 2024-01-31 \
-    --dry-run \
-    etl_ventes
+airflow backfill create \
+    --dag-id etl_ventes \
+    --from-date 2024-01-01 \
+    --to-date 2024-01-31 \
+    --dry-run
+
+# Rejouer aussi les dates qui ont déjà un run
+# (none par défaut : seules les dates sans run sont créées ; failed ; completed)
+airflow backfill create \
+    --dag-id etl_ventes \
+    --from-date 2024-01-01 \
+    --to-date 2024-01-31 \
+    --reprocess-behavior completed
 ```
+
+Depuis l'interface : sur la page du DAG, bouton **Trigger** puis option **Backfill** — on choisit la plage de dates, le comportement de retraitement (*Missing Runs*, *Missing and Errored Runs*, *All Runs*) et le nombre maximal de runs actifs. L'onglet **Backfills** du DAG liste les backfills, que l'on peut mettre en pause ou annuler.
 
 > Un backfill n'est sûr que si vos tâches sont **idempotentes**. Sans ça, vous dupliquerez les données.
 
@@ -314,29 +400,31 @@ airflow dags backfill \
 
 ### Clear d'une tâche
 
-1. Cliquer sur la tâche dans la vue Graph
-2. Cliquer "Clear" → la tâche repasse en état `none`
+1. Cliquer sur la tâche dans la grille ou dans la vue Graph
+2. Cliquer "Clear Task Instance" → la tâche est remise à zéro (plus d'état)
 3. Le Scheduler la replanifie automatiquement
 
 ### Clear d'un DAG Run entier
 
-1. Dans la liste des DAG Runs, cliquer sur le bouton "Clear"
-2. Toutes les tâches du run repassent en `none`
+1. Ouvrir le DAG Run et cliquer sur le bouton "Clear Dag Run"
+2. Choisir "Clear existing tasks" (toutes les tâches du run sont rejouées) ou "Clear only failed tasks" (seulement celles en échec)
 
-### Options de Clear
+### Options de Clear d'une tâche
 
 ```
-☐ Past        → Clear aussi les runs précédents
-☐ Future      → Clear aussi les runs futurs
+☐ Past        → Clear aussi cette tâche dans les runs précédents
+☐ Future      → Clear aussi cette tâche dans les runs suivants
 ☐ Upstream    → Clear aussi les tâches en amont
 ☒ Downstream  → Clear aussi les tâches en aval (recommandé)
-☒ Include itself → Inclure la tâche cliquée
+☐ Clear only failed tasks → Limiter aux tâches en échec
 ```
+
+La boîte de dialogue affiche la liste des tâches concernées (*Affected Tasks*) avant confirmation. L'option "Include itself" d'Airflow 2 a disparu : la tâche sélectionnée est toujours incluse.
 
 ---
 
 > 🔴 **ACTION FORMATEUR — CAPTURE REQUISE**
-> **Capturer :** L'interface Airflow — dialogue de confirmation "Clear" d'une tâche, avec les options (Past, Future, Upstream, Downstream, Include itself) cochées
+> **Capturer :** L'interface Airflow 3 — dialogue de confirmation "Clear Task Instance" d'une tâche, avec les options (Past, Future, Upstream, Downstream, Clear only failed tasks) et la liste des tâches concernées
 > **Expliquer :** Expliquer chaque option. Cas typique : une tâche a échoué et toutes les tâches en aval ont `upstream_failed`. Cocher "Downstream" pour les rejouer toutes en chaîne. Montrer comment le DAG Run repasse de "failed" à "running" après un Clear.
 
 ---
@@ -349,7 +437,8 @@ Pour vérifier qu'une tâche est idempotente, poser ces questions :
 □ Si j'exécute cette tâche 2 fois → même résultat qu'une fois ?
 □ Mes INSERT utilisent ON CONFLICT DO UPDATE ou DELETE+INSERT ?
 □ Mes fichiers de sortie sont en mode write (écrase), pas append ?
-□ Je filtre sur l'execution_date dans mes requêtes SQL ?
+□ Je filtre sur la date logique (ds) ou l'intervalle de données dans mes requêtes SQL ?
+□ La période traitée est déduite du run, jamais de datetime.now() ?
 □ Mes uploads cloud utilisent replace=True ?
 □ Je partitionne mes fichiers par date ? (/date=YYYY-MM-DD/)
 □ Je supprime les données du jour AVANT de les recréer ?
@@ -360,6 +449,9 @@ Pour vérifier qu'une tâche est idempotente, poser ces questions :
 ## max_active_runs — limiter les runs simultanés
 
 ```python
+from datetime import datetime
+from airflow.sdk import DAG
+
 with DAG(
     dag_id='pipeline_lent',
     start_date=datetime(2024, 1, 1),
@@ -383,6 +475,7 @@ with DAG(
 1. **Idempotence** = re-exécuter N fois → même résultat qu'une seule fois
 2. Utiliser `DELETE WHERE date = ...` + `INSERT` ou `INSERT ON CONFLICT DO UPDATE`
 3. Utiliser la date logique (`ds`, `ds_nodash`) dans les noms de fichiers et les filtres SQL
-4. `catchup=False` par défaut sauf si le backfill a du sens métier
-5. Le **backfill** est sûr uniquement avec des tâches idempotentes
-6. `max_active_runs=1` pour les pipelines qui ne peuvent pas tourner en parallèle
+4. En Airflow 3, `@daily` déclenche **à** la date logique (intervalle de données vide) : utiliser `CronDataIntervalTimetable` ou calculer la période depuis `logical_date`
+5. `catchup=False` est le défaut en Airflow 3 ; ne passer à `True` que si le rattrapage a du sens métier
+6. Le **backfill** (`airflow backfill create` ou interface) est sûr uniquement avec des tâches idempotentes
+7. `max_active_runs=1` pour les pipelines qui ne peuvent pas tourner en parallèle

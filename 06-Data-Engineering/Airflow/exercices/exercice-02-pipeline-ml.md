@@ -58,28 +58,36 @@ PostgreSQL                    MLflow
 ```yaml
 # docker-compose.yml
 
-version: '3'
-
 x-airflow-common:
   &airflow-common
-  image: apache/airflow:2.9.0
+  image: apache/airflow:3.3.2
   environment:
+    &airflow-common-env
     AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__CORE__AUTH_MANAGER: airflow.providers.fab.auth_manager.fab_auth_manager.FabAuthManager
     AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
     AIRFLOW__CORE__FERNET_KEY: 'ZmDfcTF7_60GrrY167zsiPd67pEvs0aGOv2oasOM1Pg='
+    # Airflow 3 : les tâches passent par l'API d'exécution du serveur d'API
+    AIRFLOW__CORE__EXECUTION_API_SERVER_URL: 'http://airflow-apiserver:8080/execution/'
+    AIRFLOW__API_AUTH__JWT_SECRET: 'secret_jwt_formation'
+    # Connexion utilisée par les DAGs (les connexions par défaut ne sont plus créées)
+    AIRFLOW_CONN_POSTGRES_DEFAULT: postgresql://airflow:airflow@postgres:5432/airflow
+    # Paquets installés au démarrage de chaque conteneur (pratique en TP, à éviter en production)
+    _PIP_ADDITIONAL_REQUIREMENTS: 'scikit-learn pandas mlflow pyarrow'
     MLFLOW_TRACKING_URI: http://mlflow:5000
   volumes:
     - ./dags:/opt/airflow/dags
     - ./logs:/opt/airflow/logs
     - ./data:/opt/airflow/data
   depends_on:
+    &airflow-common-depends-on
     postgres:
       condition: service_healthy
 
 services:
   postgres:
-    image: postgres:15
+    image: postgres:16
     environment:
       POSTGRES_USER: airflow
       POSTGRES_PASSWORD: airflow
@@ -110,28 +118,47 @@ services:
 
   airflow-init:
     <<: *airflow-common
-    command: >
-      bash -c "
-        airflow db init &&
-        airflow users create --username admin --password admin
-          --firstname Admin --lastname User --role Admin --email admin@example.com &&
-        pip install scikit-learn pandas mlflow pyarrow
-      "
+    command: version
+    environment:
+      <<: *airflow-common-env
+      _AIRFLOW_DB_MIGRATE: 'true'        # exécute `airflow db migrate`
+      _AIRFLOW_WWW_USER_CREATE: 'true'   # crée l'utilisateur de l'interface
+      _AIRFLOW_WWW_USER_USERNAME: admin
+      _AIRFLOW_WWW_USER_PASSWORD: admin
+      _PIP_ADDITIONAL_REQUIREMENTS: ''
+
+  airflow-apiserver:
+    <<: *airflow-common
+    command: api-server
+    ports:
+      - "8080:8080"
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
 
   airflow-scheduler:
     <<: *airflow-common
     command: scheduler
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
 
-  airflow-webserver:
+  airflow-dag-processor:
     <<: *airflow-common
-    command: webserver
-    ports:
-      - "8080:8080"
+    command: dag-processor
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
 
 volumes:
   postgres_data:
   mlflow_artifacts:
 ```
+
+> **Airflow 2 → 3 :** le `webserver` est remplacé par le serveur d'API (`api-server`), le processeur de DAGs (`dag-processor`) est un service à part, `airflow db init` devient `airflow db migrate`, et l'authentification par identifiant / mot de passe passe par le provider FAB (`airflow users create` n'existe qu'avec lui). Ce fichier est une version allégée (LocalExecutor) du `docker-compose.yaml` officiel d'Airflow 3.3.2. Interface : http://localhost:8080 (admin / admin).
 
 ### Données de simulation
 
@@ -195,7 +222,8 @@ def extraire_features(**context) -> str:
     hook = PostgresHook('postgres_default')
     semaine = context['ds']
 
-    df = hook.get_pandas_df("""
+    # get_df remplace get_pandas_df (déprécié) et renvoie un DataFrame pandas
+    df = hook.get_df("""
         SELECT
             client_id,
             anciennete_jours,
@@ -375,8 +403,7 @@ Action requise : Revoir la préparation des features ou les hyperparamètres.
 
 import os
 from datetime import datetime, timedelta
-from airflow.decorators import dag, task
-from airflow.utils.trigger_rule import TriggerRule
+from airflow.sdk import dag, task, TriggerRule
 
 SEUIL_ROC_AUC = 0.75
 SEUIL_ACCURACY = 0.70
@@ -398,7 +425,7 @@ def pipeline_ml_churn_solution():
         from airflow.providers.postgres.hooks.postgres import PostgresHook
 
         hook = PostgresHook('postgres_default')
-        df = hook.get_pandas_df("""
+        df = hook.get_df("""
             SELECT client_id, anciennete_jours, nb_achats_30j, nb_achats_90j,
                    montant_total_30j, montant_total_90j, nb_visites_30j,
                    taux_retour, nb_tickets_support, score_satisfaction,
@@ -503,8 +530,7 @@ def pipeline_ml_churn_solution():
             mlflow.sklearn.log_model(model, "model")
 
             # Feature importances
-            import pandas as pd as pd2
-            fi = pd2.Series(model.feature_importances_, index=split['features_cols'])
+            fi = pd.Series(model.feature_importances_, index=split['features_cols'])
             print(f"\nTop 5 features :\n{fi.nlargest(5)}")
 
             print(f"\n{classification_report(y_test, y_pred, target_names=['Actif', 'Churné'])}")
@@ -560,7 +586,7 @@ Run MLflow : {metriques.get('run_id')}
 Action : Revoir features et hyperparamètres.
         """)
 
-    @task(trigger_rule='none_failed_min_one_success')
+    @task(trigger_rule=TriggerRule.NONE_FAILED_MIN_ONE_SUCCESS)
     def rapport_ml(metriques: dict) -> None:
         print(f"""
 ╔══════════════════════════════════════╗

@@ -18,6 +18,8 @@ Airflow propose plusieurs mécanismes de branchement :
 | `BranchDayOfWeekOperator` | Branchement selon le jour de la semaine |
 | `BranchDateTimeOperator` | Branchement selon la plage horaire |
 
+> **Airflow 3** : ces opérateurs vivent dans le provider `standard` (`airflow.providers.standard.operators...`) et non plus dans `airflow.operators...`. Les décorateurs (`@dag`, `@task`, `@task.branch`), `DAG` et `TriggerRule` s'importent depuis `airflow.sdk`.
+
 ---
 
 ## BranchPythonOperator
@@ -27,9 +29,9 @@ La fonction Python doit **retourner un `task_id`** (ou une liste de `task_ids`) 
 ### Exemple simple
 
 ```python
-from airflow import DAG
-from airflow.operators.python import BranchPythonOperator, PythonOperator
-from airflow.operators.bash import BashOperator
+from airflow.sdk import DAG
+from airflow.providers.standard.operators.python import BranchPythonOperator, PythonOperator
+from airflow.providers.standard.operators.bash import BashOperator
 from datetime import datetime
 
 def choisir_traitement(**context) -> str:
@@ -37,6 +39,7 @@ def choisir_traitement(**context) -> str:
     Retourne l'identifiant de la tâche à exécuter.
     """
     # Récupérer le jour de la semaine (0=lundi, 6=dimanche)
+    # (logical_date remplace execution_date, supprimé en Airflow 3)
     jour = context['logical_date'].weekday()
 
     if jour == 0:   # Lundi
@@ -85,6 +88,8 @@ with DAG(
     [traitement_hebdo, traitement_weekend, traitement_quotidien] >> notification
 ```
 
+> En Airflow 3, un run déclenché par l'API REST peut ne pas avoir de `logical_date` (valeur `null`) : la clé est alors absente du contexte. Les runs planifiés, et ceux lancés depuis l'interface avec la date proposée par défaut, en ont une.
+
 ---
 
 ## Les trigger_rule — règles de déclenchement
@@ -92,7 +97,8 @@ with DAG(
 Par défaut, une tâche attend que **toutes** ses tâches parentes soient en succès. Mais avec le branchement, certaines tâches parents sont `skipped`. Il faut changer la règle.
 
 ```python
-from airflow.utils.trigger_rule import TriggerRule
+from airflow.sdk import TriggerRule
+# Airflow 2 : from airflow.utils.trigger_rule import TriggerRule
 
 tache_finale = PythonOperator(
     task_id='finalisation',
@@ -109,6 +115,8 @@ tache_finale = PythonOperator(
 | `ALL_SUCCESS` | Toutes les tâches parentes en succès **(défaut)** |
 | `ALL_FAILED` | Toutes les tâches parentes en échec |
 | `ALL_DONE` | Toutes les tâches parentes terminées (quel que soit l'état) |
+| `ALL_DONE_MIN_ONE_SUCCESS` | Toutes les tâches parentes terminées ET au moins un succès |
+| `ALL_DONE_SETUP_SUCCESS` | Toutes terminées ET la tâche de setup en succès (utilisée par les tâches teardown) |
 | `ALL_SKIPPED` | Toutes les tâches parentes en `skipped` |
 | `ONE_SUCCESS` | Au moins une tâche parente en succès |
 | `ONE_FAILED` | Au moins une tâche parente en échec |
@@ -123,7 +131,7 @@ tache_finale = PythonOperator(
 ## @task.branch — TaskFlow API
 
 ```python
-from airflow.decorators import dag, task
+from airflow.sdk import dag, task
 from datetime import datetime
 
 @dag(
@@ -221,9 +229,9 @@ def choisir_destinations(config: dict) -> list[str]:
 # dags/pipeline_qualite_conditionnel.py
 
 from datetime import datetime, timedelta
-from airflow.decorators import dag, task
-from airflow.operators.bash import BashOperator
-from airflow.utils.trigger_rule import TriggerRule
+from airflow.sdk import dag, task
+from airflow.providers.standard.operators.bash import BashOperator
+from airflow.sdk import TriggerRule
 
 @dag(
     dag_id='pipeline_qualite_conditionnel',
@@ -385,8 +393,9 @@ dag = pipeline_qualite_conditionnel()
 ## BranchDayOfWeekOperator
 
 ```python
-from airflow.operators.weekday import BranchDayOfWeekOperator
-from airflow.utils.weekday import WeekDay
+from airflow.providers.standard.operators.weekday import BranchDayOfWeekOperator
+from airflow.providers.standard.utils.weekday import WeekDay
+# Airflow 2 : airflow.operators.weekday et airflow.utils.weekday (n'existent plus)
 
 choisir_par_jour = BranchDayOfWeekOperator(
     task_id='choisir_par_jour',
@@ -401,7 +410,7 @@ choisir_par_jour = BranchDayOfWeekOperator(
 ## BranchDateTimeOperator
 
 ```python
-from airflow.operators.datetime import BranchDateTimeOperator
+from airflow.providers.standard.operators.datetime import BranchDateTimeOperator
 from pendulum import time as ptime
 
 # Choisir selon l'heure du jour
@@ -482,3 +491,4 @@ dag = branchement_imbrique()
 3. Toujours utiliser `trigger_rule='none_failed_min_one_success'` sur les tâches après un branchement
 4. `ShortCircuitOperator` pour annuler tout le pipeline en aval
 5. Le branchement est transparent dans la vue Graph — couleurs : vert=succès, rose=skipped
+6. En Airflow 3, les opérateurs de branchement s'importent depuis `airflow.providers.standard`, les décorateurs et `TriggerRule` depuis `airflow.sdk`

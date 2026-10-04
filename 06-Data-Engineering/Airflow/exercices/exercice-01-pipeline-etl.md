@@ -56,26 +56,34 @@ API Open-Meteo          PostgreSQL
 ```yaml
 # docker-compose.yml
 
-version: '3'
-
 x-airflow-common:
   &airflow-common
-  image: apache/airflow:2.9.0
+  image: apache/airflow:3.3.2
   environment:
+    &airflow-common-env
     AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__CORE__AUTH_MANAGER: airflow.providers.fab.auth_manager.fab_auth_manager.FabAuthManager
     AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
     AIRFLOW__CORE__FERNET_KEY: 'ZmDfcTF7_60GrrY167zsiPd67pEvs0aGOv2oasOM1Pg='
+    # Airflow 3 : les tâches passent par l'API d'exécution du serveur d'API
+    AIRFLOW__CORE__EXECUTION_API_SERVER_URL: 'http://airflow-apiserver:8080/execution/'
+    AIRFLOW__API_AUTH__JWT_SECRET: 'secret_jwt_formation'
+    # Connexion utilisée par les DAGs (les connexions par défaut ne sont plus créées)
+    AIRFLOW_CONN_POSTGRES_DEFAULT: postgresql://airflow:airflow@postgres:5432/airflow
+    # Paquets installés au démarrage de chaque conteneur (pratique en TP, à éviter en production)
+    _PIP_ADDITIONAL_REQUIREMENTS: 'requests pandas'
   volumes:
     - ./dags:/opt/airflow/dags
     - ./logs:/opt/airflow/logs
   depends_on:
+    &airflow-common-depends-on
     postgres:
       condition: service_healthy
 
 services:
   postgres:
-    image: postgres:15
+    image: postgres:16
     environment:
       POSTGRES_USER: airflow
       POSTGRES_PASSWORD: airflow
@@ -92,29 +100,46 @@ services:
 
   airflow-init:
     <<: *airflow-common
-    command: >
-      bash -c "
-        airflow db init &&
-        airflow users create
-          --username admin --password admin
-          --firstname Admin --lastname User
-          --role Admin --email admin@example.com &&
-        pip install requests pandas
-      "
+    command: version
+    environment:
+      <<: *airflow-common-env
+      _AIRFLOW_DB_MIGRATE: 'true'        # exécute `airflow db migrate`
+      _AIRFLOW_WWW_USER_CREATE: 'true'   # crée l'utilisateur de l'interface
+      _AIRFLOW_WWW_USER_USERNAME: admin
+      _AIRFLOW_WWW_USER_PASSWORD: admin
+      _PIP_ADDITIONAL_REQUIREMENTS: ''
+
+  airflow-apiserver:
+    <<: *airflow-common
+    command: api-server
+    ports:
+      - "8080:8080"
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
 
   airflow-scheduler:
     <<: *airflow-common
     command: scheduler
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
 
-  airflow-webserver:
+  airflow-dag-processor:
     <<: *airflow-common
-    command: webserver
-    ports:
-      - "8080:8080"
+    command: dag-processor
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
 
 volumes:
   postgres_data:
 ```
+
+> **Airflow 2 → 3 :** le `webserver` est remplacé par le serveur d'API (`api-server`), le processeur de DAGs (`dag-processor`) est un service à part, `airflow db init` devient `airflow db migrate`, et l'authentification par identifiant / mot de passe passe par le provider FAB (`airflow users create` n'existe qu'avec lui). Ce fichier est une version allégée (LocalExecutor) du `docker-compose.yaml` officiel d'Airflow 3.3.2. Interface : http://localhost:8080 (admin / admin).
 
 ### Script d'initialisation de la DB
 
@@ -186,7 +211,7 @@ Créer le fichier `dags/pipeline_meteo_etl.py` avec cette structure :
 # dags/pipeline_meteo_etl.py
 
 from datetime import datetime, timedelta
-from airflow.decorators import dag, task
+from airflow.sdk import dag, task
 
 # Configuration des villes
 VILLES = [
@@ -234,6 +259,8 @@ def extraire_meteo(villes: list, **context) -> list[dict]:
     """
     import requests
 
+    # Date logique du run. En Airflow 3, avec schedule='0 7 * * *', le run
+    # déclenché le jour J à 7h porte la date J (c'était J-1 en Airflow 2).
     date = context['ds']
     resultats = []
 
@@ -352,7 +379,8 @@ def charger_en_postgresql(donnees: list[dict], **context) -> int:
     from airflow.providers.postgres.hooks.postgres import PostgresHook
 
     # TODO :
-    # 1. Créer un PostgresHook avec conn_id='postgres_default'
+    # 1. Créer un PostgresHook avec la connexion 'postgres_default'
+    #    (définie par AIRFLOW_CONN_POSTGRES_DEFAULT dans le docker-compose)
     # 2. Pour chaque enregistrement, exécuter un UPSERT :
     #    INSERT INTO meteo.mesures_journalieres (...) VALUES (...)
     #    ON CONFLICT (date_mesure, ville) DO UPDATE SET ...
@@ -390,7 +418,7 @@ def verifier_chargement(**context) -> dict:
 # dags/pipeline_meteo_etl_solution.py
 
 from datetime import datetime, timedelta
-from airflow.decorators import dag, task
+from airflow.sdk import dag, task
 
 VILLES = [
     {'nom': 'Paris',     'lat': 48.8566, 'lon': 2.3522},
@@ -573,4 +601,4 @@ dag = pipeline_meteo_etl_solution()
 
 > 🔴 **ACTION FORMATEUR — CAPTURE REQUISE**
 > **Capturer :** L'interface Airflow montrant le DAG `pipeline_meteo_etl_solution` après une exécution réussie — vue Graph avec toutes les tâches en vert, et les logs de `charger_en_postgresql` montrant les 5 UPSERT
-> **Expliquer :** Montrer comment déclencher manuellement le DAG via le bouton "Trigger DAG". Naviguer dans les logs de chaque tâche. Ouvrir `verifier_chargement` pour voir les métriques calculées. Montrer comment re-déclencher le même DAG Run plusieurs fois pour prouver l'idempotence (toujours 5 lignes en DB, pas de doublons).
+> **Expliquer :** Montrer comment déclencher manuellement le DAG via le bouton "Trigger". Naviguer dans les logs de chaque tâche. Ouvrir `verifier_chargement` pour voir les métriques calculées. Montrer comment rejouer le même DAG Run plusieurs fois (bouton "Clear Dag Run") pour prouver l'idempotence (toujours 5 lignes en DB, pas de doublons).
