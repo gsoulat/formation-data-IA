@@ -12,7 +12,7 @@ pip install apache-airflow-providers-http
 
 ## Configurer une connexion HTTP
 
-```python
+```bash
 # Via CLI
 airflow connections add 'api_meteo' \
     --conn-type 'http' \
@@ -44,15 +44,15 @@ airflow connections add 'api_avec_token' \
 
 ---
 
-## SimpleHttpOperator
+## HttpOperator
 
-Effectue une requête HTTP simple (GET, POST, PUT, DELETE...).
+Effectue une requête HTTP simple (GET, POST, PUT, DELETE...). Dans les tutoriels Airflow 2, il s'appelle `SimpleHttpOperator` : ce nom n'existe plus dans le provider HTTP compatible avec Airflow 3, il a été remplacé par `HttpOperator` (mêmes paramètres).
 
 ```python
-from airflow.providers.http.operators.http import SimpleHttpOperator
+from airflow.providers.http.operators.http import HttpOperator
 
 # GET simple
-appeler_api = SimpleHttpOperator(
+appeler_api = HttpOperator(
     task_id='appeler_api_meteo',
     http_conn_id='api_meteo',
     endpoint='/v1/forecast',
@@ -68,7 +68,7 @@ appeler_api = SimpleHttpOperator(
     headers={'Accept': 'application/json'},
     # Réponse disponible en XCom
     do_xcom_push=True,
-    # Vérifier le code HTTP de retour (200 par défaut)
+    # Vérification supplémentaire de la réponse (un code 4xx/5xx fait déjà échouer la tâche)
     response_check=lambda response: response.status_code == 200,
     log_response=True,   # Logger la réponse dans les logs Airflow
 )
@@ -77,11 +77,11 @@ appeler_api = SimpleHttpOperator(
 ### POST avec un corps JSON
 
 ```python
-from airflow.providers.http.operators.http import SimpleHttpOperator
+from airflow.providers.http.operators.http import HttpOperator
 import json
 
 # POST avec corps JSON
-envoyer_rapport = SimpleHttpOperator(
+envoyer_rapport = HttpOperator(
     task_id='envoyer_rapport_slack',
     http_conn_id='slack_webhook',
     endpoint='/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX',
@@ -125,7 +125,7 @@ def verifier_reponse_api(response, **context) -> bool:
     print(f"Réponse valide : {nb_jours} jours de données")
     return True
 
-appeler_api = SimpleHttpOperator(
+appeler_api = HttpOperator(
     task_id='appeler_api_avec_validation',
     http_conn_id='api_meteo',
     endpoint='/v1/forecast',
@@ -176,7 +176,7 @@ attendre_rapport = HttpSensor(
 
 ```python
 from airflow.providers.http.hooks.http import HttpHook
-from airflow.operators.python import PythonOperator
+from airflow.providers.standard.operators.python import PythonOperator
 
 def appeler_api_complexe(**context):
     """
@@ -231,7 +231,7 @@ appeler_api_paginee = PythonOperator(
 ## Traiter la réponse HTTP dans une tâche suivante
 
 ```python
-from airflow.operators.python import PythonOperator
+from airflow.providers.standard.operators.python import PythonOperator
 
 def traiter_reponse_api(**context):
     """
@@ -239,7 +239,7 @@ def traiter_reponse_api(**context):
     """
     import json, pandas as pd
 
-    # Récupérer la réponse JSON depuis XCom (poussée par SimpleHttpOperator)
+    # Récupérer la réponse JSON depuis XCom (poussée par HttpOperator)
     ti = context['task_instance']
     reponse_brute = ti.xcom_pull(task_ids='appeler_api_meteo')
 
@@ -277,10 +277,10 @@ traiter_reponse = PythonOperator(
 from datetime import datetime, timedelta
 import json
 
-from airflow import DAG
-from airflow.operators.python import PythonOperator
+from airflow.sdk import DAG
+from airflow.providers.standard.operators.python import PythonOperator
 from airflow.providers.http.sensors.http import HttpSensor
-from airflow.providers.http.operators.http import SimpleHttpOperator
+from airflow.providers.http.operators.http import HttpOperator
 
 default_args = {
     'owner': 'data-team',
@@ -417,18 +417,18 @@ with DAG(
     )
 
     # 5. Notifier la fin via webhook
-    notifier_fin = SimpleHttpOperator(
+    notifier_fin = HttpOperator(
         task_id='notifier_fin',
         http_conn_id='slack_webhook',
         endpoint='/hooks/TXXXXX/BXXXXX/XXXXXXXX',
         method='POST',
         data=json.dumps({
-            'text': f'Pipeline transactions du {{{{ ds }}}} terminé',
+            'text': 'Pipeline transactions du {{ ds }} terminé',
             'blocks': [{
                 'type': 'section',
                 'text': {
                     'type': 'mrkdwn',
-                    'text': '*Pipeline API REST terminé ✓*\nDate: {{{{ ds }}}}\nDAG: {{{{ dag.dag_id }}}}',
+                    'text': '*Pipeline API REST terminé ✓*\nDate: {{ ds }}\nDAG: {{ dag.dag_id }}',
                 }
             }]
         }),
@@ -442,7 +442,7 @@ with DAG(
 ---
 
 > 🔴 **ACTION FORMATEUR — CAPTURE REQUISE**
-> **Capturer :** Les logs d'une tâche `SimpleHttpOperator` dans l'interface Airflow — montrer la requête HTTP envoyée et la réponse reçue
+> **Capturer :** Les logs d'une tâche `HttpOperator` dans l'interface Airflow — montrer la requête HTTP envoyée et la réponse reçue
 > **Expliquer :** Activer `log_response=True` sur l'opérateur pour afficher la réponse complète dans les logs. Montrer que les headers incluant le token `Authorization` sont bien masqués dans les logs (Airflow masque les secrets connus). Expliquer comment déboguer une erreur 401 ou 404.
 
 ---
@@ -450,14 +450,18 @@ with DAG(
 ## Notifications Slack et Teams
 
 ```python
-# ---- Notification Slack via webhook ----
-def notifier_slack(message: str, couleur: str = 'good'):
-    """Utilitaire réutilisable pour envoyer une notification Slack."""
-    import json
-    from airflow.providers.http.operators.http import SimpleHttpOperator
+import json
+from datetime import datetime
 
-    return SimpleHttpOperator(
-        task_id=f'notifier_slack_{message[:20].replace(" ", "_")}',
+from airflow.sdk import DAG
+from airflow.providers.http.operators.http import HttpOperator
+from airflow.providers.standard.operators.python import PythonOperator
+
+# ---- Notification Slack via webhook ----
+def notifier_slack(task_id: str, message: str, couleur: str = 'good', **kwargs):
+    """Utilitaire réutilisable pour envoyer une notification Slack."""
+    return HttpOperator(
+        task_id=task_id,
         http_conn_id='slack_webhook',
         endpoint='/hooks/TXXXXX/BXXXXX/XXXXXXXX',
         method='POST',
@@ -470,24 +474,27 @@ def notifier_slack(message: str, couleur: str = 'good'):
             }]
         }),
         headers={'Content-Type': 'application/json'},
+        **kwargs,   # Paramètres BaseOperator (trigger_rule, retries...)
     )
 
 # Utilisation dans un DAG
-with DAG('pipeline_avec_notifications', ...) as dag:
+with DAG('pipeline_avec_notifications', start_date=datetime(2024, 1, 1),
+         schedule='@daily', catchup=False) as dag:
     traiter = PythonOperator(task_id='traiter', python_callable=lambda: None)
-    notif_succes = notifier_slack('Pipeline terminé avec succès !', 'good')
-    notif_echec = notifier_slack('Pipeline en échec !', 'danger')
+    notif_succes = notifier_slack('notifier_succes', 'Pipeline terminé avec succès !', 'good')
+    notif_echec = notifier_slack('notifier_echec', 'Pipeline en échec !', 'danger',
+                                 trigger_rule='one_failed')  # Ne part que si traiter échoue
 
-    traiter >> notif_succes
+    traiter >> [notif_succes, notif_echec]
 ```
 
 ---
 
 ## Points clés à retenir
 
-1. `SimpleHttpOperator` pour les appels HTTP simples (GET/POST)
+1. `HttpOperator` pour les appels HTTP simples (GET/POST)
 2. `HttpSensor` pour attendre qu'un endpoint retourne une réponse valide
 3. Pour la pagination et les scénarios complexes, utiliser le `HttpHook` directement
-4. `do_xcom_push=True` sur `SimpleHttpOperator` pour passer la réponse aux tâches suivantes
+4. `do_xcom_push=True` sur `HttpOperator` pour passer la réponse aux tâches suivantes
 5. `response_check` permet de valider la réponse — lève une exception si False
 6. Les connexions HTTP stockent la base URL + les headers par défaut (pratique pour les tokens)

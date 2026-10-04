@@ -14,7 +14,7 @@ Les tests Airflow se décomposent en trois niveaux :
 |---|---|---|
 | **Validation de DAGs** | Syntax, chargement, pas de cycles | `pytest` + `DagBag` |
 | **Tests unitaires** | Logique Python des callables | `pytest` + `unittest.mock` |
-| **Tests d'intégration** | Exécution réelle des tâches | `pytest` + `airflow tasks test` |
+| **Tests d'intégration** | Exécution réelle des tâches | `dag.test()`, `airflow dags test`, `airflow tasks test` |
 
 ---
 
@@ -41,11 +41,22 @@ airflow-projet/
 
 ```txt
 # requirements-dev.txt
-apache-airflow==2.9.0
-pytest==7.4.3
-pytest-mock==3.12.0
-freezegun==1.4.0    # Pour mocker la date/heure
+apache-airflow==3.3.2
+apache-airflow-providers-postgres
+apache-airflow-providers-amazon
+pytest
+pytest-mock
+freezegun    # Pour mocker la date/heure
 ```
+
+```toml
+# pyproject.toml — rendre importables `dags.utils...` (racine) et `etl_ventes` (dossier dags/)
+[tool.pytest.ini_options]
+pythonpath = [".", "dags"]
+testpaths = ["tests"]
+```
+
+> Installer Airflow avec le fichier de contraintes officiel de la version (voir la section CI/CD plus bas) : c'est lui qui fixe les versions compatibles des providers et des dépendances.
 
 ---
 
@@ -85,14 +96,15 @@ class TestIntegriteDags:
         """Aucun DAG ne doit avoir de cycle dans ses dépendances."""
         for dag_id, dag in dagbag.dags.items():
             try:
-                dag.test_cycle()
+                dag.check_cycle()
             except Exception as e:
                 pytest.fail(f"Cycle détecté dans le DAG '{dag_id}': {e}")
 
     def test_catchup_desactive_par_defaut(self, dagbag):
         """
-        Convention d'équipe : tous les DAGs doivent avoir catchup=False.
-        Supprimer ce test si le catchup est voulu.
+        Convention d'équipe : tous les DAGs doivent avoir catchup=False
+        (c'est la valeur par défaut en Airflow 3 ; le test repère les DAGs
+        qui l'activent). Supprimer ce test si le catchup est voulu.
         """
         dags_avec_catchup = [
             dag_id for dag_id, dag in dagbag.dags.items()
@@ -146,6 +158,10 @@ class TestIntegriteDags:
             f"DAGs chargés : {list(dagbag.dags.keys())}"
         )
 ```
+
+---
+
+> **Airflow 2 → 3 :** `DagBag` s'importe toujours depuis `airflow.models` (la classe vit désormais dans `airflow.dag_processing.dagbag`). Le contrôle de cycle s'appelle `dag.check_cycle()` ; le module `airflow.utils.dag_cycle_tester` des anciens tutoriels est déprécié. Un DAG qui utilise encore un import ou un argument supprimé (`airflow.decorators`, `schedule_interval`...) apparaît dans `dagbag.import_errors` ou dans les avertissements de dépréciation : ce test est donc aussi un bon filet de sécurité pour une migration.
 
 ---
 
@@ -285,17 +301,18 @@ def envoyer_alerte(message: str, **context) -> None:
 
 import pytest
 from unittest.mock import patch, MagicMock
-from datetime import datetime
 
-# Importer les fonctions à tester
-import sys, os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'dags'))
+# Importer les fonctions à tester (dags/ est dans le pythonpath de pytest)
 from etl_ventes import extraire_depuis_db, envoyer_alerte
+
+# Les fonctions importent PostgresHook et requests à l'intérieur de leur corps :
+# on patche donc la classe là où elle est définie, pas dans le module etl_ventes.
+CHEMIN_HOOK = 'airflow.providers.postgres.hooks.postgres.PostgresHook'
 
 
 class TestExtraireDepsDB:
 
-    @patch('etl_ventes.PostgresHook')
+    @patch(CHEMIN_HOOK)
     def test_extraction_normale(self, mock_hook_class):
         """Teste l'extraction en mockant PostgresHook."""
         # Configurer le mock
@@ -323,7 +340,7 @@ class TestExtraireDepsDB:
             parameters={'d': '2024-01-15'},
         )
 
-    @patch('etl_ventes.PostgresHook')
+    @patch(CHEMIN_HOOK)
     def test_extraction_liste_vide(self, mock_hook_class):
         """Teste le comportement avec une liste vide."""
         mock_hook = MagicMock()
@@ -333,7 +350,7 @@ class TestExtraireDepsDB:
         result = extraire_depuis_db(ds='2024-01-15')
         assert result == []
 
-    @patch('etl_ventes.PostgresHook')
+    @patch(CHEMIN_HOOK)
     def test_extraction_erreur_connexion(self, mock_hook_class):
         """Teste le comportement en cas d'erreur de connexion."""
         mock_hook = MagicMock()
@@ -346,7 +363,7 @@ class TestExtraireDepsDB:
 
 class TestEnvoyerAlerte:
 
-    @patch('etl_ventes.requests.post')
+    @patch('requests.post')
     def test_alerte_envoyee(self, mock_post):
         """Teste que la requête HTTP est bien envoyée."""
         mock_response = MagicMock()
@@ -428,10 +445,13 @@ def contexte_airflow():
         'ds_nodash': '20240115',
         'ts': '2024-01-15T00:00:00+00:00',
         'logical_date': datetime(2024, 1, 15),
+        # Avec schedule='@daily' en Airflow 3 (CronTriggerTimetable),
+        # l'intervalle de données est réduit à la date logique.
         'data_interval_start': datetime(2024, 1, 15),
-        'data_interval_end': datetime(2024, 1, 16),
+        'data_interval_end': datetime(2024, 1, 15),
         'run_id': 'scheduled__2024-01-15T00:00:00+00:00',
         'task_instance': ti,
+        'ti': ti,
         'dag': dag,
         'params': {},
     }
@@ -468,7 +488,7 @@ def test_extraction_avec_fixture(contexte_airflow, mock_postgres_hook):
         (1, 'Test', 99.99)
     ]
 
-    from dags.etl_ventes import extraire_depuis_db
+    from etl_ventes import extraire_depuis_db
     result = extraire_depuis_db(**contexte_airflow)
 
     assert len(result) == 1
@@ -502,6 +522,47 @@ airflow dags test etl_ventes 2024-01-15
 airflow tasks test etl_ventes extraire 2024-01-15
 ```
 
+### Exécuter un DAG complet avec `dag.test()`
+
+`dag.test()` exécute toutes les tâches du DAG dans un seul processus Python, sans Scheduler ni serveur d'API : pratique pour déboguer avec des points d'arrêt.
+
+```python
+# dags/exemple_test_local.py
+import pendulum
+from airflow.sdk import dag, task
+
+
+@dag(
+    dag_id='exemple_test_local',
+    start_date=pendulum.datetime(2024, 1, 1, tz="UTC"),
+    schedule=None,
+    default_args={'owner': 'data-team', 'retries': 1},
+    tags=['test'],
+)
+def exemple_test_local():
+
+    @task
+    def extraire() -> list[int]:
+        return [1, 2, 3]
+
+    @task
+    def additionner(valeurs: list[int]) -> int:
+        total = sum(valeurs)
+        print(f"Total : {total}")
+        return total
+
+    additionner(extraire())
+
+
+dag_objet = exemple_test_local()
+
+if __name__ == "__main__":
+    # python dags/exemple_test_local.py
+    dag_objet.test(logical_date=pendulum.datetime(2024, 1, 15, tz="UTC"))
+```
+
+Deux conditions : la base de métadonnées doit être initialisée (`airflow db migrate`, une base SQLite locale suffit) et le fichier doit se trouver dans le dossier de DAGs configuré (`dags_folder`). En Airflow 3, une tâche n'accède plus directement à la base de métadonnées (elle passe par l'API d'exécution) : les anciens tests qui manipulaient une session SQLAlchemy ou créaient des `TaskInstance` à la main sont à remplacer par `dag.test()` ou par des tests unitaires des fonctions.
+
 ---
 
 ## Intégration CI/CD (GitHub Actions)
@@ -527,6 +588,8 @@ jobs:
           POSTGRES_USER: airflow
           POSTGRES_PASSWORD: airflow
           POSTGRES_DB: airflow
+        ports:
+          - 5432:5432
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -536,22 +599,22 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python 3.11
-        uses: actions/setup-python@v4
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.12'
 
       - name: Install dependencies
         run: |
-          pip install apache-airflow==2.9.0 \
-            --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.9.0/constraints-3.11.txt"
+          pip install "apache-airflow[postgres,amazon]==3.3.2" \
+            --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-3.3.2/constraints-3.12.txt"
           pip install pytest pytest-mock freezegun pytest-cov
 
       - name: Initialize Airflow DB
         env:
           AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@localhost/airflow
           AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
-        run: airflow db init
+        run: airflow db migrate   # `airflow db init` n'existe plus en Airflow 3
 
       - name: Run tests
         env:
@@ -576,4 +639,4 @@ jobs:
 3. Utiliser `unittest.mock.patch` pour mocker les Hooks (PostgreSQL, S3, HTTP...)
 4. Les **fixtures pytest** (`conftest.py`) évitent la duplication dans les tests
 5. Intégrer les tests dans la **CI/CD** — aucun DAG ne devrait atteindre la production sans passer les tests
-6. `airflow tasks test <dag_id> <task_id> <date>` pour tester rapidement une tâche en CLI
+6. `airflow tasks test <dag_id> <task_id> <date>` pour tester rapidement une tâche en CLI, `dag.test()` ou `airflow dags test <dag_id> <date>` pour un DAG entier

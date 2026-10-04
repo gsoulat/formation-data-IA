@@ -6,7 +6,7 @@ Apache Airflow est une plateforme open-source d'**orchestration de workflows**. 
 
 Airflow permet de :
 - **Définir** des pipelines de données sous forme de code Python
-- **Planifier** leur exécution (cron, intervalles, déclenchement manuel)
+- **Planifier** leur exécution (cron, intervalles, déclenchement manuel ou par événement)
 - **Surveiller** l'état de chaque tâche via une interface web
 - **Rejouer** des exécutions passées en cas d'échec
 - **Visualiser** les dépendances entre tâches
@@ -89,69 +89,82 @@ Airflow est composé de plusieurs composants qui interagissent ensemble.
 ### Vue d'ensemble
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│                    APACHE AIRFLOW                        │
-│                                                          │
-│  ┌──────────────┐    ┌──────────────┐                   │
-│  │  Web Server  │    │  Scheduler   │                   │
-│  │  (Flask/     │    │              │                   │
-│  │   Gunicorn)  │    │              │                   │
-│  └──────┬───────┘    └──────┬───────┘                   │
-│         │                   │                            │
-│         └────────┬──────────┘                            │
-│                  │                                        │
-│         ┌────────▼────────┐                              │
-│         │    Metadata DB   │ (PostgreSQL / MySQL)         │
-│         │                  │                              │
-│         └─────────────────┘                              │
-│                                                          │
-│  ┌──────────────────────────────────────────┐           │
-│  │              Executor                     │           │
-│  │  ┌─────────┐  ┌─────────┐  ┌─────────┐  │           │
-│  │  │ Worker 1│  │ Worker 2│  │ Worker 3│  │           │
-│  │  └─────────┘  └─────────┘  └─────────┘  │           │
-│  └──────────────────────────────────────────┘           │
-│                                                          │
-│  ┌──────────────┐                                        │
-│  │  DAGs Folder │ (répertoire Python partagé)            │
-│  └──────────────┘                                        │
-└─────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────┐
+│                       APACHE AIRFLOW 3                        │
+│                                                               │
+│  ┌──────────────┐  ┌──────────────┐  ┌───────────────┐       │
+│  │  API Server  │  │  Scheduler   │  │ DAG Processor │       │
+│  │ (UI + API    │  │              │  │ (analyse les  │       │
+│  │  REST)       │  │              │  │  fichiers DAG)│       │
+│  └──────┬───────┘  └──────┬───────┘  └───────┬───────┘       │
+│         │                 │                  │                │
+│         └─────────────────┼──────────────────┘                │
+│                           │                                   │
+│                  ┌────────▼────────┐                          │
+│                  │   Metadata DB   │ (PostgreSQL / MySQL)     │
+│                  └─────────────────┘                          │
+│                                                               │
+│  ┌──────────────────────────────────────────┐                │
+│  │              Executor                     │  API           │
+│  │  ┌─────────┐  ┌─────────┐  ┌─────────┐  │  d'exécution   │
+│  │  │ Worker 1│  │ Worker 2│  │ Worker 3│  │ ─────────────► │
+│  │  └─────────┘  └─────────┘  └─────────┘  │  (API Server)  │
+│  └──────────────────────────────────────────┘                │
+│                                                               │
+│  ┌──────────────┐                                             │
+│  │  DAGs Folder │ (répertoire Python partagé)                 │
+│  └──────────────┘                                             │
+└──────────────────────────────────────────────────────────────┘
 ```
+
+> **Si vous venez d'Airflow 2 :** le *Web Server* (Flask + Gunicorn) a été remplacé par l'**API Server**, l'analyse des fichiers DAG est sortie du Scheduler pour devenir un composant à part (le **DAG Processor**), et les tâches n'accèdent plus directement à la Metadata DB : elles passent par l'**API d'exécution**.
 
 ### Le Scheduler
 
 C'est le **cerveau** d'Airflow. Il :
-- Scanne le dossier `dags/` en permanence (toutes les ~30 secondes)
-- Analyse les DAGs et leurs planifications
+- Lit les DAGs déjà analysés et leurs planifications dans la Metadata DB
 - Crée des **DAG Runs** selon les schedules définis
 - Soumet les tâches prêtes à l'**Executor**
 - Gère les dépendances et les états des tâches
 
-### Le Web Server
+### Le DAG Processor
 
-Interface web (Flask + Gunicorn) qui permet de :
-- Visualiser tous les DAGs et leurs états
-- Déclencher manuellement des DAG Runs
-- Consulter les logs de chaque tâche
-- Gérer les Variables et Connexions
-- Configurer les alertes
+Composant séparé du Scheduler depuis Airflow 3 (commande `airflow dag-processor`). Il :
+- Scanne le dossier `dags/` en permanence : les fichiers connus sont ré-analysés toutes les ~30 secondes, les nouveaux fichiers sont recherchés toutes les 5 minutes (valeurs par défaut)
+- Exécute le code Python de chaque fichier pour en extraire les DAGs
+- Enregistre le résultat (DAGs sérialisés, erreurs d'import) dans la Metadata DB
+
+Le Scheduler et l'API Server ne lisent donc jamais vos fichiers `.py` directement.
+
+### L'API Server
+
+Il remplace le Web Server d'Airflow 2 (commande `airflow api-server`). Il sert à la fois :
+- l'**interface web** (réécrite en React pour Airflow 3), qui permet de :
+  - Visualiser tous les DAGs et leurs états
+  - Déclencher manuellement des DAG Runs
+  - Consulter les logs de chaque tâche
+  - Gérer les Variables et Connexions
+- l'**API REST** publique (`/api/v2`), pour piloter Airflow depuis un script ou un autre outil
+- l'**API d'exécution**, utilisée par les workers pour lire et écrire l'état des tâches, les XComs, les Variables et les Connexions
 
 Par défaut : `http://localhost:8080`
 
 ---
 
 > 🔴 **ACTION FORMATEUR — CAPTURE REQUISE**
-> **Capturer :** L'interface web Airflow — page d'accueil (liste des DAGs) avec plusieurs DAGs dans différents états (running, success, failed)
-> **Expliquer :** Présenter les colonnes de la vue DAGs : Owner, Schedule, Last Run, Recent Tasks, état global. Montrer comment filtrer par tags et par état.
+> **Capturer :** L'interface web Airflow 3 — page de la liste des DAGs avec plusieurs DAGs dans différents états (running, success, failed)
+> **Expliquer :** Présenter les informations affichées pour chaque DAG : nom et tags, planification, prochain run, dernier run et son état. Montrer comment filtrer par tags et par état, et comment activer/mettre en pause un DAG.
 
 ---
 
 ### Le Worker
 
 Un Worker est un processus qui **exécute** les tâches. Selon l'executor configuré :
-- **LocalExecutor** : le Scheduler lui-même exécute les tâches (jusqu'à N en parallèle)
+- **LocalExecutor** : les tâches s'exécutent dans des sous-processus sur la machine du Scheduler (jusqu'à N en parallèle)
 - **CeleryExecutor** : des workers Celery distincts récupèrent les tâches depuis une queue (Redis/RabbitMQ)
 - **KubernetesExecutor** : chaque tâche est exécutée dans un Pod Kubernetes éphémère
+
+En Airflow 3, le code d'une tâche ne se connecte plus à la Metadata DB : le worker dialogue avec l'**API d'exécution** de l'API Server. Conséquence pratique : on n'ouvre plus de session SQLAlchemy sur la base Airflow depuis une tâche, comme le montrent certains tutoriels Airflow 2.
 
 ### La Metadata Database
 
@@ -160,11 +173,11 @@ Base de données relationnelle (PostgreSQL recommandé en production) qui stocke
 - L'historique des DAG Runs et Task Instances
 - Les Variables et Connexions
 - Les XComs (données échangées entre tâches)
-- Les utilisateurs et leurs permissions
+- Les utilisateurs et leurs permissions (avec le gestionnaire d'authentification FAB)
 
 > La metadata DB ne contient **pas** vos données métier — seulement les métadonnées Airflow.
 
-### Le Triggerer (Airflow 2.2+)
+### Le Triggerer
 
 Composant optionnel pour les **Deferrable Operators**. Au lieu de bloquer un worker en attendant (ex: poll S3 toutes les 30s), le Triggerer gère les I/O asynchrones sans monopoliser un worker.
 
@@ -174,7 +187,7 @@ Composant optionnel pour les **Deferrable Operators**. Au lieu de bloquer un wor
 
 ```
                     ┌─────────┐
-                    │ no_status│  (task définie mais pas encore planifiée)
+                    │   none   │  (task définie mais pas encore planifiée)
                     └────┬────┘
                          │ Scheduler crée le DAG Run
                     ┌────▼────┐
@@ -220,28 +233,47 @@ Exemple :
 
 ---
 
-## La notion d'execution_date (logical_date)
+## La notion de logical_date (ex-execution_date)
 
 > C'est un concept **crucial** et souvent source de confusion.
 
-L'`execution_date` (renommée `logical_date` depuis Airflow 2.2) représente le **début de la période que le DAG traite**, pas le moment où il s'exécute.
+Chaque DAG Run porte une **date logique** (`logical_date`) : la date *pour laquelle* le run est créé, qui ne dépend pas du moment où il tourne réellement (un run rejoué trois jours plus tard garde la même `logical_date`). Dans les tutoriels Airflow 2, elle s'appelle `execution_date` : ce nom a été supprimé en Airflow 3.
 
-Exemple :
+Un run porte aussi un **intervalle de données** (`data_interval_start`, `data_interval_end`) : la période qu'il est censé traiter. C'est ici qu'Airflow 3 change le comportement par défaut.
+
+**Par défaut en Airflow 3** — un schedule cron ou un préréglage (`@daily`, `0 6 * * *`...) utilise `CronTriggerTimetable` : la date logique est **le moment du déclenchement**, et l'intervalle de données est vide.
+
 ```
-DAG planifié à interval="@daily"
-execution_date = 2024-01-15 00:00:00
-→ Ce DAG traite les données du 15 janvier
-→ Il s'exécute réellement le 16 janvier à 00:00:00
-  (Airflow attend que la période soit terminée)
+DAG planifié avec schedule="@daily"
+Run déclenché le 16 janvier à 00:00:00
+→ logical_date = data_interval_start = data_interval_end = 2024-01-16 00:00:00
+→ {{ ds }} vaut "2024-01-16"
+→ Pour traiter les données du 15 janvier, la tâche calcule
+  elle-même la période : logical_date - 1 jour
 ```
 
-C'est ce qu'on appelle le comportement **"end of interval"** d'Airflow.
+**Comportement historique d'Airflow 2** — la date logique est le **début de la période traitée**, et le run ne démarre qu'une fois la période terminée (comportement dit **"end of interval"**). On le retrouve en Airflow 3 en choisissant explicitement `CronDataIntervalTimetable` :
+
+```python
+from airflow.timetables.interval import CronDataIntervalTimetable
+
+schedule = CronDataIntervalTimetable("0 0 * * *", timezone="UTC")
+```
+
+```
+Run déclenché le 16 janvier à 00:00:00
+→ logical_date = data_interval_start = 2024-01-15 00:00:00
+→ data_interval_end = 2024-01-16 00:00:00
+→ Ce run traite les données du 15 janvier
+```
+
+À retenir : avant d'écrire « je traite la période [`data_interval_start`, `data_interval_end`) », vérifiez quelle timetable votre DAG utilise. Avec le défaut d'Airflow 3, ces deux bornes sont identiques.
 
 ---
 
 > 🔴 **ACTION FORMATEUR — CAPTURE REQUISE**
-> **Capturer :** La vue "Graph" d'un DAG dans l'interface web, montrant les nœuds (tâches) et les arêtes (dépendances) avec des couleurs par état
-> **Expliquer :** Pointer chaque nœud en expliquant que chaque couleur correspond à un état (vert=succès, rouge=échec, jaune=running, gris=skipped). Montrer comment cliquer sur un nœud pour voir les détails de la Task Instance.
+> **Capturer :** La vue "Graph" d'un DAG dans l'interface web (bascule Grid / Graph en haut de la page du DAG), montrant les nœuds (tâches) et les arêtes (dépendances) avec des couleurs par état
+> **Expliquer :** Pointer chaque nœud en expliquant que chaque couleur correspond à un état (succès, échec, en cours, ignoré... : s'appuyer sur la légende de l'interface). Montrer comment cliquer sur un nœud pour voir les détails de la Task Instance.
 
 ---
 
@@ -263,8 +295,8 @@ C'est ce qu'on appelle le comportement **"end of interval"** d'Airflow.
 1. **Airflow orchestre, il n'exécute pas** — c'est un chef d'orchestre, pas un musicien
 2. **Tout est du code Python** — les DAGs sont des fichiers `.py`, versionnables avec Git
 3. **Idempotence** — chaque tâche doit pouvoir être rejouée sans effet de bord
-4. **L'execution_date** est la date logique de traitement, pas d'exécution réelle
-5. **Le Scheduler** est le composant central — s'il tombe, rien ne s'exécute
+4. **La `logical_date`** (ex-`execution_date`) est la date logique du run, pas le moment où il tourne réellement ; par défaut en Airflow 3, c'est la date de déclenchement planifiée
+5. **Le Scheduler** est le composant central — s'il tombe, rien ne s'exécute ; le **DAG Processor** analyse les fichiers, l'**API Server** sert l'interface et les API
 6. **La Metadata DB** est critique — la perdre = perdre tout l'historique
 
 ---

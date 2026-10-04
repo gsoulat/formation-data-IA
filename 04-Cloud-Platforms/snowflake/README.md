@@ -12,6 +12,8 @@
 7. [Import de données CSV](07-import-donnees.md)
 8. [Gestion des privilèges](08-gestion-privileges.md)
 9. [Monitoring et surveillance](09-monitoring.md)
+10. [Sécurité : rôles, droits et utilisateurs de service en SQL](10-securite.md)
+11. [Charger des fichiers en SQL : format de fichier, stage, PUT et COPY INTO](11-chargement-stage-copy.md)
 
 ## 🎯 Objectif de ce guide
 

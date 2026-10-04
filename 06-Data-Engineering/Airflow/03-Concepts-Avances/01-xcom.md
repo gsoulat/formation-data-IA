@@ -14,6 +14,8 @@ Les XComs sont stockés dans la **metadata database** d'Airflow. Ils sont associ
 > Ne jamais stocker des DataFrames complets, des modèles ML, ou des fichiers volumineux.
 > Pour de gros volumes : utiliser le chemin du fichier comme XCom.
 
+> **Airflow 3** : une tâche ne parle plus directement à la metadata database. Les `xcom_push` / `xcom_pull` passent par l'**API d'exécution** (portée par le serveur d'API), qui lit et écrit en base à sa place. Le code des tâches reste le même. Autre changement : les valeurs sont sérialisées en **JSON uniquement** (le picklage des XComs, possible en Airflow 2, a été supprimé).
+
 ---
 
 ## XCom push — pousser une valeur
@@ -21,7 +23,8 @@ Les XComs sont stockés dans la **metadata database** d'Airflow. Ils sont associ
 ### Méthode 1 : via la valeur de retour (automatique)
 
 ```python
-from airflow.operators.python import PythonOperator
+from airflow.providers.standard.operators.python import PythonOperator
+# Airflow 2 : from airflow.operators.python import PythonOperator
 
 def extraire() -> dict:
     """
@@ -103,8 +106,10 @@ tache_2 = PythonOperator(
 
 Avec `@task`, les XComs sont gérés **automatiquement**. Pas besoin de `xcom_push` / `xcom_pull` :
 
+> En Airflow 3, les décorateurs s'importent depuis `airflow.sdk` (dans les tutoriels Airflow 2 : `from airflow.decorators import dag, task`).
+
 ```python
-from airflow.decorators import dag, task
+from airflow.sdk import dag, task
 from datetime import datetime
 
 @dag(start_date=datetime(2024, 1, 1), schedule='@daily', catchup=False)
@@ -142,8 +147,8 @@ dag = pipeline_avec_xcoms()
 ---
 
 > 🔴 **ACTION FORMATEUR — CAPTURE REQUISE**
-> **Capturer :** L'interface Airflow → Admin → XComs — montrer la liste des XComs stockés pour un DAG Run avec leurs clés et valeurs
-> **Expliquer :** Naviguer vers Admin → XComs dans le menu. Filtrer par DAG. Montrer que chaque XCom a un dag_id, task_id, run_id, key, et value. Ouvrir un XCom pour montrer la valeur sérialisée. Expliquer que c'est un tableau en base de données — donc limité en taille.
+> **Capturer :** L'interface Airflow → Browse → XComs — montrer la liste des XComs stockés pour un DAG Run avec leurs clés et valeurs
+> **Expliquer :** Naviguer vers Browse → XComs dans le menu (en Airflow 2, la page était sous Admin). Filtrer par DAG. Montrer que chaque XCom a un dag_id, task_id, run_id, key, et value. Ouvrir un XCom pour montrer la valeur sérialisée. Expliquer que c'est un tableau en base de données — donc limité en taille.
 
 ---
 
@@ -153,7 +158,7 @@ dag = pipeline_avec_xcoms()
 # dags/pipeline_xcom.py
 
 from datetime import datetime, timedelta
-from airflow.decorators import dag, task
+from airflow.sdk import dag, task
 
 @dag(
     dag_id='pipeline_xcom_demonstration',
@@ -281,8 +286,8 @@ dag = pipeline_xcom_demonstration()
 ## XComs avancés : utilisation avec PythonOperator classique
 
 ```python
-from airflow import DAG
-from airflow.operators.python import PythonOperator
+from airflow.sdk import DAG
+from airflow.providers.standard.operators.python import PythonOperator
 from datetime import datetime
 
 with DAG(
@@ -371,7 +376,7 @@ def entrainer():
     from sklearn.ensemble import RandomForestClassifier
     model = RandomForestClassifier()
     model.fit(X, y)
-    return model  # → Non sérialisable, trop volumineux
+    return model  # → Non sérialisable en JSON (plus de pickle en Airflow 3), trop volumineux
 
 # ❌ DÉCONSEILLÉ : retourner une liste de milliers d'éléments
 @task
@@ -410,29 +415,41 @@ def transformer(chemin: str) -> dict:
 
 ### Configurer les backends XCom personnalisés
 
-Pour de gros volumes de données, il est possible de configurer un **backend XCom custom** (stockage dans S3, GCS, etc.) :
+Pour de gros volumes de données, il est possible de configurer un **backend XCom custom** qui écrit les valeurs dans un stockage objet (S3, GCS, Azure Blob...) au lieu de la metadata database. Airflow fournit un backend prêt à l'emploi dans le provider `apache-airflow-providers-common-io` :
 
-```python
+```ini
 # airflow.cfg
 [core]
-xcom_backend = airflow.providers.amazon.aws.xcom_backends.S3XComBackend
+xcom_backend = airflow.providers.common.io.xcom.backend.XComObjectStorageBackend
 
-# Variables d'environnement
-AIRFLOW__CORE__XCOM_BACKEND=airflow.providers.amazon.aws.xcom_backends.S3XComBackend
-AIRFLOW__AWS__XCOM_S3_BUCKET=mon-bucket-xcoms
+[common.io]
+# Où écrire les XComs : <protocole>://<conn_id>@<bucket>/<préfixe>
+xcom_objectstorage_path = s3://aws_production@mon-bucket-xcoms/xcom
+# Taille (en octets) au-delà de laquelle la valeur part dans le stockage objet.
+# En dessous, elle reste en base. -1 (défaut) = tout reste en base.
+xcom_objectstorage_threshold = 1048576
 ```
+
+```bash
+# Équivalent en variables d'environnement
+AIRFLOW__CORE__XCOM_BACKEND=airflow.providers.common.io.xcom.backend.XComObjectStorageBackend
+AIRFLOW__COMMON_IO__XCOM_OBJECTSTORAGE_PATH=s3://aws_production@mon-bucket-xcoms/xcom
+AIRFLOW__COMMON_IO__XCOM_OBJECTSTORAGE_THRESHOLD=1048576
+```
+
+> Les valeurs doivent rester sérialisables en JSON. Il est aussi possible d'écrire son propre backend en héritant de `BaseXCom` (voir la documentation officielle, page « XComs »).
 
 ---
 
 ## Voir les XComs dans l'interface
 
-1. Aller dans **Admin → XComs**
+1. Aller dans **Browse → XComs** (en Airflow 2 : Admin → XComs)
 2. Filtrer par DAG ou task
-3. Chaque ligne = un XCom avec dag_id, task_id, run_id, key, value, timestamp
+3. Chaque ligne = un XCom avec dag_id, task_id, run_id, key, value
 
 Ou depuis la vue d'une Task Instance :
-1. Cliquer sur la tâche dans Graph View
-2. Cliquer sur "XCom"
+1. Ouvrir le DAG, puis cliquer sur la tâche dans la vue Graph (ou dans la grille)
+2. Ouvrir l'onglet "XCom"
 
 ---
 
@@ -443,4 +460,5 @@ Ou depuis la vue d'une Task Instance :
 3. Avec `PythonOperator`, utiliser `ti.xcom_push()` et `ti.xcom_pull()`
 4. **Ne jamais stocker** des DataFrames, modèles ML, ou gros fichiers en XCom
 5. Stocker des **chemins de fichiers** (local ou S3) à la place
-6. Les XComs sont consultables dans **Admin → XComs** dans l'interface web
+6. Les XComs sont consultables dans **Browse → XComs** dans l'interface web
+7. En Airflow 3, les XComs sont sérialisés en **JSON** et transitent par l'API d'exécution

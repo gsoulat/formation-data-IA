@@ -4,6 +4,8 @@
 
 Les **Variables** Airflow sont des paires clé-valeur stockées dans la metadata database. Elles permettent de **paramétrer** les DAGs sans modifier le code.
 
+> **Airflow 3** : une tâche n'a plus d'accès direct à la metadata database. Quand elle lit une Variable ou une Connexion, la demande passe par l'**API d'exécution** (portée par le serveur d'API). Pour vous, cela change surtout les imports : `from airflow.sdk import Variable, Connection, BaseHook` (en Airflow 2 : `from airflow.models import Variable`).
+
 ### Cas d'usage typiques
 
 - URL d'une API, chemin d'un fichier de configuration
@@ -17,21 +19,21 @@ Les **Variables** Airflow sont des paires clé-valeur stockées dans la metadata
 
 ### Via l'interface web
 
-**Admin → Variables → +**
+**Admin → Variables → Add Variable**
 
 | Champ | Exemple |
 |---|---|
 | Key | `api_meteo_url` |
-| Val | `https://api.open-meteo.com/v1/forecast` |
+| Value | `https://api.open-meteo.com/v1/forecast` |
 | Description | URL de l'API météo Open-Meteo |
 
-Pour les valeurs JSON, cocher "Serialize JSON" — la valeur sera désérialisée automatiquement.
+Pour une valeur JSON, coller le texte JSON dans le champ Value : il sera désérialisé à la lecture avec `deserialize_json=True` (ou `{{ var.json.... }}` dans un template). La même page permet d'importer un fichier JSON de variables.
 
 ---
 
 > 🔴 **ACTION FORMATEUR — CAPTURE REQUISE**
 > **Capturer :** L'interface Airflow → Admin → Variables — formulaire de création d'une variable JSON (ex: configuration d'un pipeline avec plusieurs champs)
-> **Expliquer :** Montrer que les clés contenant `password`, `secret`, `key` sont automatiquement masquées dans l'UI (Airflow les cache pour des raisons de sécurité). Créer une variable `pipeline_config` avec un JSON complexe et montrer comment la récupérer en Python.
+> **Expliquer :** Montrer que les variables dont la clé contient un mot sensible (`password`, `secret`, `token`, `api_key`, `private_key`...) sont automatiquement masquées dans l'UI et dans les logs (Airflow les cache pour des raisons de sécurité). Créer une variable `pipeline_config` avec un JSON complexe et montrer comment la récupérer en Python.
 
 ---
 
@@ -60,6 +62,8 @@ airflow variables export variables_backup.json
 airflow variables import variables_backup.json
 ```
 
+> Ces commandes lisent et écrivent directement dans la metadata database : elles se lancent sur une machine (ou un conteneur) Airflow qui y a accès.
+
 ### Fichier d'import JSON
 
 ```json
@@ -86,30 +90,36 @@ airflow variables import variables_backup.json
 ## Utiliser les Variables dans le code Python
 
 ```python
-from airflow.models import Variable
+from airflow.sdk import Variable, task
+from airflow.providers.standard.operators.bash import BashOperator
+from airflow.providers.common.sql.operators.sql import SQLExecuteQueryOperator
 
-# ---- Lecture simple ----
-api_url = Variable.get("api_meteo_url")
-# → "https://api.open-meteo.com/v1/forecast"
+@task
+def lire_des_variables():
+    # ---- Lecture simple ----
+    api_url = Variable.get("api_meteo_url")
+    # → "https://api.open-meteo.com/v1/forecast"
 
-# Avec valeur par défaut si la variable n'existe pas
-bucket = Variable.get("s3_bucket", default_var="mon-bucket-defaut")
+    # Avec valeur par défaut si la variable n'existe pas
+    # (Airflow 2 : l'argument s'appelait default_var)
+    bucket = Variable.get("s3_bucket", default="mon-bucket-defaut")
 
-# ---- Lecture JSON (désérialisation automatique) ----
-config = Variable.get("pipeline_config", deserialize_json=True)
-# → {"batch_size": 5000, "timeout_minutes": 30, ...}
+    # ---- Lecture JSON (désérialisation automatique) ----
+    config = Variable.get("pipeline_config", deserialize_json=True)
+    # → {"batch_size": 5000, "timeout_minutes": 30, ...}
 
-batch_size = config['batch_size']
-timeout = config['timeout_minutes']
+    batch_size = config['batch_size']
+    timeout = config['timeout_minutes']
 
 # ---- Lecture dans une fonction Python (bonne pratique) ----
 def ma_tache_avec_config(**context):
     """
     Toujours lire les variables DANS les fonctions, jamais au top-level.
-    Si lu au top-level, la valeur est figée au parsing du fichier DAG.
+    Au top-level, la lecture est refaite à chaque analyse du fichier
+    par le processeur de DAG (toutes les 30 secondes environ par défaut).
     """
     config = Variable.get("pipeline_config", deserialize_json=True)
-    env = Variable.get("env", default_var="dev")
+    env = Variable.get("env", default="dev")
     api_url = Variable.get("api_meteo_url")
 
     print(f"Environnement : {env}")
@@ -124,9 +134,11 @@ tache_bash = BashOperator(
 )
 
 # Variable JSON dans Jinja
-tache_sql = PostgresOperator(
+# (PostgresOperator n'existe plus : on utilise SQLExecuteQueryOperator,
+#  qui fonctionne avec toutes les bases SQL via conn_id)
+tache_sql = SQLExecuteQueryOperator(
     task_id='sql_avec_variable',
-    postgres_conn_id='postgres_production',
+    conn_id='postgres_production',
     sql="""
         SELECT * FROM ventes
         LIMIT {{ var.json.pipeline_config.batch_size }}
@@ -141,6 +153,17 @@ tache_sql = PostgresOperator(
 {{ var.json.nom_variable }}           → valeur désérialisée JSON
 {{ var.json.pipeline_config.batch_size }}  → champ d'un objet JSON
 ```
+
+### Variables par variable d'environnement
+
+Une Variable peut aussi être fournie sans passer par la base, avec une variable d'environnement nommée `AIRFLOW_VAR_<NOM EN MAJUSCULES>` :
+
+```bash
+export AIRFLOW_VAR_API_METEO_URL="https://api.open-meteo.com/v1/forecast"
+export AIRFLOW_VAR_PIPELINE_CONFIG='{"batch_size": 5000, "timeout_minutes": 30}'
+```
+
+`Variable.get("api_meteo_url")` la retrouve comme n'importe quelle autre. Elle n'apparaît pas dans Admin → Variables, et elle doit être définie là où les tâches s'exécutent (workers).
 
 ---
 
@@ -197,6 +220,8 @@ Elles centralisent les credentials et évitent de les coder en dur dans les DAGs
 }
 ```
 
+> Le cas de Snowflake (authentification par paire de clés) est détaillé dans [Airflow 3 avec Astro, Snowflake et dbt](../06-Airflow3-Astro/01-airflow3-astro-snowflake-dbt.md).
+
 ### AWS S3
 
 ```python
@@ -244,7 +269,11 @@ Elles centralisent les credentials et évitent de les coder en dur dans les DAGs
 
 ---
 
-## Gérer les connexions via CLI
+## Gérer les connexions
+
+Dans l'interface : **Admin → Connections → Add Connection**. Les types proposés dépendent des providers installés.
+
+### Via CLI
 
 ```bash
 # Créer une connexion PostgreSQL
@@ -274,6 +303,16 @@ airflow connections export connections_backup.json
 airflow connections import connections_backup.json
 ```
 
+### Via une variable d'environnement
+
+Comme pour les Variables, une connexion peut être définie par une variable d'environnement `AIRFLOW_CONN_<CONN_ID EN MAJUSCULES>`, au format URI ou JSON :
+
+```bash
+export AIRFLOW_CONN_POSTGRES_PRODUCTION='postgresql://airflow:secret@db.company.fr:5432/datawarehouse'
+
+export AIRFLOW_CONN_API_INTERNE='{"conn_type": "http", "host": "api.company.fr", "schema": "https", "extra": {"Authorization": "Bearer mon_token"}}'
+```
+
 ---
 
 ## Utiliser les connexions via les Hooks
@@ -282,7 +321,7 @@ airflow connections import connections_backup.json
 from airflow.providers.postgres.hooks.postgres import PostgresHook
 from airflow.providers.amazon.aws.hooks.s3 import S3Hook
 from airflow.providers.http.hooks.http import HttpHook
-from airflow.operators.python import PythonOperator
+from airflow.providers.standard.operators.python import PythonOperator
 
 def utiliser_connexions(**context):
     # ---- PostgreSQL ----
@@ -293,8 +332,8 @@ def utiliser_connexions(**context):
                                    parameters={'d': context['ds']})
     print(f"Ventes du jour : {records[0][0]}")
 
-    # DataFrame
-    df = pg_hook.get_pandas_df("SELECT * FROM ventes LIMIT 10")
+    # DataFrame pandas (get_pandas_df est déprécié au profit de get_df)
+    df = pg_hook.get_df("SELECT * FROM ventes LIMIT 10")
 
     # Connexion SQLAlchemy (pour pandas.to_sql etc.)
     engine = pg_hook.get_sqlalchemy_engine()
@@ -326,11 +365,23 @@ tache = PythonOperator(
 )
 ```
 
+Pour lire les champs d'une connexion sans passer par un Hook spécialisé :
+
+```python
+from airflow.sdk import BaseHook, task
+
+@task
+def lire_connexion():
+    conn = BaseHook.get_connection('api_interne')
+    print(conn.host, conn.port, conn.login)
+    print(conn.extra_dejson)   # le champ extra, déjà converti en dict
+```
+
 ---
 
 ## Sécurité : chiffrement avec Fernet
 
-Airflow chiffre les mots de passe des Connexions et les Variables sensibles avec une clé **Fernet**.
+Airflow chiffre les mots de passe et le champ `extra` des Connexions, ainsi que les valeurs des Variables, avec une clé **Fernet** avant de les écrire dans la metadata database.
 
 ### Générer une clé Fernet
 
@@ -365,7 +416,9 @@ environment:
 # ✓ Lire les variables DANS les tâches, jamais au top-level
 with DAG(...) as dag:
 
-    # ❌ Top-level : valeur figée au parsing, provoque un appel DB à chaque scan
+    # ❌ Top-level : lecture refaite à chaque analyse du fichier par le
+    #    processeur de DAG (parsing ralenti, appels inutiles), même si
+    #    aucune tâche ne tourne
     URL = Variable.get("api_url")
 
     def ma_tache():
@@ -373,9 +426,10 @@ with DAG(...) as dag:
         URL = Variable.get("api_url")
 
 # ✓ Utiliser des valeurs par défaut
+# (la valeur par défaut est renvoyée telle quelle : donner un dict, pas du texte JSON)
 config = Variable.get("pipeline_config",
-                       default_var='{"batch_size": 1000}',
-                       deserialize_json=True)
+                      default={"batch_size": 1000},
+                      deserialize_json=True)
 
 # ✓ Grouper les variables liées dans un JSON
 # Une seule variable "pipeline_etl_config" plutôt que 10 variables séparées
@@ -388,6 +442,8 @@ config = Variable.get("pipeline_config",
 ```
 
 ### Backends de secrets (production)
+
+Un backend de secrets est interrogé **avant** les variables d'environnement et la metadata database. Il faut installer le provider correspondant (`apache-airflow-providers-amazon`, `apache-airflow-providers-hashicorp`...).
 
 ```ini
 # airflow.cfg — utiliser AWS Secrets Manager
@@ -411,8 +467,7 @@ backend_kwargs = {"connections_path": "connections", "variables_path": "variable
 # dags/pipeline_parametre.py
 
 from datetime import datetime
-from airflow.decorators import dag, task
-from airflow.models import Variable
+from airflow.sdk import dag, task, Variable
 
 @dag(
     dag_id='pipeline_parametre',
@@ -426,8 +481,8 @@ def pipeline_parametre():
     @task
     def charger_configuration() -> dict:
         """Charge toute la configuration depuis les Variables Airflow."""
-        config = Variable.get("pipeline_config", deserialize_json=True, default_var={})
-        env = Variable.get("env", default_var="dev")
+        config = Variable.get("pipeline_config", deserialize_json=True, default={})
+        env = Variable.get("env", default="dev")
 
         # Enrichir avec les valeurs calculées
         config['environment'] = env
@@ -487,7 +542,7 @@ dag = pipeline_parametre()
 
 1. **Variables** = configuration centralisée, modifiable sans re-déployer les DAGs
 2. **Connexions** = credentials centralisés, chiffrés avec Fernet
-3. Lire les Variables **dans les fonctions**, jamais au top-level du fichier DAG
+3. Lire les Variables **dans les fonctions**, jamais au top-level du fichier DAG — avec `from airflow.sdk import Variable` en Airflow 3
 4. Utiliser des Variables JSON pour regrouper la configuration liée
 5. Les **Hooks** sont la couche basse d'accès aux connexions (`PostgresHook`, `S3Hook`, `HttpHook`...)
-6. En production : utiliser un **backend de secrets** (Vault, AWS Secrets Manager)
+6. En production : utiliser un **backend de secrets** (Vault, AWS Secrets Manager) ou des variables d'environnement `AIRFLOW_VAR_...` / `AIRFLOW_CONN_...`

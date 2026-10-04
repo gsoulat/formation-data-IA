@@ -4,10 +4,12 @@
 
 Le `PythonOperator` est l'opérateur le plus utilisé. Il exécute n'importe quelle fonction Python callable.
 
+> **Airflow 3 — où sont passés les imports ?** Les opérateurs de base ne sont plus dans le cœur d'Airflow : ils vivent dans le provider `apache-airflow-providers-standard`. `airflow.operators.python` devient `airflow.providers.standard.operators.python`, `airflow.operators.bash` devient `airflow.providers.standard.operators.bash`. Tout ce qui sert à *écrire* un DAG (`DAG`, `dag`, `task`, `chain`, `Variable`...) s'importe depuis `airflow.sdk`. Les tutoriels Airflow 2 utilisent encore les anciens chemins : il suffit de les traduire.
+
 ### Signature complète
 
 ```python
-from airflow.operators.python import PythonOperator
+from airflow.providers.standard.operators.python import PythonOperator
 
 PythonOperator(
     task_id: str,
@@ -24,7 +26,7 @@ PythonOperator(
 ### Passage d'arguments
 
 ```python
-from airflow.operators.python import PythonOperator
+from airflow.providers.standard.operators.python import PythonOperator
 
 # --- Avec op_kwargs ---
 def traiter_fichier(chemin: str, encodage: str = 'utf-8', limite: int = None):
@@ -51,7 +53,7 @@ tache2 = PythonOperator(
     op_args=[1, 2, 3],
 )
 
-# --- Avec templates_dict (Jinja dans les arguments) ---
+# --- Avec un template Jinja dans op_kwargs ---
 def traiter_par_date(date_traitement: str):
     print(f"Traitement pour la date : {date_traitement}")
 
@@ -80,8 +82,8 @@ def ma_tache_avec_contexte(**context):
     dag_run = context['dag_run']              # Objet DagRun
 
     # Dates
-    logical_date = context['logical_date']    # datetime — date logique
-    ds = context['ds']                        # str "YYYY-MM-DD"
+    logical_date = context['logical_date']    # datetime — date logique (date de déclenchement)
+    ds = context['ds']                        # str "YYYY-MM-DD" (dérivé de logical_date)
     ts = context['ts']                        # str ISO 8601
     data_interval_start = context['data_interval_start']
     data_interval_end = context['data_interval_end']
@@ -106,25 +108,32 @@ tache = PythonOperator(
 )
 ```
 
-### Via provide_context (ancienne syntaxe — Airflow < 2.0)
+> **Ce qui change en Airflow 3**
+> - Les clés `execution_date`, `prev_execution_date`, `next_execution_date`, `yesterday_ds` et `tomorrow_ds` n'existent plus : utiliser `logical_date`, `ds`, `data_interval_start` et `data_interval_end`.
+> - Avec une planification cron ou un préréglage (`'@daily'`, `'0 2 * * *'`), Airflow 3 utilise par défaut le `CronTriggerTimetable` : `data_interval_start`, `data_interval_end` et `logical_date` ont **la même valeur**, la date de déclenchement. L'intervalle affiché ci-dessus est donc vide. Pour retrouver « la période écoulée » comme en Airflow 2, soit on la calcule à partir de `logical_date` (par exemple `logical_date - timedelta(days=1)`), soit on planifie explicitement avec `CronDataIntervalTimetable` (voir le chapitre sur les opérateurs SQL).
+> - Une tâche n'a plus d'accès direct à la base de métadonnées : `dag_run` et `task_instance` sont des objets allégés fournis par l'API d'exécution, pas des modèles SQLAlchemy. Les usages courants (`ti.xcom_pull`, `ti.xcom_push`, `dag_run.run_id`, `dag_run.conf`) fonctionnent toujours.
+
+### Via provide_context (ancienne syntaxe — Airflow 1.x, supprimée)
 
 ```python
-# ❌ Ancienne syntaxe Airflow 1.x — NE PLUS UTILISER
+# ❌ Ancienne syntaxe Airflow 1.x — NE FONCTIONNE PLUS
 tache = PythonOperator(
     task_id='ancienne_syntaxe',
     python_callable=ma_fonction,
-    provide_context=True,   # Déprécié depuis Airflow 2.0
+    provide_context=True,   # Supprimé : Airflow 3 lève une erreur « Invalid arguments »
 )
 
-# ✓ Depuis Airflow 2.0, le contexte est fourni automatiquement
+# ✓ Le contexte est fourni automatiquement
 # si la fonction accepte **kwargs ou des paramètres nommés du contexte
+def ma_fonction(ds, logical_date, **context):
+    print(ds, logical_date)
 ```
 
 ---
 
 ## La TaskFlow API — @task decorator
 
-Introduite dans Airflow 2.0, la **TaskFlow API** permet d'écrire des DAGs de façon plus pythonique, sans instancier explicitement des opérateurs.
+Introduite dans Airflow 2.0, la **TaskFlow API** permet d'écrire des DAGs de façon plus pythonique, sans instancier explicitement des opérateurs. En Airflow 3, les décorateurs s'importent depuis `airflow.sdk` (l'ancien `from airflow.decorators import dag, task` des tutoriels Airflow 2 est déprécié).
 
 ### Comparaison : PythonOperator vs @task
 
@@ -148,13 +157,14 @@ tache_transformer = PythonOperator(
 )
 
 # ---- Nouvelle façon (TaskFlow API) ----
-from airflow.decorators import dag, task
+from datetime import datetime
+from airflow.sdk import dag, task
 
 @dag(
     dag_id='pipeline_taskflow',
     start_date=datetime(2024, 1, 1),
     schedule='@daily',
-    catchup=False,
+    catchup=False,   # Valeur par défaut en Airflow 3 (c'était True en Airflow 2)
 )
 def pipeline_taskflow():
 
@@ -187,8 +197,7 @@ dag = pipeline_taskflow()
 
 ```python
 from datetime import datetime, timedelta
-from airflow.decorators import dag, task
-from airflow.operators.bash import BashOperator
+from airflow.sdk import dag, task
 
 @dag(
     dag_id='etl_taskflow_complet',
@@ -305,9 +314,9 @@ dag = etl_taskflow_complet()
 ## Mélanger @task et opérateurs classiques
 
 ```python
-from airflow.decorators import dag, task
-from airflow.operators.bash import BashOperator
-from airflow.models.baseoperator import chain
+from datetime import datetime
+from airflow.sdk import dag, task
+from airflow.providers.standard.operators.bash import BashOperator
 
 @dag(
     dag_id='mix_taskflow_operateurs',
@@ -354,14 +363,16 @@ dag = mix_taskflow_operateurs()
 ## ShortCircuitOperator — court-circuiter le pipeline
 
 ```python
-from airflow.operators.python import ShortCircuitOperator
+from datetime import datetime
+from airflow.sdk import DAG
+from airflow.providers.standard.operators.bash import BashOperator
+from airflow.providers.standard.operators.python import ShortCircuitOperator
 
 def verifier_condition(**context) -> bool:
     """
     Si retourne False, toutes les tâches en aval sont skippées.
     Si retourne True, l'exécution continue normalement.
     """
-    import datetime
     # Ne traiter que les lundis
     jour = context['logical_date'].weekday()  # 0=lundi, 6=dimanche
     est_lundi = (jour == 0)
@@ -397,7 +408,8 @@ with DAG('pipeline_conditionnel', start_date=datetime(2024,1,1),
 ## @task.short_circuit — TaskFlow version
 
 ```python
-from airflow.decorators import dag, task
+from datetime import datetime
+from airflow.sdk import dag, task
 
 @dag(start_date=datetime(2024,1,1), schedule='@daily', catchup=False)
 def pipeline_conditionnel_taskflow():
@@ -429,15 +441,17 @@ dag = pipeline_conditionnel_taskflow()
 ---
 
 > 🔴 **ACTION FORMATEUR — CAPTURE REQUISE**
-> **Capturer :** La vue Graph d'un DAG TaskFlow dans l'interface Airflow, avec certaines tâches en état "skipped" (couleur rose/grise) après un ShortCircuit
+> **Capturer :** La vue Graph d'un DAG TaskFlow dans l'interface Airflow 3 (page du DAG, bascule Grid / Graph), avec certaines tâches en état "skipped" (couleur rose/grise) après un ShortCircuit
 > **Expliquer :** Montrer que les tâches skippées ne sont pas considérées comme des échecs — le DAG Run global est quand même "success". Expliquer la différence entre "skipped", "failed" et "upstream_failed".
 
 ---
 
 ## PythonVirtualenvOperator — isolation des dépendances
 
+Le virtualenv est créé à chaque exécution avec le Python de l'image Airflow : les versions épinglées dans `requirements` doivent exister pour cette version de Python.
+
 ```python
-from airflow.operators.python import PythonVirtualenvOperator
+from airflow.providers.standard.operators.python import PythonVirtualenvOperator
 
 def analyser_avec_sklearn(data_path: str):
     """
@@ -456,8 +470,8 @@ tache_sklearn = PythonVirtualenvOperator(
     task_id='analyser_sklearn',
     python_callable=analyser_avec_sklearn,
     requirements=[
-        'scikit-learn==1.3.2',
-        'pandas==2.1.4',
+        'scikit-learn==1.7.2',
+        'pandas==2.3.3',
     ],
     system_site_packages=False,  # Isoler du système
     op_kwargs={'data_path': '/data/dataset.csv'},
@@ -469,13 +483,14 @@ tache_sklearn = PythonVirtualenvOperator(
 ## @task.virtualenv — TaskFlow version
 
 ```python
-from airflow.decorators import dag, task
+from datetime import datetime
+from airflow.sdk import dag, task
 
 @dag(start_date=datetime(2024,1,1), schedule='@weekly', catchup=False)
 def pipeline_ml_isole():
 
     @task.virtualenv(
-        requirements=['scikit-learn==1.3.2', 'pandas==2.1.4'],
+        requirements=['scikit-learn==1.7.2', 'pandas==2.3.3'],
         system_site_packages=False,
     )
     def entrainer_modele(dataset_path: str) -> dict:
@@ -512,6 +527,8 @@ dag = pipeline_ml_isole()
 ## Bonnes pratiques TaskFlow API
 
 ```python
+from airflow.sdk import task
+
 # ✓ Utiliser des type hints — améliore la lisibilité et la sérialisation XCom
 @task
 def extraire() -> list[dict]:
@@ -534,7 +551,8 @@ def transformer(data: list) -> list:
     pass
 
 # ❌ Ne pas retourner de gros objets (DataFrames, modèles ML)
-# Les retours de @task sont sérialisés en XCom (stockés en DB)
+# Les retours de @task sont sérialisés en XCom (stockés en DB).
+# Airflow 3 n'accepte plus le picklage des XCom : la valeur doit être sérialisable (JSON).
 @task
 def mauvais():
     import pandas as pd
@@ -557,7 +575,8 @@ def bon():
 
 1. `PythonOperator` : opérateur classique, flexible, explicite
 2. `@task` : syntaxe moderne, passage de données automatique via XCom
-3. Le contexte Airflow (`**context`) donne accès à `ds`, `logical_date`, `dag`, `task_instance`, etc.
+3. Le contexte Airflow (`**context`) donne accès à `ds`, `logical_date`, `dag`, `task_instance`, etc. — `execution_date` n'existe plus en Airflow 3
 4. `ShortCircuitOperator` / `@task.short_circuit` : sauter des tâches conditionnellement
 5. `PythonVirtualenvOperator` : isolation des dépendances par tâche
 6. Ne jamais retourner de gros objets depuis `@task` — utiliser des chemins de fichiers
+7. En Airflow 3 : `from airflow.sdk import DAG, dag, task` et opérateurs dans `airflow.providers.standard`

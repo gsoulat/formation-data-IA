@@ -21,7 +21,7 @@ Avant d'utiliser les opérateurs SQL, il faut configurer une **Connection** dans
 
 ### Via l'interface web
 
-Aller dans **Admin → Connections → + Add a new record**
+Aller dans **Admin → Connections**, puis cliquer sur **Add Connection**
 
 | Champ | Valeur exemple |
 |---|---|
@@ -36,8 +36,8 @@ Aller dans **Admin → Connections → + Add a new record**
 ---
 
 > 🔴 **ACTION FORMATEUR — CAPTURE REQUISE**
-> **Capturer :** L'interface Airflow — Admin → Connections → formulaire de création d'une connexion PostgreSQL rempli
-> **Expliquer :** Montrer chaque champ. Expliquer que le Connection Id est la clé qui sera utilisée dans les opérateurs (`conn_id='postgres_production'`). Montrer le bouton "Test" qui permet de vérifier que la connexion fonctionne avant de sauvegarder.
+> **Capturer :** L'interface Airflow 3 — Admin → Connections → formulaire de création d'une connexion PostgreSQL rempli
+> **Expliquer :** Montrer chaque champ. Expliquer que le Connection Id est la clé qui sera utilisée dans les opérateurs (`conn_id='postgres_production'`). Montrer le bouton "Test" qui permet de vérifier que la connexion fonctionne avant de sauvegarder — il est désactivé par défaut et s'active avec `AIRFLOW__CORE__TEST_CONNECTION=Enabled`.
 
 ---
 
@@ -68,17 +68,17 @@ environment:
 
 ---
 
-## PostgresOperator
+## Exécuter du SQL sur PostgreSQL (l'ancien PostgresOperator)
 
-Exécute du SQL sur une base PostgreSQL.
+Les tutoriels Airflow 2 utilisent `PostgresOperator` (`airflow.providers.postgres.operators.postgres`). **Cet opérateur n'existe plus** dans le provider Postgres compatible avec Airflow 3 : on utilise `SQLExecuteQueryOperator`, du provider `common-sql`, avec `conn_id` à la place de `postgres_conn_id`. Le reste (SQL, templates Jinja, fichiers `.sql`) est identique.
 
 ```python
-from airflow.providers.postgres.operators.postgres import PostgresOperator
+from airflow.providers.common.sql.operators.sql import SQLExecuteQueryOperator
 
 # Requête simple
-creer_table = PostgresOperator(
+creer_table = SQLExecuteQueryOperator(
     task_id='creer_table',
-    postgres_conn_id='postgres_production',
+    conn_id='postgres_production',
     sql="""
         CREATE TABLE IF NOT EXISTS ventes (
             id          SERIAL PRIMARY KEY,
@@ -92,9 +92,9 @@ creer_table = PostgresOperator(
 )
 
 # Insertion avec template Jinja
-inserer_donnees = PostgresOperator(
+inserer_donnees = SQLExecuteQueryOperator(
     task_id='inserer_donnees',
-    postgres_conn_id='postgres_production',
+    conn_id='postgres_production',
     sql="""
         INSERT INTO ventes (date_vente, produit_id, quantite, montant)
         SELECT
@@ -113,10 +113,10 @@ inserer_donnees = PostgresOperator(
 )
 
 # Requête depuis un fichier .sql
-executer_fichier = PostgresOperator(
+executer_fichier = SQLExecuteQueryOperator(
     task_id='executer_transformation',
-    postgres_conn_id='postgres_production',
-    sql='sql/transformer_ventes.sql',  # Chemin relatif au dossier dags/
+    conn_id='postgres_production',
+    sql='sql/transformer_ventes.sql',  # Chemin relatif au dossier du fichier DAG (dags/)
 )
 ```
 
@@ -140,8 +140,8 @@ SELECT
     SUM(montant)                   AS total_montant,
     AVG(montant)                   AS ticket_moyen
 FROM ventes
-WHERE date_vente >= '{{ data_interval_start }}'::DATE
-  AND date_vente <  '{{ data_interval_end }}'::DATE
+WHERE date_vente >= '{{ data_interval_start | ds }}'::DATE
+  AND date_vente <  '{{ data_interval_end | ds }}'::DATE
 GROUP BY 1, 2
 ON CONFLICT (semaine, produit_id)
 DO UPDATE SET
@@ -150,13 +150,32 @@ DO UPDATE SET
     ticket_moyen   = EXCLUDED.ticket_moyen;
 ```
 
+> **Attention — intervalles de données en Airflow 3.** Ce fichier traite la période `[data_interval_start, data_interval_end)`. Or, pour un `schedule` écrit en cron ou en préréglage (`'@weekly'`, `'0 2 * * *'`), Airflow 3 utilise par défaut le `CronTriggerTimetable` : `data_interval_start == data_interval_end == logical_date`, la date de déclenchement. La période serait vide et la requête n'insérerait rien. Deux solutions :
+>
+> ```python
+> # 1. Demander explicitement des intervalles de données (comportement Airflow 2)
+> from airflow.timetables.interval import CronDataIntervalTimetable
+>
+> with DAG(
+>     dag_id='agregation_hebdo',
+>     start_date=datetime(2024, 1, 1),
+>     schedule=CronDataIntervalTimetable('0 0 * * 1', timezone='UTC'),
+> ) as dag:
+>     ...
+>
+> # 2. Garder schedule='0 0 * * 1' et calculer la période dans le SQL à partir de la date logique :
+> #    WHERE date_vente >= '{{ macros.ds_add(ds, -7) }}'::DATE AND date_vente < '{{ ds }}'::DATE
+> ```
+>
+> La même remarque vaut pour `{{ ds }}` : en Airflow 2, un DAG `@daily` exécuté le 2 janvier avait `ds = 2024-01-01` (début de l'intervalle) ; en Airflow 3, par défaut, `ds = 2024-01-02` (jour du déclenchement).
+
 ### Exécuter plusieurs requêtes
 
 ```python
 # Passer une liste de requêtes SQL
-pipeline_sql = PostgresOperator(
+pipeline_sql = SQLExecuteQueryOperator(
     task_id='pipeline_sql',
-    postgres_conn_id='postgres_production',
+    conn_id='postgres_production',
     sql=[
         "TRUNCATE TABLE staging.ventes_temp;",
         "INSERT INTO staging.ventes_temp SELECT * FROM source.ventes WHERE date = '{{ ds }}';",
@@ -165,9 +184,9 @@ pipeline_sql = PostgresOperator(
 )
 
 # Ou passer une liste de fichiers
-pipeline_sql_fichiers = PostgresOperator(
+pipeline_sql_fichiers = SQLExecuteQueryOperator(
     task_id='pipeline_sql_fichiers',
-    postgres_conn_id='postgres_production',
+    conn_id='postgres_production',
     sql=[
         'sql/01_truncate_staging.sql',
         'sql/02_insert_staging.sql',
@@ -180,13 +199,14 @@ pipeline_sql_fichiers = PostgresOperator(
 
 ## SQLExecuteQueryOperator — opérateur universel
 
-Depuis Airflow 2.4, `SQLExecuteQueryOperator` remplace les opérateurs SQL spécifiques en utilisant le provider détecté automatiquement depuis la connexion.
+Apparu avec Airflow 2.4, `SQLExecuteQueryOperator` a remplacé les opérateurs SQL spécifiques (`PostgresOperator`, `MySqlOperator`, `SnowflakeOperator`...) : il choisit le bon Hook d'après le type de la connexion. En Airflow 3, c'est le seul à connaître.
 
 ```python
 from airflow.providers.common.sql.operators.sql import SQLExecuteQueryOperator
 
-# Fonctionne avec PostgreSQL, MySQL, SQLite, Snowflake, BigQuery...
+# Fonctionne avec PostgreSQL, MySQL, SQLite, Snowflake...
 # Le type de DB est détecté depuis la connexion conn_id
+# (le provider de la base doit être installé)
 
 tache_sql = SQLExecuteQueryOperator(
     task_id='executer_requete',
@@ -196,10 +216,34 @@ tache_sql = SQLExecuteQueryOperator(
         FROM ventes
         WHERE date_vente = '{{ ds }}';
     """,
-    # Retourner les résultats dans les logs et XCom
+    # Pousser le résultat de la requête en XCom (comportement par défaut)
     do_xcom_push=True,
+    # Afficher aussi le résultat dans les logs
+    show_return_value_in_logs=True,
 )
 ```
+
+### Exemple avec Snowflake
+
+Même opérateur, autre connexion : il suffit d'installer `apache-airflow-providers-snowflake` et de créer une connexion de type `Snowflake`.
+
+```python
+from airflow.providers.common.sql.operators.sql import SQLExecuteQueryOperator
+from airflow.providers.snowflake.hooks.snowflake import SnowflakeHook
+
+compter_snowflake = SQLExecuteQueryOperator(
+    task_id='compter_ventes_snowflake',
+    conn_id='snowflake_default',
+    sql="SELECT COUNT(*) FROM ventes WHERE date_vente = '{{ ds }}'",
+)
+
+# Dans une fonction Python, on passe par le Hook
+def lire_snowflake(**context):
+    hook = SnowflakeHook(snowflake_conn_id='snowflake_default')
+    return hook.get_first("SELECT CURRENT_VERSION()")
+```
+
+La configuration de la connexion Snowflake, en particulier l'authentification par paire de clés, est détaillée dans [Airflow 3, Astro, Snowflake et dbt](../06-Airflow3-Astro/01-airflow3-astro-snowflake-dbt.md).
 
 ---
 
@@ -273,10 +317,13 @@ verifier_variation = SQLIntervalCheckOperator(
 # dags/pipeline_datawarehouse.py
 
 from datetime import datetime, timedelta
-from airflow import DAG
-from airflow.providers.postgres.operators.postgres import PostgresOperator
-from airflow.providers.common.sql.operators.sql import SQLCheckOperator
-from airflow.operators.python import PythonOperator
+from airflow.sdk import DAG
+from airflow.providers.common.sql.operators.sql import (
+    SQLCheckOperator,
+    SQLExecuteQueryOperator,
+)
+from airflow.providers.standard.operators.python import PythonOperator
+from airflow.timetables.interval import CronDataIntervalTimetable
 
 default_args = {
     'owner': 'data-team',
@@ -288,15 +335,18 @@ with DAG(
     dag_id='pipeline_datawarehouse',
     default_args=default_args,
     start_date=datetime(2024, 1, 1),
-    schedule='0 2 * * *',   # Tous les jours à 2h du matin
+    # Tous les jours à 2h du matin, avec un intervalle de données :
+    # le run déclenché le 2 janvier à 2h a ds = '2024-01-01' (la journée à traiter).
+    # Avec schedule='0 2 * * *' seul, ds vaudrait '2024-01-02' en Airflow 3.
+    schedule=CronDataIntervalTimetable('0 2 * * *', timezone='UTC'),
     catchup=False,
     tags=['dwh', 'sql', 'etl'],
 ) as dag:
 
     # ---- 1. Créer les tables si elles n'existent pas ----
-    creer_tables = PostgresOperator(
+    creer_tables = SQLExecuteQueryOperator(
         task_id='creer_tables',
-        postgres_conn_id='postgres_production',
+        conn_id='postgres_production',
         sql="""
             CREATE TABLE IF NOT EXISTS staging.commandes_raw (
                 id              BIGINT,
@@ -320,9 +370,9 @@ with DAG(
     )
 
     # ---- 2. Charger dans le staging ----
-    charger_staging = PostgresOperator(
+    charger_staging = SQLExecuteQueryOperator(
         task_id='charger_staging',
-        postgres_conn_id='postgres_production',
+        conn_id='postgres_production',
         sql="""
             -- Supprimer les données du jour pour idempotence
             DELETE FROM staging.commandes_raw
@@ -360,9 +410,9 @@ with DAG(
     )
 
     # ---- 4. Transformation vers le DWH ----
-    transformer_dwh = PostgresOperator(
+    transformer_dwh = SQLExecuteQueryOperator(
         task_id='transformer_vers_dwh',
-        postgres_conn_id='postgres_production',
+        conn_id='postgres_production',
         sql="""
             INSERT INTO dwh.fait_commandes
                 (date_commande, client_id, produit_id, nb_commandes, total_montant)
@@ -415,7 +465,7 @@ with DAG(
 
 ```python
 from airflow.providers.postgres.hooks.postgres import PostgresHook
-from airflow.operators.python import PythonOperator
+from airflow.providers.standard.operators.python import PythonOperator
 
 def recuperer_et_traiter(**context):
     """
@@ -442,8 +492,9 @@ def recuperer_et_traiter(**context):
     for client_id, total in records:
         print(f"  Client {client_id}: {total:.2f} €")
 
-    # Méthode 2 : get_pandas_df — retourne un DataFrame
-    df = hook.get_pandas_df(
+    # Méthode 2 : get_df — retourne un DataFrame pandas
+    # (get_pandas_df, des tutoriels Airflow 2, est déprécié)
+    df = hook.get_df(
         sql="SELECT * FROM ventes WHERE date_vente = %(date)s",
         parameters={'date': context['ds']},
     )
@@ -475,8 +526,8 @@ tache_sql_python = PythonOperator(
 ## Points clés à retenir
 
 1. **Toujours configurer une Connection** avant d'utiliser un opérateur SQL
-2. `PostgresOperator` pour PostgreSQL, `SQLExecuteQueryOperator` pour un opérateur universel
-3. Les templates Jinja `{{ ds }}` sont disponibles dans les chaînes SQL et les fichiers `.sql`
+2. `SQLExecuteQueryOperator` (avec `conn_id`) pour toutes les bases : `PostgresOperator` n'existe plus en Airflow 3
+3. Les templates Jinja `{{ ds }}` sont disponibles dans les chaînes SQL et les fichiers `.sql` — en Airflow 3, `ds` est par défaut la date de déclenchement ; utiliser `CronDataIntervalTimetable` pour travailler par intervalles de données
 4. `SQLCheckOperator` et `SQLValueCheckOperator` pour les contrôles de qualité des données
 5. Pour récupérer des résultats SQL dans Python, utiliser le **Hook** directement (`PostgresHook`)
 6. L'idempotence SQL s'obtient avec `DELETE WHERE date = ...` puis `INSERT` ou `INSERT ... ON CONFLICT DO UPDATE`

@@ -18,8 +18,10 @@ pip install apache-airflow-providers-ftp       # FTP
 
 Le `FileSensor` attend qu'un fichier ou un répertoire apparaisse sur le système de fichiers. C'est utile pour déclencher un pipeline dès qu'un fichier de données arrive.
 
+En Airflow 3, il s'importe depuis le provider standard (l'ancien chemin `airflow.sensors.filesystem` des tutoriels Airflow 2 est à remplacer).
+
 ```python
-from airflow.sensors.filesystem import FileSensor
+from airflow.providers.standard.sensors.filesystem import FileSensor
 
 attendre_fichier = FileSensor(
     task_id='attendre_fichier_source',
@@ -53,17 +55,32 @@ mode='reschedule' (recommandé) :
 
 ### FileSensor avec connexion
 
-Pour surveiller des fichiers distants (via SSH, SFTP) :
+Le paramètre `fs_conn_id` désigne une connexion de type **File (path)** : elle fournit un répertoire de base (champ Extra `{"path": "/data"}`) auquel `filepath` est ajouté. Le `FileSensor` ne surveille que le système de fichiers vu par le worker (disque local ou volume monté).
 
 ```python
-from airflow.sensors.filesystem import FileSensor
+from airflow.providers.standard.sensors.filesystem import FileSensor
 
 attendre_rapport = FileSensor(
-    task_id='attendre_rapport_sftp',
-    filepath='/remote/data/rapport_{{ ds_nodash }}.xlsx',
-    fs_conn_id='sftp_serveur_production',  # Connexion SFTP configurée dans Airflow
+    task_id='attendre_rapport',
+    filepath='incoming/rapport_{{ ds_nodash }}.xlsx',  # Relatif au chemin de la connexion
+    fs_conn_id='fs_data',   # Connexion File (path) configurée dans Airflow
     poke_interval=60,   # Vérifier toutes les minutes
     timeout=7200,       # Timeout après 2 heures
+    mode='reschedule',
+)
+```
+
+Pour surveiller un fichier sur un serveur distant, on utilise le capteur du provider concerné, par exemple `SFTPSensor` (`apache-airflow-providers-sftp`) :
+
+```python
+from airflow.providers.sftp.sensors.sftp import SFTPSensor
+
+attendre_rapport_sftp = SFTPSensor(
+    task_id='attendre_rapport_sftp',
+    path='/remote/data/rapport_{{ ds_nodash }}.xlsx',
+    sftp_conn_id='sftp_serveur_production',  # Connexion SFTP configurée dans Airflow
+    poke_interval=60,
+    timeout=7200,
     mode='reschedule',
 )
 ```
@@ -73,8 +90,8 @@ attendre_rapport = FileSensor(
 ## Opérateurs de manipulation de fichiers locaux
 
 ```python
-from airflow.operators.bash import BashOperator
-from airflow.operators.python import PythonOperator
+from airflow.providers.standard.operators.bash import BashOperator
+from airflow.providers.standard.operators.python import PythonOperator
 import shutil, os
 
 # Copier un fichier
@@ -121,7 +138,7 @@ archiver = BashOperator(
 
 ### Configurer la connexion AWS
 
-```python
+```bash
 # Via CLI
 airflow connections add 'aws_default' \
     --conn-type 'aws' \
@@ -133,17 +150,19 @@ airflow connections add 'aws_default' \
 # AIRFLOW_CONN_AWS_DEFAULT=aws://AKIAIOSFODNN7EXAMPLE:wJalrXUtnFEMI%2FK7MDENG@?region_name=eu-west-1
 ```
 
-### S3CreateObjectOperator — upload d'un fichier
+### S3CreateObjectOperator — créer un objet à partir d'un contenu
+
+`data` est le **contenu** de l'objet (chaîne ou octets), pas un chemin de fichier. Pour envoyer un fichier local, utiliser `LocalFilesystemToS3Operator` ci-dessous.
 
 ```python
 from airflow.providers.amazon.aws.operators.s3 import S3CreateObjectOperator
 
-# Uploader un fichier local vers S3
-upload_vers_s3 = S3CreateObjectOperator(
-    task_id='upload_rapport_s3',
+# Créer un petit objet S3 (marqueur de fin de traitement)
+creer_marqueur_s3 = S3CreateObjectOperator(
+    task_id='creer_marqueur_s3',
     s3_bucket='mon-bucket-production',
-    s3_key='rapports/{{ ds }}/rapport_ventes.csv',
-    data='/data/processed/rapport_{{ ds_nodash }}.csv',  # Chemin fichier local
+    s3_key='rapports/{{ ds }}/_SUCCESS',
+    data='Rapport du {{ ds }} généré par {{ dag.dag_id }}',  # Contenu de l'objet
     aws_conn_id='aws_default',
     replace=True,   # Écraser si existe déjà
 )
@@ -164,18 +183,25 @@ transferer_vers_s3 = LocalFilesystemToS3Operator(
 )
 ```
 
-### S3ToLocalFilesystemOperator — téléchargement depuis S3
+### Téléchargement depuis S3
+
+Le provider Amazon ne fournit pas d'opérateur de transfert S3 → disque local : on passe par le `S3Hook` dans une tâche Python.
 
 ```python
-from airflow.providers.amazon.aws.transfers.s3_to_local import S3ToLocalFilesystemOperator
+from airflow.sdk import task
+from airflow.providers.amazon.aws.hooks.s3 import S3Hook
 
-telecharger_depuis_s3 = S3ToLocalFilesystemOperator(
-    task_id='telecharger_donnees_s3',
-    bucket='mon-data-lake',
-    key='data/sources/{{ ds }}/commandes.json',
-    local_path='/data/incoming/commandes_{{ ds_nodash }}.json',
-    aws_conn_id='aws_default',
-)
+@task
+def telecharger_donnees_s3(ds=None):
+    hook = S3Hook(aws_conn_id='aws_default')
+    chemin_local = hook.download_file(
+        key=f'data/sources/{ds}/commandes.json',
+        bucket_name='mon-data-lake',
+        local_path='/data/incoming',
+        preserve_file_name=True,          # Garder le nom « commandes.json »
+        use_autogenerated_subdir=False,   # Écrire directement dans local_path
+    )
+    return chemin_local   # Chemin du fichier téléchargé, poussé en XCom
 ```
 
 ### S3KeySensor — attendre qu'un objet S3 apparaisse
@@ -226,7 +252,7 @@ nettoyer_staging = S3DeleteObjectsOperator(
 
 ```python
 from airflow.providers.amazon.aws.hooks.s3 import S3Hook
-from airflow.operators.python import PythonOperator
+from airflow.providers.standard.operators.python import PythonOperator
 
 def traiter_fichiers_s3(**context):
     """
@@ -290,10 +316,10 @@ traiter_s3 = PythonOperator(
 # dags/pipeline_fichiers_s3.py
 
 from datetime import datetime, timedelta
-from airflow import DAG
-from airflow.sensors.filesystem import FileSensor
-from airflow.operators.python import PythonOperator
-from airflow.operators.bash import BashOperator
+from airflow.sdk import DAG
+from airflow.providers.standard.sensors.filesystem import FileSensor
+from airflow.providers.standard.operators.python import PythonOperator
+from airflow.providers.standard.operators.bash import BashOperator
 from airflow.providers.amazon.aws.transfers.local_to_s3 import LocalFilesystemToS3Operator
 from airflow.providers.amazon.aws.sensors.s3 import S3KeySensor
 
@@ -307,6 +333,8 @@ with DAG(
     dag_id='pipeline_fichiers_s3',
     default_args=default_args,
     start_date=datetime(2024, 1, 1),
+    # Airflow 3 : ds est la date de déclenchement. Le run du 2 janvier à 6h
+    # attend ventes_20240102.csv (en Airflow 2, c'était ventes_20240101.csv).
     schedule='0 6 * * *',
     catchup=False,
     tags=['fichiers', 's3', 'etl'],
@@ -388,8 +416,8 @@ with DAG(
 ---
 
 > 🔴 **ACTION FORMATEUR — CAPTURE REQUISE**
-> **Capturer :** Le terminal + l'interface Airflow montrant une tâche `FileSensor` en état "running" qui attend (mode reschedule), avec les logs indiquant les tentatives "Poking for path..."
-> **Expliquer :** Montrer dans les logs le message "Poking for path: /data/incoming/ventes_xxx.csv" — fichier absent. Puis simuler l'arrivée du fichier (`touch /data/incoming/ventes_xxx.csv`) et voir la tâche passer en "success". Expliquer la différence entre `mode='poke'` et `mode='reschedule'` en termes de consommation de workers.
+> **Capturer :** Le terminal + l'interface Airflow montrant une tâche `FileSensor` qui attend (état "up_for_reschedule" entre deux vérifications en mode reschedule), avec les logs indiquant les tentatives "Poking for file..."
+> **Expliquer :** Montrer dans les logs le message "Poking for file /data/incoming/ventes_xxx.csv" — fichier absent. Puis simuler l'arrivée du fichier (`touch /data/incoming/ventes_xxx.csv`) et voir la tâche passer en "success". Expliquer la différence entre `mode='poke'` et `mode='reschedule'` en termes de consommation de workers.
 
 ---
 
@@ -428,6 +456,6 @@ upload_gcs = LocalFilesystemToGCSOperator(
 1. `FileSensor` avec `mode='reschedule'` pour éviter de bloquer les workers
 2. `S3KeySensor` pour attendre qu'un fichier apparaisse dans S3
 3. `LocalFilesystemToS3Operator` pour les uploads vers S3
-4. Pour des opérations S3 complexes (parcourir, filtrer, transformer), utiliser le `S3Hook` directement dans un `PythonOperator`
+4. Pour télécharger depuis S3 ou pour des opérations complexes (parcourir, filtrer, transformer), utiliser le `S3Hook` directement dans un `PythonOperator` ou un `@task`
 5. Toujours configurer les **Connections** Airflow avant d'utiliser les opérateurs cloud
-6. Les templates Jinja `{{ ds_nodash }}` donnent la date au format `YYYYMMDD` — pratique pour les noms de fichiers
+6. Les templates Jinja `{{ ds_nodash }}` donnent la date au format `YYYYMMDD` — pratique pour les noms de fichiers (en Airflow 3, par défaut, c'est la date de déclenchement du run)

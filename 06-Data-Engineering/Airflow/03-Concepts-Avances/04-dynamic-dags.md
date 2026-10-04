@@ -14,10 +14,12 @@ Les pipelines statiques (une tâche par action codée en dur) ne passent pas à 
 
 La fonctionnalité la plus moderne pour les tâches dynamiques : `@task.expand()` crée automatiquement N instances d'une tâche à partir d'une liste.
 
+> En Airflow 3, `dag` et `task` s'importent depuis `airflow.sdk` (dans les tutoriels Airflow 2 : `from airflow.decorators import dag, task`). Le fonctionnement de `expand()` est inchangé.
+
 ### Exemple simple
 
 ```python
-from airflow.decorators import dag, task
+from airflow.sdk import dag, task
 from datetime import datetime
 
 @dag(start_date=datetime(2024, 1, 1), schedule='@daily', catchup=False)
@@ -63,7 +65,7 @@ consolider                   ✓
 ## Dynamic Task Mapping avec liste dynamique
 
 ```python
-from airflow.decorators import dag, task
+from airflow.sdk import dag, task
 from datetime import datetime
 
 @dag(start_date=datetime(2024, 1, 1), schedule='@daily', catchup=False)
@@ -75,7 +77,7 @@ def dynamic_mapping_liste_dynamique():
         La liste est calculée au runtime — non connue à la définition du DAG.
         Peut venir d'une DB, d'une API, d'une Variable Airflow...
         """
-        from airflow.models import Variable
+        from airflow.sdk import Variable
 
         # Option 1 : depuis une Variable Airflow
         # tables = Variable.get("tables_a_traiter", deserialize_json=True)
@@ -124,7 +126,7 @@ dag = dynamic_mapping_liste_dynamique()
 ## expand_kwargs — plusieurs paramètres dynamiques
 
 ```python
-from airflow.decorators import dag, task
+from airflow.sdk import dag, task
 from datetime import datetime
 
 @dag(start_date=datetime(2024, 1, 1), schedule='@daily', catchup=False)
@@ -163,7 +165,7 @@ dag = dynamic_mapping_multi_params()
 ## expand avec constantes — partial()
 
 ```python
-from airflow.decorators import dag, task
+from airflow.sdk import dag, task
 from datetime import datetime
 
 @dag(start_date=datetime(2024, 1, 1), schedule='@daily', catchup=False)
@@ -199,8 +201,8 @@ Une autre approche : générer plusieurs DAGs à partir d'un template Python.
 # dags/dags_dynamiques.py
 
 from datetime import datetime
-from airflow import DAG
-from airflow.operators.python import PythonOperator
+from airflow.sdk import DAG
+from airflow.providers.standard.operators.python import PythonOperator
 
 # Configuration des pipelines à générer
 CONFIGURATIONS_PIPELINES = [
@@ -315,8 +317,8 @@ pipelines:
 import yaml
 import os
 from datetime import datetime
-from airflow import DAG
-from airflow.operators.python import PythonOperator
+from airflow.sdk import DAG
+from airflow.providers.standard.operators.python import PythonOperator
 
 # Charger le fichier YAML
 CONFIG_FILE = os.path.join(os.path.dirname(__file__), 'config/pipelines.yaml')
@@ -373,16 +375,21 @@ for config in charger_config(CONFIG_FILE):
 | Visibilité | Une seule entrée dans la liste des DAGs | Un DAG par entrée (lisible mais encombre l'UI) |
 | Contrôle indépendant | Difficile | Facile (chaque DAG a son schedule, ses alertes) |
 | Logging | Groupé sous le même DAG Run | Séparé par DAG |
-| Performance | Meilleure (moins d'overhead) | Plus d'overhead (N DAGs scannés) |
+| Performance | Meilleure (moins d'overhead) | Plus d'overhead (N DAGs analysés par le processeur de DAG) |
 
 ### Limites de expand()
 
 ```python
 # ✓ expand() supporte jusqu'à plusieurs milliers d'instances
-# (limité par max_map_length dans airflow.cfg, défaut = 1024)
+# (limité par [core] max_map_length dans airflow.cfg, défaut = 1024)
 
-# ❌ expand() ne supporte pas les opérateurs classiques directement
-# Uniquement @task et les TaskFlow operators
+# ✓ expand() fonctionne aussi avec les opérateurs classiques,
+# mais la syntaxe change : il faut passer par partial()
+from airflow.providers.standard.operators.bash import BashOperator
+
+BashOperator.partial(task_id='afficher').expand(
+    bash_command=['echo commandes', 'echo clients', 'echo produits'],
+)
 
 # ❌ Chaîne d'expand() complexe peut être difficile à déboguer
 ```
@@ -390,10 +397,11 @@ for config in charger_config(CONFIG_FILE):
 ### Limites des factories de DAGs
 
 ```python
-# ❌ Ne jamais faire d'I/O lourds au top-level (connexion DB, appel API)
-# pour générer la liste des configs — le Scheduler parse les DAGs fréquemment
+# ❌ Ne jamais faire d'I/O lourds au top-level (connexion DB, appel API,
+# lecture d'une Variable Airflow) pour générer la liste des configs —
+# le processeur de DAG (dag-processor) ré-analyse les fichiers fréquemment
 
-# ✓ Utiliser un fichier YAML local ou une Variable Airflow statique
+# ✓ Utiliser un fichier YAML ou JSON local, versionné avec les DAGs,
 # pour la configuration des factories
 
 # ✓ Limiter le nombre de DAGs générés (< 200 recommandé)
@@ -405,7 +413,7 @@ for config in charger_config(CONFIG_FILE):
 ## DAGs avec params — alternative aux factories
 
 ```python
-from airflow.decorators import dag, task
+from airflow.sdk import dag, task
 from datetime import datetime
 
 @dag(
@@ -452,7 +460,7 @@ airflow dags trigger pipeline_avec_params \
     --conf '{"pays": "DE", "date_debut": "2024-02-01", "date_fin": "2024-02-29"}'
 ```
 
-Ou via l'interface : bouton "Trigger DAG w/ config" → formulaire JSON.
+Ou via l'interface : bouton **Trigger** du DAG → Airflow affiche un formulaire généré à partir des `params` (un champ par paramètre), avec la possibilité de modifier directement le JSON de configuration.
 
 ---
 
