@@ -47,7 +47,7 @@ Airflow/
 ├── 05-Deploiement/
 │   └── 01-production.md               ← Kubernetes, CI/CD, supervision
 ├── 06-Airflow3-Astro/
-│   └── 01-airflow3-astro-snowflake-dbt.md ← Astro CLI, Snowflake, dbt (Cosmos), notifications
+│   └── 01-airflow3-astro-snowflake.md ← Astro CLI, Snowflake, dbt (Cosmos), notifications
 └── exercices/
     ├── exercice-01-pipeline-etl.md    ← Pipeline ETL complet
     └── exercice-02-pipeline-ml.md     ← Pipeline ML avec MLflow

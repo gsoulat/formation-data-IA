@@ -243,7 +243,7 @@ def lire_snowflake(**context):
     return hook.get_first("SELECT CURRENT_VERSION()")
 ```
 
-La configuration de la connexion Snowflake, en particulier l'authentification par paire de clés, est détaillée dans [Airflow 3, Astro, Snowflake et dbt](../06-Airflow3-Astro/01-airflow3-astro-snowflake-dbt.md).
+La configuration de la connexion Snowflake, en particulier l'authentification par paire de clés, est détaillée dans [Airflow 3, Astro, Snowflake et dbt](../06-Airflow3-Astro/01-airflow3-astro-snowflake.md).
 
 ---
 

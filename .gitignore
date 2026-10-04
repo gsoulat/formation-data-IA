@@ -92,5 +92,5 @@ wheels/
 .env.*.local
 
 
-# Atelier Airflow local : clés et scripts contenant des secrets
-06-Data-Engineering/Airflow/atelier/secrets/
+# Atelier Airflow local (configuration, journaux, clés) : jamais versionné
+06-Data-Engineering/Airflow/atelier/

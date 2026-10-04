@@ -220,7 +220,7 @@ Elles centralisent les credentials et évitent de les coder en dur dans les DAGs
 }
 ```
 
-> Le cas de Snowflake (authentification par paire de clés) est détaillé dans [Airflow 3 avec Astro, Snowflake et dbt](../06-Airflow3-Astro/01-airflow3-astro-snowflake-dbt.md).
+> Le cas de Snowflake (authentification par paire de clés) est détaillé dans [Airflow 3 avec Astro, Snowflake et dbt](../06-Airflow3-Astro/01-airflow3-astro-snowflake.md).
 
 ### AWS S3
 

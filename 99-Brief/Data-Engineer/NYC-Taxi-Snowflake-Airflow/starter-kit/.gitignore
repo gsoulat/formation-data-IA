@@ -1,0 +1,19 @@
+# Secrets : ne jamais versionner
+.env
+*.p8
+*.pem
+rsa_key*
+
+# Python
+.venv/
+__pycache__/
+
+# Airflow / Astro
+logs/
+.astro/
+airflow_settings.yaml
+
+
+# Fichiers téléchargés
+*.parquet
+.DS_Store
