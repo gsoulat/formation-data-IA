@@ -29,7 +29,7 @@ La gestion des privilèges permet de contrôler qui peut accéder et modifier le
 1. Ajoutez :
    - **Object Type** : `Schema`
    - **Object** : `SALES_DB.RAW_DATA`
-   - **Privileges** : `USAGE`, `SELECT`
+   - **Privileges** : `USAGE`
 
 ## Étape 4 : Attribuer des privilèges sur les tables
 1. Pour chaque table (`CUSTOMERS`, `PRODUCTS`, `ORDERS`, `ORDER_ITEMS`) :
@@ -74,12 +74,15 @@ La gestion des privilèges permet de contrôler qui peut accéder et modifier le
 
 ```
 ACCOUNTADMIN
-    └── SECURITYADMIN
-            └── SYSADMIN
-                    └── SALES_ADMIN (custom)
-                            ├── SALES_DEVELOPER (custom)
-                            └── SALES_ANALYST (custom)
+    ├── SECURITYADMIN
+    │       └── USERADMIN
+    └── SYSADMIN
+            └── SALES_ADMIN (custom)
+                    ├── SALES_DEVELOPER (custom)
+                    └── SALES_ANALYST (custom)
 ```
+
+Le modèle complet (propriété des objets, rôles système, droits futurs, utilisateurs de service, diagnostic des erreurs) est détaillé en SQL au [chapitre 10](10-securite.md).
 
 ## Créer des rôles supplémentaires
 
@@ -217,7 +220,7 @@ GRANT SELECT ON FUTURE TABLES IN SCHEMA SALES_DB.RAW_DATA
 TO ROLE SALES_ANALYST;
 
 -- Assigner à utilisateur
-GRANT ROLE SALES_ANALYST TO USER 'username';
+GRANT ROLE SALES_ANALYST TO USER username;
 ```
 
 ## ✅ Points de vérification
