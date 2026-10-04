@@ -82,7 +82,7 @@ Vocabulaire :
 
 Travail en binôme, 5 jours, en autonomie accompagnée. Chaque journée commence par un guide pas à pas sur un exemple voisin (des ventes) : reproduisez-le ou lisez-le en entier, puis transposez-le à nos données. Les ressources donnent ensuite la documentation officielle et des vidéos. Compte Snowflake : au choix, un compte pour le binôme ou un compte chacun ; de même, un utilisateur de service commun ou un par personne avec sa propre clé. Dans tous les cas, une clé privée ne s'envoie ni par messagerie ni par Git. Répartissez-vous pour que chacun touche à Snowflake et à Airflow.
 
-![Le parcours en cinq journées](https://raw.githubusercontent.com/gsoulat/formation-data-IA/main/99-Brief/Data-Engineer/NYC-Taxi-Snowflake-Airflow/starter-kit/docs/parcours.png)
+![Le parcours en cinq journées](https://raw.githubusercontent.com/gsoulat/formation-data-IA/main/99-Brief/Data-Engineer/Snowflake+Airflow/starter-kit/docs/parcours.png)
 
 Le détail de chaque étape, avec les pièges à éviter, est dans le fichier `docs/ETAPES.md` du kit de démarrage. Le guide à suivre en premier chaque jour :
 — Jour 1, rôles et droits Snowflake : https://github.com/gsoulat/formation-data-IA/blob/main/04-Cloud-Platforms/snowflake/10-securite.md
