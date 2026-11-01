@@ -1,3 +1,7 @@
+-- À exécuter avec le rôle des outils (vérifiez le rôle affiché en haut à droite de la feuille).
+USE ROLE TRANSFORMER;
+USE WAREHOUSE NYC_TAXI_WH;
+
 -- Activité mensuelle de chaque chauffeur : services, heures, courses, recette.
 INSERT OVERWRITE INTO NYC_TAXI.MARTS.MART_DRIVER_MONTHLY
 SELECT
