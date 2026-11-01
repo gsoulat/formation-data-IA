@@ -1,3 +1,10 @@
+# [2.27.0](https://github.com/gsoulat/formation-data-IA/compare/v2.26.0...v2.27.0) (2026-11-01)
+
+
+### Features
+
+* **brief:** brief Gouvernance Snowflake autonome, sans Airflow ([5d8fd46](https://github.com/gsoulat/formation-data-IA/commit/5d8fd46076d10e547876155306a65f0d889fc1e1))
+
 # [2.26.0](https://github.com/gsoulat/formation-data-IA/compare/v2.25.0...v2.26.0) (2026-10-18)
 
 
