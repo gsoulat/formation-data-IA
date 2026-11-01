@@ -1,27 +1,15 @@
 # Ressources — parcours d'apprentissage par jour
 
-Méthode : pour chaque jour, 1) suivre le guide pas à pas indiqué en premier, sur son exemple, dans votre compte Snowflake, 2) transposer aux données de Hudson Cab Partners, 3) aller chercher le détail dans la documentation officielle, 4) regarder une vidéo si un geste reste flou. Les vidéos en anglais ont des sous-titres automatiques français sur YouTube (Paramètres → Sous-titres → Traduire automatiquement).
+Les liens de chaque jour. Ce qu'il faut en faire, et dans quel ordre, est dans `GUIDE_BRIEF_GOUVERNANCE.md`. Les vidéos en anglais ont des sous-titres automatiques français sur YouTube (Paramètres → Sous-titres → Traduire automatiquement).
 
 ## Kit de démarrage
 
-- Fichiers RH, fichiers SQL fournis, contrat de gouvernance, détail des étapes, modèles de documents : à parcourir sur https://github.com/gsoulat/formation-data-IA/tree/main/99-Brief/Data-Engineer/Snowflake/Snowflake+Gouvernance/starter-kit
-- Pour l'ajouter à votre projet du brief précédent, sans télécharger tout le dépôt de cours (à lancer depuis le dossier parent de `nyc-taxi-pipeline`) :
-  ```bash
-  git clone --depth 1 --filter=blob:none --sparse https://github.com/gsoulat/formation-data-IA.git
-  cd formation-data-IA
-  git sparse-checkout set "99-Brief/Data-Engineer/Snowflake/Snowflake+Gouvernance/starter-kit"
-  cd ..
-  cp -R "formation-data-IA/99-Brief/Data-Engineer/Snowflake/Snowflake+Gouvernance/starter-kit/." nyc-taxi-pipeline/
-  rm -rf formation-data-IA
-  cd nyc-taxi-pipeline
-  ```
-  Aucun fichier de votre projet n'est écrasé : les fichiers du kit portent des noms qui lui sont propres.
+- Le kit : à parcourir sur https://github.com/gsoulat/formation-data-IA/tree/main/99-Brief/Data-Engineer/Snowflake/Snowflake+Gouvernance/starter-kit ; pour l'installer, voir l'étape 0 de `GUIDE_BRIEF_GOUVERNANCE.md`
 
 ## Avant le premier jour
 
-Vérifier :
-- Votre compte Snowflake du brief précédent est toujours actif (un compte d'essai dure 30 jours) et en édition Enterprise. Sinon, en recréer un : https://www.snowflake.com/en/snowflake-trial/
-- Votre pipeline du brief précédent tourne : la base `NYC_TAXI` et la table `MARTS.FCT_TRIPS` existent.
+Préparer (étape 0 du guide) :
+- Créer un compte d'essai Snowflake, en édition Enterprise : https://signup.snowflake.com/
 
 Regarder :
 - Vidéo (FR) — RGPD : Qu'est-ce qu'une donnée personnelle ?, Leto : https://www.youtube.com/watch?v=muSdwpDrYEY
@@ -30,11 +18,30 @@ Regarder :
 Lire :
 - CNIL, définition d'une donnée personnelle : https://www.cnil.fr/fr/definition/donnee-personnelle
 
-## Jour 1 — Inventorier, charger et cataloguer
+## Jour 1 — matin : la veille réglementaire
+
+Textes de référence :
+- Le RGPD, texte officiel au Journal officiel de l'Union européenne (EUR-Lex) : https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32016R0679
+- Le RGPD article par article, présenté par la CNIL : https://www.cnil.fr/fr/reglement-europeen-protection-donnees
+- Comité européen de la protection des données (CEPD), lignes directrices 3/2018 sur le champ d'application territorial : https://www.edpb.europa.eu/our-work-tools/our-documents/guidelines/guidelines-32018-territorial-scope-gdpr-article-3-version_fr
+
+Recommandations de la CNIL :
+- Référentiel relatif à la gestion du personnel (2019, PDF) : https://www.cnil.fr/sites/cnil/files/atoms/files/referentiel_grh_novembre_2019_0.pdf
+- Les durées de conservation des données : https://www.cnil.fr/fr/les-durees-de-conservation-des-donnees
+- Les bases légales d'un traitement : https://www.cnil.fr/fr/les-bases-legales
+- Sécurité des données : https://www.cnil.fr/fr/securite-des-donnees
+
+Pour suivre l'actualité (dispositif de veille) :
+- Actualités de la CNIL : https://www.cnil.fr/fr/actualites
+- Flux RSS de la CNIL, à brancher dans un lecteur de flux : https://www.cnil.fr/fr/rss.xml
+- Actualités du CEPD : https://edpb.europa.eu/news/news_fr
+
+## Jour 1 — après-midi : charger et cataloguer
 
 Guide à suivre en premier (FR) :
 - Authentification et gouvernance des données, section 5.3 (tags, héritage, classification) : https://github.com/gsoulat/formation-data-IA/blob/main/04-Cloud-Platforms/snowflake/15-gouvernance.md
-- Pour le chargement, le guide du brief précédent reste la référence : https://github.com/gsoulat/formation-data-IA/blob/main/04-Cloud-Platforms/snowflake/11-chargement-stage-copy.md
+- Charger des fichiers dans Snowflake, sections 2 (format de fichier), 3 (stage), 4 (table), 6 (COPY INTO) et 7 (vérifier) : https://github.com/gsoulat/formation-data-IA/blob/main/04-Cloud-Platforms/snowflake/11-chargement-stage-copy.md. Ignorez les sections 5 et 8 (`PUT` et Python) : dans ce brief, les fichiers se déposent sur le stage depuis Snowsight.
+- Déposer des fichiers sur un stage depuis Snowsight : https://docs.snowflake.com/en/user-guide/data-load-local-file-system-stage-ui
 
 Documentation officielle Snowflake :
 - Tags d'objets (création, valeurs autorisées, héritage, privilèges) : https://docs.snowflake.com/en/user-guide/object-tagging/introduction
@@ -50,7 +57,7 @@ Vidéos :
 ## Jour 2 — Protéger : qui voit quoi
 
 Guide à suivre en premier (FR) :
-- Le même guide, sections 5.1 (masquage dynamique) et 5.2 (politiques d'accès par ligne), puis l'atelier de la section 11, étapes 1 à 4 : https://github.com/gsoulat/formation-data-IA/blob/main/04-Cloud-Platforms/snowflake/15-gouvernance.md
+- Le même guide, sections 5.1 (masquage dynamique) et 5.2 (politiques d'accès par ligne) : https://github.com/gsoulat/formation-data-IA/blob/main/04-Cloud-Platforms/snowflake/15-gouvernance.md
 - Rappel sur les rôles et les droits : https://github.com/gsoulat/formation-data-IA/blob/main/04-Cloud-Platforms/snowflake/10-securite.md
 
 Documentation officielle Snowflake :
@@ -59,6 +66,9 @@ Documentation officielle Snowflake :
 - Politiques d'accès par ligne (dont l'exemple avec une table de correspondance) : https://docs.snowflake.com/en/user-guide/security-row-intro
 - Fonction POLICY_REFERENCES (où une politique est-elle attachée ?) : https://docs.snowflake.com/en/sql-reference/functions/policy_references
 - INSERT, option OVERWRITE : https://docs.snowflake.com/en/sql-reference/sql/insert
+- Les privilèges, objet par objet (qui peut créer un tag, le poser, attacher une politique) : https://docs.snowflake.com/en/user-guide/security-access-control-privileges
+- USE SECONDARY ROLES (tester un rôle seul) : https://docs.snowflake.com/en/sql-reference/sql/use-secondary-roles
+- ALTER MASKING POLICY (changer le corps d'une politique attachée) : https://docs.snowflake.com/en/sql-reference/sql/alter-masking-policy
 
 Vidéos :
 - Vidéo (EN) — Snowflake Data Governance Features - 1 - Data Masking & Row Access, Anupam Kushwah : https://www.youtube.com/watch?v=FTLrAGpXgsQ
@@ -71,14 +81,18 @@ Vidéos :
 Guides à suivre en premier (FR) :
 - Stockage et protection des données, sections 4 (Time Travel) et 5 (Fail-safe) : https://github.com/gsoulat/formation-data-IA/blob/main/04-Cloud-Platforms/snowflake/13-stockage-protection.md
 - Gouvernance, section 6 (auditer : `ACCOUNT_USAGE`, `ACCESS_HISTORY`, latences) : https://github.com/gsoulat/formation-data-IA/blob/main/04-Cloud-Platforms/snowflake/15-gouvernance.md
-- Airflow 3 avec Astro CLI, section 6 (fichiers SQL et contrôles) : https://github.com/gsoulat/formation-data-IA/blob/main/06-Data-Engineering/Airflow/06-Airflow3-Astro/01-airflow3-astro-snowflake.md
+- Transformer dans Snowflake, section 7 (tâches planifiées) : https://github.com/gsoulat/formation-data-IA/blob/main/04-Cloud-Platforms/snowflake/18-transformation.md
 
 Documentation officielle :
 - Time Travel (durée de rétention, clause AT) : https://docs.snowflake.com/en/user-guide/data-time-travel
 - Fail-safe : https://docs.snowflake.com/en/user-guide/data-failsafe
 - REMOVE (retirer un fichier d'un stage) : https://docs.snowflake.com/en/sql-reference/sql/remove
 - Vue ACCESS_HISTORY : https://docs.snowflake.com/en/sql-reference/account-usage/access_history
-- Opérateurs SQL d'Airflow (lien non vérifié) : https://airflow.apache.org/docs/apache-airflow-providers-common-sql/stable/operators.html
+- Vue QUERY_HISTORY (le rôle de chaque requête) : https://docs.snowflake.com/en/sql-reference/account-usage/query_history
+- Les tâches et les graphes de tâches : https://docs.snowflake.com/en/user-guide/tasks-intro et https://docs.snowflake.com/en/user-guide/tasks-graphs
+- CREATE TASK et EXECUTE TASK : https://docs.snowflake.com/en/sql-reference/sql/create-task et https://docs.snowflake.com/en/sql-reference/sql/execute-task
+- TASK_HISTORY (l'historique des exécutions) : https://docs.snowflake.com/en/sql-reference/functions/task_history
+- Lever une erreur dans un script (RAISE) : https://docs.snowflake.com/en/developer-guide/snowflake-scripting/exceptions
 
 Réglementation :
 - CNIL, les durées de conservation des données : https://www.cnil.fr/fr/les-durees-de-conservation-des-donnees
@@ -88,10 +102,10 @@ Réglementation :
 ## Bonus
 
 - Bonus 1, classification automatique : https://docs.snowflake.com/en/user-guide/classify-intro et la procédure `SYSTEM$CLASSIFY` https://docs.snowflake.com/en/sql-reference/stored-procedures/system_classify (elle consomme des crédits)
-- Bonus 2, tâches planifiées : section 7 du guide https://github.com/gsoulat/formation-data-IA/blob/main/04-Cloud-Platforms/snowflake/18-transformation.md et https://docs.snowflake.com/en/sql-reference/sql/create-task
+- Bonus 2, alertes : https://docs.snowflake.com/en/user-guide/alerts
 - Bonus 3, politiques d'agrégation : https://docs.snowflake.com/en/user-guide/aggregation-policies
 
 ## À savoir
 
-- Les fonctions de mesure de la qualité intégrées à Snowflake (*data metric functions*) ne sont pas disponibles sur un compte d'essai : les règles de qualité de ce brief s'écrivent en SQL et s'exécutent avec Airflow.
+- Les fonctions de mesure de la qualité intégrées à Snowflake (*data metric functions*) ne sont pas disponibles sur un compte d'essai : les règles de qualité de ce brief s'écrivent en SQL et s'exécutent dans une tâche planifiée.
 - La propagation automatique des tags existe (https://docs.snowflake.com/en/user-guide/object-tagging/propagation) mais n'est pas demandée : comprenez d'abord ce qui se passe sans elle.

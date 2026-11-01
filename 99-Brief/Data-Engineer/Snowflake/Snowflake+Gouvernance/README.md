@@ -2,7 +2,7 @@
 
 > Apprenants : commencez par [`BRIEF.md`](BRIEF.md). Cette page s'adresse au formateur.
 
-Brief guidé de 3 jours, en binôme, à la suite du brief [Pipeline médaillon NYC Yellow Taxi : Snowflake et Airflow](../Snowflake+Airflow/). Les apprenants ajoutent à leur entrepôt un fichier RH fictif de chauffeurs, le cataloguent (descriptions, tags, vue du catalogue), posent les politiques de masquage et d'accès par ligne, automatisent avec Airflow la purge et les règles de qualité, puis prouvent par l'historique des accès que les règles tiennent.
+Brief guidé de 3 jours, en binôme, à partir d'un compte Snowflake vide. Les apprenants chargent dans un nouvel entrepôt un fichier RH fictif de chauffeurs, le cataloguent (descriptions, tags, vue du catalogue), posent les politiques de masquage et d'accès par ligne, automatisent par des tâches Snowflake la purge et les règles de qualité, puis prouvent par l'historique des accès que les règles tiennent.
 
 ![Schéma de la gouvernance](starter-kit/docs/gouvernance.png)
 
@@ -12,17 +12,17 @@ Brief guidé de 3 jours, en binôme, à la suite du brief [Pipeline médaillon N
 |---|---|---|
 | `BRIEF.md` | apprenants | le brief complet, à lire sur GitHub |
 | `RESSOURCES.md` | apprenants | guides, documentation et vidéos, jour par jour |
-| `starter-kit/` | apprenants | fichiers RH fictifs, fichiers SQL fournis, contrat de gouvernance, détail des étapes, modèles de documents |
+| `starter-kit/` | apprenants | guide des étapes (dont l'étape 0 : installer le kit), contrat, fichiers RH fictifs, fichiers SQL fournis, trois modèles de documents, fiche juridique et exemples commentés |
 
 Ce dossier ne contient ni la solution ni la grille de notation : elles sont conservées hors de ce dépôt public.
 
 ## Compétences visées
 
-C19 et C21 au niveau 2 (adapter) ; C20 au niveau 1 (imiter).
+C4, C19 et C21 au niveau 2 (adapter) ; C20 au niveau 1 (imiter).
 
 ## Prérequis des apprenants
 
-Avoir terminé le brief précédent : base `NYC_TAXI`, rôle des outils, utilisateur de service et projet Airflow en état de marche. Compte Snowflake en édition Enterprise (le compte d'essai le permet).
+Aucun brief précédent requis : le kit part d'un compte Snowflake vide (installation). Avoir déjà écrit du SQL ; tout se fait dans Snowsight, sans Python ni outil à installer. Compte Snowflake en édition Enterprise (le compte d'essai le permet).
 
 ## Les données
 
@@ -37,4 +37,4 @@ Le fichier RH est fictif, généré par un script à graine fixe conservé hors 
 ## Guides du cours utilisés par le brief
 
 - Jours 1 et 2 : [Authentification et gouvernance des données](../../../../04-Cloud-Platforms/snowflake/15-gouvernance.md)
-- Jour 3 : [Stockage et protection des données](../../../../04-Cloud-Platforms/snowflake/13-stockage-protection.md), puis [Airflow 3 avec Astro CLI](../../../../06-Data-Engineering/Airflow/06-Airflow3-Astro/01-airflow3-astro-snowflake.md)
+- Jour 3 : [Stockage et protection des données](../../../../04-Cloud-Platforms/snowflake/13-stockage-protection.md), puis [Transformer dans Snowflake, section 7 : tâches planifiées](../../../../04-Cloud-Platforms/snowflake/18-transformation.md)

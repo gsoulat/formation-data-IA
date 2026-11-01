@@ -1,0 +1,7 @@
+# Secrets : ne jamais versionner (mots de passe, clés)
+.env
+*.p8
+*.pem
+
+# Système
+.DS_Store

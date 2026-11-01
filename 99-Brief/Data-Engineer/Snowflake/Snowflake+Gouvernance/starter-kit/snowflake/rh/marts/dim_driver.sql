@@ -1,3 +1,7 @@
+-- À exécuter avec le rôle des outils (vérifiez le rôle affiché en haut à droite de la feuille).
+USE ROLE TRANSFORMER;
+USE WAREHOUSE NYC_TAXI_WH;
+
 -- Dimension chauffeur : une ligne par chauffeur.
 -- INSERT OVERWRITE vide la table et la remplit, sans la recréer.
 INSERT OVERWRITE INTO NYC_TAXI.MARTS.DIM_DRIVER

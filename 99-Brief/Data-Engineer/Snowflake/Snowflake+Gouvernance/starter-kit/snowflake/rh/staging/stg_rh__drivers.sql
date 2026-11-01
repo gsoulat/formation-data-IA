@@ -1,3 +1,7 @@
+-- À exécuter avec le rôle des outils (vérifiez le rôle affiché en haut à droite de la feuille).
+USE ROLE TRANSFORMER;
+USE WAREHOUSE NYC_TAXI_WH;
+
 -- Chauffeurs : typage et nettoyage léger du fichier RH.
 CREATE OR REPLACE VIEW NYC_TAXI.STAGING.STG_RH__DRIVERS AS
 SELECT
