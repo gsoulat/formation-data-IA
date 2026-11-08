@@ -6,6 +6,13 @@
 
 ## 1. Alias personnalisés (Productivité)
 
+<!-- videos:azqO7l2L-Ig -->
+> 🎬 **En vidéo**
+>
+> <a href="https://www.youtube.com/watch?v=azqO7l2L-Ig" title="Bash : Personnaliser ton terminal (PATH, export, alias)"><img src="https://i.ytimg.com/vi/azqO7l2L-Ig/mqdefault.jpg" alt="▶ Bash : Personnaliser ton terminal (PATH, export, alias)" width="320"></a>
+>
+> ▶ [Bash : Personnaliser ton terminal (PATH, export, alias)](https://www.youtube.com/watch?v=azqO7l2L-Ig)
+
 Ajoutez-les dans votre `.bashrc` ou `.zshrc` :
 ```bash
 alias ll='ls -lah'

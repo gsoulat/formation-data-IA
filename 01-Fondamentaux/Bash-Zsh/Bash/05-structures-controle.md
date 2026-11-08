@@ -27,6 +27,13 @@ fi
 
 ## 2. Boucles (for)
 
+<!-- videos:HEjkZUvG8ts -->
+> 🎬 **En vidéo**
+>
+> <a href="https://www.youtube.com/watch?v=HEjkZUvG8ts" title="Bash : Les boucles (for)"><img src="https://i.ytimg.com/vi/HEjkZUvG8ts/mqdefault.jpg" alt="▶ Bash : Les boucles (for)" width="320"></a>
+>
+> ▶ [Bash : Les boucles (for)](https://www.youtube.com/watch?v=HEjkZUvG8ts)
+
 ```bash
 # Sur une liste de fichiers
 for file in data/*.csv; do

@@ -5,6 +5,13 @@
 ---
 
 ## 1. Le .gitignore : Vital pour la Data
+<!-- videos:A1uyxPPGJM4 -->
+> 🎬 **En vidéo**
+>
+> <a href="https://www.youtube.com/watch?v=A1uyxPPGJM4" title="Git : Ignorer des fichiers (.gitignore, données, secrets)"><img src="https://i.ytimg.com/vi/A1uyxPPGJM4/mqdefault.jpg" alt="▶ Git : Ignorer des fichiers (.gitignore, données, secrets)" width="320"></a>
+>
+> ▶ [Git : Ignorer des fichiers (.gitignore, données, secrets)](https://www.youtube.com/watch?v=A1uyxPPGJM4)
+
 Évitez de commiter des données ou des secrets.
 
 ```text
@@ -27,6 +34,13 @@ Utilisez des outils comme `nbstripout` pour retirer les résultats d'exécution 
 ---
 
 ## 2. Conventional Commits
+<!-- videos:2wzXzeb8npU -->
+> 🎬 **En vidéo**
+>
+> <a href="https://www.youtube.com/watch?v=2wzXzeb8npU" title="Git : Écrire de bons commits"><img src="https://i.ytimg.com/vi/2wzXzeb8npU/mqdefault.jpg" alt="▶ Git : Écrire de bons commits" width="320"></a>
+>
+> ▶ [Git : Écrire de bons commits](https://www.youtube.com/watch?v=2wzXzeb8npU)
+
 Utilisez des messages structurés pour automatiser vos changelogs :
 - `feat:` Nouvelle fonctionnalité.
 - `fix:` Correction de bug.

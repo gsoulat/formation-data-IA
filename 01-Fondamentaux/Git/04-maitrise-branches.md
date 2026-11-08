@@ -34,6 +34,13 @@ git merge feature/etl-module
 ---
 
 ## 4. Résoudre les conflits
+<!-- videos:_crDzJ8HiPI -->
+> 🎬 **En vidéo**
+>
+> <a href="https://www.youtube.com/watch?v=_crDzJ8HiPI" title="Git : Résoudre un conflit (marqueurs, résolution)"><img src="https://i.ytimg.com/vi/_crDzJ8HiPI/mqdefault.jpg" alt="▶ Git : Résoudre un conflit (marqueurs, résolution)" width="320"></a>
+>
+> ▶ [Git : Résoudre un conflit (marqueurs, résolution)](https://www.youtube.com/watch?v=_crDzJ8HiPI)
+
 Un conflit survient quand deux branches modifient la même ligne.
 1. Tentez le merge : `git merge feature/X`.
 2. Si conflit, ouvrez le fichier et cherchez les marqueurs `<<<<<<<`, `=======`, `>>>>>>>`.

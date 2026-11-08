@@ -6,6 +6,13 @@
 
 ## 1. Qu'est-ce que Git ?
 
+<!-- videos:l3B35-a1VYY -->
+> 🎬 **En vidéo**
+>
+> <a href="https://www.youtube.com/watch?v=l3B35-a1VYY" title="Git : Pourquoi versionner ? (versionner, dépôt, commit)"><img src="https://i.ytimg.com/vi/l3B35-a1VYY/mqdefault.jpg" alt="▶ Git : Pourquoi versionner ? (versionner, dépôt, commit)" width="320"></a>
+>
+> ▶ [Git : Pourquoi versionner ? (versionner, dépôt, commit)](https://www.youtube.com/watch?v=l3B35-a1VYY)
+
 **Git** est un système de contrôle de version distribué créé par Linus Torvalds en 2005.
 C'est l'outil le plus utilisé au monde pour gérer les versions de code source et suivre l'historique
 des modifications d'un projet.
