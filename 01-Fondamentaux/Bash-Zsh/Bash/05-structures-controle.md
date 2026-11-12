@@ -6,6 +6,13 @@
 
 ## 1. Conditions (if / elif / else)
 
+<!-- videos:GAKfQRTfZ-g -->
+> 🎬 **En vidéo**
+>
+> <a href="https://www.youtube.com/watch?v=GAKfQRTfZ-g" title="Bash 15 : Les conditions (if, [ -f ], $?)"><img src="https://i.ytimg.com/vi/GAKfQRTfZ-g/mqdefault.jpg" alt="▶ Bash 15 : Les conditions (if, [ -f ], $?)" width="320"></a>
+>
+> ▶ [Bash 15 : Les conditions (if, [ -f ], $?)](https://www.youtube.com/watch?v=GAKfQRTfZ-g)
+
 Préférer la syntaxe `[[ ]]` (Bash/Zsh) à `[ ]` (POSIX).
 
 ```bash
@@ -27,12 +34,12 @@ fi
 
 ## 2. Boucles (for)
 
-<!-- videos:HEjkZUvG8ts -->
+<!-- videos:PQJGla-laEs -->
 > 🎬 **En vidéo**
 >
-> <a href="https://www.youtube.com/watch?v=HEjkZUvG8ts" title="Bash : Les boucles (for)"><img src="https://i.ytimg.com/vi/HEjkZUvG8ts/mqdefault.jpg" alt="▶ Bash : Les boucles (for)" width="320"></a>
+> <a href="https://www.youtube.com/watch?v=PQJGla-laEs" title="Bash 16 : Les boucles (for)"><img src="https://i.ytimg.com/vi/PQJGla-laEs/mqdefault.jpg" alt="▶ Bash 16 : Les boucles (for)" width="320"></a>
 >
-> ▶ [Bash : Les boucles (for)](https://www.youtube.com/watch?v=HEjkZUvG8ts)
+> ▶ [Bash 16 : Les boucles (for)](https://www.youtube.com/watch?v=PQJGla-laEs)
 
 ```bash
 # Sur une liste de fichiers

@@ -18,6 +18,13 @@ Un processus est une instance d'un programme en cours d'exécution. Chaque proce
 
 ## 2. Observer les processus
 
+<!-- videos:Ue8XzVwWt9Q -->
+> 🎬 **En vidéo**
+>
+> <a href="https://www.youtube.com/watch?v=Ue8XzVwWt9Q" title="Bash 18 : Surveiller ce qui tourne (ps, top, kill)"><img src="https://i.ytimg.com/vi/Ue8XzVwWt9Q/mqdefault.jpg" alt="▶ Bash 18 : Surveiller ce qui tourne (ps, top, kill)" width="320"></a>
+>
+> ▶ [Bash 18 : Surveiller ce qui tourne (ps, top, kill)](https://www.youtube.com/watch?v=Ue8XzVwWt9Q)
+
 | Commande | Usage |
 | --- | --- |
 | `ps aux` | Liste statique de tous les processus. |

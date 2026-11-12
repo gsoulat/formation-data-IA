@@ -11,6 +11,13 @@ Les branches permettent d'isoler le développement. Vous travaillez sur une nouv
 
 ## 2. Gérer les branches
 
+<!-- videos:vLnjO5hvnPc -->
+> 🎬 **En vidéo**
+>
+> <a href="https://www.youtube.com/watch?v=vLnjO5hvnPc" title="Git 07 : Les branches (git switch -c, git branch, git merge)"><img src="https://i.ytimg.com/vi/vLnjO5hvnPc/mqdefault.jpg" alt="▶ Git 07 : Les branches (git switch -c, git branch, git merge)" width="320"></a>
+>
+> ▶ [Git 07 : Les branches (git switch -c, git branch, git merge)](https://www.youtube.com/watch?v=vLnjO5hvnPc)
+
 ### Créer et naviguer
 ```bash
 git branch feature/etl-module      # Créer
@@ -34,12 +41,12 @@ git merge feature/etl-module
 ---
 
 ## 4. Résoudre les conflits
-<!-- videos:_crDzJ8HiPI -->
+<!-- videos:yxS9WDdya2Y -->
 > 🎬 **En vidéo**
 >
-> <a href="https://www.youtube.com/watch?v=_crDzJ8HiPI" title="Git : Résoudre un conflit (marqueurs, résolution)"><img src="https://i.ytimg.com/vi/_crDzJ8HiPI/mqdefault.jpg" alt="▶ Git : Résoudre un conflit (marqueurs, résolution)" width="320"></a>
+> <a href="https://www.youtube.com/watch?v=yxS9WDdya2Y" title="Git 08 : Résoudre un conflit (marqueurs, résolution)"><img src="https://i.ytimg.com/vi/yxS9WDdya2Y/mqdefault.jpg" alt="▶ Git 08 : Résoudre un conflit (marqueurs, résolution)" width="320"></a>
 >
-> ▶ [Git : Résoudre un conflit (marqueurs, résolution)](https://www.youtube.com/watch?v=_crDzJ8HiPI)
+> ▶ [Git 08 : Résoudre un conflit (marqueurs, résolution)](https://www.youtube.com/watch?v=yxS9WDdya2Y)
 
 Un conflit survient quand deux branches modifient la même ligne.
 1. Tentez le merge : `git merge feature/X`.

@@ -6,12 +6,12 @@
 
 ## 1. Qu'est-ce que le Shell ?
 
-<!-- videos:PZBSOMnwFX4 -->
+<!-- videos:b3VIbr5cFlo -->
 > 🎬 **En vidéo**
 >
-> <a href="https://www.youtube.com/watch?v=PZBSOMnwFX4" title="Bash : Installer ton terminal (Linux, Windows (WSL))"><img src="https://i.ytimg.com/vi/PZBSOMnwFX4/mqdefault.jpg" alt="▶ Bash : Installer ton terminal (Linux, Windows (WSL))" width="320"></a>
+> <a href="https://www.youtube.com/watch?v=b3VIbr5cFlo" title="Bash 00 : Installer ton terminal (Linux, Windows (WSL))"><img src="https://i.ytimg.com/vi/b3VIbr5cFlo/mqdefault.jpg" alt="▶ Bash 00 : Installer ton terminal (Linux, Windows (WSL))" width="320"></a>
 >
-> ▶ [Bash : Installer ton terminal (Linux, Windows (WSL))](https://www.youtube.com/watch?v=PZBSOMnwFX4)
+> ▶ [Bash 00 : Installer ton terminal (Linux, Windows (WSL))](https://www.youtube.com/watch?v=b3VIbr5cFlo)
 
 Le **shell** est un interpréteur de commandes qui permet d'interagir avec le système
 d'exploitation via des commandes textuelles. C'est l'interface entre l'utilisateur et le noyau
@@ -77,12 +77,12 @@ cat /etc/shells
 
 ## 4. Premières commandes essentielles
 
-<!-- videos:JtrrK2zzk3g -->
+<!-- videos:TUcts03vOrE -->
 > 🎬 **En vidéo**
 >
-> <a href="https://www.youtube.com/watch?v=JtrrK2zzk3g" title="Bash : Découvrir le terminal (prompt, echo, whoami)"><img src="https://i.ytimg.com/vi/JtrrK2zzk3g/mqdefault.jpg" alt="▶ Bash : Découvrir le terminal (prompt, echo, whoami)" width="320"></a>
+> <a href="https://www.youtube.com/watch?v=TUcts03vOrE" title="Bash 01 : Découvrir le terminal (prompt, echo, whoami)"><img src="https://i.ytimg.com/vi/TUcts03vOrE/mqdefault.jpg" alt="▶ Bash 01 : Découvrir le terminal (prompt, echo, whoami)" width="320"></a>
 >
-> ▶ [Bash : Découvrir le terminal (prompt, echo, whoami)](https://www.youtube.com/watch?v=JtrrK2zzk3g)
+> ▶ [Bash 01 : Découvrir le terminal (prompt, echo, whoami)](https://www.youtube.com/watch?v=TUcts03vOrE)
 
 | Commande | Description | Exemple |
 | --- | --- | --- |

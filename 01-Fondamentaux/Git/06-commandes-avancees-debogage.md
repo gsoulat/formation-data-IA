@@ -6,12 +6,12 @@
 
 ## 1. Annuler des modifications
 
-<!-- videos:J6EoB6R9SzI -->
+<!-- videos:48yGz8FQ7fA -->
 > 🎬 **En vidéo**
 >
-> <a href="https://www.youtube.com/watch?v=J6EoB6R9SzI" title="Git : Annuler des changements (git restore, git revert)"><img src="https://i.ytimg.com/vi/J6EoB6R9SzI/mqdefault.jpg" alt="▶ Git : Annuler des changements (git restore, git revert)" width="320"></a>
+> <a href="https://www.youtube.com/watch?v=48yGz8FQ7fA" title="Git 05 : Annuler des changements (git restore, git revert)"><img src="https://i.ytimg.com/vi/48yGz8FQ7fA/mqdefault.jpg" alt="▶ Git 05 : Annuler des changements (git restore, git revert)" width="320"></a>
 >
-> ▶ [Git : Annuler des changements (git restore, git revert)](https://www.youtube.com/watch?v=J6EoB6R9SzI)
+> ▶ [Git 05 : Annuler des changements (git restore, git revert)](https://www.youtube.com/watch?v=48yGz8FQ7fA)
 
 ### Restaurer un fichier (Undo local)
 ```bash
@@ -33,12 +33,12 @@ git reset --hard HEAD~1
 ---
 
 ## 2. Stash : Mettre de côté
-<!-- videos:5oqJkUY_V48 -->
+<!-- videos:CQMV9-1ho8A -->
 > 🎬 **En vidéo**
 >
-> <a href="https://www.youtube.com/watch?v=5oqJkUY_V48" title="Git : Mettre de côté et étiqueter (git stash, git tag)"><img src="https://i.ytimg.com/vi/5oqJkUY_V48/mqdefault.jpg" alt="▶ Git : Mettre de côté et étiqueter (git stash, git tag)" width="320"></a>
+> <a href="https://www.youtube.com/watch?v=CQMV9-1ho8A" title="Git 11 : Mettre de côté et étiqueter (git stash, git tag)"><img src="https://i.ytimg.com/vi/CQMV9-1ho8A/mqdefault.jpg" alt="▶ Git 11 : Mettre de côté et étiqueter (git stash, git tag)" width="320"></a>
 >
-> ▶ [Git : Mettre de côté et étiqueter (git stash, git tag)](https://www.youtube.com/watch?v=5oqJkUY_V48)
+> ▶ [Git 11 : Mettre de côté et étiqueter (git stash, git tag)](https://www.youtube.com/watch?v=CQMV9-1ho8A)
 
 Utile pour changer de branche sans committer un travail inachevé.
 ```bash

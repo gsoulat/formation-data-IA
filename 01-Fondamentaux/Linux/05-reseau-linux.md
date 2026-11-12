@@ -19,12 +19,12 @@ Linux identifie chaque connexion physique ou virtuelle comme une interface :
 
 ## 2. Ports et Services
 
-<!-- videos:nM6d7bbLgdY -->
+<!-- videos:8SJxkIVrbsg -->
 > 🎬 **En vidéo**
 >
-> <a href="https://www.youtube.com/watch?v=nM6d7bbLgdY" title="Bash : Se connecter à un serveur (ssh, empreinte, exit)"><img src="https://i.ytimg.com/vi/nM6d7bbLgdY/mqdefault.jpg" alt="▶ Bash : Se connecter à un serveur (ssh, empreinte, exit)" width="320"></a>
+> <a href="https://www.youtube.com/watch?v=8SJxkIVrbsg" title="Bash 23 : Se connecter à un serveur (ssh, empreinte, exit)"><img src="https://i.ytimg.com/vi/8SJxkIVrbsg/mqdefault.jpg" alt="▶ Bash 23 : Se connecter à un serveur (ssh, empreinte, exit)" width="320"></a>
 >
-> ▶ [Bash : Se connecter à un serveur (ssh, empreinte, exit)](https://www.youtube.com/watch?v=nM6d7bbLgdY)
+> ▶ [Bash 23 : Se connecter à un serveur (ssh, empreinte, exit)](https://www.youtube.com/watch?v=8SJxkIVrbsg)
 
 Un serveur peut héberger plusieurs services sur la même IP via des ports :
 - HTTP : 80 / HTTPS : 443
