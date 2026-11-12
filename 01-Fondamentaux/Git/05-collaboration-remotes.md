@@ -18,12 +18,26 @@ git remote -v          # Voir la liste
 ## 2. Synchroniser le code
 
 ### Envoyer (Push)
+<!-- videos:zgstTcSVBxw -->
+> 🎬 **En vidéo**
+>
+> <a href="https://www.youtube.com/watch?v=zgstTcSVBxw" title="Git 09 : Pousser vers un dépôt distant (git remote, git push)"><img src="https://i.ytimg.com/vi/zgstTcSVBxw/mqdefault.jpg" alt="▶ Git 09 : Pousser vers un dépôt distant (git remote, git push)" width="320"></a>
+>
+> ▶ [Git 09 : Pousser vers un dépôt distant (git remote, git push)](https://www.youtube.com/watch?v=zgstTcSVBxw)
+
 ```bash
 git push origin main
 git push -u origin feature/X   # -u lie la branche locale à la distante
 ```
 
 ### Récupérer (Fetch / Pull)
+<!-- videos:W2SC4GhgLxI -->
+> 🎬 **En vidéo**
+>
+> <a href="https://www.youtube.com/watch?v=W2SC4GhgLxI" title="Git 10 : Récupérer les changements (git fetch, git pull)"><img src="https://i.ytimg.com/vi/W2SC4GhgLxI/mqdefault.jpg" alt="▶ Git 10 : Récupérer les changements (git fetch, git pull)" width="320"></a>
+>
+> ▶ [Git 10 : Récupérer les changements (git fetch, git pull)](https://www.youtube.com/watch?v=W2SC4GhgLxI)
+
 - **Fetch** : Télécharge les commits sans les fusionner.
 - **Pull** : Télécharge ET fusionne (Fetch + Merge).
 ```bash

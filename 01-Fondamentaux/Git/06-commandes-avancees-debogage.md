@@ -6,6 +6,13 @@
 
 ## 1. Annuler des modifications
 
+<!-- videos:48yGz8FQ7fA -->
+> 🎬 **En vidéo**
+>
+> <a href="https://www.youtube.com/watch?v=48yGz8FQ7fA" title="Git 05 : Annuler des changements (git restore, git revert)"><img src="https://i.ytimg.com/vi/48yGz8FQ7fA/mqdefault.jpg" alt="▶ Git 05 : Annuler des changements (git restore, git revert)" width="320"></a>
+>
+> ▶ [Git 05 : Annuler des changements (git restore, git revert)](https://www.youtube.com/watch?v=48yGz8FQ7fA)
+
 ### Restaurer un fichier (Undo local)
 ```bash
 git restore script.py
@@ -26,6 +33,13 @@ git reset --hard HEAD~1
 ---
 
 ## 2. Stash : Mettre de côté
+<!-- videos:CQMV9-1ho8A -->
+> 🎬 **En vidéo**
+>
+> <a href="https://www.youtube.com/watch?v=CQMV9-1ho8A" title="Git 11 : Mettre de côté et étiqueter (git stash, git tag)"><img src="https://i.ytimg.com/vi/CQMV9-1ho8A/mqdefault.jpg" alt="▶ Git 11 : Mettre de côté et étiqueter (git stash, git tag)" width="320"></a>
+>
+> ▶ [Git 11 : Mettre de côté et étiqueter (git stash, git tag)](https://www.youtube.com/watch?v=CQMV9-1ho8A)
+
 Utile pour changer de branche sans committer un travail inachevé.
 ```bash
 git stash              # Sauvegarder

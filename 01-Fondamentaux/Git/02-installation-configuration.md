@@ -6,6 +6,13 @@
 
 ## 1. Installation de Git
 
+<!-- videos:p18nWKPd6aw -->
+> 🎬 **En vidéo**
+>
+> <a href="https://www.youtube.com/watch?v=p18nWKPd6aw" title="Git 01 : Installer et configurer Git (git --version, git config)"><img src="https://i.ytimg.com/vi/p18nWKPd6aw/mqdefault.jpg" alt="▶ Git 01 : Installer et configurer Git (git --version, git config)" width="320"></a>
+>
+> ▶ [Git 01 : Installer et configurer Git (git --version, git config)](https://www.youtube.com/watch?v=p18nWKPd6aw)
+
 ### 🍎 macOS
 ```bash
 # Avec Homebrew

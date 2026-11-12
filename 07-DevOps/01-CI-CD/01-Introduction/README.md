@@ -14,6 +14,13 @@
 
 ## Qu'est-ce que le CI/CD ?
 
+<!-- videos:nRXKkMcoDEQ -->
+> 🎬 **En vidéo**
+>
+> <a href="https://www.youtube.com/watch?v=nRXKkMcoDEQ" title="CI/CD 00 : Pourquoi la CI ? (pipeline)"><img src="https://i.ytimg.com/vi/nRXKkMcoDEQ/mqdefault.jpg" alt="▶ CI/CD 00 : Pourquoi la CI ? (pipeline)" width="320"></a>
+>
+> ▶ [CI/CD 00 : Pourquoi la CI ? (pipeline)](https://www.youtube.com/watch?v=nRXKkMcoDEQ)
+
 **CI/CD** est l'acronyme de **Continuous Integration** (Intégration Continue) et **Continuous Delivery/Deployment** (Livraison/Déploiement Continu).
 
 ### Continuous Integration (CI)
