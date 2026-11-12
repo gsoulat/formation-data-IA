@@ -108,7 +108,7 @@ Sollicitez-le ensuite plus sérieusement, sur quelques dizaines de numéros d'af
 - une **temporisation** entre les appels ;
 - un **fichier de résultats** qui conserve, pour chaque numéro, la réponse obtenue **et sa date** ;
 - une relance qui **ne refait pas** les appels déjà faits ;
-- un **journal** qui permet de savoir après coup ce qui s'est passé pendant la collecte.
+- un **journal** qui permet de savoir après coup ce qui s'est passé pendant la collecte : début et fin de campagne, chaque appel avec son code HTTP et son temps de réponse, chaque erreur du service, chaque numéro sauté parce qu'il avait déjà été vérifié. Utilisez le module `logging` de Python plutôt que des `print()` (voir [Ressources](#ressources)).
 
 Questions à vous poser : votre échantillon de deux cents numéros représente-t-il le référentiel ? Comment l'avez-vous tiré ? Une fois une réponse obtenue, combien de temps reste-t-elle vraie : un numéro vérifié il y a six mois doit-il être revérifié avant la prochaine facture ?
 
@@ -207,3 +207,11 @@ Terminez par le test qui compte : effacez votre dossier, reclonez votre dépôt,
 - Formats nationaux des numéros de TVA : https://taxation-customs.ec.europa.eu/vat-identification-numbers_en
 - Requests : https://requests.readthedocs.io/ · pandas : https://pandas.pydata.org/docs/
 - WCAG 2.1 — usage de la couleur (1.4.1) : https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html
+
+### Écrire un journal de collecte (logs)
+
+- Cours interne — [Logging structuré en Python](../../../01-Fondamentaux/Python/05-Qualite-Tests/06-logging-structure.ipynb)
+- Python — tutoriel officiel sur le logging (niveaux, format, écriture dans un fichier) : https://docs.python.org/fr/3/howto/logging.html
+- Python — recettes de logging (plusieurs sorties, rotation des fichiers) : https://docs.python.org/fr/3/howto/logging-cookbook.html
+- Python — référence du module `logging` : https://docs.python.org/fr/3/library/logging.html
+- Real Python — Logging in Python (en anglais, pas à pas) : https://realpython.com/python-logging/
