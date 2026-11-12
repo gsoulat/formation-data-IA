@@ -107,6 +107,13 @@ Dessinez le **modèle de données** (MCD) : quelles tables, quelles relations ? 
 
 ### Phase 2 — Découvrir l'ORM (J1, après-midi)
 
+<!-- videos:Ae7LHdJwMJ4,JpSpovOrecw -->
+> 🎬 **En vidéo** (2 épisodes)
+>
+> <a href="https://www.youtube.com/watch?v=Ae7LHdJwMJ4" title="Python 12 : Une base de données avec SQLite (sqlite3, INSERT, SELECT)"><img src="https://i.ytimg.com/vi/Ae7LHdJwMJ4/mqdefault.jpg" alt="▶ Python 12 : Une base de données avec SQLite (sqlite3, INSERT, SELECT)" width="260"></a> <a href="https://www.youtube.com/watch?v=JpSpovOrecw" title="Python 11 : Les classes et les objets (class, méthode, fit/predict)"><img src="https://i.ytimg.com/vi/JpSpovOrecw/mqdefault.jpg" alt="▶ Python 11 : Les classes et les objets (class, méthode, fit/predict)" width="260"></a>
+>
+> ▶ [Python 12 : Une base de données avec SQLite (sqlite3, INSERT, SELECT)](https://www.youtube.com/watch?v=Ae7LHdJwMJ4) · ▶ [Python 11 : Les classes et les objets (class, méthode, fit/predict)](https://www.youtube.com/watch?v=JpSpovOrecw)
+
 Lancez PostgreSQL avec Docker Compose. Créez la table des films **à la main, en SQL**, insérez trois films, et écrivez la requête des films de 1995. Faites ensuite la même chose avec **SQLModel** : une classe `Film`, une session, un `select()`.
 
 Comparez les deux. Qu'avez-vous arrêté d'écrire ? Que se passe-t-il si une valeur n'a pas le bon type ? Et maintenant, quelle requête SQL SQLModel envoie-t-il vraiment ? Activez l'affichage des requêtes (`echo=True`) pour le voir. Notez vos conclusions dans `docs/orm.md`, en une demi-page : ce que l'ORM apporte, et un cas où il vaut mieux écrire le SQL soi-même.

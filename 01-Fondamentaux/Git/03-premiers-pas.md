@@ -29,12 +29,12 @@ git clone https://github.com/username/projet.git
 
 ## 2. Le cycle de vie d'un fichier
 
-<!-- videos:pIzqeydu9jU -->
-> 🎬 **En vidéo**
+<!-- videos:pIzqeydu9jU,sYoazNOseQQ -->
+> 🎬 **En vidéo** (2 épisodes)
 >
-> <a href="https://www.youtube.com/watch?v=pIzqeydu9jU" title="Git 03 : Les trois zones (git add, git commit -m)"><img src="https://i.ytimg.com/vi/pIzqeydu9jU/mqdefault.jpg" alt="▶ Git 03 : Les trois zones (git add, git commit -m)" width="320"></a>
+> <a href="https://www.youtube.com/watch?v=pIzqeydu9jU" title="Git 03 : Les trois zones (git add, git commit -m)"><img src="https://i.ytimg.com/vi/pIzqeydu9jU/mqdefault.jpg" alt="▶ Git 03 : Les trois zones (git add, git commit -m)" width="260"></a> <a href="https://www.youtube.com/watch?v=sYoazNOseQQ" title="VS Code 08 : Git dans VS Code (modifications, indexer, valider)"><img src="https://i.ytimg.com/vi/sYoazNOseQQ/mqdefault.jpg" alt="▶ VS Code 08 : Git dans VS Code (modifications, indexer, valider)" width="260"></a>
 >
-> ▶ [Git 03 : Les trois zones (git add, git commit -m)](https://www.youtube.com/watch?v=pIzqeydu9jU)
+> ▶ [Git 03 : Les trois zones (git add, git commit -m)](https://www.youtube.com/watch?v=pIzqeydu9jU) · ▶ [VS Code 08 : Git dans VS Code (modifications, indexer, valider)](https://www.youtube.com/watch?v=sYoazNOseQQ)
 
 ### Vérifier l'état
 ```bash

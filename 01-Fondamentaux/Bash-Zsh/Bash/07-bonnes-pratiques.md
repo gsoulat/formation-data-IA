@@ -24,6 +24,13 @@ alias csvhead='head -n 20 | column -t -s,'
 
 ## 2. Configuration .bashrc / .zshrc
 
+<!-- videos:bbqTHCWR3pU -->
+> 🎬 **En vidéo**
+>
+> <a href="https://www.youtube.com/watch?v=bbqTHCWR3pU" title="Éditer dans le terminal : nano et Vim 10 : Vim : un .vimrc minimal"><img src="https://i.ytimg.com/vi/bbqTHCWR3pU/mqdefault.jpg" alt="▶ Éditer dans le terminal : nano et Vim 10 : Vim : un .vimrc minimal" width="320"></a>
+>
+> ▶ [Éditer dans le terminal : nano et Vim 10 : Vim : un .vimrc minimal](https://www.youtube.com/watch?v=bbqTHCWR3pU)
+
 C'est ici que vous définissez votre environnement (Path, Variables, Alias).
 ```bash
 export PATH="$HOME/bin:$PATH"

@@ -19,12 +19,12 @@ Linux identifie chaque connexion physique ou virtuelle comme une interface :
 
 ## 2. Ports et Services
 
-<!-- videos:8SJxkIVrbsg -->
-> 🎬 **En vidéo**
+<!-- videos:8SJxkIVrbsg,PtRNGTBoyds -->
+> 🎬 **En vidéo** (2 épisodes)
 >
-> <a href="https://www.youtube.com/watch?v=8SJxkIVrbsg" title="Bash 23 : Se connecter à un serveur (ssh, empreinte, exit)"><img src="https://i.ytimg.com/vi/8SJxkIVrbsg/mqdefault.jpg" alt="▶ Bash 23 : Se connecter à un serveur (ssh, empreinte, exit)" width="320"></a>
+> <a href="https://www.youtube.com/watch?v=8SJxkIVrbsg" title="Bash 23 : Se connecter à un serveur (ssh, empreinte, exit)"><img src="https://i.ytimg.com/vi/8SJxkIVrbsg/mqdefault.jpg" alt="▶ Bash 23 : Se connecter à un serveur (ssh, empreinte, exit)" width="260"></a> <a href="https://www.youtube.com/watch?v=PtRNGTBoyds" title="VS Code 12 : Travailler à distance (Remote SSH, conteneurs)"><img src="https://i.ytimg.com/vi/PtRNGTBoyds/mqdefault.jpg" alt="▶ VS Code 12 : Travailler à distance (Remote SSH, conteneurs)" width="260"></a>
 >
-> ▶ [Bash 23 : Se connecter à un serveur (ssh, empreinte, exit)](https://www.youtube.com/watch?v=8SJxkIVrbsg)
+> ▶ [Bash 23 : Se connecter à un serveur (ssh, empreinte, exit)](https://www.youtube.com/watch?v=8SJxkIVrbsg) · ▶ [VS Code 12 : Travailler à distance (Remote SSH, conteneurs)](https://www.youtube.com/watch?v=PtRNGTBoyds)
 
 Un serveur peut héberger plusieurs services sur la même IP via des ports :
 - HTTP : 80 / HTTPS : 443

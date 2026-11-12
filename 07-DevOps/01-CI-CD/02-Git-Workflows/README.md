@@ -16,6 +16,13 @@
 
 ## Pourquoi un workflow Git ?
 
+<!-- videos:LeiFSO22-pQ -->
+> 🎬 **En vidéo**
+>
+> <a href="https://www.youtube.com/watch?v=LeiFSO22-pQ" title="CI/CD 01 : Les stratégies de branches (Git Flow, GitHub Flow)"><img src="https://i.ytimg.com/vi/LeiFSO22-pQ/mqdefault.jpg" alt="▶ CI/CD 01 : Les stratégies de branches (Git Flow, GitHub Flow)" width="320"></a>
+>
+> ▶ [CI/CD 01 : Les stratégies de branches (Git Flow, GitHub Flow)](https://www.youtube.com/watch?v=LeiFSO22-pQ)
+
 Un workflow Git définit comment votre équipe utilise Git pour collaborer efficacement. Un bon workflow :
 
 - Facilite la collaboration

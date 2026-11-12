@@ -193,6 +193,13 @@ jobs:
 
 ## Workflows de base
 
+<!-- videos:vnkx7fnYE2U -->
+> 🎬 **En vidéo**
+>
+> <a href="https://www.youtube.com/watch?v=vnkx7fnYE2U" title="CI/CD 06 : Tester avec une vraie base (secrets, variables)"><img src="https://i.ytimg.com/vi/vnkx7fnYE2U/mqdefault.jpg" alt="▶ CI/CD 06 : Tester avec une vraie base (secrets, variables)" width="320"></a>
+>
+> ▶ [CI/CD 06 : Tester avec une vraie base (secrets, variables)](https://www.youtube.com/watch?v=vnkx7fnYE2U)
+
 ### CI basique (Node.js)
 
 ```yaml
@@ -674,6 +681,13 @@ jobs:
 ---
 
 ## Débogage et optimisation
+
+<!-- videos:ruJRPkzcnMs -->
+> 🎬 **En vidéo**
+>
+> <a href="https://www.youtube.com/watch?v=ruJRPkzcnMs" title="CI/CD 05 : Lire un pipeline rouge (corriger, relancer)"><img src="https://i.ytimg.com/vi/ruJRPkzcnMs/mqdefault.jpg" alt="▶ CI/CD 05 : Lire un pipeline rouge (corriger, relancer)" width="320"></a>
+>
+> ▶ [CI/CD 05 : Lire un pipeline rouge (corriger, relancer)](https://www.youtube.com/watch?v=ruJRPkzcnMs)
 
 ### Activer le debug
 
