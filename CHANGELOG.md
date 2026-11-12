@@ -1,3 +1,10 @@
+# [2.28.0](https://github.com/gsoulat/formation-data-IA/compare/v2.27.0...v2.28.0) (2026-11-12)
+
+
+### Features
+
+* **brief:** brief Data Analyst TVA intracommunautaire (API VIES) ([a00028c](https://github.com/gsoulat/formation-data-IA/commit/a00028cadecb7091ce449e01e1b4ba2c4b1f3def))
+
 # [2.27.0](https://github.com/gsoulat/formation-data-IA/compare/v2.26.0...v2.27.0) (2026-11-01)
 
 
