@@ -9,6 +9,13 @@
 
 ## Qu'est-ce que pre-commit ?
 
+<!-- videos:gQDf8dpEqyU -->
+> 🎬 **En vidéo**
+>
+> <a href="https://www.youtube.com/watch?v=gQDf8dpEqyU" title="CI/CD 02 : Vérifier avant chaque commit : pre-commit (hook)"><img src="https://i.ytimg.com/vi/gQDf8dpEqyU/mqdefault.jpg" alt="▶ CI/CD 02 : Vérifier avant chaque commit : pre-commit (hook)" width="320"></a>
+>
+> ▶ [CI/CD 02 : Vérifier avant chaque commit : pre-commit (hook)](https://www.youtube.com/watch?v=gQDf8dpEqyU)
+
 **pre-commit** est un framework multi-langage pour gerer et maintenir des hooks Git. Il :
 
 - Gere les dependances de chaque hook automatiquement

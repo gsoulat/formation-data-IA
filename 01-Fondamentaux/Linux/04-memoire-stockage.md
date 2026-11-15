@@ -45,6 +45,13 @@ C'est ici qu'on définit quels disques doivent être montés automatiquement au 
 
 ## 4. Inodes et espace disque
 
+<!-- videos:3U0CCfr2b8Y -->
+> 🎬 **En vidéo**
+>
+> <a href="https://www.youtube.com/watch?v=3U0CCfr2b8Y" title="Bash 22 : Installer et faire de la place (sudo, apt install, brew)"><img src="https://i.ytimg.com/vi/3U0CCfr2b8Y/mqdefault.jpg" alt="▶ Bash 22 : Installer et faire de la place (sudo, apt install, brew)" width="320"></a>
+>
+> ▶ [Bash 22 : Installer et faire de la place (sudo, apt install, brew)](https://www.youtube.com/watch?v=3U0CCfr2b8Y)
+
 Chaque fichier consomme :
 1. De l'espace disque (les octets).
 2. Un **Inode** (l'index du fichier).

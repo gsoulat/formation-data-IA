@@ -14,6 +14,13 @@
 
 ## Qu'est-ce qu'une Pull Request ?
 
+<!-- videos:BiLbI_uNCvg -->
+> 🎬 **En vidéo**
+>
+> <a href="https://www.youtube.com/watch?v=BiLbI_uNCvg" title="Git 13 : Bonus : la pull request (GitHub, pull request, revue de code)"><img src="https://i.ytimg.com/vi/BiLbI_uNCvg/mqdefault.jpg" alt="▶ Git 13 : Bonus : la pull request (GitHub, pull request, revue de code)" width="320"></a>
+>
+> ▶ [Git 13 : Bonus : la pull request (GitHub, pull request, revue de code)](https://www.youtube.com/watch?v=BiLbI_uNCvg)
+
 Une **Pull Request** (ou PR) est le mécanisme central de collaboration sur GitHub.
 C'est une demande pour intégrer des modifications d'une branche vers une autre, généralement de
 votre

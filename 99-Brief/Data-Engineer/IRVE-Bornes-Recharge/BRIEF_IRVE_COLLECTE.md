@@ -1,5 +1,8 @@
 # Brief : Le maillage de recharge électrique en France — pipeline API + scraping vers PostgreSQL
 
+> Il existe une **[version CI/CD](BRIEF_IRVE_CICD.md)** de ce brief (5 jours) : API IRVE seule, trois couches dans
+> PostgreSQL, avec uv obligatoire, commits conventionnels, semantic-release et image Docker publiée sur GHCR.
+
 ## Informations
 
 | Critère | Valeur |
